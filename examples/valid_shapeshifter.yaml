@@ -1,0 +1,72 @@
+kind: CharacterDefinition
+ocs_version: 0.9.0
+id: "11111111-1111-1111-1111-111111111111"
+slug: "mirage-morph"
+names:
+  canon: "Mirage Morph"
+  aliases:
+    - "The Living Prism"
+identity:
+  entity_kind: person
+  sapience_level: sapient
+  species: other
+  pronouns:
+    - "they/them"
+  age:
+    nominal:
+      value: 27
+      unit: "y"
+appearance:
+  baseline:
+    height:
+      value: 182
+      unit: "cm"
+    descriptors:
+      - "silver hair"
+      - "iridescent eyes"
+  forms:
+    - id: "22222222-2222-2222-2222-222222222222"
+      name: "Storm Shade"
+      delta_from_baseline:
+        height:
+          value: 5
+          unit: "cm"
+        colorway: "#223344"
+        descriptors:
+          - "crackling aura"
+      triggers:
+        - "lightning"
+    - id: "33333333-3333-3333-3333-333333333333"
+      name: "Glass Wraith"
+      delta_from_baseline:
+        height:
+          value: -7
+          unit: "cm"
+        descriptors:
+          - "translucent skin"
+      triggers:
+        - "direct sunlight"
+personality:
+  traits:
+    - kind: bipolar
+      key: "introversion↔extroversion"
+      value: -0.2
+  motivations:
+    - key: "protect_shifting_clan"
+      intensity: 0.85
+background:
+  biography:
+    - text: "A drifter able to refract themself into elemental avatars."
+      lang: "en"
+  relationships:
+    - target_ref: "44444444-4444-4444-4444-444444444444"
+      kind: "mentor"
+      valence: 0.7
+meta:
+  versioning:
+    created_at: "2024-03-01T10:00:00Z"
+    last_modified: "2024-04-02T15:30:00Z"
+  tags:
+    - "example"
+    - "shapeshifter"
+extras: {}

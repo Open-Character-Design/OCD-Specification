@@ -1,0 +1,103 @@
+{
+  "appearance": {
+    "art_style": null,
+    "baseline": {
+      "build": null,
+      "color_palette": null,
+      "descriptors": null,
+      "height": {
+        "unit": "cm",
+        "value": 185.0
+      },
+      "weight": null
+    },
+    "forms": null,
+    "outfits": null,
+    "portraits": null
+  },
+  "background": null,
+  "behavior": {
+    "action_repertoire": null,
+    "ai": null,
+    "combat_style": null,
+    "portrayal_tips": [
+      "Weave decisions through moral nuance."
+    ]
+  },
+  "extras": null,
+  "id": "00000000-0000-0000-0000-000000000001",
+  "identity": {
+    "age": {
+      "biological": null,
+      "chrono_override": null,
+      "chronological": null,
+      "nominal": {
+        "unit": "y",
+        "value": 35.0
+      },
+      "rationale": null
+    },
+    "composite_of": null,
+    "continuity": null,
+    "entity_kind": "person",
+    "origins": null,
+    "pronouns": [
+      "they/them"
+    ],
+    "roles": null,
+    "sapience_level": "sapient",
+    "secret_identities": null,
+    "species": "human"
+  },
+  "kind": "CharacterDefinition",
+  "media_profiles": null,
+  "meta": {
+    "audit": null,
+    "creators": null,
+    "external_ids": null,
+    "rights": null,
+    "tags": [
+      "spectre",
+      "n7"
+    ],
+    "versioning": {
+      "change_log": null,
+      "created_at": "2023-03-11T10:00:00Z",
+      "last_modified": "2023-08-20T10:00:00Z"
+    }
+  },
+  "metaphysics": null,
+  "names": {
+    "aliases": [
+      "Shepard"
+    ],
+    "canon": "Commander Shepard",
+    "display": null,
+    "epithets": null
+  },
+  "ocs_version": "0.9.0",
+  "personality": {
+    "motivations": null,
+    "speech": null,
+    "summary": "Adaptive leader balancing duty and empathy.",
+    "traits": [
+      {
+        "id": null,
+        "key": "paragon\u2194renegade",
+        "kind": "bipolar",
+        "label": null,
+        "poles": null,
+        "value": 0.45
+      },
+      {
+        "id": null,
+        "key": "leadership",
+        "kind": "scalar",
+        "label": null,
+        "scale": null,
+        "value": 0.9
+      }
+    ]
+  },
+  "slug": "n7-legend"
+}

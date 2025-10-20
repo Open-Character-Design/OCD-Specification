@@ -1,0 +1,17 @@
+[
+  {
+    "code": "NORMALIZED_SLUG",
+    "detail": "'n7--legend' \u2192 'n7-legend'",
+    "path": "slug"
+  },
+  {
+    "code": "NORMALIZED_AXIS",
+    "detail": "'paragon_renegade' \u2192 'paragon\u2194renegade'",
+    "path": "personality.traits[].key"
+  },
+  {
+    "code": "NONCANONICAL_CANON_NAME",
+    "detail": "slug 'n7-legend' does not match canonical name slug 'commander-shepard'",
+    "path": "names.canon"
+  }
+]

@@ -1,0 +1,200 @@
+/* OCS Custom Color Scheme */
+:root {
+  /* Primary Colors */
+  --md-primary-fg-color: #2B6CB0;        /* OCD Blue */
+  --md-primary-fg-color--light: #3182CE; /* Lighter OCD Blue */
+  --md-primary-fg-color--dark: #1A365D;  /* Indigo Depth */
+  
+  /* Accent Colors */
+  --md-accent-fg-color: #F6AD55;         /* Golden Accent */
+  --md-accent-fg-color--transparent: rgba(246, 173, 85, 0.1);
+  
+  /* Neutral Colors */
+  --md-default-fg-color: #4A5568;       /* Slate Text */
+  --md-default-bg-color: #FFFFFF;       /* Pure White */
+  --md-default-bg-color--light: #E2E8F0; /* Cool Gray */
+  
+  /* Code Colors */
+  --md-code-bg-color: #F7FAFC;
+  --md-code-fg-color: #2D3748;
+  
+  /* Link Colors */
+  --md-typeset-a-color: #2B6CB0;
+}
+
+/* Dark mode overrides */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #3182CE;        /* Lighter OCD Blue for dark mode */
+  --md-primary-fg-color--dark: #1A365D;  /* Indigo Depth background */
+  --md-default-bg-color: #1A365D;        /* Indigo Depth */
+  --md-default-fg-color: #E2E8F0;         /* Cool Gray text */
+  --md-code-bg-color: #2D3748;
+  --md-code-fg-color: #E2E8F0;
+  --md-typeset-a-color: #63B3ED;
+}
+
+/* Custom button styling */
+.md-button {
+  background-color: var(--md-accent-fg-color);
+  color: var(--md-primary-fg-color--dark);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.md-button:hover {
+  background-color: #ED8936; /* Sunlit Gold */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(246, 173, 85, 0.3);
+}
+
+/* Hero section styling */
+.hero-section {
+  background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, var(--md-primary-fg-color--dark) 100%);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin: -1rem -1rem 2rem -1rem;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+/* Features grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.feature-card {
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-bg-color--light);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+  color: var(--md-primary-fg-color);
+  margin-bottom: 1rem;
+}
+
+.feature-card .emoji {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Code block enhancements */
+.highlight .copy {
+  background-color: var(--md-accent-fg-color);
+  color: var(--md-primary-fg-color--dark);
+}
+
+/* Admonition styling */
+.md-typeset .admonition {
+  border-left: 4px solid var(--md-accent-fg-color);
+}
+
+.md-typeset .admonition-title {
+  background-color: var(--md-accent-fg-color--transparent);
+  color: var(--md-primary-fg-color--dark);
+}
+
+/* Tab styling */
+.md-typeset .tabbed-set > input:checked + label {
+  border-bottom-color: var(--md-accent-fg-color);
+  color: var(--md-primary-fg-color);
+}
+
+/* Navigation tabs */
+.md-tabs__link--active {
+  color: var(--md-accent-fg-color) !important;
+}
+
+/* Search highlighting */
+.md-search-result__meta {
+  color: var(--md-accent-fg-color);
+}
+
+/* Custom admonition types */
+.md-typeset .admonition.tip {
+  border-left-color: #48BB78;
+}
+
+.md-typeset .admonition.tip .admonition-title {
+  background-color: rgba(72, 187, 120, 0.1);
+  color: #2F855A;
+}
+
+.md-typeset .admonition.warning {
+  border-left-color: #ED8936;
+}
+
+.md-typeset .admonition.warning .admonition-title {
+  background-color: rgba(237, 137, 54, 0.1);
+  color: #C05621;
+}
+
+.md-typeset .admonition.note {
+  border-left-color: var(--md-primary-fg-color);
+}
+
+.md-typeset .admonition.note .admonition-title {
+  background-color: rgba(43, 108, 176, 0.1);
+  color: var(--md-primary-fg-color);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-section p {
+    font-size: 1rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .feature-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .hero-section {
+    background: none;
+    color: black;
+  }
+  
+  .feature-card {
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+}

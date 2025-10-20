@@ -1,0 +1,57 @@
+kind: CharacterDefinition
+ocs_version: 0.9.0
+id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1"
+slug: "veil-bond"
+names:
+  canon: "Veil Bond"
+  aliases:
+    - "Twin Veil"
+identity:
+  entity_kind: person
+  sapience_level: sapient
+  composite_of:
+    - ref: "bbbbbbb1-bbbb-bbbb-bbbb-bbbbbbbbbbb1"
+      control_share: 0.55
+      exposure: secret
+      visibility: "host"
+    - ref: "ccccccc1-cccc-cccc-cccc-ccccccccccc1"
+      control_share: 0.45
+      exposure: secret
+      visibility: "symbiote"
+  secret_identities:
+    - public_name: "Dr. Mira Vale"
+      exposure_risk: 0.6
+appearance:
+  baseline:
+    height:
+      value: 168
+      unit: "cm"
+    descriptors:
+      - "chalk-white skin"
+  outfits:
+    - id: "ddddddd1-dddd-dddd-dddd-ddddddddddd1"
+      name: "Lab Regalia"
+      descriptors:
+        - "silver-lined coat"
+personality:
+  traits:
+    - kind: categorical
+      key: "dominant↔persona"
+      value: "host"
+  motivations:
+    - key: "maintain_balance"
+      intensity: 0.7
+background:
+  biography:
+    - text: "A scientist and an alien veil sharing a body."
+      lang: "en"
+meta:
+  versioning:
+    created_at: "2024-02-01T08:00:00Z"
+    last_modified: "2024-02-15T08:00:00Z"
+  tags:
+    - "example"
+    - "symbiote"
+extras:
+  resonance:
+    equilibrium: "fragile"

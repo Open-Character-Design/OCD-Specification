@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="750" viewBox="0 0 1100 750">
+  <defs>
+    <style>
+      .title { font-family: 'Inter', 'Segoe UI', sans-serif; font-size: 20px; font-weight: 600; fill: #1a1a1a; }
+      .body { font-family: 'Inter', 'Segoe UI', sans-serif; font-size: 16px; fill: #1a1a1a; }
+      .box { rx: 14; ry: 14; stroke-width: 2; }
+      .edge { stroke-width: 3; fill: none; marker-end: url(#arrow-blue); }
+      .edge-yellow { stroke: #d79b00; }
+      .edge-green { stroke: #82b366; }
+      .edge-red { stroke: #b85450; }
+      .edge-blue { stroke: #3399ff; }
+    </style>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L9,3 L0,6 Z" fill="currentColor" />
+    </marker>
+  </defs>
+  <rect x="120" y="120" width="260" height="100" class="box" fill="#dae8fc" stroke="#6c8ebf" />
+  <text x="250" y="160" class="title" text-anchor="middle">Authoring Workspace</text>
+  <text x="250" y="184" class="body" text-anchor="middle">OCD-T markdown + JSON fragments</text>
+
+  <rect x="420" y="120" width="240" height="90" class="box" fill="#e1d5e7" stroke="#9673a6" />
+  <text x="540" y="160" class="title" text-anchor="middle">Source Control &amp; Reviews</text>
+  <text x="540" y="184" class="body" text-anchor="middle">branch policies · lint hooks</text>
+
+  <rect x="420" y="250" width="280" height="150" class="box" fill="#d5e8d4" stroke="#82b366" />
+  <text x="560" y="290" class="title" text-anchor="middle">Validation &amp; Normalization</text>
+  <text x="560" y="318" class="body" text-anchor="middle">schema checks · vocabulary alignment</text>
+  <text x="560" y="342" class="body" text-anchor="middle">trait axis normalization · tag coercion</text>
+
+  <rect x="120" y="280" width="220" height="100" class="box" fill="#fff2cc" stroke="#d6b656" />
+  <text x="230" y="320" class="title" text-anchor="middle">Controlled Vocabularies</text>
+  <text x="230" y="344" class="body" text-anchor="middle">ratings · registers · tags</text>
+
+  <rect x="720" y="210" width="220" height="100" class="box" fill="#f8cecc" stroke="#b85450" />
+  <text x="830" y="250" class="title" text-anchor="middle">Diagnostics Output</text>
+  <text x="830" y="274" class="body" text-anchor="middle">warnings · lint reports</text>
+
+  <rect x="420" y="440" width="280" height="100" class="box" fill="#cce5ff" stroke="#3399ff" />
+  <text x="560" y="480" class="title" text-anchor="middle">Normalized CharacterDefinition JSON</text>
+  <text x="560" y="504" class="body" text-anchor="middle">ready for runtimes</text>
+
+  <rect x="120" y="580" width="220" height="90" class="box" fill="#ffe6cc" stroke="#d79b00" />
+  <text x="230" y="618" class="title" text-anchor="middle">Prompt Templates</text>
+  <text x="230" y="642" class="body" text-anchor="middle">system prompts · personas</text>
+
+  <rect x="420" y="580" width="240" height="90" class="box" fill="#ffe6cc" stroke="#d79b00" />
+  <text x="540" y="618" class="title" text-anchor="middle">Agent Memory Stores</text>
+  <text x="540" y="642" class="body" text-anchor="middle">RAG indices · embeddings</text>
+
+  <rect x="720" y="580" width="240" height="90" class="box" fill="#ffe6cc" stroke="#d79b00" />
+  <text x="840" y="618" class="title" text-anchor="middle">Game &amp; Simulation Systems</text>
+  <text x="840" y="642" class="body" text-anchor="middle">state machines · behavior trees</text>
+
+  <path d="M380 170 H420" class="edge edge-blue"/>
+  <path d="M540 210 V250" class="edge edge-green"/>
+  <path d="M340 330 H420" class="edge edge-green"/>
+  <path d="M700 280 H720" class="edge edge-red"/>
+  <path d="M560 400 V440" class="edge edge-blue"/>
+  <path d="M560 540 V580" class="edge edge-yellow"/>
+  <path d="M420 610 H340" class="edge edge-yellow"/>
+  <path d="M700 610 H660" class="edge edge-yellow"/>
+
+  <path d="M540 170 H640" stroke="#6c8ebf" stroke-width="3" fill="none" marker-end="url(#arrow-blue)"/>
+  <path d="M560 540 L450 580" stroke="#d79b00" stroke-width="3" fill="none" marker-end="url(#arrow-blue)"/>
+  <path d="M560 540 L560 580" stroke="#d79b00" stroke-width="3" fill="none" marker-end="url(#arrow-blue)"/>
+  <path d="M560 540 L780 580" stroke="#d79b00" stroke-width="3" fill="none" marker-end="url(#arrow-blue)"/>
+  <path d="M230 220 L230 280" stroke="#82b366" stroke-width="3" fill="none" marker-end="url(#arrow-blue)"/>
+  <path d="M540 210 L830 210" stroke="#b85450" stroke-width="3" fill="none" marker-end="url(#arrow-blue)"/>
+</svg>

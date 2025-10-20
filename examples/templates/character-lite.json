@@ -1,0 +1,12 @@
+{
+  "ocs_version": "1.0.0",
+  "character": {
+    "id": "template-lite",
+    "name": "Template Lite",
+    "summary": "One-line summary of the character.",
+    "persona": {
+      "traits": ["curious", "supportive"],
+      "description": "Concise description of the core persona."
+    }
+  }
+}

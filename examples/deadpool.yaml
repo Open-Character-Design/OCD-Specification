@@ -1,0 +1,175 @@
+ocs_version: "0.0.1"
+id: "char-deadpool"
+names:
+  canon: "Wade Wilson"
+  display: "Deadpool"
+  aliases: ["Wade", "Merc with a Mouth"]
+locale: "en-US"
+media_targets: ["comics", "film", "game"]
+
+identity:
+  kind: "humanoid"
+  species: "Mutated human (Weapon X experiment)"
+  age: "mid-30s (biologically unstable)"
+  pronouns: "he/him"
+  locale: "Canada / USA"
+
+appearance:
+  body_type: "humanoid"
+  height: "6'2\""
+  weight: "210 lbs (muscular, scarred)"
+  distinguishing_features: ["red-and-black suit", "horrifically scarred skin", "dual katanas"]
+  physical_summary: "Athletic, combat-trained mercenary with grotesque scarring hidden under costume."
+  metaphysicality:
+    aura: "chaotic, unkillable energy"
+    energy_type: "mutant healing factor"
+    plane_of_origin: "Marvel Earth-616"
+    traits: ["immortality: functional (healing factor)", "toon-force meta-awareness", "reality-bending humor"]
+
+personality:
+  summary: "Irreverent, chaotic, violent mercenary with meta awareness and buried emotional depth."
+  archetype: "trickster / anti-hero"
+  traits:
+    - name: "introversion↔extraversion"
+      polarity: 0.9
+      intensity: 1.0
+    - name: "cooperative↔competitive"
+      polarity: -0.6
+      intensity: 0.8
+    - name: "serious↔playful"
+      polarity: -0.8
+      intensity: 1.0
+  quirks: ["constant fourth-wall breaking", "talks to imaginary audience", "obsessed with chimichangas"]
+  humor_styles: ["slapstick", "meta irony", "crude jokes"]
+  goals:
+    short_term: ["Get paid", "Kill target (or not)", "Make a joke about it"]
+    long_term: ["Find meaning in chaos", "Protect people he actually cares about"]
+  values: ["self-interest (surface)", "loyalty (hidden)", "freedom"]
+  conflicts:
+    internal: "Struggles with trauma, disfigurement, and self-worth"
+    external: "Constant enemies, merc jobs gone wrong, clashing with other heroes"
+
+background:
+  summary: "Ex-mercenary, diagnosed with cancer, subjected to Weapon X experiments. Gains regenerative powers but becomes disfigured and mentally unstable."
+  timeline:
+    - at: "pre-mutation"
+      event: "Served as soldier/mercenary"
+    - at: "Weapon X project"
+      event: "Experiments grant healing factor; causes mental instability"
+    - at: "post-Weapon X"
+      event: "Becomes mercenary Deadpool, anti-hero, constant fourth-wall breaker"
+  affiliations: ["X-Force", "Deadpool Corps", "occasional X-Men ally"]
+  relationships:
+    - target_ref: "rel:vanessa"
+      role: "love interest"
+      sentiment: 0.95
+    - target_ref: "rel:cable"
+      role: "ally/rival"
+      sentiment: 0.7
+    - target_ref: "rel:wolverine"
+      role: "frienemy"
+      sentiment: 0.6
+  narrative_hooks:
+    themes: ["redemption", "chaos vs. order", "meta satire of superheroes"]
+    potential_arcs: ["reluctant protector", "dark comedy tragedy"]
+    narrative_role: "anti-hero protagonist"
+
+capabilities:
+  skills:
+    - name: "Expert swordsmanship"
+      level: 5
+      tags: ["combat"]
+    - name: "Guns & explosives"
+      level: 5
+      tags: ["firearms"]
+    - name: "Improvisation"
+      level: 5
+      tags: ["chaos", "comedy"]
+  instincts:
+    - trigger: "Danger"
+      response: "Make a joke, then attack recklessly"
+    - trigger: "Ally threatened"
+      response: "Feign indifference but intervene"
+  powers:
+    - "Regenerative healing factor (near-immortal)"
+    - "Enhanced reflexes and stamina"
+    - "Fourth-wall awareness / meta commentary"
+  resources:
+    - "Dual katanas"
+    - "Firearms cache"
+    - "Red-and-black suit"
+
+behavior_directives:
+  portrayal_tips: ["Always balance irreverence with hidden vulnerability", "Break the fourth wall often"]
+  improv_guidelines:
+    dos: ["Crack jokes mid-combat", "Satirize the genre", "Swing between absurd and sincere"]
+    donts: ["Stay serious for too long", "Speak in purely heroic tone"]
+  dialogue_style:
+    register: "snarky, crude, self-aware"
+    pace: "fast, tangential"
+    vocabulary: ["chimichangas", "meta jokes", "pop culture references"]
+  safety_bounds:
+    topics_to_soften: ["graphic gore (tone as dark comedy)"]
+    topics_to_avoid: ["sexual violence", "hate speech"]
+
+interaction_layer:
+  preferred_modes: ["speech", "combat banter", "meta commentary"]
+  consent_model:
+    allows: ["crude humor", "graphic violence (satirical)"]
+    restricts: ["child audiences", "serious romance outside canon tone"]
+  narrator_notes: "Play Deadpool as if he knows he’s in a story — humor and brutality exist side by side."
+
+state_dynamics:
+  status: "active"
+  location: "wherever chaos is"
+  health: "effectively infinite (healing factor)"
+  morale: 0.7
+  mood: "irreverent"
+
+contextual_fit:
+  genres: ["superhero satire", "dark comedy", "action"]
+  media: ["comic", "film", "game"]
+  deployment_contexts: ["adult action comedy"]
+
+meta_properties:
+  target_audience:
+    age_range: "17+"
+    tone_alignment: "irreverent, violent comedy"
+  appropriateness:
+    violence: "extreme but satirical"
+    sexuality: "coarse jokes, some intimacy"
+    language: "explicit"
+    cultural_sensitivity: ["satirical, but must not cross into bigotry"]
+  content_ratings:
+    - system: "MPAA"
+      rating: "R"
+      notes: "Strong violence, language, sexual content"
+    - system: "ESRB"
+      rating: "M"
+      notes: "Intense violence, crude humor"
+  safety_warnings: ["graphic violence", "dark comedy", "meta irreverence"]
+
+representation_accessibility:
+  representation_notes:
+    culture: "Canadian mercenary, cancer survivor"
+    disability: "scarring, chronic trauma, unstable mental state"
+  accessibility_guidance: ["Handle trauma with care under the comedy", "Avoid making disability itself the punchline"]
+  sensitivity_notes: ["Balance edgy humor without demeaning marginalized groups"]
+
+assets:
+  images: []
+  audio: []
+  links: ["https://marvel.fandom.com/wiki/Deadpool_(Wade_Wilson)"]
+
+meta:
+  tags: ["anti-hero", "mercenary", "meta", "comedy"]
+  authorship:
+    created_by: "Fabian Nicieza & Rob Liefeld"
+    source: "Marvel Comics"
+  versioning:
+    created_at: "1991-02-01T00:00:00Z"
+    last_modified: "1991-02-01T00:00:00Z"
+  version: "0.0.1"
+  canon_status: "official"
+  license: "© Marvel Entertainment"
+  expansion_hooks: ["Deadpool Corps", "romantic arcs with Vanessa", "conflict with Cable"]

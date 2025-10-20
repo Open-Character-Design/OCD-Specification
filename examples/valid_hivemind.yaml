@@ -1,0 +1,63 @@
+kind: CharacterDefinition
+ocs_version: 0.9.0
+id: "55555555-5555-5555-5555-555555555555"
+slug: "chorus-of-dawn"
+names:
+  canon: "Chorus of Dawn"
+  aliases:
+    - "Aurora Choir"
+identity:
+  entity_kind: collective
+  sapience_level: transcendent
+  species: collective
+  pronouns:
+    - "they/them"
+  composite_of:
+    - ref: "66666666-6666-6666-6666-666666666666"
+      control_share: 0.5
+      exposure: secret
+      visibility: "avatar"
+    - ref: "77777777-7777-7777-7777-777777777777"
+      control_share: 0.5
+      exposure: secret
+  secret_identities:
+    - public_name: "Aurora Collective"
+      exposure_risk: 0.2
+appearance:
+  baseline:
+    descriptors:
+      - "glowing constellation of voices"
+  art_style: "noir"
+metaphysics:
+  power_system:
+    name: "Resonance"
+    ruleset_ref: "88888888-8888-8888-8888-888888888888"
+  abilities:
+    - id: "99999999-9999-9999-9999-999999999999"
+      name: "Harmony Surge"
+      kind: "active"
+      cost:
+        focus: 3
+      effects:
+        - tag: "stun"
+          magnitude: 2
+      cooldown:
+        value: 6
+        unit: "s"
+personality:
+  traits:
+    - kind: scalar
+      key: "empathy↔sociopathy"
+      value: 0.9
+background:
+  biography:
+    - text: "A network of dawn spirits speaking as one."
+      lang: "en"
+meta:
+  versioning:
+    created_at: "2024-01-15T05:00:00Z"
+    last_modified: "2024-02-20T18:45:00Z"
+  tags:
+    - "example"
+    - "hivemind"
+extras: {}

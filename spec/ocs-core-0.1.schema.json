@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ocs.dev/schema/ocs-core-0.1.json",
+  "type": "object",
+  "required": ["ocs_version", "names", "identity", "personality", "behavior_directives", "meta"],
+  "properties": {
+    "ocs_version": { "type": "string" },
+    "names": {
+      "type": "object",
+      "required": ["canon"],
+      "properties": {
+        "canon": { "type": "string" },
+        "display": { "type": "string" },
+        "aliases": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": true
+    },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-_:.]{2,64}$" },
+    "locale": { "type": "string" },
+    "media_targets": { "type": "array", "items": { "type": "string" } },
+    "identity": {
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+        "name": { "type": "string" },
+        "kind": { "type": "string", "enum": ["humanoid", "creature", "machine", "entity"] },
+        "species": { "type": "string" },
+        "breed": { "type": "string" },
+        "age": { "type": ["number", "string"] },
+        "pronouns": { "type": "string" },
+        "locale": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "personality": {
+      "type": "object",
+      "required": ["summary"],
+      "properties": {
+        "summary": { "type": "string" },
+        "archetype": { "type": "string" },
+        "traits": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "object",
+                "required": ["kind", "name", "polarity", "intensity"],
+                "properties": {
+                  "kind": { "const": "bipolar" },
+                  "name": { "type": "string" },
+                  "polarity": { "type": "number", "minimum": -1, "maximum": 1 },
+                  "intensity": { "type": "number", "minimum": 0, "maximum": 1 }
+                },
+                "additionalProperties": true
+              },
+              {
+                "type": "object",
+                "required": ["kind", "name", "value"],
+                "properties": {
+                  "kind": { "const": "scalar" },
+                  "name": { "type": "string" },
+                  "value": { "type": "number", "minimum": 0, "maximum": 1 },
+                  "unit": { "type": "string" }
+                },
+                "additionalProperties": true
+              },
+              {
+                "type": "object",
+                "required": ["kind", "name", "value"],
+                "properties": {
+                  "kind": { "const": "flag" },
+                  "name": { "type": "string" },
+                  "value": { "type": "boolean" }
+                },
+                "additionalProperties": true
+              }
+            ]
+          }
+        },
+        "quirks": { "type": "array", "items": { "type": "string" } },
+        "humor_styles": { "type": "array", "items": { "type": "string" } },
+        "goals": {
+          "type": "object",
+          "properties": {
+            "short_term": { "type": "array", "items": { "type": "string" } },
+            "long_term": { "type": "array", "items": { "type": "string" } }
+          },
+          "additionalProperties": false
+        },
+        "values": { "type": "array", "items": { "type": "string" } },
+        "conflicts": {
+          "type": "object",
+          "properties": {
+            "internal": { "type": "string" },
+            "external": { "type": "string" }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": true
+    },
+    "behavior_directives": {
+      "type": "object",
+      "required": ["portrayal_tips", "dialogue_style"],
+      "properties": {
+        "portrayal_tips": { "type": "array", "items": { "type": "string" } },
+        "dialogue_style": { "type": "object" },
+        "improv_guidelines": { "type": "object" },
+        "safety_bounds": { "type": "object" }
+      },
+      "additionalProperties": true
+    },
+    "meta": {
+      "type": "object",
+      "required": ["tags", "versioning"],
+      "properties": {
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "authorship": { "type": "object" },
+        "version": { "type": "string" },
+        "canon_status": { "type": "string" },
+        "license": { "type": "string" },
+        "versioning": {
+          "type": "object",
+          "required": ["created_at", "last_modified"],
+          "properties": {
+            "created_at": { "type": "string", "format": "date-time" },
+            "last_modified": { "type": "string", "format": "date-time" }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

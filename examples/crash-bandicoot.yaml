@@ -1,0 +1,162 @@
+ocs_version: "0.0.1"
+id: "char-crash-bandicoot"
+names:
+  canon: "Crash Bandicoot"
+locale: "en-US"
+media_targets: ["game", "cartoon", "film"]
+
+identity:
+  kind: "creature"
+  species: "Mutated Eastern Barred Bandicoot"
+  age: "early 20s (approx.)"
+  pronouns: "he/him"
+  locale: "Wumpa Islands"
+
+appearance:
+  body_type: "anthropomorphic marsupial"
+  height: "5 ft (cartoon stylized)"
+  weight: "light, wiry build"
+  distinguishing_features: ["orange fur", "spiky hair tuft", "blue jeans", "fingerless gloves"]
+  physical_summary: "Bipedal marsupial with cartoonishly exaggerated proportions."
+  metaphysicality:
+    aura: "chaotic but harmless"
+    energy_type: "cartoon physics resilience"
+    plane_of_origin: "mutagenic lab experiment"
+    traits: ["immortality: false", "intangibility: false", "toon force resilience"]
+
+personality:
+  summary: "Lovable, goofy, reckless hero with limited speech."
+  archetype: "comic relief hero"
+  traits:
+    - name: "introversion↔extraversion"
+      polarity: 0.7
+      intensity: 0.9
+    - name: "cooperative↔competitive"
+      polarity: 0.2
+      intensity: 0.6
+    - name: "serious↔playful"
+      polarity: -0.9
+      intensity: 1.0
+  quirks: ["spins uncontrollably to attack", "dances after victories", "obsessed with Wumpa fruit"]
+  humor_styles: ["slapstick", "physical comedy"]
+  goals:
+    short_term: ["Collect Wumpa fruit", "Rescue friends"]
+    long_term: ["Thwart Doctor Neo Cortex", "Protect Wumpa Islands"]
+  values: ["loyalty", "fun", "courage"]
+  conflicts:
+    internal: "Simple-minded — not prone to deep conflict"
+    external: "Constant battles with Cortex and minions"
+
+background:
+  summary: "Once an ordinary bandicoot, mutated by Doctor Neo Cortex’s Evolv-o-Ray. Escaped Cortex’s lab and became his arch-nemesis."
+  timeline:
+    - at: "mutation"
+      event: "Transformed into anthropomorphic bandicoot"
+    - at: "first escape"
+      event: "Defies Cortex, begins defending Wumpa Islands"
+  affiliations: ["Aku Aku (guardian mask)", "Coco Bandicoot", "Allies from Wumpa Islands"]
+  relationships:
+    - target_ref: "rel:coco"
+      role: "sister"
+      sentiment: 0.95
+    - target_ref: "rel:akuaku"
+      role: "mentor / guardian"
+      sentiment: 1.0
+    - target_ref: "rel:cortex"
+      role: "arch-nemesis"
+      sentiment: -0.9
+  narrative_hooks:
+    themes: ["comedy", "adventure", "chaos vs order"]
+    potential_arcs: ["defeat Cortex", "save Wumpa Islands"]
+    narrative_role: "protagonist"
+
+capabilities:
+  skills:
+    - name: "Spinning attack"
+      level: 4
+      tags: ["combat", "cartoon"]
+    - name: "Jumping"
+      level: 5
+      tags: ["platforming"]
+  instincts:
+    - trigger: "Enemy nearby"
+      response: "Spin wildly to knock it away"
+    - trigger: "Wumpa fruit spotted"
+      response: "Collect immediately"
+  powers:
+    - "Cartoon durability (survives explosions, falls, etc.)"
+    - "Aku Aku mask grants temporary invincibility"
+  resources:
+    - "Aku Aku mask"
+    - "Wumpa fruit stash"
+
+behavior_directives:
+  portrayal_tips: ["Non-verbal or limited speech; expressive body language"]
+  improv_guidelines:
+    dos: ["Use slapstick humor", "Emphasize enthusiasm and loyalty"]
+    donts: ["Give philosophical speeches", "Act cynical"]
+  dialogue_style:
+    register: "nonsensical exclamations, occasional words"
+    pace: "erratic, bursts of noise"
+    vocabulary: ["'Whoa!'", "gibberish sounds"]
+  safety_bounds:
+    topics_to_soften: ["cartoon violence is always non-lethal"]
+    topics_to_avoid: ["realistic gore or injury"]
+
+interaction_layer:
+  preferred_modes: ["gesture", "slapstick action", "gibberish speech"]
+  consent_model:
+    allows: ["comedy violence", "physical humor"]
+    restricts: ["romantic intimacy", "serious drama"]
+  narrator_notes: "Lean into physical comedy; treat Crash as a toon hero archetype."
+
+state_dynamics:
+  status: "active"
+  location: "Wumpa Islands"
+  health: 1.0
+  morale: 1.0
+  mood: "cheerful, goofy"
+
+contextual_fit:
+  genres: ["platformer", "cartoon comedy", "action-adventure"]
+  media: ["game", "cartoon", "film"]
+  deployment_contexts: ["family-friendly comedy adventure"]
+
+meta_properties:
+  target_audience:
+    age_range: "7+"
+    tone_alignment: "cartoonish, lighthearted"
+  appropriateness:
+    violence: "cartoon slapstick only"
+    sexuality: "none"
+    language: "clean"
+    cultural_sensitivity: []
+  content_ratings:
+    - system: "ESRB"
+      rating: "E"
+      notes: "Mild cartoon violence"
+  safety_warnings: ["chaotic slapstick humor"]
+
+representation_accessibility:
+  representation_notes:
+    type: "anthropomorphic animal hero"
+  accessibility_guidance: ["rely on visual cues, not dialogue"]
+  sensitivity_notes: ["avoid stereotyping in animal portrayals"]
+
+assets:
+  images: []
+  audio: []
+  links: ["https://crashbandicoot.fandom.com/wiki/Crash_Bandicoot"]
+
+meta:
+  tags: ["protagonist", "cartoon hero", "platformer", "mascot"]
+  authorship:
+    created_by: "Naughty Dog"
+    source: "Crash Bandicoot (1996)"
+  versioning:
+    created_at: "1996-09-09T00:00:00Z"
+    last_modified: "1996-09-09T00:00:00Z"
+  version: "0.0.1"
+  canon_status: "official"
+  license: "© Universal Interactive / Activision"
+  expansion_hooks: ["further antics vs Cortex", "crossovers with Spyro"]

@@ -1,0 +1,38 @@
+kind: CharacterDefinition
+ocs_version: 0.9.0
+id: 00000000-0000-0000-0000-000000000003
+slug: ripley--lv426
+names:
+  canon: Ellen Ripley
+identity:
+  entity_kind: person
+  sapience_level: sapient
+  species: human
+  pronouns:
+  - she/her
+personality:
+  summary: Resourceful survivor tempered by trauma.
+  traits:
+  - kind: bipolar
+    key: fear-courage
+    value: 0.8
+  - kind: scalar
+    key: resilience
+    value: 0.95
+behavior:
+  action_repertoire:
+  - seal bulkhead
+  - plan evacuation
+appearance:
+  baseline:
+    height:
+      value: 175
+      unit: cm
+meta:
+  tags:
+  - Weyland
+  - weyland
+  - alien
+  versioning:
+    created_at: '2022-10-15T12:00:00Z'
+    last_modified: '2023-10-15T12:00:00Z'

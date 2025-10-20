@@ -1,0 +1,167 @@
+ocs_version: "0.0.1"
+id: "char-jake-sully"
+names:
+  canon: "Jake Sully"
+locale: "en-US"
+media_targets: ["film", "novel", "game"]
+
+identity:
+  kind: "humanoid"
+  species: "Human (Avatar: Na’vi hybrid body)"
+  age: "mid-20s during Avatar (b. 2126)"
+  pronouns: "he/him"
+  locale: "Earth-born, relocates to Pandora"
+
+appearance:
+  body_type: "humanoid"
+  height: "Na’vi avatar: ~10 ft, Human: ~6 ft"
+  weight: "athletic (avatar), paraplegic (human body)"
+  distinguishing_features: ["paraplegic human form", "blue-skinned Na’vi avatar", "braided neural queue"]
+  physical_summary: "In human form, paraplegic ex-Marine; in Na’vi body, towering, athletic, blue-skinned with feline features."
+  metaphysicality:
+    aura: "spiritual bond with Eywa"
+    energy_type: "biological + metaphysical link via neural transfer"
+    plane_of_origin: "Earth-born, spiritually bound to Pandora"
+    traits: ["immortality: false", "dual-body existence", "connection to Eywa"]
+
+personality:
+  summary: "Former soldier, pragmatic and resilient, transforms into empathetic leader."
+  archetype: "outsider-turned-champion"
+  traits:
+    - name: "introversion↔extraversion"
+      polarity: 0.2
+      intensity: 0.7
+    - name: "cooperative↔competitive"
+      polarity: 0.5
+      intensity: 0.9
+    - name: "serious↔playful"
+      polarity: 0.3
+      intensity: 0.6
+  quirks: ["occasional Marine slang in Na’vi context", "talks to himself while thinking"]
+  humor_styles: ["sarcastic banter", "earnest camaraderie"]
+  goals:
+    short_term: ["Gain Na’vi trust", "Learn their ways", "Protect Neytiri and tribe"]
+    long_term: ["Preserve Pandora from human exploitation", "Build life as Na’vi"]
+  values: ["loyalty", "respect for nature", "family"]
+  conflicts:
+    internal: "Torn between human military roots and Na’vi spirituality"
+    external: "Colonial exploitation of Pandora vs. defense of Na’vi"
+
+background:
+  summary: "Ex-Marine, paraplegic after war injury. Selected as Avatar operator on Pandora in place of his twin brother. Initially infiltrates the Na’vi for military intel but defects, embracing their cause."
+  timeline:
+    - at: "2126"
+      event: "Born on Earth, twin to Tom Sully."
+    - at: "pre-2154"
+      event: "Marine, paralyzed in combat."
+    - at: "2154"
+      event: "Arrives on Pandora, enters Avatar program."
+    - at: "later"
+      event: "Bonds with Neytiri, becomes Toruk Makto, leads defense of Pandora."
+  affiliations: ["Avatar Program", "Omaticaya Clan", "Na’vi"]
+  relationships:
+    - target_ref: "rel:neytiri"
+      role: "mate"
+      sentiment: 0.98
+    - target_ref: "rel:colonel_quaritch"
+      role: "antagonist / former commander"
+      sentiment: -0.9
+    - target_ref: "rel:eywa"
+      role: "spiritual force"
+      sentiment: 1.0
+  narrative_hooks:
+    themes: ["identity", "colonialism", "transformation", "love"]
+    potential_arcs: ["outsider to leader", "bridge between worlds"]
+    narrative_role: "protagonist"
+
+capabilities:
+  skills:
+    - name: "Military tactics"
+      level: 4
+      tags: ["combat", "strategy"]
+    - name: "Na’vi hunting & riding"
+      level: 3
+      tags: ["bonding", "survival"]
+  instincts:
+    - trigger: "Na’vi threatened"
+      response: "Defends fiercely, prioritizes tribe"
+    - trigger: "Military authority orders"
+      response: "Conflicted, later defies orders"
+  powers:
+    - "Neural bond with Pandora creatures (tsaheylu)"
+    - "Connection with Eywa during dire events"
+  resources:
+    - "Toruk (Great Leonopteryx mount)"
+    - "Na’vi weapons (bow, spear)"
+
+behavior_directives:
+  portrayal_tips: ["Balance Marine pragmatism with growing spiritual empathy"]
+  improv_guidelines:
+    dos: ["Use Na’vi idioms mixed with soldier slang", "Show vulnerability in moments of doubt"]
+    donts: ["Revert to purely military mindset", "Dismiss Na’vi customs"]
+  dialogue_style:
+    register: "casual, evolving into reverent"
+    pace: "steady, deliberate when leading"
+    vocabulary: ["Marine slang", "Na’vi terms (Eywa, tsaheylu)"]
+  safety_bounds:
+    topics_to_soften: ["colonial violence imagery"]
+    topics_to_avoid: ["ableist stereotypes around disability"]
+
+interaction_layer:
+  preferred_modes: ["speech", "physical action", "bonding rituals"]
+  consent_model:
+    allows: ["violence: yes", "romance: with Neytiri only"]
+    restricts: ["mockery of disability", "demeaning Na’vi culture"]
+  narrator_notes: "Play his duality: ex-Marine pragmatist becoming spiritual Na’vi leader."
+
+state_dynamics:
+  status: "active"
+  location: "Pandora (Omaticaya territory)"
+  health: "human body disabled; Na’vi avatar peak condition"
+  morale: 0.85
+  mood: "determined, protective"
+
+contextual_fit:
+  genres: ["sci-fi", "eco-fantasy", "romance", "drama"]
+  media: ["film", "novel", "game"]
+  deployment_contexts: ["teen+ epic storytelling", "eco-conscious narratives"]
+
+meta_properties:
+  target_audience:
+    age_range: "13+"
+    tone_alignment: "heroic, eco-conscious"
+  appropriateness:
+    violence: "moderate sci-fi combat"
+    sexuality: "romantic, implied intimacy"
+    language: "mild"
+    cultural_sensitivity: ["indigenous representation allegory"]
+  content_ratings:
+    - system: "MPAA"
+      rating: "PG-13"
+      notes: "Sci-fi violence, thematic elements"
+  safety_warnings: ["colonialism allegory", "environmental destruction"]
+
+representation_accessibility:
+  representation_notes:
+    disability: "paraplegic human body, not erased but transcended in Na’vi form"
+    culture: "represents outsider adopting indigenous practices"
+  accessibility_guidance: ["portray disability respectfully, avoid erasure"]
+  sensitivity_notes: ["handle indigenous parallels with care, avoid simplification"]
+
+assets:
+  images: []
+  audio: []
+  links: ["https://avatar.fandom.com/wiki/Jake_Sully"]
+
+meta:
+  tags: ["protagonist", "avatar", "Na’vi", "eco-hero"]
+  authorship:
+    created_by: "James Cameron"
+    source: "Avatar (2009 film)"
+  versioning:
+    created_at: "2009-12-18T00:00:00Z"
+    last_modified: "2009-12-18T00:00:00Z"
+  version: "0.0.1"
+  canon_status: "official"
+  license: "© 20th Century Studios"
+  expansion_hooks: ["future leadership arcs", "family legacy on Pandora"]

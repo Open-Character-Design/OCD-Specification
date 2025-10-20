@@ -1,0 +1,365 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opencharacter.dev/schema/core-1.0.json",
+  "title": "Open Character Specification Core",
+  "oneOf": [
+    { "$ref": "#/$defs/CharacterDefinition" },
+    { "$ref": "#/$defs/CharacterInstance" }
+  ],
+  "$defs": {
+    "UUID": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "Slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"
+    },
+    "LocalizedText": {
+      "type": "object",
+      "required": ["text", "lang"],
+      "properties": {
+        "text": { "type": "string" },
+        "lang": { "type": "string", "minLength": 2 }
+      },
+      "additionalProperties": false
+    },
+    "Names": {
+      "type": "object",
+      "required": ["canon"],
+      "properties": {
+        "canon": { "type": "string", "minLength": 1 },
+        "display": {
+          "oneOf": [
+            {
+              "type": "array",
+              "items": { "$ref": "#/$defs/LocalizedText" }
+            },
+            {
+              "type": "object",
+              "patternProperties": {
+                "^[a-z]{2}(?:-[A-Za-z0-9]+)*$": { "type": "string" }
+              },
+              "additionalProperties": false
+            }
+          ]
+        },
+        "aliases": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      },
+      "additionalProperties": true
+    },
+    "AgeMeasurement": {
+      "type": "object",
+      "required": ["value", "unit"],
+      "properties": {
+        "value": { "type": "number" },
+        "unit": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "Identity": {
+      "type": "object",
+      "required": ["entity_kind", "sapience_level"],
+      "properties": {
+        "entity_kind": {
+          "type": "string",
+          "enum": [
+            "person",
+            "collective",
+            "creature",
+            "object",
+            "place",
+            "abstract",
+            "ai"
+          ]
+        },
+        "species": {
+          "type": "string",
+          "enum": [
+            "human",
+            "ai",
+            "alien",
+            "collective",
+            "object",
+            "deity",
+            "other"
+          ]
+        },
+        "sapience_level": {
+          "type": "string",
+          "enum": [
+            "animal",
+            "tool",
+            "agent",
+            "sapient",
+            "transcendent"
+          ]
+        },
+        "pronouns": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "age": {
+          "type": "object",
+          "properties": {
+            "nominal": { "$ref": "#/$defs/AgeMeasurement" },
+            "biological": { "$ref": "#/$defs/AgeMeasurement" },
+            "chronological": { "$ref": "#/$defs/AgeMeasurement" },
+            "chrono_override": { "$ref": "#/$defs/AgeMeasurement" },
+            "rationale": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        "origins": {
+          "type": "object",
+          "properties": {
+            "universe": { "type": "string" },
+            "birthplace": { "type": "string" },
+            "debut_date": { "type": "string", "format": "date" }
+          },
+          "additionalProperties": false
+        },
+        "continuity": {
+          "type": "object",
+          "properties": {
+            "canon": {
+              "type": "string",
+              "enum": ["prime", "alt", "fanon", "apocrypha"]
+            },
+            "timeline_ids": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/UUID" }
+            }
+          },
+          "additionalProperties": false
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "protagonist",
+              "antagonist",
+              "support",
+              "ensemble",
+              "npc",
+              "avatar"
+            ]
+          }
+        },
+        "composite_of": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["ref", "control_share", "exposure"],
+            "properties": {
+              "ref": { "$ref": "#/$defs/UUID" },
+              "control_share": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "exposure": {
+                "type": "string",
+                "enum": ["public", "secret"]
+              },
+              "visibility": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "secret_identities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["public_name", "exposure_risk"],
+            "properties": {
+              "public_name": { "type": "string" },
+              "exposure_risk": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "Meta": {
+      "type": "object",
+      "required": ["versioning"],
+      "properties": {
+        "creators": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name"],
+            "properties": {
+              "name": { "type": "string" },
+              "role": { "type": "string" }
+            },
+            "additionalProperties": true
+          }
+        },
+        "rights": {
+          "type": "object",
+          "properties": {
+            "owner": { "type": "string" },
+            "license": { "type": "string" },
+            "usage_notes": { "type": "string" }
+          },
+          "additionalProperties": true
+        },
+        "versioning": {
+          "type": "object",
+          "required": ["created_at", "last_modified"],
+          "properties": {
+            "created_at": { "type": "string", "format": "date-time" },
+            "last_modified": { "type": "string", "format": "date-time" },
+            "change_log": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "additionalProperties": true
+        },
+        "external_ids": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "audit": {
+          "type": "object",
+          "properties": {
+            "edited_by": { "type": "string" },
+            "source_files": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "Stat": {
+      "type": "object",
+      "required": ["key", "value"],
+      "properties": {
+        "key": { "type": "string" },
+        "value": { "type": ["number", "string", "object", "array", "boolean"] },
+        "unit": { "type": "string" },
+        "min": { "type": "number" },
+        "max": { "type": "number" },
+        "temp": { "type": "boolean" }
+      },
+      "additionalProperties": true
+    },
+    "EffectTimer": {
+      "type": "object",
+      "required": ["value", "unit"],
+      "properties": {
+        "value": { "type": "number", "minimum": 0 },
+        "unit": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "CharacterDefinition": {
+      "type": "object",
+      "required": [
+        "kind",
+        "ocs_version",
+        "id",
+        "slug",
+        "names",
+        "identity",
+        "meta"
+      ],
+      "properties": {
+        "kind": { "const": "CharacterDefinition" },
+        "ocs_version": { "type": "string" },
+        "$schema": { "type": "string", "format": "uri" },
+        "$id": { "type": "string", "format": "uri" },
+        "id": { "$ref": "#/$defs/UUID" },
+        "slug": { "$ref": "#/$defs/Slug" },
+        "names": { "$ref": "#/$defs/Names" },
+        "identity": { "$ref": "#/$defs/Identity" },
+        "appearance": { "type": "object", "additionalProperties": true },
+        "metaphysics": { "type": "object", "additionalProperties": true },
+        "personality": { "type": "object", "additionalProperties": true },
+        "background": { "type": "object", "additionalProperties": true },
+        "behavior": { "type": "object", "additionalProperties": true },
+        "media_profiles": { "type": "object", "additionalProperties": true },
+        "meta": { "$ref": "#/$defs/Meta" },
+        "extras": { "type": "object", "additionalProperties": true }
+      },
+      "additionalProperties": false
+    },
+    "CharacterInstance": {
+      "type": "object",
+      "required": [
+        "kind",
+        "ocs_version",
+        "instance_id",
+        "from_def",
+        "state"
+      ],
+      "properties": {
+        "kind": { "const": "CharacterInstance" },
+        "ocs_version": { "type": "string" },
+        "$schema": { "type": "string", "format": "uri" },
+        "$id": { "type": "string", "format": "uri" },
+        "instance_id": { "$ref": "#/$defs/UUID" },
+        "from_def": { "$ref": "#/$defs/UUID" },
+        "state": {
+          "type": "object",
+          "properties": {
+            "stats": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/Stat" }
+            },
+            "location_ref": { "$ref": "#/$defs/UUID" },
+            "active_effects": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "effect": { "type": "string" },
+                  "remaining": { "$ref": "#/$defs/EffectTimer" },
+                  "source_ref": { "$ref": "#/$defs/UUID" }
+                },
+                "required": ["effect"],
+                "additionalProperties": true
+              }
+            },
+            "cooldowns": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["ability_ref", "remaining"],
+                "properties": {
+                  "ability_ref": { "$ref": "#/$defs/UUID" },
+                  "remaining": { "$ref": "#/$defs/EffectTimer" }
+                },
+                "additionalProperties": true
+              }
+            }
+          },
+          "additionalProperties": true
+        },
+        "progression": { "type": "object", "additionalProperties": true },
+        "session": { "type": "object", "additionalProperties": true },
+        "extras": { "type": "object", "additionalProperties": true }
+      },
+      "additionalProperties": false
+    }
+  }
+}

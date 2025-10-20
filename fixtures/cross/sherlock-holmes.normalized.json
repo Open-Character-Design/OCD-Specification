@@ -1,0 +1,88 @@
+{
+  "appearance": null,
+  "background": {
+    "affiliations": null,
+    "biography": null,
+    "milestones": null,
+    "relationships": [
+      {
+        "category": "ally",
+        "name": "Dr. John Watson",
+        "target_ref": "00000000-0000-0000-0000-000000010000"
+      }
+    ]
+  },
+  "behavior": {
+    "action_repertoire": null,
+    "ai": null,
+    "combat_style": null,
+    "portrayal_tips": [
+      "Deliver deductions with crisp cadence."
+    ]
+  },
+  "extras": null,
+  "id": "00000000-0000-0000-0000-000000000004",
+  "identity": {
+    "age": null,
+    "composite_of": null,
+    "continuity": null,
+    "entity_kind": "person",
+    "origins": null,
+    "pronouns": [
+      "he/him"
+    ],
+    "roles": null,
+    "sapience_level": "sapient",
+    "secret_identities": null,
+    "species": "human"
+  },
+  "kind": "CharacterDefinition",
+  "media_profiles": null,
+  "meta": {
+    "audit": null,
+    "creators": null,
+    "external_ids": null,
+    "rights": null,
+    "tags": [
+      "detective",
+      "victorian"
+    ],
+    "versioning": {
+      "change_log": null,
+      "created_at": "2020-05-14T08:00:00Z",
+      "last_modified": "2023-05-14T08:00:00Z"
+    }
+  },
+  "metaphysics": null,
+  "names": {
+    "aliases": null,
+    "canon": "Sherlock Holmes",
+    "display": null,
+    "epithets": null
+  },
+  "ocs_version": "0.9.0",
+  "personality": {
+    "motivations": null,
+    "speech": null,
+    "summary": "Analytical detective with aloof demeanor.",
+    "traits": [
+      {
+        "id": null,
+        "key": "logic\u2194intuition",
+        "kind": "bipolar",
+        "label": null,
+        "poles": null,
+        "value": 0.95
+      },
+      {
+        "id": null,
+        "key": "observation",
+        "kind": "scalar",
+        "label": null,
+        "scale": null,
+        "value": 0.98
+      }
+    ]
+  },
+  "slug": "bakerstreet-consultant"
+}

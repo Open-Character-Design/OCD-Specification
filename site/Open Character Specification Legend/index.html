@@ -1,0 +1,1470 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Open Character Specification (OCS) – Legend & Adoption Guide v0.2 - Open Character Specification</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#open-character-specification-ocs-legend-adoption-guide-v02" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Open Character Specification" class="md-header__button md-logo" aria-label="Open Character Specification" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Character Specification
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Open Character Specification (OCS) – Legend &amp; Adoption Guide v0.2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eVirgil/OpenCharacter-Specification" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Open Character Specification" class="md-nav__button md-logo" aria-label="Open Character Specification" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Character Specification
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eVirgil/OpenCharacter-Specification" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Spec
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Spec
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spec/legend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Legend
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spec/grammar-ocst/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OCS-T Grammar
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spec/schema-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Schema Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spec/trait-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Trait Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Authoring
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Authoring
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authoring/writing-ocs-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Writing OCS Files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authoring/ocst-authoring-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OCS-T Authoring Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authoring/examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Integration
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Integration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/python-validator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python Validator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/js-ts-validator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JS/TS Validator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/validator-roadmap-todo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Validator Roadmap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agents & Runtime Orchestration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/extensions-and-namespaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extensions & Namespaces
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fields
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/vocabularies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vocabularies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/diagnostics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Diagnostics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Governance
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Governance
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance/versioning-and-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Versioning & Roadmap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance/contributing-to-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributing to the Spec
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Changelog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Core Concepts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-required-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Required Fields
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Identity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-appearance-metaphysicality" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Appearance &amp; Metaphysicality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-personality" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Personality
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Personality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Background
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Capabilities
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-behavior-directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      8) Behavior Directives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-interaction-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      9) Interaction Layer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-state-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      10) State Dynamics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-contextual-fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      11) Contextual Fit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-meta-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      12) Meta Properties
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-representation-accessibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      13) Representation &amp; Accessibility
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      14) Assets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-meta" class="md-nav__link">
+    <span class="md-ellipsis">
+      15) Meta
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      16) Extensions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-conformance-error-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      17) Conformance &amp; Error Policy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-adoption-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      18) Adoption Guidance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-quick-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      19) Quick Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-legend-symbols" class="md-nav__link">
+    <span class="md-ellipsis">
+      20) Legend Symbols
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="open-character-specification-ocs-legend-adoption-guide-v02">Open Character Specification (OCS) – Legend &amp; Adoption Guide v0.2<a class="headerlink" href="#open-character-specification-ocs-legend-adoption-guide-v02" title="Permanent link">&para;</a></h1>
+<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
+<p>The OCS defines a <strong>structured, portable character format</strong> for human authors, AI systems, and machine validation. This guide explains the fields, vocabularies, scales, and extensibility model for adopting OCS in your own projects.</p>
+<hr />
+<h2 id="1-core-concepts">1) Core Concepts<a class="headerlink" href="#1-core-concepts" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>OCS is data‑centric</strong>: every character is a structured object with defined fields.</li>
+<li><strong>Human + AI friendly</strong>: readable as YAML/JSON or OCS‑T (compact textual grammar).</li>
+<li><strong>Schema validated</strong>: type and range checks ensure quality.</li>
+<li><strong>Extensible</strong>: any project‑specific or system‑specific block can be namespaced under <code>x-*</code>.</li>
+<li><strong>Traits support three kinds</strong>: bipolar (axes with polarity/intensity), scalar (single value with optional unit), and flag (boolean presence/absence).</li>
+</ul>
+<hr />
+<h2 id="2-required-fields">2) Required Fields<a class="headerlink" href="#2-required-fields" title="Permanent link">&para;</a></h2>
+<p>Every valid OCS file must include:</p>
+<ul>
+<li><code>ocs_version</code> – the schema version string.</li>
+<li><code>names</code> – canonical and presentation names (<code>canon</code>, <code>display</code>, <code>aliases</code>).</li>
+<li><code>identity</code> – core descriptors (kind, species, age, etc.).</li>
+<li><code>personality</code> – core character psychology (summary, traits, values).</li>
+<li><code>behavior_directives</code> – portrayal guidance and safety.</li>
+<li><code>meta</code> – tags, authorship, and required versioning timestamps.</li>
+</ul>
+<hr />
+<h2 id="3-identity">3) Identity<a class="headerlink" href="#3-identity" title="Permanent link">&para;</a></h2>
+<p>Defines <strong>who/what</strong> the character is.</p>
+<ul>
+<li><code>name</code> – free text <em>(legacy/back-compat; prefer <code>names.canon</code>/<code>names.display</code>).</em></li>
+<li><code>kind</code> – enum: <code>humanoid | creature | machine | entity</code>.</li>
+<li><code>species</code> / <code>breed</code> – free text.</li>
+<li><code>age</code> – number or string (supports approximations like "~200+").</li>
+<li><code>pronouns</code> – string.</li>
+<li><code>locale</code> – language or cultural context (ISO‑639‑1 preferred).</li>
+</ul>
+<p><strong>ID convention</strong>: <code>id</code> must match <code>^[a-z0-9][a-z0-9-_:.]{2,64}$</code>.</p>
+<hr />
+<h2 id="4-appearance-metaphysicality">4) Appearance &amp; Metaphysicality<a class="headerlink" href="#4-appearance-metaphysicality" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>body_type</code> – enums suggested: <code>humanoid | quadruped | avian | serpentine | amorphous | mechanical_orb | incorporeal | other</code>.</li>
+<li><code>distinguishing_features</code> – array of strings.</li>
+<li><code>physical_summary</code> – prose.</li>
+<li>
+<p><code>metaphysicality</code>:</p>
+</li>
+<li>
+<p><code>aura</code>, <code>energy_type</code>, <code>plane_of_origin</code> – free strings.</p>
+</li>
+<li><code>traits</code> – array of metaphysical or ontological notes.</li>
+</ul>
+<hr />
+<h2 id="5-personality">5) Personality<a class="headerlink" href="#5-personality" title="Permanent link">&para;</a></h2>
+<h3 id="required">Required<a class="headerlink" href="#required" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>summary</code> – prose snapshot.</li>
+</ul>
+<h3 id="optional">Optional<a class="headerlink" href="#optional" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>archetype</code> – free label (e.g., "mentor", "trickster").</li>
+<li>
+<p><code>traits</code> – array of objects, each with a <code>kind</code>:</p>
+</li>
+<li>
+<p><strong>Bipolar</strong>: <code>{ name, kind: bipolar, polarity [-1..1], intensity [0..1] }</code></p>
+</li>
+<li><strong>Scalar</strong>: <code>{ name, kind: scalar, value [0..1], unit? }</code></li>
+<li><strong>Flag</strong>: <code>{ name, kind: flag, value: boolean }</code></li>
+<li><code>quirks</code> – string list.</li>
+<li><code>humor_styles</code> – string list.</li>
+<li><code>goals</code> – split into <code>short_term</code> and <code>long_term</code> arrays.</li>
+<li><code>values</code> – array of guiding principles.</li>
+<li><code>conflicts</code> – internal/external tensions.</li>
+</ul>
+<p><strong>Normalization</strong>: bipolar trait names accept <code>-</code>, <code>_</code>, or <code>↔</code>. Canonical form is <code>↔</code>.</p>
+<hr />
+<h2 id="6-background">6) Background<a class="headerlink" href="#6-background" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>summary</code> – prose history.</li>
+<li><code>timeline</code> – array of <code>{ at, event }</code>.</li>
+<li><code>affiliations</code> – groups/orgs.</li>
+<li>
+<p><code>relationships</code> – <code>{ target_ref, role, sentiment }</code>:</p>
+</li>
+<li>
+<p><code>target_ref</code> – must be a valid OCS id or external URI.</p>
+</li>
+<li><code>sentiment</code> – float [-1, 1].</li>
+<li><code>narrative_hooks</code> – themes, arcs, roles.</li>
+</ul>
+<hr />
+<h2 id="7-capabilities">7) Capabilities<a class="headerlink" href="#7-capabilities" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>skills</code> – <code>{ name, level (0..5), tags }</code>.</li>
+<li><code>instincts</code> – <code>{ trigger, response }</code>.</li>
+<li><code>powers</code> – free list.</li>
+<li><code>resources</code> – equipment/items.</li>
+</ul>
+<hr />
+<h2 id="8-behavior-directives">8) Behavior Directives<a class="headerlink" href="#8-behavior-directives" title="Permanent link">&para;</a></h2>
+<p>Defines <strong>how to portray</strong> the character.</p>
+<ul>
+<li><code>portrayal_tips</code> – free text guidance.</li>
+<li><code>improv_guidelines</code> – <code>dos</code> and <code>donts</code> arrays.</li>
+<li><code>dialogue_style</code> – <code>{ register, pace, vocabulary[] }</code>.</li>
+<li><code>safety_bounds</code> – <code>{ topics_to_soften[], topics_to_avoid[] }</code>.</li>
+</ul>
+<hr />
+<h2 id="9-interaction-layer">9) Interaction Layer<a class="headerlink" href="#9-interaction-layer" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>preferred_modes</code> – e.g., <code>speech</code>, <code>gesture</code>, <code>telepathy</code>.</li>
+<li><code>consent_model</code> – <code>{ allows[], restricts[] }</code> (tags, e.g., <code>violence: defensive only</code>).</li>
+<li><code>narrator_notes</code> – meta commentary for guides/DMs.</li>
+</ul>
+<hr />
+<h2 id="10-state-dynamics">10) State Dynamics<a class="headerlink" href="#10-state-dynamics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>status</code> – <code>active | inactive | unknown</code>.</li>
+<li><code>location</code> – free text.</li>
+<li><code>health</code>, <code>morale</code> – float 0..1.</li>
+<li><code>mood</code> – string.</li>
+</ul>
+<hr />
+<h2 id="11-contextual-fit">11) Contextual Fit<a class="headerlink" href="#11-contextual-fit" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>genres</code> – lowercase tokens (e.g., <code>sci-fi</code>, <code>fantasy</code>).</li>
+<li><code>media</code> – target media types (<code>game</code>, <code>novel</code>, <code>film</code>, <code>chat</code>).</li>
+<li><code>deployment_contexts</code> – guidance for scenarios.</li>
+</ul>
+<hr />
+<h2 id="12-meta-properties">12) Meta Properties<a class="headerlink" href="#12-meta-properties" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>target_audience</code>: <code>{ age_range, tone_alignment }</code>.</li>
+<li>
+<p><code>appropriateness</code>:</p>
+</li>
+<li>
+<p><code>violence</code>: <code>none | cartoon | fantasy | realistic | extreme</code></p>
+</li>
+<li><code>sexuality</code>: <code>none | implied | moderate | explicit</code></li>
+<li><code>language</code>: <code>clean | mild | moderate | explicit</code></li>
+<li><code>content_ratings</code>: <code>[ { system, rating, notes } ]</code></li>
+<li><code>safety_warnings</code>: string list.</li>
+</ul>
+<hr />
+<h2 id="13-representation-accessibility">13) Representation &amp; Accessibility<a class="headerlink" href="#13-representation-accessibility" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>representation_notes</code>: identity/culture/orientation details.</li>
+<li><code>accessibility_guidance</code>: play/portrayal safeguards.</li>
+<li><code>sensitivity_notes</code>: pitfalls to avoid.</li>
+</ul>
+<hr />
+<h2 id="14-assets">14) Assets<a class="headerlink" href="#14-assets" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>images</code>, <code>audio</code>, <code>links</code> – URLs or references.</li>
+</ul>
+<hr />
+<h2 id="15-meta">15) Meta<a class="headerlink" href="#15-meta" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>tags</code> – lowercase tokens.</li>
+<li><code>authorship</code>: <code>{ created_by, source }</code>.</li>
+<li><code>versioning</code>: <code>{ created_at, last_modified }</code> – both ISO‑8601 UTC strings and required.</li>
+<li><code>version</code> – free string.</li>
+<li><code>canon_status</code> – <code>official | unofficial | alt | fanon</code>.</li>
+<li><code>license</code> – SPDX or free string.</li>
+<li><code>expansion_hooks</code> – optional roadmap notes.</li>
+</ul>
+<hr />
+<h2 id="16-extensions">16) Extensions<a class="headerlink" href="#16-extensions" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Any field starting <code>x-*</code> is reserved for system‑specific extensions.</li>
+<li>Example: <code>x-dnd5e</code>, <code>x-srd</code>, <code>x-game-balance</code>.</li>
+<li>Extensions may define their own schema, but should be documented separately.</li>
+</ul>
+<hr />
+<h2 id="17-conformance-error-policy">17) Conformance &amp; Error Policy<a class="headerlink" href="#17-conformance-error-policy" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Reject</strong>: duplicate keys, malformed IDs, invalid enums, out-of-range values.</li>
+<li><strong>Warn</strong>: unresolved refs, barewords in prose fields, rating conflicts.</li>
+<li><strong>Normalize</strong>: trim, lowercase, dedupe arrays, coerce numeric/text hybrids.</li>
+</ul>
+<hr />
+<h2 id="18-adoption-guidance">18) Adoption Guidance<a class="headerlink" href="#18-adoption-guidance" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>For Authors</strong>: start simple (identity, personality, behavior_directives, meta). Add depth iteratively.</li>
+<li><strong>For Engineers</strong>: validate via JSON Schema, Zod, or Pydantic; normalize before ingest.</li>
+<li><strong>For AI Systems</strong>: use <code>behavior_directives</code> and <code>interaction_layer</code> to guide persona response; apply <code>meta_properties</code> for safety filters.</li>
+<li><strong>For Game Designers</strong>: slot in system extensions (<code>x-dnd5e</code>, <code>x-narrative-arcs</code>) for sheet data.</li>
+</ul>
+<hr />
+<h2 id="19-quick-example">19) Quick Example<a class="headerlink" href="#19-quick-example" title="Permanent link">&para;</a></h2>
+<pre><code class="language-yaml">ocs_version: &quot;0.0.1&quot;
+id: char-bruenor
+names:
+  canon: &quot;Bruenor Battlehammer&quot;
+identity:
+  kind: humanoid
+  species: Dwarf
+personality:
+  summary: &quot;Gruff but loyal dwarven king&quot;
+  traits:
+    - name: &quot;introversion↔extraversion&quot;
+      kind: bipolar
+      polarity: 0.2
+      intensity: 0.6
+behavior_directives:
+  portrayal_tips: [&quot;Temper bluster with heart&quot;]
+  dialogue_style:
+    register: gruff
+meta:
+  tags: [dwarf, king]
+  versioning:
+    created_at: &quot;2025-09-25T16:00:00Z&quot;
+    last_modified: &quot;2025-09-26T16:00:00Z&quot;
+</code></pre>
+<hr />
+<h2 id="20-legend-symbols">20) Legend Symbols<a class="headerlink" href="#20-legend-symbols" title="Permanent link">&para;</a></h2>
+<ul>
+<li>↔ in trait names: bipolar spectrum dimension. Equivalent to <code>-</code> or <code>_</code> during parse.</li>
+<li><code>x-*</code>: extension namespace.</li>
+<li><code>{}</code>: object, <code>[]</code>: array.</li>
+<li>Strings with sentences always quoted. Barewords only for enums/tags.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

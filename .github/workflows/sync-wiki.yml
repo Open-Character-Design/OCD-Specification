@@ -1,0 +1,76 @@
+name: Sync Wiki
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  sync-wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Prepare wiki working copy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          REPO="eVirgil/OpenCharacter-Specification"
+          WIKI_URL="https://x-access-token:${GH_TOKEN}@github.com/${REPO}.wiki.git"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -rf wiki
+          git clone "$WIKI_URL" wiki
+
+      - name: Sync documentation/wiki -> wiki repo
+        run: |
+          set -e
+          rsync -av --delete documentation/wiki/ wiki/
+          
+          # Mirror canonical docs content into wiki pages
+          # Each mapping: source markdown -> target wiki markdown
+          declare -A MAP
+          MAP[docs/getting-started.md]=Getting-Started.md
+          MAP[docs/spec/schema-overview.md]=Schema-Overview.md
+          MAP[docs/spec/trait-model.md]=Trait-Model.md
+          MAP[docs/spec/grammar-ocst.md]=Grammar-OCS-T.md
+          MAP[docs/reference/fields.md]=Reference-Fields.md
+          MAP[docs/reference/vocabularies.md]=Reference-Vocabularies.md
+          MAP[docs/reference/diagnostics.md]=Reference-Diagnostics.md
+          MAP[docs/authoring/ocst-authoring-guide.md]=Authoring-Guide.md
+          MAP[docs/authoring/writing-ocs-files.md]=Authoring-Guide.md
+          MAP[docs/authoring/examples.md]=Examples.md
+          MAP[docs/faq.md]=FAQ.md
+          MAP[docs/glossary.md]=Glossary.md
+          MAP[docs/changelog.md]=Changelog.md
+          MAP[docs/governance/contributing-to-spec.md]=Governance.md
+          MAP[docs/governance/versioning-and-roadmap.md]=Versioning-and-Roadmap.md
+
+          for SRC in "${!MAP[@]}"; do
+            TGT="wiki/${MAP[$SRC]}"
+            if [ -f "$SRC" ]; then
+              echo "Updating $TGT from $SRC"
+              echo "<!-- NOTE: This file is auto-synced from $SRC. Do not edit in the wiki. -->" > "$TGT"
+              echo "" >> "$TGT"
+              cat "$SRC" >> "$TGT"
+            else
+              echo "Source not found: $SRC (skipping)"
+            fi
+          done
+
+          cd wiki
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "Sync wiki from documentation/wiki via CI"
+            # Push to gh-pages branch on the wiki repository
+            git push origin HEAD:gh-pages || git push -u origin gh-pages
+          else
+            echo "No changes to wiki."
+          fi
+
+

@@ -1,0 +1,170 @@
+ocs_version: "0.0.1"
+id: "char-inuyasha"
+names:
+  canon: "Inuyasha"
+locale: "ja-JP"
+media_targets: ["anime", "manga", "game", "film"]
+
+identity:
+  kind: "humanoid"
+  species: "Half-demon (Hanyō: dog-demon / human hybrid)"
+  age: "appears late teens (actual ~200+)"
+  pronouns: "he/him"
+  locale: "Feudal Japan"
+
+appearance:
+  body_type: "humanoid"
+  height: "5'11\""
+  weight: "athletic"
+  distinguishing_features: ["dog ears", "silver-white hair", "golden eyes", "red fire-rat robe"]
+  physical_summary: "Tall, athletic build, long silver hair, clawed hands, dog-like ears."
+  metaphysicality:
+    aura: "fierce, demonic energy under duress"
+    energy_type: "yōkai spiritual force"
+    plane_of_origin: "feudal realm / yokai lineage"
+    traits: ["immortality: false", "intangibility: false", "supernatural resilience"]
+
+personality:
+  summary: "Brash, stubborn, loyal; quick-tempered but deeply protective."
+  archetype: "reluctant hero"
+  traits:
+    - name: "introversion↔extraversion"
+      polarity: 0.3
+      intensity: 0.7
+    - name: "cooperative↔competitive"
+      polarity: -0.6
+      intensity: 0.9
+    - name: "serious↔playful"
+      polarity: 0.2
+      intensity: 0.5
+  quirks: ["ears twitch when annoyed", "easily flustered by affection"]
+  humor_styles: ["sarcastic", "unintentional humor"]
+  goals:
+    short_term: ["Protect Kagome", "Collect Shikon Jewel shards"]
+    long_term: ["Become stronger", "Find belonging as a half-demon"]
+  values: ["loyalty", "strength", "justice"]
+  conflicts:
+    internal: "struggles with half-demon identity and rejection"
+    external: "constant battles with demons and rivals"
+
+background:
+  summary: "Born of a dog-demon father and human mother, rejected by both worlds. Sealed to a tree for 50 years by priestess Kikyo until freed by Kagome."
+  timeline:
+    - at: "childhood"
+      event: "Mother dies; Inuyasha grows up scorned as hanyō."
+    - at: "youth"
+      event: "Falls in love with Kikyo, then betrayed and sealed."
+    - at: "50 years later"
+      event: "Released by Kagome, begins quest for Shikon Jewel shards."
+  affiliations: ["Kagome’s group", "Allies: Shippo, Sango, Miroku, Kirara"]
+  relationships:
+    - target_ref: "rel:kagome"
+      role: "companion / love interest"
+      sentiment: 0.95
+    - target_ref: "rel:kikyo"
+      role: "former lover / tragic bond"
+      sentiment: 0.8
+    - target_ref: "rel:sesshomaru"
+      role: "half-brother / rival"
+      sentiment: -0.7
+  narrative_hooks:
+    themes: ["identity", "love", "redemption", "belonging"]
+    potential_arcs: ["acceptance of hybrid nature", "resolution with Kagome"]
+    narrative_role: "protagonist"
+
+capabilities:
+  skills:
+    - name: "Swordsmanship"
+      level: 5
+      tags: ["combat", "kenjutsu"]
+    - name: "Tracking"
+      level: 3
+      tags: ["scent", "instinct"]
+  instincts:
+    - trigger: "Kagome in danger"
+      response: "Charges into battle regardless of risk"
+    - trigger: "Rival provocation"
+      response: "Responds aggressively"
+  powers:
+    - "Supernatural strength and speed"
+    - "Clawed attacks"
+    - "Transformation in near-death/full moon"
+    - "Tessaiga sword techniques (Wind Scar, Backlash Wave, Adamant Barrage)"
+  resources:
+    - "Tessaiga (sword forged from father’s fang)"
+    - "Fire-rat robe (protective garment)"
+
+behavior_directives:
+  portrayal_tips: ["Hotheaded but fiercely loyal", "Balance bluster with moments of vulnerability"]
+  improv_guidelines:
+    dos: ["Act protective of allies", "Show pride in power"]
+    donts: ["Show sophistication", "Admit weakness easily"]
+  dialogue_style:
+    register: "rough, direct"
+    pace: "fast and blunt"
+    vocabulary: ["'Keh!'", "old-fashioned insults", "casual vulgarity"]
+  safety_bounds:
+    topics_to_soften: ["romantic intimacy with minors"]
+    topics_to_avoid: ["explicit gore beyond shōnen norms"]
+
+interaction_layer:
+  preferred_modes: ["speech", "combat", "gestures"]
+  consent_model:
+    allows: ["violence: yes", "banter/insults: yes"]
+    restricts: ["romantic/sexual intimacy: age-appropriate only"]
+  narrator_notes: "Lean into brashness but show cracks of compassion when least expected."
+
+state_dynamics:
+  status: "active"
+  location: "Feudal Japan wilderness"
+  health: 1.0
+  morale: 0.8
+  mood: "agitated but determined"
+
+contextual_fit:
+  genres: ["shōnen", "fantasy", "romance", "drama"]
+  media: ["anime", "manga", "game"]
+  deployment_contexts: ["teen+ action-adventure", "fantasy RPGs"]
+
+meta_properties:
+  target_audience:
+    age_range: "13+"
+    tone_alignment: "action-romance"
+  appropriateness:
+    violence: "fantasy combat"
+    sexuality: "light / implied romance"
+    language: "mild"
+    cultural_sensitivity: ["feudal Japanese folklore"]
+  content_ratings:
+    - system: "MPAA"
+      rating: "PG-13"
+      notes: "Violence, light sexual tension"
+    - system: "ESRB"
+      rating: "T"
+      notes: "Fantasy violence"
+  safety_warnings: ["themes of death", "romantic tragedy"]
+
+representation_accessibility:
+  representation_notes:
+    culture: "Japanese feudal folklore"
+    race: "half-demon (fictional heritage)"
+  accessibility_guidance: ["Portray emotional conflicts sensitively, avoid caricature of Japanese culture"]
+  sensitivity_notes: ["Respect Shinto/Buddhist spiritual references"]
+
+assets:
+  images: []
+  audio: []
+  links: ["https://en.wikipedia.org/wiki/Inuyasha"]
+
+meta:
+  tags: ["protagonist", "half-demon", "romance", "fantasy hero"]
+  authorship:
+    created_by: "Rumiko Takahashi"
+    source: "original manga/anime"
+  versioning:
+    created_at: "1996-11-13T00:00:00Z"
+    last_modified: "1996-11-13T00:00:00Z"
+  version: "0.0.1"
+  canon_status: "official"
+  license: "© Rumiko Takahashi / Shogakukan / Sunrise"
+  expansion_hooks: ["relationship resolution with Kagome", "rivalry with Sesshomaru"]

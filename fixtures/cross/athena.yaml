@@ -1,0 +1,32 @@
+kind: CharacterDefinition
+ocs_version: 0.9.0
+id: 00000000-0000-0000-0000-000000000005
+slug: athena--pallas
+names:
+  canon: Athena
+  aliases:
+  - Pallas Athena
+  - Athene
+identity:
+  entity_kind: creature
+  sapience_level: sapient
+  species: deity
+  pronouns:
+  - she/her
+personality:
+  summary: Strategic goddess of wisdom and warfare.
+  traits:
+  - kind: bipolar
+    key: wisdom_war
+    value: 0.6
+  - kind: flag
+    key: patron-of-heroes
+    value: true
+meta:
+  tags:
+  - Olympian
+  - olympian
+  - Myth
+  versioning:
+    created_at: '1900-01-01T00:00:00Z'
+    last_modified: '2023-01-01T00:00:00Z'

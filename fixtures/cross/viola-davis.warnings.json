@@ -1,0 +1,12 @@
+[
+  {
+    "code": "NORMALIZED_SLUG",
+    "detail": "'viola--davis' \u2192 'viola-davis'",
+    "path": "slug"
+  },
+  {
+    "code": "NORMALIZED_AXIS",
+    "detail": "'stage_screen' \u2192 'stage\u2194screen'",
+    "path": "personality.traits[].key"
+  }
+]

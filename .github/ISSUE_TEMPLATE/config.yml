@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Specification Q&A
+    url: https://community.opencharacter.dev/forums/spec
+    about: Ask general questions or request clarification about the specification.

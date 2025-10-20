@@ -1,0 +1,69 @@
+{
+  "name": "@ocs-tools/validator",
+  "version": "1.0.0",
+  "description": "Open Character Specification validator and CLI for Node.js",
+  "author": "Open Character Specification Team",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./parser": {
+      "types": "./dist/parser.d.ts",
+      "import": "./dist/parser.js"
+    },
+    "./validate": {
+      "types": "./dist/validate.d.ts",
+      "import": "./dist/validate.js"
+    },
+    "./cli": "./dist/cli.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "ocs-validate": "./dist/cli.js"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "ocs",
+    "open-character-specification",
+    "validator",
+    "cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opencharacter/OpenCharacter-Specification.git",
+    "directory": "node"
+  },
+  "bugs": {
+    "url": "https://github.com/opencharacter/OpenCharacter-Specification/issues"
+  },
+  "homepage": "https://github.com/opencharacter/OpenCharacter-Specification#readme",
+  "scripts": {
+    "prebuild": "node scripts/build-parser.js",
+    "build": "tsc -p tsconfig.json",
+    "postbuild": "node scripts/copy-schema.js",
+    "test": "npm run build && node dist/check-fixtures.js"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^2.1.1",
+    "yaml": "^2.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "peggy": "^4.0.2",
+    "typescript": "^5.4.0"
+  }
+}

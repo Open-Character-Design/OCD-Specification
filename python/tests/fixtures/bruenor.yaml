@@ -1,0 +1,46 @@
+kind: CharacterDefinition
+ocs_version: "0.9.0"
+id: "11111111-1111-1111-1111-111111111111"
+slug: "bruenor"
+names:
+  canon: Bruenor
+  aliases: ["Bruenor Battlehammer"]
+identity:
+  entity_kind: person
+  sapience_level: sapient
+  species: human
+  pronouns: ["he/him"]
+  age:
+    nominal: { value: 250, unit: "y" }
+  composite_of:
+    - ref: "22222222-2222-2222-2222-222222222222"
+      control_share: 1.0
+      exposure: public
+personality:
+  traits:
+    - id: "33333333-3333-3333-3333-333333333333"
+      kind: bipolar
+      key: "introversion↔extraversion"
+      value: 0.1
+    - kind: scalar
+      key: "leadership"
+      value: 0.7
+behavior:
+  action_repertoire: ["strike", "parry"]
+appearance:
+  baseline:
+    height: { value: 140, unit: "cm" }
+    descriptors: ["stout"]
+  portraits:
+    - uri: "https://example.com/portrait.png"
+      media: image
+media_profiles:
+  game_rpg:
+    stats:
+      - key: hp
+        value: 120
+meta:
+  tags: [Test, test]
+  versioning:
+    created_at: "2025-09-25T16:00:00Z"
+    last_modified: "2025-09-26T16:00:00Z"

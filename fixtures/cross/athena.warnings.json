@@ -1,0 +1,22 @@
+[
+  {
+    "code": "NORMALIZED_SLUG",
+    "detail": "'athena--pallas' \u2192 'athena-pallas'",
+    "path": "slug"
+  },
+  {
+    "code": "NORMALIZED_AXIS",
+    "detail": "'wisdom_war' \u2192 'wisdom\u2194war'",
+    "path": "personality.traits[].key"
+  },
+  {
+    "code": "NORMALIZED_AXIS",
+    "detail": "'patron-of-heroes' \u2192 'patron\u2194of-heroes'",
+    "path": "personality.traits[].key"
+  },
+  {
+    "code": "NONCANONICAL_CANON_NAME",
+    "detail": "slug 'athena-pallas' does not match canonical name slug 'athena'",
+    "path": "names.canon"
+  }
+]

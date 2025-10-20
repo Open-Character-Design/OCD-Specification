@@ -1,0 +1,146 @@
+site_name: Open Character Specification
+site_description: A structured, portable format for defining characters across games, film/TV, books, and AI role-play
+site_url: https://evirgil.github.io/OpenCharacter-Specification/
+repo_url: https://github.com/eVirgil/OpenCharacter-Specification
+repo_name: OpenCharacter-Specification
+edit_uri: edit/main/docs/
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started.md
+    - Tutorial:
+      - Overview: tutorial/index.md
+      - Your First Character: tutorial/first-character.md
+      - Adding Personality: tutorial/personality.md
+      - Background & Relationships: tutorial/background.md
+      - System Extensions: tutorial/extensions.md
+      - Production Tips: tutorial/production.md
+  - Specification:
+    - Overview: spec/schema-overview.md
+    - Legend: spec/legend.md
+    - Trait Model: spec/trait-model.md
+    - OCD-T Grammar: spec/grammar-ocd.md
+  - Authoring:
+    - Writing OCS Files: authoring/writing-ocs-files.md
+    - OCD-T Guide: authoring/ocd-authoring-guide.md
+    - Examples Gallery: authoring/examples.md
+  - Integration:
+    - Python Validator: integration/python-validator.md
+    - JavaScript/TypeScript: integration/js-ts-validator.md
+    - Agents & Runtime: integration/agents.md
+    - Extensions: integration/extensions-and-namespaces.md
+  - Reference:
+    - Fields: reference/fields.md
+    - Vocabularies: reference/vocabularies.md
+    - Diagnostics: reference/diagnostics.md
+  - Community:
+    - FAQ: faq.md
+    - Contributing: governance/contributing-to-spec.md
+    - Versioning: governance/versioning-and-roadmap.md
+    - Changelog: changelog.md
+    - Glossary: glossary.md
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - navigation.indexes
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+    - search.share
+    - toc.follow
+    - toc.integrate
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    text: Inter
+    code: JetBrains Mono
+  custom_dir: docs/overrides
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/eVirgil/OpenCharacter-Specification
+  version:
+    provider: mike
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      title: On this page
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: eVirgil
+      repo: OpenCharacter-Specification
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - search:
+      lang: en
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - minify:
+      minify_html: true

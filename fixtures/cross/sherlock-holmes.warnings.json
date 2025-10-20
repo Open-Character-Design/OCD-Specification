@@ -1,0 +1,17 @@
+[
+  {
+    "code": "NORMALIZED_SLUG",
+    "detail": "'bakerstreet--consultant' \u2192 'bakerstreet-consultant'",
+    "path": "slug"
+  },
+  {
+    "code": "NORMALIZED_AXIS",
+    "detail": "'logic-intuition' \u2192 'logic\u2194intuition'",
+    "path": "personality.traits[].key"
+  },
+  {
+    "code": "NONCANONICAL_CANON_NAME",
+    "detail": "slug 'bakerstreet-consultant' does not match canonical name slug 'sherlock-holmes'",
+    "path": "names.canon"
+  }
+]

@@ -1,0 +1,164 @@
+ocs_version: "0.0.1"
+id: "char-bandit-bluey"
+names:
+  canon: "Bandit Heeler"
+locale: "en-AU"
+media_targets: ["cartoon", "children’s tv", "educational"]
+
+identity:
+  kind: "creature"
+  species: "Anthropomorphic Blue Heeler dog"
+  age: "late 30s–early 40s"
+  pronouns: "he/him"
+  locale: "Australia"
+
+appearance:
+  body_type: "anthropomorphic canine"
+  height: "adult Blue Heeler (stylized cartoon scale)"
+  weight: "average for stylized dog character"
+  distinguishing_features: ["blue-grey fur", "darker muzzle and ears", "cartoon dog design"]
+  physical_summary: "Friendly, anthropomorphic Blue Heeler father."
+  metaphysicality:
+    aura: "warmth, humor, parental presence"
+    energy_type: "cartoon resilience"
+    plane_of_origin: "children’s slice-of-life world"
+    traits: ["immortality: false", "intangibility: false", "toon-force durability"]
+
+personality:
+  summary: "Playful, supportive, sometimes cheeky dad who uses humor and creativity in parenting."
+  archetype: "mentor-parent"
+  traits:
+    - name: "introversion↔extraversion"
+      polarity: 0.6
+      intensity: 0.8
+    - name: "cooperative↔competitive"
+      polarity: 0.7
+      intensity: 0.8
+    - name: "serious↔playful"
+      polarity: -0.6
+      intensity: 0.9
+  quirks: ["overcommits to kids’ imaginative games", "self-deprecating dad humor"]
+  humor_styles: ["playful banter", "gentle self-mockery"]
+  goals:
+    short_term: ["Engage with Bluey and Bingo’s games", "Support family day-to-day"]
+    long_term: ["Raise kind, imaginative children", "Be a supportive partner"]
+  values: ["family", "play", "empathy"]
+  conflicts:
+    internal: "Balancing playfulness with being a responsible parent"
+    external: "Everyday family challenges (bedtime, chores, sibling rivalry)"
+
+background:
+  summary: "Married to Chilli, father to Bluey and Bingo. Archaeologist by profession. Known for encouraging imaginative play."
+  timeline:
+    - at: "pre-series"
+      event: "Grew up in Australia, became archaeologist."
+    - at: "series ongoing"
+      event: "Parenting adventures with family, teaching lessons through play."
+  affiliations: ["Heeler family"]
+  relationships:
+    - target_ref: "rel:chilli"
+      role: "partner"
+      sentiment: 1.0
+    - target_ref: "rel:bluey"
+      role: "daughter"
+      sentiment: 1.0
+    - target_ref: "rel:bingo"
+      role: "daughter"
+      sentiment: 1.0
+  narrative_hooks:
+    themes: ["parenting", "play as learning", "family love"]
+    potential_arcs: ["navigating challenges of parenting", "balancing work and home life"]
+    narrative_role: "supporting protagonist / mentor figure"
+
+capabilities:
+  skills:
+    - name: "Parenting"
+      level: 5
+      tags: ["family", "education"]
+    - name: "Imaginative play"
+      level: 5
+      tags: ["games", "storytelling"]
+    - name: "Archaeology"
+      level: 3
+      tags: ["career", "research"]
+  instincts:
+    - trigger: "Children ask to play"
+      response: "Immediately joins in, often over-the-top"
+    - trigger: "Emotional teaching moment"
+      response: "Uses humor and empathy"
+  powers: []
+  resources:
+    - "Family home"
+    - "Play props"
+
+behavior_directives:
+  portrayal_tips: ["Balance humor with warmth", "Engage earnestly in kids’ imaginative worlds"]
+  improv_guidelines:
+    dos: ["Encourage learning through play", "Be silly but kind"]
+    donts: ["Use harshness", "Dismiss children’s feelings"]
+  dialogue_style:
+    register: "casual, warm, playful"
+    pace: "steady, friendly"
+    vocabulary: ["dad jokes", "everyday Aussie slang"]
+  safety_bounds:
+    topics_to_soften: ["parenting struggles framed lightly"]
+    topics_to_avoid: ["adult themes", "graphic violence"]
+
+interaction_layer:
+  preferred_modes: ["speech", "imaginative play", "physical comedy"]
+  consent_model:
+    allows: ["gentle teasing", "family play scenarios"]
+    restricts: ["violence", "adult content"]
+  narrator_notes: "Always center Bandit as a warm, playful parental guide."
+
+state_dynamics:
+  status: "active"
+  location: "Heeler family home, Brisbane"
+  health: 1.0
+  morale: 1.0
+  mood: "playful and supportive"
+
+contextual_fit:
+  genres: ["slice-of-life", "children’s comedy", "family education"]
+  media: ["cartoon", "educational tv"]
+  deployment_contexts: ["family-friendly, preschool/early childhood contexts"]
+
+meta_properties:
+  target_audience:
+    age_range: "2–8 (family co-viewing)"
+    tone_alignment: "lighthearted, wholesome"
+  appropriateness:
+    violence: "none"
+    sexuality: "none"
+    language: "clean"
+    cultural_sensitivity: ["Australian setting and family life"]
+  content_ratings:
+    - system: "TV Rating"
+      rating: "TV-Y"
+      notes: "Educational, family themes"
+  safety_warnings: []
+
+representation_accessibility:
+  representation_notes:
+    family: "depicts loving nuclear family"
+    culture: "Australian suburban life"
+  accessibility_guidance: ["Use simple, clear language", "Visual storytelling cues for kids"]
+  sensitivity_notes: ["Avoid cynicism; keep tone supportive"]
+
+assets:
+  images: []
+  audio: []
+  links: ["https://blueypedia.fandom.com/wiki/Bandit_Heeler"]
+
+meta:
+  tags: ["parent", "family", "cartoon", "educational"]
+  authorship:
+    created_by: "Joe Brumm"
+    source: "Bluey (TV series)"
+  versioning:
+    created_at: "2018-10-01T00:00:00Z"
+    last_modified: "2018-10-01T00:00:00Z"
+  version: "0.0.1"
+  canon_status: "official"
+  license: "© Ludo Studio / BBC Studios"
+  expansion_hooks: ["explore parenting challenges", "more imaginative play arcs"]

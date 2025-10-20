@@ -1,0 +1,42 @@
+ocd-t: 0
+official-source: "citadel-archives"
+ocs-version: "0.9.0"
+{
+  kind: CharacterDefinition,
+  ocs_version: "0.9.0",
+  id: "00000000-0000-0000-0000-000000000001",
+  slug: "n7--legend",
+  names: {
+    canon: "Commander Shepard",
+    aliases: ["Shepard"],
+  },
+  identity: {
+    entity_kind: person,
+    sapience_level: sapient,
+    species: human,
+    pronouns: ["they/them"],
+    age: { nominal: { value: 35, unit: "y" } },
+  },
+  personality: {
+    summary: "Adaptive leader balancing duty and empathy.",
+    traits: [
+      { kind: bipolar, key: "paragon_renegade", value: 0.45 },
+      { kind: scalar, key: "leadership", value: 0.9 },
+    ],
+  },
+  behavior: {
+    portrayal_tips: ["Weave decisions through moral nuance."],
+  },
+  appearance: {
+    baseline: {
+      height: { value: 185, unit: "cm" },
+    },
+  },
+  meta: {
+    tags: ["Spectre", "spectre", "n7"],
+    versioning: {
+      created_at: "2023-03-11T10:00:00Z",
+      last_modified: "2023-08-20T10:00:00Z",
+    },
+  },
+}

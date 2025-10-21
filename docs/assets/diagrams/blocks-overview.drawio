@@ -1,78 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="app.diagrams.net" modified="2025-01-01T00:00:00.000Z" agent="Mozilla/5.0 (X11; Linux x86_64)" etag="OCDBlocks" version="22.1.5" type="device">
+<mxfile host="app.diagrams.net" modified="2025-10-21T00:00:00.000Z" agent="OCD-Docs-Render/1.0 (X11; Linux x86_64)" etag="OCDCharacterDefinitionEnhanced" version="22.1.5" type="device">
   <diagram id="blocks-overview" name="Block Relationships">
-    <mxGraphModel dx="1416" dy="850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
-        <mxCell id="core" value="CharacterDefinition" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;shadow=0" parent="1" vertex="1">
-          <mxGeometry x="420" y="200" width="220" height="90" as="geometry"/>
+
+        <!-- Title -->
+        <mxCell id="title" value="CharacterDefinition Structure" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=26;fontStyle=1;fontColor=#e2e8f0;fontFamily=Inter;" parent="1" vertex="1">
+          <mxGeometry x="600" y="20" width="280" height="34" as="geometry"/>
         </mxCell>
-        <mxCell id="coreIds" value="Core Identifiers\nkind, ocd_version, id, slug" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1" parent="1" vertex="1">
-          <mxGeometry x="420" y="50" width="220" height="80" as="geometry"/>
+        <mxCell id="subtitle" value="Root of every character sheet" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontColor=#94a3b8;fontFamily=Inter;" parent="1" vertex="1">
+          <mxGeometry x="600" y="56" width="280" height="22" as="geometry"/>
         </mxCell>
-        <mxCell id="names" value="Names\ncanon, display, aliases" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" parent="1" vertex="1">
-          <mxGeometry x="130" y="150" width="200" height="80" as="geometry"/>
+
+        <!-- Central CharacterDefinition block -->
+        <mxCell id="core" value="CharacterDefinition&#xa;root of every sheet" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fillColor=#3b82f6;gradientColor=#1e40af;gradientDirection=north;strokeColor=#1e3a8a;strokeWidth=2;shadow=1;fontSize=18;fontColor=#f8fafc;fontFamily=Inter;" parent="1" vertex="1">
+          <mxGeometry x="590" y="360" width="260" height="110" as="geometry"/>
         </mxCell>
-        <mxCell id="identity" value="Identity\nspecies, pronouns, embodiment" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" parent="1" vertex="1">
-          <mxGeometry x="770" y="150" width="220" height="80" as="geometry"/>
+
+        <!-- Core Schema Group (Indigo/Blue) -->
+        <mxCell id="coreIds" value="🧩 Core Schema Identifiers&#xa;kind · ocd_version · id · slug" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2563eb;gradientColor=#1e40af;gradientDirection=north;strokeColor=#1e3a8a;strokeWidth=1;shadow=1;fontSize=14;fontStyle=1;fontColor=#f8fafc;fontFamily=Inter;" parent="1" vertex="1">
+          <mxGeometry x="590" y="190" width="260" height="86" as="geometry"/>
         </mxCell>
-        <mxCell id="meta" value="Meta &amp; Versioning\ntags, content ratings, timestamps" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" parent="1" vertex="1">
-          <mxGeometry x="770" y="50" width="220" height="80" as="geometry"/>
+        <mxCell id="names" value="🏷️ Names&#xa;canon · display · aliases" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2563eb;gradientColor=#1e40af;gradientDirection=north;strokeColor=#1e3a8a;strokeWidth=1;shadow=1;fontSize=14;fontStyle=1;fontColor=#f8fafc;fontFamily=Inter;" parent="1" vertex="1">
+          <mxGeometry x="330" y="190" width="230" height="86" as="geometry"/>
         </mxCell>
-        <mxCell id="personality" value="Personality\ntrait axes, instincts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" parent="1" vertex="1">
-          <mxGeometry x="120" y="310" width="200" height="80" as="geometry"/>
+        <mxCell id="meta" value="🗂️ Metadata &amp; Versioning&#xa;tags · ratings · timestamps" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2563eb;gradientColor=#1e40af;gradientDirection=north;strokeColor=#1e3a8a;strokeWidth=1;shadow=1;fontSize=14;fontStyle=1;fontColor=#f8fafc;fontFamily=Inter;" parent="1" vertex="1">
+          <mxGeometry x="870" y="190" width="230" height="86" as="geometry"/>
         </mxCell>
-        <mxCell id="background" value="Background\ntimeline, relationships, affiliations" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" parent="1" vertex="1">
-          <mxGeometry x="360" y="340" width="220" height="80" as="geometry"/>
+
+        <!-- Identity & Essence (Teal/Green) -->
+        <mxCell id="identity" value="🕊️ Identity&#xa;species · pronouns · embodiment" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#10b981;gradientColor=#059669;gradientDirection=north;strokeColor=#047857;strokeWidth=1;shadow=1;fontSize=14;fontStyle=1;fontColor=#073b32;fontFamily=Inter;" parent="1" vertex="1">
+          <mxGeometry x="980" y="360" width="230" height="86" as="geometry"/>
         </mxCell>
-        <mxCell id="behavior" value="Behavior\nportrayal tips, dialogue style, safety" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" parent="1" vertex="1">
-          <mxGeometry x="640" y="340" width="220" height="80" as="geometry"/>
+
+        <!-- Behavioral / Expressive (Amber/Gold) -->
+        <mxCell id="personality" value="🧠 Personality&#xa;trait axes · instincts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f59e0b;gradientColor=#d97706;gradientDirection=north;strokeColor=#b45309;strokeWidth=1;shadow=1;fontSize=14;fontStyle=1;fontColor=#111827;fontFamily=Inter;" parent="1" vertex="1">
+          <mxGeometry x="320" y="360" width="230" height="86" as="geometry"/>
         </mxCell>
-        <mxCell id="state" value="State Dynamics\nmood, health, resources" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" parent="1" vertex="1">
-          <mxGeometry x="900" y="310" width="220" height="80" as="geometry"/>
+        <mxCell id="background" value="🗃️ Background&#xa;timeline · relationships · affiliations" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f59e0b;gradientColor=#d97706;gradientDirection=north;strokeColor=#b45309;strokeWidth=1;shadow=1;fontSize=14;fontStyle=1;fontColor=#111827;fontFamily=Inter;" parent="1" vertex="1">
+          <mxGeometry x="260" y="520" width="240" height="86" as="geometry"/>
         </mxCell>
-        <mxCell id="extensions" value="Extensions (x-*)\nproject-specific mechanics" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" parent="1" vertex="1">
-          <mxGeometry x="420" y="470" width="220" height="80" as="geometry"/>
+        <mxCell id="behavior" value="⚙️ Behavior&#xa;portrayal tips · dialogue style · safety" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f59e0b;gradientColor=#d97706;gradientDirection=north;strokeColor=#b45309;strokeWidth=1;shadow=1;fontSize=14;fontStyle=1;fontColor=#111827;fontFamily=Inter;" parent="1" vertex="1">
+          <mxGeometry x="560" y="520" width="260" height="86" as="geometry"/>
         </mxCell>
-        <mxCell id="media" value="Media Profiles\navatars, voice packs, media handles" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" parent="1" vertex="1">
-          <mxGeometry x="180" y="470" width="220" height="80" as="geometry"/>
+        <mxCell id="state" value="📊 State &amp; Conditions&#xa;mood · health · resources" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f59e0b;gradientColor=#d97706;gradientDirection=north;strokeColor=#b45309;strokeWidth=1;shadow=1;fontSize=14;fontStyle=1;fontColor=#111827;fontFamily=Inter;" parent="1" vertex="1">
+          <mxGeometry x="880" y="520" width="240" height="86" as="geometry"/>
         </mxCell>
-        <mxCell id="appearance" value="Appearance &amp; Metaphysics\nvisual traits, supernatural context" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" parent="1" vertex="1">
-          <mxGeometry x="660" y="470" width="220" height="80" as="geometry"/>
+
+        <!-- Extensions & Output (Violet/Purple) -->
+        <mxCell id="media" value="🖼️ Media Profiles&#xa;avatars · voice packs · handles" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8b5cf6;gradientColor=#6d28d9;gradientDirection=north;strokeColor=#5b21b6;strokeWidth=1;shadow=1;fontSize=14;fontStyle=1;fontColor=#f5f3ff;fontFamily=Inter;" parent="1" vertex="1">
+          <mxGeometry x="260" y="670" width="240" height="86" as="geometry"/>
         </mxCell>
-        <mxCell id="edge-coreIds" style="endArrow=classic;html=1;strokeColor=#6c8ebf;strokeWidth=1.5" parent="1" source="coreIds" target="core" edge="1">
+        <mxCell id="extensions" value="📦 Custom Extensions (x-*)&#xa;project-specific mechanics" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8b5cf6;gradientColor=#6d28d9;gradientDirection=north;strokeColor=#5b21b6;strokeWidth=1;shadow=1;fontSize=14;fontStyle=1;fontColor=#f5f3ff;fontFamily=Inter;" parent="1" vertex="1">
+          <mxGeometry x="560" y="670" width="260" height="86" as="geometry"/>
+        </mxCell>
+        <mxCell id="appearance" value="🧭 Appearance &amp; Lore&#xa;visual traits · world/setting context" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8b5cf6;gradientColor=#6d28d9;gradientDirection=north;strokeColor=#5b21b6;strokeWidth=1;shadow=1;fontSize=14;fontStyle=1;fontColor=#f5f3ff;fontFamily=Inter;" parent="1" vertex="1">
+          <mxGeometry x="880" y="670" width="240" height="86" as="geometry"/>
+        </mxCell>
+
+        <!-- Connecting Edges (Blue stroke for cohesion) -->
+        <mxCell id="edge-coreIds" style="endArrow=classic;html=1;strokeColor=#3b82f6;strokeWidth=2" parent="1" source="coreIds" target="core" edge="1">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="edge-names" style="endArrow=classic;html=1;strokeColor=#6c8ebf;strokeWidth=1.5" parent="1" source="names" target="core" edge="1">
+        <mxCell id="edge-names" style="endArrow=classic;html=1;strokeColor=#3b82f6;strokeWidth=2" parent="1" source="names" target="core" edge="1">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="edge-identity" style="endArrow=classic;html=1;strokeColor=#6c8ebf;strokeWidth=1.5" parent="1" source="identity" target="core" edge="1">
+        <mxCell id="edge-meta" style="endArrow=classic;html=1;strokeColor=#3b82f6;strokeWidth=2" parent="1" source="meta" target="core" edge="1">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="edge-meta" style="endArrow=classic;html=1;strokeColor=#6c8ebf;strokeWidth=1.5" parent="1" source="meta" target="core" edge="1">
+        <mxCell id="edge-identity" style="endArrow=classic;html=1;strokeColor=#3b82f6;strokeWidth=2" parent="1" source="identity" target="core" edge="1">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="edge-personality" style="endArrow=classic;html=1;strokeColor=#6c8ebf;strokeWidth=1.5" parent="1" source="personality" target="core" edge="1">
+        <mxCell id="edge-personality" style="endArrow=classic;html=1;strokeColor=#3b82f6;strokeWidth=2" parent="1" source="personality" target="core" edge="1">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="edge-background" style="endArrow=classic;html=1;strokeColor=#6c8ebf;strokeWidth=1.5" parent="1" source="background" target="core" edge="1">
+        <mxCell id="edge-background" style="endArrow=classic;html=1;strokeColor=#3b82f6;strokeWidth=2" parent="1" source="background" target="core" edge="1">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="edge-behavior" style="endArrow=classic;html=1;strokeColor=#6c8ebf;strokeWidth=1.5" parent="1" source="behavior" target="core" edge="1">
+        <mxCell id="edge-behavior" style="endArrow=classic;html=1;strokeColor=#3b82f6;strokeWidth=2" parent="1" source="behavior" target="core" edge="1">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="edge-state" style="endArrow=classic;html=1;strokeColor=#6c8ebf;strokeWidth=1.5" parent="1" source="state" target="core" edge="1">
+        <mxCell id="edge-state" style="endArrow=classic;html=1;strokeColor=#3b82f6;strokeWidth=2" parent="1" source="state" target="core" edge="1">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="edge-extensions" style="endArrow=classic;html=1;strokeColor=#6c8ebf;strokeWidth=1.5" parent="1" source="extensions" target="core" edge="1">
+        <mxCell id="edge-extensions" style="endArrow=classic;html=1;strokeColor=#3b82f6;strokeWidth=2" parent="1" source="extensions" target="core" edge="1">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="edge-media" style="endArrow=classic;html=1;strokeColor=#6c8ebf;strokeWidth=1.5" parent="1" source="media" target="core" edge="1">
+        <mxCell id="edge-media" style="endArrow=classic;html=1;strokeColor=#3b82f6;strokeWidth=2" parent="1" source="media" target="core" edge="1">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="edge-appearance" style="endArrow=classic;html=1;strokeColor=#6c8ebf;strokeWidth=1.5" parent="1" source="appearance" target="core" edge="1">
+        <mxCell id="edge-appearance" style="endArrow=classic;html=1;strokeColor=#3b82f6;strokeWidth=2" parent="1" source="appearance" target="core" edge="1">
           <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend" value="Legend&#xa;🟦 Core · 🟩 Identity · 🟨 Behavior · 🟪 Extensions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#334155;strokeWidth=1;shadow=0;fontSize=12;fontColor=#cbd5e1;fontFamily=Inter;align=left;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="1120" y="760" width="240" height="90" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>

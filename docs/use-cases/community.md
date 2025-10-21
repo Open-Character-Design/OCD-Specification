@@ -1,8 +1,6 @@
 # Community & Open Source Applications
 
-<div class="hero-section">
 Join the open creative ecosystem where characters transcend individual projects to become shared cultural assets.
-</div>
 
 OCD isn't just a technical specification, it's the foundation for a new kind of creative community. By enabling true character portability and interoperability, OCD creates opportunities for collaboration, education, and cultural exchange that were never possible before. Welcome to the future of open creative ecosystems.
 
@@ -629,4 +627,4 @@ The future of character design isn't about better tools, it's about better syste
 The future of character design is open, collaborative, and global. And it starts with OCD.
 
 !!! tip "Ready to Join the Community?"
-    Start by exploring our [Community Resources](../community/contributing-to-spec.md) to learn how to contribute, or check out our [Examples Gallery](../authoring/examples.md) to see what's possible with OCD.
+    Start by exploring our [Community Resources](../governance/contributing-to-spec.md) to learn how to contribute, or check out our [Examples Gallery](../authoring/examples.md) to see what's possible with OCD.

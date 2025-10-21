@@ -1,16 +1,14 @@
 
-<div class="hero-section">
-<h1>Open Character Specification</h1>
-<p><strong>A structured, portable format for defining characters across games, film/TV, books, and AI role-play.</strong></p>
-<p>Transform your character development workflow with a unified specification that works everywhere.</p>
-<a href="getting-started.md" class="md-button md-button--primary">Get Started Now</a>
-</div>
+# Open Character Design Specification
 
-## Open Character Specification
+**A structured, portable format for defining characters across games, film/TV, books, and AI role-play.**
+
+Transform your character development workflow with a unified specification that works everywhere.
+
 
 ## Quick Start
 
-Get up and running in minutes with our validators:
+Get up and running in minutes with our validators (WIP - Not actually ready yet):
 
 === "Python"
 
@@ -26,127 +24,60 @@ Get up and running in minutes with our validators:
     npx @ocd-tools/validator examples/bruenor.yaml --print
     ```
 
+[Get Started Now](getting-started.md){ .md-button .md-button--primary }
+
+
 ## Why OCD?
 
-<div class="features-grid">
+<p id="why-ocd-quip">Why OCD? Good question</p>
 
-<div class="feature-card">
-
-🌐 **Multi-Genre Support**
-
-Works across fantasy, sci-fi, modern, and any genre. Define characters for games, AI platforms, and media with consistent structure.
-
-*Perfect for: Game developers, writers, AI developers*
-
-</div>
-
-<div class="feature-card">
-
-⚙️ **System Integration**
-
-Built-in support for D&D 5e, custom game systems, and AI platforms. Extensible with `x-*` namespaces for any framework.
-
-*Perfect for: Technical teams, system integrators*
-
-</div>
-
-<div class="feature-card">
-
-✏️ **Author-Friendly Formats**
-
-Choose from YAML, JSON, or OCD-T (our concise textual format). All formats validate to the same schema.
-
-*Perfect for: Writers, artists, content creators*
-
-</div>
-
-<div class="feature-card">
-
-✅ **Built-in Validation**
-
-Python and JavaScript validators with normalization, linting, and comprehensive diagnostics. Catch issues before deployment.
-
-*Perfect for: Developers, quality assurance teams*
-
-</div>
-
-<div class="feature-card">
-
-🔗 **Portable & Interoperable**
-
-Characters work across platforms. Export from your game, import to AI, share with collaborators, all with the same format.
-
-*Perfect for: Cross-platform teams, collaborative projects*
-
-</div>
-
-<div class="feature-card">
-
-🏭 **Production Ready**
-
-Used in production by game studios, AI platforms, and content creators. Battle-tested with comprehensive tooling.
-
-*Perfect for: Professional studios, enterprise teams*
-
-</div>
-
-</div>
+The Open Character Design bridges creativity and technology — providing a structured, interoperable framework for defining, sharing, and evolving digital characters.
+It helps creators maintain consistency, enhance collaboration, and connect characters across art, data, and interactive systems.
 
 ## Use Cases
 
-Transform your creative workflow with OCD's structured approach to character design across different applications and industries.
+Transform your creative and technical workflows with OCD’s unified character design framework.
 
-<div class="features-grid">
+From storytelling to simulation, OCD connects creativity, data, and collaboration across five core domains:
 
-<div class="feature-card">
-
-### 🎭 [Creative Applications](use-cases/creative.md)
+### 🎨 [Creative Design](use-cases/creative.md)
 
 **Character Design Framework & Worldbuilding**
 
-Transform your creative process with structured character development that works across any medium. From concept art to final production, maintain consistency and enable true creative collaboration.
+Bring structure and depth to your creative process. OCD enables consistent character development from concept to implementation, supporting visual artists, writers, and transmedia creators in building cohesive worlds.
 
-[Explore Creative Use Cases →](use-cases/creative.md)
+*For: Writers, artists, content creators*
 
-</div>
+### ⚙️ [Technical Integration & Data Systems](use-cases/technical.md)
 
-<div class="feature-card">
+Bridge creativity and computation. OCD provides a structured metadata layer for character systems—ideal for AI datasets, API integration, procedural pipelines, and version control in complex productions.
 
-### ⚙️ [Technical Applications](use-cases/technical.md)
+*For: Developers, data engineers, AI researchers*
 
-**Metadata Management & AI Integration**
 
-Build robust character systems with OCD's technical capabilities. Perfect for procedural generation, AI training datasets, API integration, and version control workflows.
+### 🎮 [Interactive & Game Development](use-cases/interactive.md)
 
-[Explore Technical Use Cases →](use-cases/technical.md)
+**Games & Interactive Experiences**
 
-</div>
+Design and deploy interactive characters for games, simulations, and virtual worlds. OCD ensures your NPCs, avatars, and agents maintain personality consistency across gameplay and updates.
 
-<div class="feature-card">
+*For: Game developers, AI engineers*
 
-### 🎮 [Interactive & Storytelling](use-cases/interactive.md)
+### 🎬 [Virtual & Real-Time Production](use-cases/virtual-production.md)
 
-**Game Engines & AI-Driven Experiences**
+**Real-time Character Rendering**
 
-Create immersive interactive experiences with OCD-powered characters. From game engines to AI NPCs, bring your characters to life in digital worlds.
+Integrate OCD characters into film, TV, and live digital production. Manage character consistency across real-time rendering pipelines and virtual performance systems.
 
-[Explore Interactive Use Cases →](use-cases/interactive.md)
+*For: Film studios, virtual production teams*
 
-</div>
-
-<div class="feature-card">
-
-### 🌐 [Community & Open Source](use-cases/community.md)
+### 🌐 [Collaboration & Open Ecosystem](use-cases/community.md)
 
 **Collaboration & Cross-Media Adaptation**
 
-Join the open creative ecosystem. Share characters, collaborate across teams, and adapt content seamlessly across different media and platforms.
+Join a shared creative standard. OCD’s open specification enables creators to exchange, remix, and evolve characters across projects, teams, and platforms.
 
-[Explore Community Use Cases →](use-cases/community.md)
-
-</div>
-
-</div>
+*For: Open-source collaborators, cross-media teams*
 
 ## Your First Character
 
@@ -163,6 +94,7 @@ identity:
 personality:
   summary: "Brave and curious adventurer"
 meta:
+  tags: [adventurer, human, brave]
   versioning:
     created_at: "2024-01-01T00:00:00Z"
     last_modified: "2024-01-01T00:00:00Z"
@@ -173,41 +105,29 @@ meta:
 
 ## What's Next?
 
-<div class="features-grid">
-
-<div class="feature-card">
-
-🚀 [Get Started](getting-started.md)
+### 🚀 [Get Started](getting-started.md)
 
 Install validators, create your first character, and understand the basics.
 
-</div>
+*For: New users, quick setup*
 
-<div class="feature-card">
-
-📖 [Browse Examples](authoring/examples.md)
+### 📖 [Browse Examples](authoring/examples.md)
 
 Explore character examples from D&D warriors to sci-fi heroes. See OCD in action.
 
-</div>
+*For: Learning by example, inspiration*
 
-<div class="feature-card">
-
-📝 [Read the Spec](spec/schema-overview.md)
+### 📝 [Read the Spec](spec/schema-overview.md)
 
 Deep dive into the specification. Understand blocks, traits, and validation rules.
 
-</div>
+*For: Technical implementation, detailed understanding*
 
-<div class="feature-card">
-
-🔌 [Integration Guide](integration/python-validator.md)
+### 🔌 [Integration Guide](integration/python-validator.md)
 
 Integrate OCD into your applications with our Python and JavaScript validators.
 
-</div>
-
-</div>
+*For: Developers, system integration*
 
 ## Community
 

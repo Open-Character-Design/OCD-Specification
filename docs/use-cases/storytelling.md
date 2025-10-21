@@ -1,8 +1,8 @@
 # Interactive Storytelling Tools
 
-<div class="hero-section">
+
 Create dynamic, adaptive storytelling experiences with OCD-powered characters that drive narrative generation, branching storylines, and contextual dialogue systems.
-</div>
+
 
 OCD characters excel in interactive storytelling where personality-driven narratives create engaging, personalized experiences. This guide shows you how to build sophisticated storytelling systems that adapt narratives based on character personalities and player choices.
 

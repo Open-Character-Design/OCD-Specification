@@ -12,7 +12,7 @@ OCD transforms how you think about character creation. Instead of scattered note
 - **Cross-Media Portability**: Create characters that work seamlessly across games, books, AI, and more
 - **Technical Integration**: Build applications that understand and work with your character data
 
-**Perfect for:**
+**For:**
 - **Writers** building consistent character universes
 - **Game Developers** creating rich, interactive character systems  
 - **AI Developers** training models with structured character data
@@ -37,21 +37,13 @@ By the end of this tutorial, you'll be able to:
 
 ## Tutorial Structure
 
-<div class="features-grid">
-
-<div class="feature-card">
-
 ### [Step 1: Your First Character](first-character.md)
 
 Learn the basics by creating a minimal valid character and running your first validation.
 
 **What you'll build:** A simple human character with basic identity information.
 
-**Use Case Connection:** Perfect for [Creative Applications](use-cases/creative.md) - learn the foundation of structured character design.
-
-</div>
-
-<div class="feature-card">
+**Use Case Connection:** Perfect for [Creative Applications](../use-cases/creative.md) - learn the foundation of structured character design.
 
 ### [Step 2: Adding Personality](personality.md)
 
@@ -59,11 +51,7 @@ Explore the trait model by adding personality traits, bipolar axes, and scalar v
 
 **What you'll build:** A character with detailed personality traits and behavioral tendencies.
 
-**Use Case Connection:** Essential for [Interactive & Storytelling](use-cases/interactive.md) - personality drives AI behavior and dialogue systems.
-
-</div>
-
-<div class="feature-card">
+**Use Case Connection:** Essential for [Interactive & Storytelling](../use-cases/interactive.md) - personality drives AI behavior and dialogue systems.
 
 ### [Step 3: Background & Relationships](background.md)
 
@@ -71,11 +59,7 @@ Add timeline events, affiliations, and relationships between characters.
 
 **What you'll build:** A character with rich background and connections to other characters.
 
-**Use Case Connection:** Core to [Community & Open Source](use-cases/community.md) - relationships enable collaborative worldbuilding.
-
-</div>
-
-<div class="feature-card">
+**Use Case Connection:** Core to [Community & Open Source](../use-cases/community.md) - relationships enable collaborative worldbuilding.
 
 ### [Step 4: System Extensions](extensions.md)
 
@@ -83,11 +67,7 @@ Integrate with game systems using extension blocks like `x-dnd5e`.
 
 **What you'll build:** A D&D 5e character with stats, abilities, and equipment.
 
-**Use Case Connection:** Key for [Technical Applications](use-cases/technical.md) - learn how to extend OCD for specific platforms.
-
-</div>
-
-<div class="feature-card">
+**Use Case Connection:** Key for [Technical Applications](../use-cases/technical.md) - learn how to extend OCD for specific platforms.
 
 ### [Step 5: Production Tips](production.md)
 
@@ -96,10 +76,6 @@ Learn best practices for validation, normalization, and deployment workflows.
 **What you'll build:** A production-ready character with proper metadata and validation.
 
 **Use Case Connection:** Critical for all use cases - learn how to deploy OCD characters in real-world applications.
-
-</div>
-
-</div>
 
 ## Quick Reference
 

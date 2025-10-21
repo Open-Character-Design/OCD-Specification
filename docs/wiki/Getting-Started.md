@@ -20,8 +20,7 @@ npx @ocd-tools/validator ../examples/bruenor.yaml --print
 
 Explore:
 - Spec: `spec/core.schema.json`
-- Legend: `docs/spec/legend.md`
-- Grammar: `docs/spec/grammar-ocd.md`
+- OCD-T Guide: `docs/authoring/ocd-t-guide.md`
 - Examples: `examples/`
 
 Next:

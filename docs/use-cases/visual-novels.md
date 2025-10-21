@@ -1,8 +1,8 @@
 # Visual Novels & RPG Systems
 
-<div class="hero-section">
+
 Create immersive visual novels and RPG experiences with OCD-powered characters that drive personality-based dialogue trees, expression systems, and emotional state management.
-</div>
+
 
 OCD characters excel in visual novel and RPG contexts where personality-driven interactions are crucial. This guide shows you how to build sophisticated dialogue systems, expression management, and character progression systems using OCD character data.
 

@@ -1,8 +1,8 @@
 # Virtual Production
 
-<div class="hero-section">
+
 Integrate OCD characters into virtual production pipelines for real-time character management, cross-platform synchronization, and live production workflows.
-</div>
+
 
 OCD characters excel in virtual production environments where real-time character management and cross-platform compatibility are essential. This guide shows you how to build production-ready systems that enable live character updates, multi-platform synchronization, and seamless integration with production tools.
 

@@ -10,7 +10,7 @@ Welcome to the Open Character Specification (OCD) wiki.
 - **Examples**: [[Examples]]
 - **Governance**: [[Governance]] · [[Versioning-and-Roadmap]]
 - **Changelog**: [[Changelog]]
-- **FAQ**: [[FAQ]] · [[Glossary]] · [[Legend]]
+- **FAQ**: [[FAQ]] · [[Glossary]]
 - **Agents**: [[Agents]]
 
 Canonical sources live in the repository under `docs/`, `spec/`, `examples/`, `grammar/`, and validator packages under `node/` and `python/`.

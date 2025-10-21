@@ -143,6 +143,33 @@
   overflow: hidden;
 }
 
+/* Hero section as h1 class - ensure proper styling */
+h1.hero-section {
+  background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, var(--md-primary-fg-color--dark) 100%);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin: -1rem -1rem 3rem -1rem;
+  border-radius: 0 0 1rem 1rem;
+  position: relative;
+  overflow: hidden;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style paragraphs that follow the hero h1 */
+h1.hero-section + p,
+h1.hero-section + p + p {
+  background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, var(--md-primary-fg-color--dark) 100%);
+  color: white;
+  padding: 0 2rem 2rem 2rem;
+  text-align: center;
+  margin: -3rem -1rem 3rem -1rem;
+  position: relative;
+  z-index: 1;
+}
+
 .hero-section::before {
   content: '';
   position: absolute;
@@ -195,6 +222,11 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin: 3rem 0;
+}
+
+/* Specific grid layouts */
+.features-grid.grid-2x3 {
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .feature-card {

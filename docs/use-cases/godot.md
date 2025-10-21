@@ -1,8 +1,8 @@
 # Godot Integration
 
-<div class="hero-section">
+
 Integrate OCD characters into Godot projects using GDScript's flexible scripting system and Godot's powerful node architecture for dynamic character behavior.
-</div>
+
 
 Godot's node-based architecture and GDScript's simplicity make it perfect for creating dynamic character systems. This guide shows you how to build a complete OCD character integration system that leverages Godot's strengths.
 

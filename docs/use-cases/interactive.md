@@ -1,8 +1,6 @@
 # Interactive & Storytelling Applications
 
-<div class="hero-section">
 Create immersive interactive experiences with OCD-powered characters that bring your stories to life in digital worlds.
-</div>
 
 OCD bridges the gap between creative character design and technical implementation, enabling rich interactive experiences across games, visual novels, AI-driven narratives, and virtual production. Whether you're building the next blockbuster game or creating an AI-powered storytelling platform, OCD provides the structured foundation your interactive characters need.
 

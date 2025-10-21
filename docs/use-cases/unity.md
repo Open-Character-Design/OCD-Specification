@@ -1,8 +1,8 @@
 # Unity Integration
 
-<div class="hero-section">
+
 Integrate OCD characters seamlessly into Unity projects with structured data that automatically configures in-game attributes, behaviors, and visual systems.
-</div>
+
 
 Unity's flexible component system makes it ideal for importing and using OCD character data. This guide shows you how to create a complete character import system that maps OCD personality traits to Unity components and behaviors.
 

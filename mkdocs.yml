@@ -18,18 +18,17 @@ nav:
       - Production Tips: tutorial/production.md
   - Specification:
     - Overview: spec/schema-overview.md
-    - Legend: spec/legend.md
     - Trait Model: spec/trait-model.md
-    - OCD-T Grammar: spec/grammar-ocd.md
   - Authoring:
     - Writing OCD Files: authoring/writing-ocd-files.md
-    - OCD-T Guide: authoring/ocd-authoring-guide.md
+    - OCD-T Guide: authoring/ocd-t-guide.md
     - Examples Gallery: authoring/examples.md
   - Integration:
     - Python Validator: integration/python-validator.md
     - JavaScript/TypeScript: integration/js-ts-validator.md
     - Agents & Runtime: integration/agents.md
     - Extensions: integration/extensions-and-namespaces.md
+    - Validator Roadmap: integration/validator-roadmap-todo.md
   - Reference:
     - Fields: reference/fields.md
     - Vocabularies: reference/vocabularies.md
@@ -56,6 +55,7 @@ nav:
     - Versioning: governance/versioning-and-roadmap.md
     - Changelog: changelog.md
     - Glossary: glossary.md
+    - Agents: Agents.md
 
 theme:
   name: material
@@ -105,7 +105,8 @@ extra:
   analytics:
     provider: google
     property: !ENV GOOGLE_ANALYTICS_KEY
-
+extra_javascript:
+  - assets/jokes.js
 markdown_extensions:
   - abbr
   - admonition
@@ -160,3 +161,7 @@ plugins:
       enable_creation_date: true
   - minify:
       minify_html: true
+
+exclude_docs: |
+  wiki/**
+  README.md

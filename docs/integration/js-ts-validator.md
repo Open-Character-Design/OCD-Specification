@@ -97,7 +97,7 @@ class WebCharacterDesigner {
         `<div class="character-card" data-id="${char.id}">
           <h3>${char.names.canon}</h3>
           <p>${char.identity.species}</p>
-        </div>`
+        `
       ).join('');
     }
   }

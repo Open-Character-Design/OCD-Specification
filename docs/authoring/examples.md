@@ -4,10 +4,6 @@ Explore character examples from different genres, systems, and complexity levels
 
 ## Featured Characters
 
-<div class="features-grid">
-
-<div class="feature-card">
-
 ### 🛡️ [Bruenor Battlehammer](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/bruenor.yaml)
 
 **D&D Warrior-King**
@@ -17,10 +13,6 @@ A legendary dwarven fighter from Forgotten Realms, showcasing D&D 5e integration
 **Tags:** `dwarf`, `fighter`, `dnd5e`, `fantasy`, `warrior`
 
 [View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/bruenor.yaml)
-
-</div>
-
-<div class="feature-card">
 
 ### 🚀 [Commander Shepard](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/commander-shepard.yaml)
 
@@ -32,10 +24,6 @@ The iconic Mass Effect hero, demonstrating sci-fi character creation with futuri
 
 [View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/commander-shepard.yaml)
 
-</div>
-
-<div class="feature-card">
-
 ### 🎮 [Crash Bandicoot](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/crash-bandicoot.yaml)
 
 **Game Mascot**
@@ -45,10 +33,6 @@ A platformer hero showcasing how to represent video game characters with unique 
 **Tags:** `bandicoot`, `platformer`, `game`, `mascot`, `cartoon`
 
 [View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/crash-bandicoot.yaml)
-
-</div>
-
-<div class="feature-card">
 
 ### 🧙‍♀️ [Eve](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/eve.yaml)
 
@@ -60,10 +44,6 @@ A helpful AI character demonstrating modern AI assistant capabilities with clear
 
 [View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/eve.yaml)
 
-</div>
-
-<div class="feature-card">
-
 ### 🤖 [Guilty Spark](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/guilty-spark.yaml)
 
 **Sci-Fi AI**
@@ -73,10 +53,6 @@ A Halo AI construct showing how to represent artificial intelligence with comple
 **Tags:** `ai`, `construct`, `halo`, `sci-fi`, `villain`
 
 [View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/guilty-spark.yaml)
-
-</div>
-
-<div class="feature-card">
 
 ### 🐕 [Inuyasha](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/inuyasha.yaml)
 
@@ -88,10 +64,6 @@ A half-demon from anime, showcasing how to represent characters with dual nature
 
 [View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/inuyasha.yaml)
 
-</div>
-
-<div class="feature-card">
-
 ### 💀 [Deadpool](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/deadpool.yaml)
 
 **Anti-Hero**
@@ -102,10 +74,6 @@ The Merc with a Mouth, demonstrating how to represent chaotic characters with fo
 
 [View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/deadpool.yaml)
 
-</div>
-
-<div class="feature-card">
-
 ### 🎭 [Jake Sully](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/jake-sully.yaml)
 
 **Sci-Fi Protagonist**
@@ -115,10 +83,6 @@ Avatar's protagonist showing how to represent characters with body-swapping abil
 **Tags:** `human`, `avatar`, `sci-fi`, `environmental`, `hero`
 
 [View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/jake-sully.yaml)
-
-</div>
-
-</div>
 
 ## Character Templates
 

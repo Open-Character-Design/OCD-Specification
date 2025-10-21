@@ -1,8 +1,6 @@
 # Technical Applications
 
-<div class="hero-section">
 Build robust character systems with OCD's technical capabilities for metadata management, AI integration, and procedural generation.
-</div>
 
 OCD provides the technical foundation for sophisticated character-driven applications. From AI training datasets to procedural generation systems, OCD's structured approach enables powerful technical implementations that scale from individual projects to enterprise applications.
 

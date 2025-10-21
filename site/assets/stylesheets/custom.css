@@ -143,6 +143,33 @@
   overflow: hidden;
 }
 
+/* Hero section as h1 class - ensure proper styling */
+h1.hero-section {
+  background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, var(--md-primary-fg-color--dark) 100%);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin: -1rem -1rem 3rem -1rem;
+  border-radius: 0 0 1rem 1rem;
+  position: relative;
+  overflow: hidden;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style paragraphs that follow the hero h1 */
+h1.hero-section + p,
+h1.hero-section + p + p {
+  background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, var(--md-primary-fg-color--dark) 100%);
+  color: white;
+  padding: 0 2rem 2rem 2rem;
+  text-align: center;
+  margin: -3rem -1rem 3rem -1rem;
+  position: relative;
+  z-index: 1;
+}
+
 .hero-section::before {
   content: '';
   position: absolute;
@@ -195,6 +222,11 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin: 3rem 0;
+}
+
+/* Specific grid layouts */
+.features-grid.grid-2x3 {
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .feature-card {
@@ -769,5 +801,104 @@
     --md-accent-fg-color: #FFD700;
     --md-default-fg-color: #FFFFFF;
     --md-default-bg-color: #000000;
+  }
+}
+
+/* Character Gallery Card Styling */
+.md-typeset .cards .card img { 
+  width: 100%; 
+  height: 160px; 
+  object-fit: cover; 
+}
+
+.rounded { 
+  border-radius: 0.75rem; 
+}
+
+.md-typeset .cards .card { 
+  border-radius: 1rem; 
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--md-border-color);
+  overflow: hidden;
+}
+
+.md-typeset .cards .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px var(--md-shadow-color);
+  border-color: var(--md-accent-fg-color--transparent);
+}
+
+.md-typeset .cards .card h3 {
+  color: var(--md-primary-fg-color);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.md-typeset .cards .card strong {
+  color: var(--md-accent-fg-color--dark);
+  font-weight: 600;
+}
+
+.md-typeset .cards .card p {
+  color: var(--md-default-fg-color--light);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.md-typeset .cards .card a {
+  color: var(--md-typeset-a-color);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.md-typeset .cards .card a:hover {
+  color: var(--md-accent-fg-color--dark);
+  text-decoration: underline;
+}
+
+/* Collapsible YAML sections */
+.md-typeset .details {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px var(--md-shadow-color--light);
+  margin-top: 1rem;
+}
+
+.md-typeset .details summary {
+  background: linear-gradient(135deg, var(--md-accent-fg-color--transparent), rgba(246, 173, 85, 0.05));
+  color: var(--md-primary-fg-color--dark);
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--md-border-color--light);
+  transition: all 0.2s ease;
+}
+
+.md-typeset .details summary:hover {
+  background: linear-gradient(135deg, rgba(246, 173, 85, 0.1), rgba(246, 173, 85, 0.05));
+}
+
+.md-typeset .details[open] summary {
+  border-bottom-color: var(--md-accent-fg-color);
+}
+
+.md-typeset .details .highlight {
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Responsive card grid */
+@media screen and (max-width: 768px) {
+  .md-typeset .cards .card img { 
+    height: 120px; 
+  }
+  
+  .md-typeset .cards .card {
+    margin-bottom: 1rem;
   }
 }

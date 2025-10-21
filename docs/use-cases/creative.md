@@ -1,8 +1,6 @@
 # Creative Applications
 
-<div class="hero-section">
 Transform your creative process with OCD's structured approach to character design and worldbuilding.
-</div>
 
 OCD isn't just about storing character data, it's about revolutionizing how we think about character creation. By treating characters as living, structured entities rather than static images or notes, OCD enables true creative collaboration and consistency across any medium.
 

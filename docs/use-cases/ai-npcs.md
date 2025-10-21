@@ -1,8 +1,6 @@
 # AI-Driven NPC Personalities
 
-<div class="hero-section">
 Create sophisticated AI-driven NPCs with OCD personality traits that drive behavior trees, memory systems, and learning algorithms for believable, consistent character interactions.
-</div>
 
 OCD personality traits provide the perfect foundation for creating AI-driven NPCs that exhibit consistent, believable behavior. This guide shows you how to build sophisticated AI systems that use OCD character data to drive decision-making, memory formation, and social interactions.
 

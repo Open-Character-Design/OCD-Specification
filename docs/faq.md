@@ -6,7 +6,7 @@ Frequently asked questions about OCD (Open Character Specification).
 
 ### When should I use OCD?
 
-OCD is perfect for:
+OCD is For:
 
 - **Character-driven projects** that need consistency across multiple mediums
 - **Collaborative teams** working on shared character universes

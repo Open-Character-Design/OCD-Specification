@@ -1,53 +1,46 @@
 # Open Character Specification (OCD)
 
-OCD is a portable, machine-validated format for character definitions across games, film/TV, books, and AI role-play.
+A portable, machine-validated format for character definitions across games, film/TV, books, and AI role-play.
 
-It ships with:
-- **Core schema** (JSON Schema v1.0) and **Legend & Adoption Guide**
-- **OCD-T**: a concise textual grammar for authoring with full parser support
-- **Python validator** (Pydantic v2) with normalization & lint
-- **TypeScript validator** (Ajv) with full feature parity
-- **Examples** in YAML and OCD-T
+## 📖 Documentation
 
-## Quick Start
+**👉 [Visit the full documentation site](https://open-character-design.github.io/OCD-Specification/) for complete guides, examples, and API reference.**
 
-### Python
+## 🚀 Quick Links
 
-```bash
-pip install ocd==1.0.0
+- **[Getting Started](https://open-character-design.github.io/OCD-Specification/getting-started/)** - Install validators and create your first character
+- **[Examples](https://open-character-design.github.io/OCD-Specification/authoring/examples/)** - Browse character examples in YAML and OCD-T
+- **[Schema Reference](https://open-character-design.github.io/OCD-Specification/spec/schema-overview/)** - Complete specification details
+- **[Integration Guide](https://open-character-design.github.io/OCD-Specification/integration/)** - Python and JavaScript validators
 
-# Validate a document and print the normalized JSON
-ocd-validate examples/bruenor.yaml --print
+## 📦 What's Included
+
+- **Core Schema** - JSON Schema v1.0 specification
+- **OCD-T Grammar** - Concise textual format with full parser support
+- **Python Validator** - Pydantic v2 with normalization & linting
+- **TypeScript Validator** - Ajv with full feature parity
+- **Examples** - Sample characters in YAML and OCD-T formats
+
+## 🏗️ Repository Structure
+
+```
+├── spec/           # Core schemas and specification docs
+├── grammar/        # OCD-T grammar specification
+├── python/         # Python validator library & CLI
+├── node/           # TypeScript validator and tooling
+├── examples/       # Sample character files
+├── docs/           # Documentation source (MkDocs)
+└── site/           # Generated documentation site
 ```
 
-### Node.js
+## 📄 License
 
-```bash
-npm install @ocd-tools/validator@1.0.0
+- **Code**: Apache-2.0 ([LICENSES/LICENSE-CODE-Apache-2.0.txt](LICENSES/LICENSE-CODE-Apache-2.0.txt))
+- **Specification & Documentation**: CC-BY-4.0 ([LICENSES/LICENSE-SPEC-CC-BY-4.0.txt](LICENSES/LICENSE-SPEC-CC-BY-4.0.txt))
 
-# Validate using the packaged CLI
-npx @ocd-tools/validator examples/bruenor.yaml --print
+## 🤝 Contributing
 
-# Or install globally
-npm install --global @ocd-tools/validator@1.0.0
-ocd-validate examples/bruenor.yaml --print
-```
+We welcome contributions! Please see our [Contributing Guide](https://open-character-design.github.io/OCD-Specification/governance/contributing-to-spec/) for details.
 
-Structure
-
-spec/ – schemas and docs
-
-grammar/ – OCD-T spec and grammar
-
-python/ – validator library & CLI (publishable as `ocd`) and tests
-
-node/ – JS/TS validator, parser, and CLI tooling (publishable as `@ocd-tools/validator`)
-
-examples/ – sample characters (YAML/OCD-T)
-
-
-Licensing
-
-Code: Apache-2.0 (LICENSES/LICENSE-CODE-Apache-2.0.txt)
-
-Specs & docs: CC-BY-4.0 (LICENSES/LICENSE-SPEC-CC-BY-4.0.txt)
+- **Issues**: [Report bugs or request features](https://github.com/Open-Character-Design/OCD-Specification/issues)
+- **Discussions**: [Ask questions and share examples](https://github.com/Open-Character-Design/OCD-Specification/discussions)

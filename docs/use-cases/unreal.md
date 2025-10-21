@@ -1,8 +1,8 @@
 # Unreal Engine Integration
 
-<div class="hero-section">
+
 Integrate OCD characters into Unreal Engine projects using Blueprint-friendly C++ classes and Blueprint visual scripting for maximum flexibility and performance.
-</div>
+
 
 Unreal Engine's powerful C++ foundation and Blueprint system make it ideal for creating sophisticated character systems. This guide shows you how to build a complete OCD character integration system that works seamlessly with Unreal's architecture.
 

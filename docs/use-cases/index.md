@@ -1,70 +1,36 @@
 # Use Cases
 
-<div class="hero-section">
 Transform your creative workflow with OCD's structured approach to character design across games, film, AI, and interactive media.
-</div>
 
 OCD isn't just a file format, it's a comprehensive framework that bridges creativity and technology. Whether you're building the next blockbuster game, training AI models, or creating immersive storytelling experiences, OCD provides the structured foundation your projects need.
 
 ## Who Uses OCD?
 
-<div class="features-grid">
-
-<div class="feature-card">
-
-🎨 **Creative Professionals**
+### 🎨 Creative Professionals
 
 Artists, writers, and designers who need consistent character development across multiple projects and mediums.
 
-</div>
-
-<div class="feature-card">
-
-⚙️ **Technical Teams**
+### ⚙️ Technical Teams
 
 Developers, engineers, and data scientists building character-driven applications, AI systems, and procedural content.
 
-</div>
-
-<div class="feature-card">
-
-🎮 **Game Studios**
+### 🎮 Game Studios
 
 Teams creating games, visual novels, and interactive experiences that require rich, consistent character systems.
 
-</div>
-
-<div class="feature-card">
-
-🤖 **AI Platforms**
+### 🤖 AI Platforms
 
 Companies building AI-powered character interactions, NPCs, and creative tools that need structured character data.
 
-</div>
-
-<div class="feature-card">
-
-📚 **Educational Institutions**
+### 📚 Educational Institutions
 
 Teachers and students learning character design, narrative development, and creative technology workflows.
 
-</div>
-
-<div class="feature-card">
-
-🌐 **Open Source Communities**
+### 🌐 Open Source Communities
 
 Collaborative projects building shared character libraries and interoperable creative tools.
 
-</div>
-
-</div>
-
 ## Explore Use Cases by Category
-
-<div class="features-grid">
-
-<div class="feature-card">
 
 ### 🎭 [Creative Applications](creative.md)
 
@@ -74,10 +40,6 @@ Transform your creative process with structured character development that works
 
 [Explore Creative Use Cases →](creative.md)
 
-</div>
-
-<div class="feature-card">
-
 ### ⚙️ [Technical Applications](technical.md)
 
 **Metadata Management & AI Integration**
@@ -85,10 +47,6 @@ Transform your creative process with structured character development that works
 Build robust character systems with OCD's technical capabilities. Perfect for procedural generation, AI training datasets, API integration, and version control workflows.
 
 [Explore Technical Use Cases →](technical.md)
-
-</div>
-
-<div class="feature-card">
 
 ### 🎮 [Interactive & Storytelling](interactive.md)
 
@@ -98,10 +56,6 @@ Create immersive interactive experiences with OCD-powered characters. From game 
 
 [Explore Interactive Use Cases →](interactive.md)
 
-</div>
-
-<div class="feature-card">
-
 ### 🌐 [Community & Open Source](community.md)
 
 **Collaboration & Cross-Media Adaptation**
@@ -109,10 +63,6 @@ Create immersive interactive experiences with OCD-powered characters. From game 
 Join the open creative ecosystem. Share characters, collaborate across teams, and adapt content seamlessly across different media and platforms.
 
 [Explore Community Use Cases →](community.md)
-
-</div>
-
-</div>
 
 ## Quick Start by Use Case
 

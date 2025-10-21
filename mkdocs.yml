@@ -1,7 +1,7 @@
 site_name: Open Character Specification
 site_description: A structured, portable format for defining characters across games, film/TV, books, and AI role-play
 site_url: https://evirgil.github.io/OpenCharacter-Specification/
-repo_url: https://github.com/eVirgil/OpenCharacter-Specification
+repo_url: https://github.com/Open-Character-Design/OCD-Specification
 repo_name: OpenCharacter-Specification
 edit_uri: edit/main/docs/
 
@@ -99,7 +99,7 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/eVirgil/OpenCharacter-Specification
+      link: https://github.com/Open-Character-Design/OCD-Specification
   version:
     provider: mike
   analytics:

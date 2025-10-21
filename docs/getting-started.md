@@ -162,7 +162,7 @@ OCD serves different needs for different types of users. Choose the path that be
 **Next Steps:**
 1. Learn about [Community Contribution](governance/contributing-to-spec.md)
 2. Explore [Community Examples](authoring/examples.md) for shared characters
-3. Join discussions on [GitHub](https://github.com/eVirgil/OpenCharacter-Specification/discussions)
+3. Join discussions on [GitHub](https://github.com/Open-Character-Design/OCD-Specification/discussions)
 
 </div>
 
@@ -417,7 +417,7 @@ If you run into issues:
 1. **Check the [FAQ](faq.md)** for common questions
 2. **Browse [Examples](authoring/examples.md)** for inspiration
 3. **Read the [Specification](spec/schema-overview.md)** for detailed information
-4. **Ask on [GitHub Discussions](https://github.com/eVirgil/OpenCharacter-Specification/discussions)**
+4. **Ask on [GitHub Discussions](https://github.com/Open-Character-Design/OCD-Specification/discussions)**
 
 ## Quick Reference
 

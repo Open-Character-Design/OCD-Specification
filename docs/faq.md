@@ -357,8 +357,8 @@ OCD validation is designed to catch common issues. If you need to bypass validat
 
 1. **Documentation**: Check the [Specification](spec/schema-overview.md)
 2. **Examples**: Browse the [Examples Gallery](authoring/examples.md)
-3. **Community**: Ask on [GitHub Discussions](https://github.com/eVirgil/OpenCharacter-Specification/discussions)
-4. **Issues**: Report bugs on [GitHub Issues](https://github.com/eVirgil/OpenCharacter-Specification/issues)
+3. **Community**: Ask on [GitHub Discussions](https://github.com/Open-Character-Design/OCD-Specification/discussions)
+4. **Issues**: Report bugs on [GitHub Issues](https://github.com/Open-Character-Design/OCD-Specification/issues)
 
 ### How do I contribute to OCD?
 

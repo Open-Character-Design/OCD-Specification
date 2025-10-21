@@ -212,9 +212,9 @@ Integrate OCD into your applications with our Python and JavaScript validators.
 
 ## Community
 
-- **GitHub**: [OpenCharacter-Specification](https://github.com/eVirgil/OpenCharacter-Specification)
-- **Issues**: [Report bugs or request features](https://github.com/eVirgil/OpenCharacter-Specification/issues)
-- **Discussions**: [Ask questions and share examples](https://github.com/eVirgil/OpenCharacter-Specification/discussions)
+- **GitHub**: [OpenCharacter-Specification](https://github.com/Open-Character-Design/OCD-Specification)
+- **Issues**: [Report bugs or request features](https://github.com/Open-Character-Design/OCD-Specification/issues)
+- **Discussions**: [Ask questions and share examples](https://github.com/Open-Character-Design/OCD-Specification/discussions)
 - **Contributing**: [Help improve the specification](governance/contributing-to-spec.md)
 
 !!! note "Open Source"

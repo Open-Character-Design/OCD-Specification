@@ -386,4 +386,4 @@ See the [Examples Gallery](../authoring/examples.md) for complete character exam
 - **[Examples Gallery](../authoring/examples.md)**: See extension examples in action
 - **[Integration Guide](python-validator.md)**: Use extensions in applications
 - **[Contributing Guide](../governance/contributing-to-spec.md)**: Contribute to core specification
-- **[Community Discussions](https://github.com/eVirgil/OpenCharacter-Specification/discussions)**: Share your extensions
+- **[Community Discussions](https://github.com/Open-Character-Design/OCD-Specification/discussions)**: Share your extensions

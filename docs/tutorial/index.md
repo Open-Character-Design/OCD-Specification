@@ -121,7 +121,7 @@ If you get stuck at any point:
 1. **Check the [FAQ](../faq.md)** for common questions
 2. **Browse [Examples](../authoring/examples.md)** for inspiration
 3. **Read the [Specification](../spec/schema-overview.md)** for detailed information
-4. **Ask on [GitHub Discussions](https://github.com/eVirgil/OpenCharacter-Specification/discussions)**
+4. **Ask on [GitHub Discussions](https://github.com/Open-Character-Design/OCD-Specification/discussions)**
 
 ## Ready to Start?
 

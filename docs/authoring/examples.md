@@ -8,7 +8,7 @@ Explore character examples from different genres, systems, and complexity levels
 
 <div class="feature-card">
 
-### 🛡️ [Bruenor Battlehammer](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/bruenor.yaml)
+### 🛡️ [Bruenor Battlehammer](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/bruenor.yaml)
 
 **D&D Warrior-King**
 
@@ -16,13 +16,13 @@ A legendary dwarven fighter from Forgotten Realms, showcasing D&D 5e integration
 
 **Tags:** `dwarf`, `fighter`, `dnd5e`, `fantasy`, `warrior`
 
-[View Example →](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/bruenor.yaml)
+[View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/bruenor.yaml)
 
 </div>
 
 <div class="feature-card">
 
-### 🚀 [Commander Shepard](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/commander-shepard.yaml)
+### 🚀 [Commander Shepard](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/commander-shepard.yaml)
 
 **Sci-Fi Protagonist**
 
@@ -30,13 +30,13 @@ The iconic Mass Effect hero, demonstrating sci-fi character creation with futuri
 
 **Tags:** `human`, `soldier`, `sci-fi`, `space`, `hero`
 
-[View Example →](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/commander-shepard.yaml)
+[View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/commander-shepard.yaml)
 
 </div>
 
 <div class="feature-card">
 
-### 🎮 [Crash Bandicoot](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/crash-bandicoot.yaml)
+### 🎮 [Crash Bandicoot](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/crash-bandicoot.yaml)
 
 **Game Mascot**
 
@@ -44,13 +44,13 @@ A platformer hero showcasing how to represent video game characters with unique 
 
 **Tags:** `bandicoot`, `platformer`, `game`, `mascot`, `cartoon`
 
-[View Example →](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/crash-bandicoot.yaml)
+[View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/crash-bandicoot.yaml)
 
 </div>
 
 <div class="feature-card">
 
-### 🧙‍♀️ [Eve](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/eve.yaml)
+### 🧙‍♀️ [Eve](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/eve.yaml)
 
 **AI Assistant**
 
@@ -58,13 +58,13 @@ A helpful AI character demonstrating modern AI assistant capabilities with clear
 
 **Tags:** `ai`, `assistant`, `helpful`, `modern`, `virtual`
 
-[View Example →](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/eve.yaml)
+[View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/eve.yaml)
 
 </div>
 
 <div class="feature-card">
 
-### 🤖 [Guilty Spark](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/guilty-spark.yaml)
+### 🤖 [Guilty Spark](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/guilty-spark.yaml)
 
 **Sci-Fi AI**
 
@@ -72,13 +72,13 @@ A Halo AI construct showing how to represent artificial intelligence with comple
 
 **Tags:** `ai`, `construct`, `halo`, `sci-fi`, `villain`
 
-[View Example →](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/guilty-spark.yaml)
+[View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/guilty-spark.yaml)
 
 </div>
 
 <div class="feature-card">
 
-### 🐕 [Inuyasha](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/inuyasha.yaml)
+### 🐕 [Inuyasha](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/inuyasha.yaml)
 
 **Anime Character**
 
@@ -86,13 +86,13 @@ A half-demon from anime, showcasing how to represent characters with dual nature
 
 **Tags:** `half-demon`, `anime`, `fantasy`, `warrior`, `romance`
 
-[View Example →](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/inuyasha.yaml)
+[View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/inuyasha.yaml)
 
 </div>
 
 <div class="feature-card">
 
-### 💀 [Deadpool](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/deadpool.yaml)
+### 💀 [Deadpool](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/deadpool.yaml)
 
 **Anti-Hero**
 
@@ -100,13 +100,13 @@ The Merc with a Mouth, demonstrating how to represent chaotic characters with fo
 
 **Tags:** `mutant`, `anti-hero`, `comedy`, `marvel`, `chaotic`
 
-[View Example →](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/deadpool.yaml)
+[View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/deadpool.yaml)
 
 </div>
 
 <div class="feature-card">
 
-### 🎭 [Jake Sully](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/jake-sully.yaml)
+### 🎭 [Jake Sully](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/jake-sully.yaml)
 
 **Sci-Fi Protagonist**
 
@@ -114,7 +114,7 @@ Avatar's protagonist showing how to represent characters with body-swapping abil
 
 **Tags:** `human`, `avatar`, `sci-fi`, `environmental`, `hero`
 
-[View Example →](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/jake-sully.yaml)
+[View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/jake-sully.yaml)
 
 </div>
 
@@ -383,7 +383,7 @@ x-superhero:
 
 ### D&D 5e Integration
 
-See [Bruenor Battlehammer](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/bruenor.yaml) for a complete D&D 5e character with:
+See [Bruenor Battlehammer](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/bruenor.yaml) for a complete D&D 5e character with:
 
 - Complete ability scores and modifiers
 - Spellcasting with known spells and slots
@@ -561,12 +561,12 @@ identity:
 
 ## Download Examples
 
-All examples are available in the [examples directory](https://github.com/eVirgil/OpenCharacter-Specification/tree/main/examples) of the OCD repository.
+All examples are available in the [examples directory](https://github.com/Open-Character-Design/OCD-Specification/tree/main/examples) of the OCD repository.
 
 ### Quick Download
 ```bash
 # Download all examples
-git clone https://github.com/eVirgil/OpenCharacter-Specification.git
+git clone https://github.com/Open-Character-Design/OCD-Specification.git
 cd OpenCharacter-Specification/examples
 
 # Validate all examples

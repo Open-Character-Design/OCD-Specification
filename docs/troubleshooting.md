@@ -346,7 +346,7 @@ meta:
 
 1. [Validation Reference](reference/validation.md)
 2. [Integration Examples](integration/examples.md)
-3. [Specification Format](authoring/ocd-specification-format.md)
+3. [Specification Format](spec/ocd-specification-format.md)
 
 ### Community Support
 

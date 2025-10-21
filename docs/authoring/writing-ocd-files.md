@@ -1,3 +1,14 @@
+---
+title: Authoring Playbook
+description: Best practices for structuring OCD files across YAML, JSON, and OCD-T formats.
+search:
+  boost: 2
+tags:
+  - authoring
+  - best-practices
+  - workflow
+---
+
 # Writing OCD Files
 
 This guide covers best practices for authoring OCD files in YAML, JSON, and OCD-T formats.
@@ -255,7 +266,7 @@ meta:
 
 ## Next Steps
 
-- **[Examples Gallery](examples.md)**: See real character examples
-- **[OCD-T Guide](ocd-authoring-guide.md)**: Learn the textual format
-- **[Validation Reference](../reference/diagnostics.md)**: Understand error messages
-- **[Integration Guide](../integration/python-validator.md)**: Use OCD in applications
+- **[Examples Gallery](examples.md)**: See real character examples.
+- **[OCD Specification Format](../spec/ocd-specification-format.md)**: Review the canonical document structure.
+- **[Validation Diagnostics](../reference/diagnostics.md)**: Understand error messages.
+- **[Python Validator Integration](../integration/python-validator.md)**: Use OCD in applications.

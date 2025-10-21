@@ -1,6 +1,20 @@
-# Validation Modes Tutorial
+---
+title: Validation Modes
+description: Learn when to use relaxed or strict validation and how to tune custom OCD specifications.
+search:
+  boost: 2
+tags:
+  - validation
+  - qa
+  - workflow
+---
+
+# Validation Modes
 
 This tutorial explains how to use the two validation modes in the Open Character Specification: relaxed and strict. You'll learn when to use each mode and how to create custom validation specifications.
+
+!!! info "Need the full rule reference?"
+    The normative rules live in the [Validation Overview](../reference/validation.md) and [Diagnostics Reference](../reference/diagnostics.md). Come back here when you want the narrative walkthrough and examples.
 
 ## Understanding Validation Modes
 
@@ -343,7 +357,7 @@ OCD_DEBUG=1 ocd-validate character.yaml --mode strict --spec my-spec.ocd
 
 ## Next Steps
 
-- Learn about [Custom Validation Rules](custom-validation-rules.md)
-- Explore [Specification Overlays](specification-overlays.md)
-- See [Integration Examples](integration-examples.md)
-- Check [Troubleshooting Guide](troubleshooting.md)
+- Learn how custom rules are defined in the [Validation Overview](../reference/validation.md#custom-specification-overlays).
+- Explore schema overlay patterns in the [OCD Specification Format](../spec/ocd-specification-format.md).
+- See end-to-end validator usage in the [Integration Examples](../integration/examples.md).
+- Troubleshoot stubborn issues with the [Validation Troubleshooting Guide](../troubleshooting.md).

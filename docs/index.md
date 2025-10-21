@@ -24,7 +24,7 @@ Get up and running in minutes with our validators:
     npx @ocd-tools/validator examples/bruenor.yaml --print
     ```
 
-[Get Started Now](getting-started/){ .md-button .md-button--primary }
+[Get Started Now](getting-started.md){ .md-button .md-button--primary }
 
 
 ## Why OCD?
@@ -124,7 +124,7 @@ meta:
 
 <div class="feature-card">
 
-<h3>🚀 <a href="getting-started/">Get Started</a></h3>
+<h3>🚀 <a href="getting-started.md">Get Started</a></h3>
 
 <p>Install validators, create your first character, and understand the basics.</p>
 

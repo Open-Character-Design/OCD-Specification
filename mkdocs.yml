@@ -7,59 +7,59 @@ edit_uri: edit/main/docs/
 
 nav:
   - Home: index.md
-  - Getting Started:
-    - Installation: getting-started.md
+  - Start Here:
+    - Orientation: start-here/index.md
+    - Quick Install: getting-started.md
     - Migration Guide: migration-guide.md
     - FAQ: faq.md
-  - Tutorial:
-    - Overview: tutorial/index.md
-    - Your First Character: tutorial/first-character.md
-    - Adding Personality: tutorial/personality.md
-    - Background & Relationships: tutorial/background.md
+    - Use Cases & Inspiration:
+      - Overview: use-cases/index.md
+      - Creative Workflows: use-cases/creative.md
+      - Interactive & Storytelling: use-cases/interactive.md
+      - Technical Applications: use-cases/technical.md
+      - AI & Machine Learning:
+        - AI NPCs: use-cases/ai-npcs.md
+        - Interactive Storytelling: use-cases/storytelling.md
+        - Visual Novels & RPGs: use-cases/visual-novels.md
+        - Virtual Production: use-cases/virtual-production.md
+      - Game Engines:
+        - Unity: use-cases/unity.md
+        - Unreal Engine: use-cases/unreal.md
+        - Godot: use-cases/godot.md
+      - Community Projects: use-cases/community.md
+  - Build Characters:
+    - Guided Tutorial Overview: tutorial/index.md
+    - Step 1 · Your First Character: tutorial/first-character.md
+    - Step 2 · Personality & Traits: tutorial/personality.md
+    - Step 3 · Background & Relationships: tutorial/background.md
+    - Step 4 · System Extensions: tutorial/extensions.md
+    - Step 5 · Production Tips: tutorial/production.md
+    - Authoring Playbook:
+      - Writing OCD Files: authoring/writing-ocd-files.md
+      - Examples Gallery: authoring/examples.md
+  - Validate & QA:
+    - Validation Overview: reference/validation.md
     - Validation Modes: tutorial/validation-modes.md
-    - System Extensions: tutorial/extensions.md
-    - Production Tips: tutorial/production.md
-  - Specification:
-    - Overview: spec/schema-overview.md
-    - Trait Model: spec/trait-model.md
-    - OCD Specification Format: spec/ocd-specification-format.md
-    - Fields Reference: reference/fields.md
-    - Vocabularies: reference/vocabularies.md
-  - Authoring:
-    - Writing OCD Files: authoring/writing-ocd-files.md
-    - Examples Gallery: authoring/examples.md
-  - Validation:
-    - Overview: reference/validation.md
-    - Troubleshooting: troubleshooting.md
-    - Diagnostics: reference/diagnostics.md
-  - Integration:
+    - Troubleshooting Guide: troubleshooting.md
+    - Diagnostics Reference: reference/diagnostics.md
+  - Integrate & Automate:
     - Python Validator: integration/python-validator.md
-    - JavaScript/TypeScript: integration/js-ts-validator.md
+    - JavaScript & TypeScript: integration/js-ts-validator.md
     - Integration Examples: integration/examples.md
     - Agents & Runtime: integration/agents.md
-    - Extensions: integration/extensions-and-namespaces.md
+    - Extensions & Namespaces: integration/extensions-and-namespaces.md
     - Validator Roadmap: integration/validator-roadmap-todo.md
-  - Use Cases:
-    - Overview: use-cases/index.md
-    - Creative Workflows: use-cases/creative.md
-    - Technical Applications: use-cases/technical.md
-    - Interactive & Storytelling: use-cases/interactive.md
-    - Game Development:
-      - Unity: use-cases/unity.md
-      - Unreal Engine: use-cases/unreal.md
-      - Godot: use-cases/godot.md
-    - AI & Machine Learning:
-      - AI NPCs: use-cases/ai-npcs.md
-      - Interactive Storytelling: use-cases/storytelling.md
-      - Visual Novels & RPGs: use-cases/visual-novels.md
-      - Virtual Production: use-cases/virtual-production.md
-    - Community Projects: use-cases/community.md
-  - Community:
-    - Contributing: governance/contributing-to-spec.md
-    - Versioning: governance/versioning-and-roadmap.md
-    - Changelog: changelog.md
+  - Reference & Governance:
+    - Schema Overview: spec/schema-overview.md
+    - Trait Model: spec/trait-model.md
+    - OCD Specification Format: spec/ocd-specification-format.md
+    - Field Reference: reference/fields.md
+    - Vocabularies: reference/vocabularies.md
     - Glossary: glossary.md
-    - Agents: Agents.md
+    - Contributing: governance/contributing-to-spec.md
+    - Versioning & Roadmap: governance/versioning-and-roadmap.md
+    - Changelog: changelog.md
+    - Agents Directory: Agents.md
 
 theme:
   name: material

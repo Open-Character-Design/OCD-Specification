@@ -1,13 +1,12 @@
 
-## Open Character Specification
-
 <div class="hero-section">
-A structured, portable format for defining characters across games, film/TV, books, and AI role-play.
+<h1>Open Character Specification</h1>
+<p><strong>A structured, portable format for defining characters across games, film/TV, books, and AI role-play.</strong></p>
+<p>Transform your character development workflow with a unified specification that works everywhere.</p>
+<a href="getting-started.md" class="md-button md-button--primary">Get Started Now</a>
 </div>
 
-Transform your character development workflow with a unified specification that works everywhere.
-
-[Get Started Now](getting-started.md){ .md-button .md-button--primary }
+## Open Character Specification
 
 ## Quick Start
 

@@ -1,22 +1,22 @@
-# OCS Python Tools
+# OCD Python Tools
 
-The `ocs` package provides validation, normalization, and linting helpers for the Open Character Specification.
+The `ocd` package provides validation, normalization, and linting helpers for the Open Character Specification.
 
 ## Installation
 
 ```bash
-pip install ocs
+pip install ocd
 ```
 
 The project targets Python 3.10+ and ships as a pure-Python wheel.
 
 ## Command Line Interface
 
-After installation the `ocs-validate` entry point becomes available:
+After installation the `ocd-validate` entry point becomes available:
 
 ```bash
 # Validate a YAML document and print the normalized JSON
-ocs-validate examples/bruenor.yaml --print
+ocd-validate examples/bruenor.yaml --print
 ```
 
 Key options:
@@ -31,8 +31,8 @@ The CLI accepts `-` as the path argument to read from standard input.
 ## Library Usage
 
 ```python
-from ocs import validate_and_normalize
-from ocs.yaml_loader import safe_load
+from ocd import validate_and_normalize
+from ocd.yaml_loader import safe_load
 
 with open("examples/bruenor.yaml", "r", encoding="utf-8") as handle:
     document = safe_load(handle.read())

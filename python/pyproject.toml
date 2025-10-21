@@ -3,7 +3,7 @@ requires = ["hatchling>=1.21.0"]
 build-backend = "hatchling.build"
 
 [project]
-name = "ocs"
+name = "ocd"
 version = "1.0.0"
 description = "Open Character Specification: Python validator and CLI tools"
 authors = [
@@ -17,7 +17,7 @@ dependencies = [
 ]
 readme = "README.md"
 license = { text = "Apache-2.0" }
-keywords = ["ocs", "open-character-specification", "validation", "normalization", "schema"]
+keywords = ["ocd", "open-character-specification", "validation", "normalization", "schema"]
 classifiers = [
   "Development Status :: 5 - Production/Stable",
   "Intended Audience :: Developers",
@@ -39,10 +39,10 @@ Documentation = "https://github.com/opencharacter/OpenCharacter-Specification#re
 Issues = "https://github.com/opencharacter/OpenCharacter-Specification/issues"
 
 [project.scripts]
-ocs-validate = "ocs.ocs_validate:main"
+ocd-validate = "ocd.ocd_validate:main"
 
 [tool.hatch.build]
-packages = ["src/ocs"]
+packages = ["src/ocd"]
 
 [tool.hatch.envs.default]
 dependencies = ["pytest"]

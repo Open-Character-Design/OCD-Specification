@@ -275,30 +275,30 @@ function peg$parse(input, options) {
         keyLocations.set(entry.key, entry.loc);
       }
 
-      if (headers['ocs-t'] === undefined) {
+      if (headers['ocd-t'] === undefined) {
         const loc = lines.length > 0 ? lines[0].loc : location();
-        error('Missing required "ocs-t" header', loc);
+        error('Missing required "ocd-t" header', loc);
       }
 
-      const revision = headers['ocs-t'];
+      const revision = headers['ocd-t'];
       if (typeof revision !== 'number' || !Number.isInteger(revision)) {
-        const loc = keyLocations.get('ocs-t') ?? location();
-        error('"ocs-t" header must be an integer', loc);
+        const loc = keyLocations.get('ocd-t') ?? location();
+        error('"ocd-t" header must be an integer', loc);
       }
 
       let version;
-      if (Object.prototype.hasOwnProperty.call(headers, 'ocs-version')) {
-        const value = headers['ocs-version'];
+      if (Object.prototype.hasOwnProperty.call(headers, 'ocd-version')) {
+        const value = headers['ocd-version'];
         if (typeof value !== 'string') {
-          const loc = keyLocations.get('ocs-version') ?? location();
-          error('"ocs-version" header must be a string', loc);
+          const loc = keyLocations.get('ocd-version') ?? location();
+          error('"ocd-version" header must be a string', loc);
         }
         version = value;
       }
 
       const extras = Object.create(null);
       for (const [key, value] of Object.entries(headers)) {
-        if (key === 'ocs-t' || key === 'ocs-version') {
+        if (key === 'ocd-t' || key === 'ocd-version') {
           continue;
         }
         extras[key] = value;
@@ -2185,7 +2185,7 @@ function peg$parse(input, options) {
       return name;
     }
 
-    return `${left}↔${right}`;
+    return `${left}-${right}`;
   }
 
   function normalizeTraitEntry(entry, loc) {

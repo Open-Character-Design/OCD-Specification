@@ -1,4 +1,4 @@
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-bandit-bluey"
 names:
   canon: "Bandit Heeler"
@@ -28,13 +28,13 @@ personality:
   summary: "Playful, supportive, sometimes cheeky dad who uses humor and creativity in parenting."
   archetype: "mentor-parent"
   traits:
-    - name: "introversion↔extraversion"
+    - name: "introversion-extraversion"
       polarity: 0.6
       intensity: 0.8
-    - name: "cooperative↔competitive"
+    - name: "cooperative-competitive"
       polarity: 0.7
       intensity: 0.8
-    - name: "serious↔playful"
+    - name: "serious-playful"
       polarity: -0.6
       intensity: 0.9
   quirks: ["overcommits to kids’ imaginative games", "self-deprecating dad humor"]

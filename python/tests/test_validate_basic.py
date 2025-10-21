@@ -3,8 +3,8 @@ from __future__ import annotations
 from copy import deepcopy
 from pathlib import Path
 
-from ocs.ocs_validate import validate_and_normalize
-from ocs.yaml_loader import safe_load
+from ocd.ocd_validate import validate_and_normalize
+from ocd.yaml_loader import safe_load
 
 
 FIXTURE_DIR = Path(__file__).parent / "fixtures"
@@ -18,7 +18,7 @@ def test_basic_bruenor() -> None:
     assert result["data"]["names"]["canon"] == "Bruenor"
     assert result["data"]["meta"]["tags"] == ["test"]
     traits = result["data"]["personality"]["traits"]
-    assert any(trait.get("key") == "introversion↔extraversion" for trait in traits)
+    assert any(trait.get("key") == "introversion-extraversion" for trait in traits)
 
 
 def test_normalization_slug_and_profile_facets() -> None:
@@ -45,9 +45,9 @@ def test_normalization_slug_and_profile_facets() -> None:
         None,
     )
     assert normalized_profile is not None
-    assert "introversion↔extraversion" in normalized_profile["facets"]
-    assert "thinking↔feeling" in normalized_profile["facets"]
-    assert normalized_profile["key"] == "temperament_introvert↔extrovert"
+    assert "introversion-extraversion" in normalized_profile["facets"]
+    assert "thinking-feeling" in normalized_profile["facets"]
+    assert normalized_profile["key"] == "temperament_introvert-extrovert"
 
 
 def test_missing_last_modified_invalid() -> None:

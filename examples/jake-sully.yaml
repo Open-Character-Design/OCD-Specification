@@ -1,4 +1,4 @@
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-jake-sully"
 names:
   canon: "Jake Sully"
@@ -28,13 +28,13 @@ personality:
   summary: "Former soldier, pragmatic and resilient, transforms into empathetic leader."
   archetype: "outsider-turned-champion"
   traits:
-    - name: "introversion↔extraversion"
+    - name: "introversion-extraversion"
       polarity: 0.2
       intensity: 0.7
-    - name: "cooperative↔competitive"
+    - name: "cooperative-competitive"
       polarity: 0.5
       intensity: 0.9
-    - name: "serious↔playful"
+    - name: "serious-playful"
       polarity: 0.3
       intensity: 0.6
   quirks: ["occasional Marine slang in Na’vi context", "talks to himself while thinking"]

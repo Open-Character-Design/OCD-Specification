@@ -10,9 +10,9 @@ from jsonschema import Draft202012Validator
 from jsonschema.exceptions import ValidationError as JSONSchemaValidationError
 from pydantic import ValidationError
 
-from .ocs_model import CharacterDefinition, CharacterInstance
-from .ocs_normalize import normalize_in_place
-from .ocs_lint import lint
+from .ocd_model import CharacterDefinition, CharacterInstance
+from .ocd_normalize import normalize_in_place
+from .ocd_lint import lint
 from .yaml_loader import safe_load
 
 _CORE_SCHEMA_VALIDATOR: Draft202012Validator | None = None
@@ -159,7 +159,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
     parser.add_argument(
         "path",
-        help="Path to an OCS document (YAML or JSON). Use '-' to read from standard input.",
+        help="Path to an OCD document (YAML or JSON). Use '-' to read from standard input.",
     )
     parser.add_argument(
         "--format",

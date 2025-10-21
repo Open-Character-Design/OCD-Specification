@@ -1,6 +1,6 @@
-## Open Character Specification (OCS)
+## Open Character Specification (OCD)
 
-Welcome to the Open Character Specification (OCS) wiki.
+Welcome to the Open Character Specification (OCD) wiki.
 
 - **Getting Started**: [[Getting-Started]]
 - **Spec Overview**: [[Specification]]
@@ -16,7 +16,7 @@ Welcome to the Open Character Specification (OCS) wiki.
 Canonical sources live in the repository under `docs/`, `spec/`, `examples/`, `grammar/`, and validator packages under `node/` and `python/`.
 
 Rendered documentation (GitHub Pages): `https://eVirgil.github.io/OpenCharacter-Specification`
-Repository: `https://github.com/eVirgil/OpenCharacter-Specification`
+Repository: `https://github.com/Open-Character-Design/OCD-Specification`
 
 Tip: This wiki stays DRY by linking and pointing to canonical docs; see each page for paths and rendered links.
 

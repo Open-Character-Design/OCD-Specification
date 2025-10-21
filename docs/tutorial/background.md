@@ -11,7 +11,7 @@ A character with detailed background, timeline events, affiliations, and relatio
 Let's enhance Alice with background details:
 
 ```yaml title="alice-background.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-alice-adventurer"
 names:
   canon: "Alice"
@@ -35,15 +35,15 @@ appearance:
 personality:
   summary: "Brave, curious, and always ready for adventure."
   traits:
-    - name: "introversion↔extraversion"
+    - name: "introversion-extraversion"
       kind: "bipolar"
       polarity: 0.7
       intensity: 0.8
-    - name: "competitive↔cooperative"
+    - name: "competitive-cooperative"
       kind: "bipolar"
       polarity: 0.6
       intensity: 0.7
-    - name: "serious↔playful"
+    - name: "serious-playful"
       kind: "bipolar"
       polarity: 0.3
       intensity: 0.6
@@ -207,7 +207,7 @@ narrative_hooks:
 To make relationships work properly, you need to create the referenced characters. Here's Marcus, Alice's father:
 
 ```yaml title="marcus-blacksmith.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-marcus-blacksmith"
 names:
   canon: "Marcus Ironforge"
@@ -230,15 +230,15 @@ appearance:
 personality:
   summary: "Hardworking, protective father who worries about his adventurous daughter."
   traits:
-    - name: "introversion↔extraversion"
+    - name: "introversion-extraversion"
       kind: "bipolar"
       polarity: -0.3
       intensity: 0.6
-    - name: "competitive↔cooperative"
+    - name: "competitive-cooperative"
       kind: "bipolar"
       polarity: 0.8
       intensity: 0.7
-    - name: "serious↔playful"
+    - name: "serious-playful"
       kind: "bipolar"
       polarity: -0.2
       intensity: 0.5
@@ -287,7 +287,7 @@ meta:
 When you validate Alice's character, the validator will check if the referenced characters exist:
 
 ```bash
-ocs-validate alice-background.yaml
+ocd-validate alice-background.yaml
 ```
 
 If Marcus's file is in the same directory or accessible, the validator will confirm the relationship references are valid.
@@ -380,7 +380,7 @@ relationships:
 
 ## What's Next?
 
-Excellent! You've added rich background and relationships to Alice. In the next step, you'll learn how to integrate OCS with specific game systems using extension blocks.
+Excellent! You've added rich background and relationships to Alice. In the next step, you'll learn how to integrate OCD with specific game systems using extension blocks.
 
 **Next:** [Step 4: System Extensions](extensions.md)
 

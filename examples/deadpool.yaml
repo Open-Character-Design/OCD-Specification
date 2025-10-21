@@ -1,4 +1,4 @@
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-deadpool"
 names:
   canon: "Wade Wilson"
@@ -30,13 +30,13 @@ personality:
   summary: "Irreverent, chaotic, violent mercenary with meta awareness and buried emotional depth."
   archetype: "trickster / anti-hero"
   traits:
-    - name: "introversion↔extraversion"
+    - name: "introversion-extraversion"
       polarity: 0.9
       intensity: 1.0
-    - name: "cooperative↔competitive"
+    - name: "cooperative-competitive"
       polarity: -0.6
       intensity: 0.8
-    - name: "serious↔playful"
+    - name: "serious-playful"
       polarity: -0.8
       intensity: 1.0
   quirks: ["constant fourth-wall breaking", "talks to imaginary audience", "obsessed with chimichangas"]
@@ -117,7 +117,7 @@ interaction_layer:
   consent_model:
     allows: ["crude humor", "graphic violence (satirical)"]
     restricts: ["child audiences", "serious romance outside canon tone"]
-  narrator_notes: "Play Deadpool as if he knows he’s in a story — humor and brutality exist side by side."
+  narrator_notes: "Play Deadpool as if he knows he’s in a story ,  humor and brutality exist side by side."
 
 state_dynamics:
   status: "active"

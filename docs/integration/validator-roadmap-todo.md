@@ -1,10 +1,10 @@
 # Validator Implementation Roadmap - TODO
 
-This document outlines the planned implementation of OpenCharacter Specification (OCS) validators across multiple programming languages and platforms. The goal is to provide comprehensive validation and normalization capabilities that maintain API consistency across all implementations.
+This document outlines the planned implementation of OpenCharacter Specification (OCD) validators across multiple programming languages and platforms. The goal is to provide comprehensive validation and normalization capabilities that maintain API consistency across all implementations.
 
 ## Priority Validators (v1.0 Required)
 
-### JavaScript/TypeScript (Runtime) — Ajv
+### JavaScript/TypeScript (Runtime) ,  Ajv
 
 **Why**: Browsers, Node.js, and toolchains; fastest ecosystem boost.
 
@@ -24,7 +24,7 @@ validateAndNormalize(doc: any): Promise<Result>
 
 **Deliverables**:
 - ✅ Basic scaffold exists at `node/src/validate.ts`
-- [ ] Implement Ajv integration with OCS schema
+- [ ] Implement Ajv integration with OCD schema
 - [ ] Port normalization functions from Python
 - [ ] Port diagnostics/linting rules from Python
 - [ ] Add comprehensive test suite
@@ -35,12 +35,12 @@ validateAndNormalize(doc: any): Promise<Result>
 
 ## Post-1.0 Validators
 
-### Go — github.com/santhosh-tekuri/jsonschema or invopop/jsonschema
+### Go ,  github.com/santhosh-tekuri/jsonschema or invopop/jsonschema
 
 **Why**: Servers, CLIs; lots of game tools use Go.
 
 **Implementation Plan**:
-- Create `ocsvalidate` CLI tool
+- Create `ocdvalidate` CLI tool
 - Support YAML/JSON input formats
 - Implement validation → normalization → diagnostics pipeline
 - Output machine-readable JSON diagnostics
@@ -55,7 +55,7 @@ func ValidateAndNormalize(doc interface{}) (*NormalizedDoc, []Diagnostic, error)
 - [ ] Create Go module structure
 - [ ] Implement core validation logic
 - [ ] Port normalization algorithms
-- [ ] Create `ocsvalidate` CLI command
+- [ ] Create `ocdvalidate` CLI command
 - [ ] Add YAML/JSON input support
 - [ ] Implement machine-readable diagnostic output
 - [ ] Add comprehensive test suite
@@ -63,15 +63,15 @@ func ValidateAndNormalize(doc interface{}) (*NormalizedDoc, []Diagnostic, error)
 
 **CLI Interface**:
 ```bash
-ocsvalidate input.yaml --format json --output diagnostics.json
+ocdvalidate input.yaml --format json --output diagnostics.json
 ```
 
-### Rust — jsonschema crate + serde
+### Rust ,  jsonschema crate + serde
 
 **Why**: Compile-to-WASM for browser/engine embedding; high performance.
 
 **Implementation Plan**:
-- Create `ocs_validate` Rust library
+- Create `ocd_validate` Rust library
 - Build WASM target for browser embedding
 - Implement high-performance validation and normalization
 
@@ -96,14 +96,14 @@ validateAndNormalize(jsonString: string): { valid: boolean, data?: any, errors: 
 - [ ] Performance benchmarking
 - [ ] Browser integration examples
 
-### C#/.NET — JsonSchema.Net
+### C#/.NET ,  JsonSchema.Net
 
 **Why**: Unity and enterprise stacks.
 
 **Library**: JsonSchema.Net (by Nick G.)
 
 **Implementation Plan**:
-- Create `Ocs.Validator` NuGet package
+- Create `Ocd.Validator` NuGet package
 - Implement validation and normalization
 - Include minimal normalize pass (arrow, tokens)
 
@@ -124,7 +124,7 @@ public static ValidationResult ValidateAndNormalize(JObject document)
 - [ ] Add documentation and examples
 - [ ] Consider .NET Standard 2.0 for broad compatibility
 
-### Java/Kotlin — networknt/json-schema-validator
+### Java/Kotlin ,  networknt/json-schema-validator
 
 **Why**: JVM backends + Android tooling.
 
@@ -156,7 +156,7 @@ fun JsonNode.validateAndNormalize(): ValidationResult
 
 ## Optional Nice-to-Haves (Lower Priority)
 
-### Swift — swift-jsonschema or Custom Implementation
+### Swift ,  swift-jsonschema or Custom Implementation
 
 **Why**: Server-side Swift + Apple toolchains.
 
@@ -174,7 +174,7 @@ fun JsonNode.validateAndNormalize(): ValidationResult
 - [ ] Test suite with XCTest
 - [ ] Documentation and examples
 
-### Ruby — json_schemer
+### Ruby ,  json_schemer
 
 **Why**: Quick scripting and automation.
 
@@ -184,7 +184,7 @@ fun JsonNode.validateAndNormalize(): ValidationResult
 
 **API Design**:
 ```ruby
-OCS::Validator.validate_and_normalize(document)
+OCD::Validator.validate_and_normalize(document)
 ```
 
 **Deliverables**:
@@ -196,7 +196,7 @@ OCS::Validator.validate_and_normalize(document)
 - [ ] Add RSpec test suite
 - [ ] Documentation and examples
 
-### PHP — opis/json-schema
+### PHP ,  opis/json-schema
 
 **Why**: Web CMS integration and PHP-based tooling.
 
@@ -234,7 +234,7 @@ All validators should maintain consistent APIs:
 ### Normalization Requirements
 
 All implementations must support:
-- Canonicalize bipolar trait names to ↔ arrow syntax
+- Canonicalize bipolar trait names to - dash syntax
 - Lowercase and deduplicate tokens: tags, genres, media, media_targets
 - Consistent formatting and structure normalization
 

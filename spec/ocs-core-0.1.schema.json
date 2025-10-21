@@ -1,10 +1,10 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://ocs.dev/schema/ocs-core-0.1.json",
+  "$id": "https://ocd.dev/schema/ocd-core-0.1.json",
   "type": "object",
-  "required": ["ocs_version", "names", "identity", "personality", "behavior_directives", "meta"],
+  "required": ["ocd_version", "names", "identity", "personality", "behavior_directives", "meta"],
   "properties": {
-    "ocs_version": { "type": "string" },
+    "ocd_version": { "type": "string" },
     "names": {
       "type": "object",
       "required": ["canon"],

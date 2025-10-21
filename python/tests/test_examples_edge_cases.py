@@ -3,17 +3,17 @@ from __future__ import annotations
 from copy import deepcopy
 from pathlib import Path
 
-from ocs.ocs_validate import validate_and_normalize
-from ocs.yaml_loader import safe_load
+from ocd.ocd_validate import validate_and_normalize
+from ocd.yaml_loader import safe_load
 
 
 EXAMPLES_DIR = Path(__file__).resolve().parents[2] / "examples"
 
 VALID_EXPECTATIONS = {
-    "valid_shapeshifter.yaml": "introversion↔extroversion",
-    "valid_hivemind.yaml": "empathy↔sociopathy",
-    "valid_symbiote.yaml": "dominant↔persona",
-    "valid_fourthwall.yaml": "fourth↔wall_awareness",
+    "valid_shapeshifter.yaml": "introversion-extroversion",
+    "valid_hivemind.yaml": "empathy-sociopathy",
+    "valid_symbiote.yaml": "dominant-persona",
+    "valid_fourthwall.yaml": "fourth-wall_awareness",
 }
 
 INVALID_EXPECTATIONS = {

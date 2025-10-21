@@ -1,14 +1,14 @@
 ocd-t: 0
-ocs-version: "0.0.1"
+ocd-version: "0.0.1"
 {
-  ocs_version: "0.0.1",
+  ocd_version: "0.0.1",
   id: char-bruenor,
   names: { canon: "Bruenor Battlehammer" },
   identity: { kind: humanoid, species: Dwarf },
   personality: {
     summary: "Gruff but loyal dwarven king",
     traits: [
-      { name: "introversion↔extraversion", kind: bipolar, polarity: 0.2, intensity: 0.6 },
+      { name: "introversion-extraversion", kind: bipolar, polarity: 0.2, intensity: 0.6 },
       { name: "alcohol addiction", kind: scalar, value: 0.35 },
       { name: "pyromaniac", kind: flag, value: true },
     ],

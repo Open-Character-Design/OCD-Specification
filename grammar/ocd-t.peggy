@@ -7,7 +7,7 @@
       return name;
     }
 
-    if (name.includes('↔')) {
+    if (name.includes('-')) {
       return name;
     }
 
@@ -24,7 +24,7 @@
       return name;
     }
 
-    return `${left}↔${right}`;
+    return `${left}-${right}`;
   }
 
   function normalizeTraitEntry(entry, loc) {
@@ -132,18 +132,18 @@ HeaderBlock
       }
 
       let version;
-      if (Object.prototype.hasOwnProperty.call(headers, 'ocs-version')) {
-        const value = headers['ocs-version'];
+      if (Object.prototype.hasOwnProperty.call(headers, 'ocd-version')) {
+        const value = headers['ocd-version'];
         if (typeof value !== 'string') {
-          const loc = keyLocations.get('ocs-version') ?? location();
-          error('"ocs-version" header must be a string', loc);
+          const loc = keyLocations.get('ocd-version') ?? location();
+          error('"ocd-version" header must be a string', loc);
         }
         version = value;
       }
 
       const extras = Object.create(null);
       for (const [key, value] of Object.entries(headers)) {
-        if (key === 'ocd-t' || key === 'ocs-version') {
+        if (key === 'ocd-t' || key === 'ocd-version') {
           continue;
         }
         extras[key] = value;

@@ -97,7 +97,7 @@ function parseArgs(args: string[]): CliParseResult {
 }
 
 function printHelp(): void {
-  const scriptName = path.basename(process.argv[1] ?? 'ocs-validate');
+  const scriptName = path.basename(process.argv[1] ?? 'ocd-validate');
   console.log(`Usage: ${scriptName} [options] <path | ->`);
   console.log('');
   console.log('Validate and normalize an Open Character Specification document.');

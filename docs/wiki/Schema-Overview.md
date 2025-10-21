@@ -1,7 +1,7 @@
 ## Schema Overview (Core)
 
 Canonical: `docs/spec/schema-overview.md` (rendered: `https://eVirgil.github.io/OpenCharacter-Specification/spec/schema-overview/`)
-JSON Schemas: `spec/core.schema.json`, `spec/ocs-core-0.1.schema.json`
+JSON Schemas: `spec/core.schema.json`, `spec/ocd-core-0.1.schema.json`
 
 Focus:
 - Core entities and fields

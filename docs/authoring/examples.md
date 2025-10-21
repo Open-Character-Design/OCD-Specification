@@ -1,6 +1,6 @@
 # Examples Gallery
 
-Explore character examples from different genres, systems, and complexity levels. Each example demonstrates OCS features and best practices.
+Explore character examples from different genres, systems, and complexity levels. Each example demonstrates OCD features and best practices.
 
 ## Featured Characters
 
@@ -8,7 +8,7 @@ Explore character examples from different genres, systems, and complexity levels
 
 <div class="feature-card">
 
-### 🛡️ [Bruenor Battlehammer](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/bruenor.yaml)
+### 🛡️ [Bruenor Battlehammer](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/bruenor.yaml)
 
 **D&D Warrior-King**
 
@@ -16,13 +16,13 @@ A legendary dwarven fighter from Forgotten Realms, showcasing D&D 5e integration
 
 **Tags:** `dwarf`, `fighter`, `dnd5e`, `fantasy`, `warrior`
 
-[View Example →](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/bruenor.yaml)
+[View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/bruenor.yaml)
 
 </div>
 
 <div class="feature-card">
 
-### 🚀 [Commander Shepard](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/commander-shepard.yamll)
+### 🚀 [Commander Shepard](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/commander-shepard.yaml)
 
 **Sci-Fi Protagonist**
 
@@ -30,13 +30,13 @@ The iconic Mass Effect hero, demonstrating sci-fi character creation with futuri
 
 **Tags:** `human`, `soldier`, `sci-fi`, `space`, `hero`
 
-[View Example →](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/commander-shepard.yamll)
+[View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/commander-shepard.yaml)
 
 </div>
 
 <div class="feature-card">
 
-### 🎮 [Crash Bandicoot](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/crash-bandicoot.yaml)
+### 🎮 [Crash Bandicoot](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/crash-bandicoot.yaml)
 
 **Game Mascot**
 
@@ -44,13 +44,13 @@ A platformer hero showcasing how to represent video game characters with unique 
 
 **Tags:** `bandicoot`, `platformer`, `game`, `mascot`, `cartoon`
 
-[View Example →](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/crash-bandicoot.yaml)
+[View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/crash-bandicoot.yaml)
 
 </div>
 
 <div class="feature-card">
 
-### 🧙‍♀️ [Eve](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/eve.yaml)
+### 🧙‍♀️ [Eve](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/eve.yaml)
 
 **AI Assistant**
 
@@ -58,13 +58,13 @@ A helpful AI character demonstrating modern AI assistant capabilities with clear
 
 **Tags:** `ai`, `assistant`, `helpful`, `modern`, `virtual`
 
-[View Example →](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/eve.yaml)
+[View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/eve.yaml)
 
 </div>
 
 <div class="feature-card">
 
-### 🤖 [Guilty Spark](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/guilty-spark.yaml)
+### 🤖 [Guilty Spark](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/guilty-spark.yaml)
 
 **Sci-Fi AI**
 
@@ -72,13 +72,13 @@ A Halo AI construct showing how to represent artificial intelligence with comple
 
 **Tags:** `ai`, `construct`, `halo`, `sci-fi`, `villain`
 
-[View Example →](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/guilty-spark.yaml)
+[View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/guilty-spark.yaml)
 
 </div>
 
 <div class="feature-card">
 
-### 🐕 [Inuyasha](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/inuyasha.yaml)
+### 🐕 [Inuyasha](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/inuyasha.yaml)
 
 **Anime Character**
 
@@ -86,13 +86,13 @@ A half-demon from anime, showcasing how to represent characters with dual nature
 
 **Tags:** `half-demon`, `anime`, `fantasy`, `warrior`, `romance`
 
-[View Example →](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/inuyasha.yaml)
+[View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/inuyasha.yaml)
 
 </div>
 
 <div class="feature-card">
 
-### 💀 [Deadpool](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/deadpool.yaml)
+### 💀 [Deadpool](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/deadpool.yaml)
 
 **Anti-Hero**
 
@@ -100,13 +100,13 @@ The Merc with a Mouth, demonstrating how to represent chaotic characters with fo
 
 **Tags:** `mutant`, `anti-hero`, `comedy`, `marvel`, `chaotic`
 
-[View Example →](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/deadpool.yaml)
+[View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/deadpool.yaml)
 
 </div>
 
 <div class="feature-card">
 
-### 🎭 [Jake Sully](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/jake-sully.yaml)
+### 🎭 [Jake Sully](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/jake-sully.yaml)
 
 **Sci-Fi Protagonist**
 
@@ -114,7 +114,7 @@ Avatar's protagonist showing how to represent characters with body-swapping abil
 
 **Tags:** `human`, `avatar`, `sci-fi`, `environmental`, `hero`
 
-[View Example →](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/jake-sully.yaml)
+[View Example →](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/jake-sully.yaml)
 
 </div>
 
@@ -127,7 +127,7 @@ Avatar's protagonist showing how to represent characters with body-swapping abil
 Perfect for getting started:
 
 ```yaml title="minimal-template.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-template-minimal"
 names:
   canon: "Template Character"
@@ -145,7 +145,7 @@ meta:
 Full-featured template with all major blocks:
 
 ```yaml title="complete-template.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-template-complete"
 names:
   canon: "Complete Character"
@@ -169,7 +169,7 @@ appearance:
 personality:
   summary: "Brave, curious, and always ready for adventure."
   traits:
-    - name: "introversion↔extraversion"
+    - name: "introversion-extraversion"
       kind: "bipolar"
       polarity: 0.5
       intensity: 0.7
@@ -220,7 +220,7 @@ meta:
 
 #### The Noble Paladin
 ```yaml title="paladin-example.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-paladin-example"
 names:
   canon: "Sir Galahad"
@@ -229,7 +229,7 @@ identity:
   species: "Human"
 personality:
   traits:
-    - name: "selfish↔selfless"
+    - name: "selfish-selfless"
       kind: "bipolar"
       polarity: 0.9
       intensity: 0.9
@@ -245,7 +245,7 @@ x-dnd5e:
 
 #### The Mysterious Wizard
 ```yaml title="wizard-example.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-wizard-example"
 names:
   canon: "Gandalf"
@@ -254,7 +254,7 @@ identity:
   species: "Human"
 personality:
   traits:
-    - name: "intuition↔logic"
+    - name: "intuition-logic"
       kind: "bipolar"
       polarity: 0.7
       intensity: 0.8
@@ -272,7 +272,7 @@ x-dnd5e:
 
 #### The Space Marine
 ```yaml title="marine-example.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-marine-example"
 names:
   canon: "Sergeant Johnson"
@@ -281,7 +281,7 @@ identity:
   species: "Human"
 personality:
   traits:
-    - name: "serious↔playful"
+    - name: "serious-playful"
       kind: "bipolar"
       polarity: -0.3
       intensity: 0.8
@@ -299,7 +299,7 @@ x-sci-fi:
 
 #### The AI Companion
 ```yaml title="ai-example.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-ai-example"
 names:
   canon: "Cortana"
@@ -308,7 +308,7 @@ identity:
   species: "AI"
 personality:
   traits:
-    - name: "logic↔emotion"
+    - name: "logic-emotion"
       kind: "bipolar"
       polarity: 0.6
       intensity: 0.7
@@ -326,7 +326,7 @@ x-sci-fi:
 
 #### The Detective
 ```yaml title="detective-example.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-detective-example"
 names:
   canon: "Detective Sarah Chen"
@@ -335,7 +335,7 @@ identity:
   species: "Human"
 personality:
   traits:
-    - name: "intuition↔logic"
+    - name: "intuition-logic"
       kind: "bipolar"
       polarity: 0.4
       intensity: 0.8
@@ -353,7 +353,7 @@ x-modern:
 
 #### The Superhero
 ```yaml title="superhero-example.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-superhero-example"
 names:
   canon: "Captain Justice"
@@ -362,7 +362,7 @@ identity:
   species: "Human"
 personality:
   traits:
-    - name: "selfish↔selfless"
+    - name: "selfish-selfless"
       kind: "bipolar"
       polarity: 0.8
       intensity: 0.9
@@ -383,7 +383,7 @@ x-superhero:
 
 ### D&D 5e Integration
 
-See [Bruenor Battlehammer](https://github.com/eVirgil/OpenCharacter-Specification/blob/main/examples/bruenor.yaml) for a complete D&D 5e character with:
+See [Bruenor Battlehammer](https://github.com/Open-Character-Design/OCD-Specification/blob/main/examples/bruenor.yaml) for a complete D&D 5e character with:
 
 - Complete ability scores and modifiers
 - Spellcasting with known spells and slots
@@ -396,11 +396,11 @@ See [Bruenor Battlehammer](https://github.com/eVirgil/OpenCharacter-Specificatio
 Example of a custom game system extension:
 
 ```yaml title="custom-system-example.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-custom-example"
 names:
   canon: "Custom Hero"
-# ... standard OCS fields ...
+# ... standard OCD fields ...
 
 x-my-fantasy-rpg:
   system: "MyFantasyRPG"
@@ -430,7 +430,7 @@ x-my-fantasy-rpg:
 Demonstrates composite identity and complex relationships:
 
 ```yaml title="shapeshifter-example.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-shapeshifter-example"
 names:
   canon: "Mystique"
@@ -446,7 +446,7 @@ identity:
       exposure: "secondary"
 personality:
   traits:
-    - name: "honest↔deceptive"
+    - name: "honest-deceptive"
       kind: "bipolar"
       polarity: -0.7
       intensity: 0.8
@@ -465,7 +465,7 @@ capabilities:
 Shows how to represent collective consciousness:
 
 ```yaml title="hivemind-example.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-hivemind-example"
 names:
   canon: "The Collective"
@@ -481,7 +481,7 @@ identity:
       control_share: 0.4
 personality:
   traits:
-    - name: "individual↔collective"
+    - name: "individual-collective"
       kind: "bipolar"
       polarity: 0.9
       intensity: 0.9
@@ -499,7 +499,7 @@ capabilities:
 
 ### Valid Character
 ```yaml title="valid-example.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-valid-example"
 names:
   canon: "Valid Character"
@@ -520,7 +520,7 @@ meta:
 
 ### Character with Warnings
 ```yaml title="warning-example.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char_warning_example"  # Underscores will be normalized
 names:
   canon: "Warning Character"
@@ -555,27 +555,27 @@ identity:
 ```
 ❌ Validation failed
 🚨 2 errors:
-  - Missing required field: ocs_version
+  - Missing required field: ocd_version
   - Invalid identity kind: 'invalid-kind'
 ```
 
 ## Download Examples
 
-All examples are available in the [examples directory](https://github.com/eVirgil/OpenCharacter-Specification/tree/main/examples) of the OCS repository.
+All examples are available in the [examples directory](https://github.com/Open-Character-Design/OCD-Specification/tree/main/examples) of the OCD repository.
 
 ### Quick Download
 ```bash
 # Download all examples
-git clone https://github.com/eVirgil/OpenCharacter-Specification.git
+git clone https://github.com/Open-Character-Design/OCD-Specification.git
 cd OpenCharacter-Specification/examples
 
 # Validate all examples
-find . -name "*.yaml" -exec ocs-validate {} \;
+find . -name "*.yaml" -exec ocd-validate {} \;
 ```
 
 ### Individual Downloads
 - [Bruenor Battlehammer](https://raw.githubusercontent.com/eVirgil/OpenCharacter-Specification/main/examples/bruenor.yaml)
-- [Commander Shepard](https://raw.githubusercontent.com/eVirgil/OpenCharacter-Specification/main/examples/commander-shepard.yamll)
+- [Commander Shepard](https://raw.githubusercontent.com/eVirgil/OpenCharacter-Specification/main/examples/commander-shepard.yaml)
 - [Crash Bandicoot](https://raw.githubusercontent.com/eVirgil/OpenCharacter-Specification/main/examples/crash-bandicoot.yaml)
 - [Eve](https://raw.githubusercontent.com/eVirgil/OpenCharacter-Specification/main/examples/eve.yaml)
 
@@ -598,7 +598,7 @@ We welcome community contributions! To add your character example:
 
 ## What's Next?
 
-- **[Tutorial](tutorial/index.md)**: Learn to create characters step by step
-- **[Writing Guide](writing-ocs-files.md)**: Best practices for authoring
-- **[Specification](spec/schema-overview.md)**: Technical details
-- **[Integration](integration/python-validator.md)**: Use OCS in your applications
+- **[Tutorial](../tutorial/index.md)**: Learn to create characters step by step
+- **[Writing Guide](writing-ocd-files.md)**: Best practices for authoring
+- **[Specification](../spec/schema-overview.md)**: Technical details
+- **[Integration](../integration/python-validator.md)**: Use OCD in your applications

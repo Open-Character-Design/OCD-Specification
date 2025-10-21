@@ -1,10 +1,10 @@
 # Versioning & Roadmap
 
-The OpenCharacter Specification (OCS) uses semantic versioning to communicate stability and upgrade expectations. This page clarifies how version numbers are assigned, the roadmap to v1.0, and the release management process.
+The OpenCharacter Specification (OCD) uses semantic versioning to communicate stability and upgrade expectations. This page clarifies how version numbers are assigned, the roadmap to v1.0, and the release management process.
 
 ## Semantic Versioning
 
-- The `ocs_version` field follows `MAJOR.MINOR.PATCH` semantics.
+- The `ocd_version` field follows `MAJOR.MINOR.PATCH` semantics.
 - Patch releases contain backwards-compatible fixes to the schema, grammar, or validator guidance.
 - Minor releases may add optional fields or extension hooks but cannot remove or repurpose existing behavior.
 - Major releases may introduce breaking changes after the process outlined in the [Breaking Change Policy](./contributing-to-spec.md#breaking-change-policy).

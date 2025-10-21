@@ -2,7 +2,7 @@ from __future__ import annotations
 import re
 from typing import Any, Dict, List
 
-from .ocs_normalize import normalize_token
+from .ocd_normalize import normalize_token
 
 
 ASCII_CANON_RE = re.compile(r"^[A-Za-z0-9 _\-]+$")

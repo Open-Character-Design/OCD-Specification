@@ -1,15 +1,15 @@
-# Open Character Specification (OCS) – Legend & Adoption Guide v0.2
+# Open Character Specification (OCD) – Legend & Adoption Guide v0.2
 
 ## Purpose
 
-The OCS defines a **structured, portable character format** for human authors, AI systems, and machine validation. This guide explains the fields, vocabularies, scales, and extensibility model for adopting OCS in your own projects.
+The OCD defines a **structured, portable character format** for human authors, AI systems, and machine validation. This guide explains the fields, vocabularies, scales, and extensibility model for adopting OCD in your own projects.
 
 ---
 
 ## 1) Core Concepts
 
-* **OCS is data‑centric**: every character is a structured object with defined fields.
-* **Human + AI friendly**: readable as YAML/JSON or OCS‑T (compact textual grammar).
+* **OCD is data‑centric**: every character is a structured object with defined fields.
+* **Human + AI friendly**: readable as YAML/JSON or OCD‑T (compact textual grammar).
 * **Schema validated**: type and range checks ensure quality.
 * **Extensible**: any project‑specific or system‑specific block can be namespaced under `x-*`.
 * **Traits support three kinds**: bipolar (axes with polarity/intensity), scalar (single value with optional unit), and flag (boolean presence/absence).
@@ -18,9 +18,9 @@ The OCS defines a **structured, portable character format** for human authors, A
 
 ## 2) Required Fields
 
-Every valid OCS file must include:
+Every valid OCD file must include:
 
-* `ocs_version` – the schema version string.
+* `ocd_version` – the schema version string.
 * `names` – canonical and presentation names (`canon`, `display`, `aliases`).
 * `identity` – core descriptors (kind, species, age, etc.).
 * `personality` – core character psychology (summary, traits, values).
@@ -76,7 +76,7 @@ Defines **who/what** the character is.
 * `values` – array of guiding principles.
 * `conflicts` – internal/external tensions.
 
-**Normalization**: bipolar trait names accept `-`, `_`, or `↔`. Canonical form is `↔`.
+**Normalization**: bipolar trait names accept `-`, `_`, or `-`. Canonical form is `-`.
 
 ---
 
@@ -87,7 +87,7 @@ Defines **who/what** the character is.
 * `affiliations` – groups/orgs.
 * `relationships` – `{ target_ref, role, sentiment }`:
 
-  * `target_ref` – must be a valid OCS id or external URI.
+  * `target_ref` – must be a valid OCD id or external URI.
   * `sentiment` – float [-1, 1].
 * `narrative_hooks` – themes, arcs, roles.
 
@@ -205,7 +205,7 @@ Defines **how to portray** the character.
 ## 19) Quick Example
 
 ```yaml
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: char-bruenor
 names:
   canon: "Bruenor Battlehammer"
@@ -215,7 +215,7 @@ identity:
 personality:
   summary: "Gruff but loyal dwarven king"
   traits:
-    - name: "introversion↔extraversion"
+    - name: "introversion-extraversion"
       kind: bipolar
       polarity: 0.2
       intensity: 0.6
@@ -234,7 +234,7 @@ meta:
 
 ## 20) Legend Symbols
 
-* ↔ in trait names: bipolar spectrum dimension. Equivalent to `-` or `_` during parse.
+* - in trait names: bipolar spectrum dimension. Equivalent to `-` or `_` during parse.
 * `x-*`: extension namespace.
 * `{}`: object, `[]`: array.
 * Strings with sentences always quoted. Barewords only for enums/tags.

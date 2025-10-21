@@ -1,18 +1,18 @@
 # Operational Guidance for Conversational Agents
 
-Designing interactive agents with the Open Character Specification requires combining authored character data with runtime orchestration. This guide covers four operational pillars—prompt composition, memory synchronization, state management, and safety filtering—for three common deployment modes: AI agents, NPCs, and chatbots.
+Designing interactive agents with the Open Character Specification requires combining authored character data with runtime orchestration. This guide covers four operational pillars, prompt composition, memory synchronization, state management, and safety filtering, for three common deployment modes: AI agents, NPCs, and chatbots.
 
 ## Prompt Composition
 
 | Deployment | Recommended Strategy | Implementation Notes |
 |------------|----------------------|----------------------|
-| **AI Agents** | Blend canonical biography, current goals, and available tools into the system prompt. Attach current scene context and task briefs as user messages. | Serialize selected OCS sections (e.g., `background.biography`, `personality.traits`, `behavior.ai.behavior_model`) into templated snippets so the LLM always sees stable identity anchors. | 
-| **NPCs** | Use the OCS file to seed a dialogue state machine: the baseline persona powers greeting lines, while `behavior.improv_guidelines` maps to fallback utterances. | Keep prompts concise—strip metadata not needed for in-world dialogue, and project `state_dynamics` (mood, morale) into tone modifiers. |
+| **AI Agents** | Blend canonical biography, current goals, and available tools into the system prompt. Attach current scene context and task briefs as user messages. | Serialize selected OCD sections (e.g., `background.biography`, `personality.traits`, `behavior.ai.behavior_model`) into templated snippets so the LLM always sees stable identity anchors. | 
+| **NPCs** | Use the OCD file to seed a dialogue state machine: the baseline persona powers greeting lines, while `behavior.improv_guidelines` maps to fallback utterances. | Keep prompts concise, strip metadata not needed for in-world dialogue, and project `state_dynamics` (mood, morale) into tone modifiers. |
 | **Chatbots** | Combine safety preambles with `interaction_layer.preferred_modes` to tell the LLM how to respond in chat. Inject `meta_properties.target_audience` to tune register. | Cache the rendered prompt per session to avoid re-reading the full document on every turn; diff in only the user-visible deltas. |
 
 ## Memory Synchronization
 
-- **Shared Memory Store**: Mirror `state_dynamics`, `contextual_fit`, and any running quest data into a key-value store. When updates occur (e.g., morale drops), commit them back into the OCS-compatible structure so offline authoring tools stay in sync.
+- **Shared Memory Store**: Mirror `state_dynamics`, `contextual_fit`, and any running quest data into a key-value store. When updates occur (e.g., morale drops), commit them back into the OCD-compatible structure so offline authoring tools stay in sync.
 - **Observation Logging**: Capture each exchange as a `TranscriptEvent` (timestamp, speaker, summary). For agents with long-term memory, distill older turns into `background.timeline` style summaries to keep prompts lean.
 - **Cross-Agent Sync**: When multiple agents share a world, propagate changes through `relationships` references. An NPC learning about a player action should update their sentiment, which future prompts serialize automatically.
 
@@ -20,7 +20,7 @@ Designing interactive agents with the Open Character Specification requires comb
 
 ### AI Agents
 - Maintain an explicit finite-state machine keyed by `state_dynamics.status` (e.g., `planning`, `executing`, `cooldown`).
-- Surface `behavior.ai.safety.boundaries` as guard conditions—if a tool call would violate a boundary, suppress it and produce an apology response instead.
+- Surface `behavior.ai.safety.boundaries` as guard conditions, if a tool call would violate a boundary, suppress it and produce an apology response instead.
 - Persist tool outputs to `extras` so post-run audits can replay how the agent acted.
 
 ### NPCs
@@ -42,7 +42,7 @@ Designing interactive agents with the Open Character Specification requires comb
 
 ## Deployment Checklist
 
-- [ ] Validate the OCS document with the platform-specific validator before shipping prompts.
+- [ ] Validate the OCD document with the platform-specific validator before shipping prompts.
 - [ ] Load-test prompts with representative transcripts to ensure safety filters do not over-trigger.
 - [ ] Document your synchronization cadence so authors know when runtime state will be written back to source control.
 

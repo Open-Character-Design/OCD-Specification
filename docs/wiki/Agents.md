@@ -3,7 +3,7 @@
 Canonical: `docs/Agents.md` (rendered: `https://eVirgil.github.io/OpenCharacter-Specification/Agents/`)
 
 Contents:
-- Agent concepts within OCS ecosystem
+- Agent concepts within OCD ecosystem
 - Integration patterns with tools and runtimes
 
 

@@ -7,21 +7,21 @@ Quick start (from repo root):
 Python
 ```bash
 cd python
-pip install ocs
-python ../tools/ocs-validate.py ../examples/bruenor.yaml --print
+pip install ocd
+python ../tools/ocd-validate.py ../examples/bruenor.yaml --print
 ```
 
 Node.js
 ```bash
 cd node
-npm install @ocs-tools/validator
-npx @ocs-tools/validator ../examples/bruenor.yaml --print
+npm install @ocd-tools/validator
+npx @ocd-tools/validator ../examples/bruenor.yaml --print
 ```
 
 Explore:
 - Spec: `spec/core.schema.json`
 - Legend: `docs/spec/legend.md`
-- Grammar: `docs/spec/grammar-ocst.md`
+- Grammar: `docs/spec/grammar-ocd.md`
 - Examples: `examples/`
 
 Next:

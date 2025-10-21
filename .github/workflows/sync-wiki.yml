@@ -38,12 +38,12 @@ jobs:
           MAP[docs/getting-started.md]=Getting-Started.md
           MAP[docs/spec/schema-overview.md]=Schema-Overview.md
           MAP[docs/spec/trait-model.md]=Trait-Model.md
-          MAP[docs/spec/grammar-ocst.md]=Grammar-OCS-T.md
+          MAP[docs/spec/grammar-ocdt.md]=Grammar-OCD-T.md
           MAP[docs/reference/fields.md]=Reference-Fields.md
           MAP[docs/reference/vocabularies.md]=Reference-Vocabularies.md
           MAP[docs/reference/diagnostics.md]=Reference-Diagnostics.md
-          MAP[docs/authoring/ocst-authoring-guide.md]=Authoring-Guide.md
-          MAP[docs/authoring/writing-ocs-files.md]=Authoring-Guide.md
+          MAP[docs/authoring/ocdt-authoring-guide.md]=Authoring-Guide.md
+          MAP[docs/authoring/writing-ocd-files.md]=Authoring-Guide.md
           MAP[docs/authoring/examples.md]=Examples.md
           MAP[docs/faq.md]=FAQ.md
           MAP[docs/glossary.md]=Glossary.md

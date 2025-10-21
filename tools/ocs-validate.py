@@ -5,13 +5,13 @@ import sys
 from pathlib import Path
 
 sys.path.append(str(Path(__file__).resolve().parents[1] / "python" / "src"))
-from ocs.ocs_validate import validate_and_normalize  # type: ignore  # noqa: E402
-from ocs.yaml_loader import safe_load as load_yaml  # type: ignore  # noqa: E402
+from ocd.ocd_validate import validate_and_normalize  # type: ignore  # noqa: E402
+from ocd.yaml_loader import safe_load as load_yaml  # type: ignore  # noqa: E402
 
 
 def main() -> None:
     if len(sys.argv) < 2:
-        print("usage: ocs-validate <file.(yaml|json)> [--print]")
+        print("usage: ocd-validate <file.(yaml|json)> [--print]")
         raise SystemExit(2)
 
     path = sys.argv[1]

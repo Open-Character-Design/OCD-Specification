@@ -21,7 +21,7 @@ git push
 ```
 
 Pages included:
-- `Home.md`, `Getting-Started.md`, `Specification.md`, `Schema-Overview.md`, `Trait-Model.md`, `Grammar-OCS-T.md`
+- `Home.md`, `Getting-Started.md`, `Specification.md`, `Schema-Overview.md`, `Trait-Model.md`, `Grammar-OCD.md`
 - `Reference-Fields.md`, `Reference-Vocabularies.md`, `Reference-Diagnostics.md`
 - `Authoring-Guide.md`, `Examples.md`, `Validators.md`, `Integration-Node.md`, `Integration-Python.md`, `Agents.md`
 - `Legend.md`, `FAQ.md`, `Glossary.md`, `Changelog.md`, `Governance.md`, `Versioning-and-Roadmap.md`, `Contributing.md`, `License.md`

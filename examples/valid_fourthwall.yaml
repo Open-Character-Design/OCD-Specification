@@ -1,5 +1,5 @@
 kind: CharacterDefinition
-ocs_version: 0.9.0
+ocd_version: 0.9.0
 id: "eeeeeee1-eeee-eeee-eeee-eeeeeeeeeee1"
 slug: "script-savvy"
 names:
@@ -30,7 +30,7 @@ behavior:
 personality:
   traits:
     - kind: flag
-      key: "fourth↔wall_awareness"
+      key: "fourth-wall_awareness"
       value: true
 background:
   biography:

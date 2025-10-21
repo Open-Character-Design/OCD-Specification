@@ -5,8 +5,8 @@ import { fileURLToPath } from 'node:url';
 
 import { parse } from 'yaml';
 
-import { parseOcst } from './parser.js';
-import { stringifyOcst } from './serializer.js';
+import { parseOcdt } from './parser.js';
+import { stringifyOcdt } from './serializer.js';
 import { validateAndNormalize, type Warning } from './validate.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
@@ -179,10 +179,10 @@ async function runCrossFixtures(): Promise<number> {
     const yamlOutcome = await checkNormalizedExpectations(`${baseName}.yaml`, yamlDoc, expectedData, expectedWarnings);
     failures += yamlOutcome.failures;
 
-    let parsedOcst;
+    let parsedOcdt;
     try {
       const ocdSource = await readFile(ocdPath, 'utf8');
-      parsedOcst = parseOcst(ocdSource);
+      parsedOcdt = parseOcdt(ocdSource);
     } catch (err) {
       failures += 1;
       console.error(`❌ ${baseName}.ocd failed to parse:`, err instanceof Error ? err.message : String(err));
@@ -191,7 +191,7 @@ async function runCrossFixtures(): Promise<number> {
 
     const ocdOutcome = await checkNormalizedExpectations(
       `${baseName}.ocd`,
-      parsedOcst.body,
+      parsedOcdt.body,
       expectedData,
       expectedWarnings,
     );
@@ -199,9 +199,9 @@ async function runCrossFixtures(): Promise<number> {
 
     if (ocdOutcome.failures === 0) {
       try {
-        const canonicalText = stringifyOcst({ headers: parsedOcst.headers, body: expectedData });
-        const reparsed = parseOcst(canonicalText);
-        assert.deepStrictEqual(reparsed.headers, parsedOcst.headers);
+        const canonicalText = stringifyOcdt({ headers: parsedOcdt.headers, body: expectedData });
+        const reparsed = parseOcdt(canonicalText);
+        assert.deepStrictEqual(reparsed.headers, parsedOcdt.headers);
         assert.deepStrictEqual(reparsed.body, expectedData);
 
         const roundTripResult = await validateAndNormalize(reparsed.body);

@@ -1,10 +1,10 @@
 # Step 1: Your First Character
 
-In this step, you'll create your first OCS character and learn the fundamentals of validation.
+In this step, you'll create your first OCD character and learn the fundamentals of validation.
 
 ## What You'll Build
 
-A minimal but complete character definition that demonstrates the core OCS structure.
+A minimal but complete character definition that demonstrates the core OCD structure.
 
 ## Installation
 
@@ -13,13 +13,13 @@ First, let's install a validator so you can check your work:
 === "Python"
 
     ```bash
-    pip install ocs==1.0.0
+    pip install ocd
     ```
 
 === "Node.js"
 
     ```bash
-    npm install @ocs-tools/validator@1.0.0
+    npm install @ocd-tools/validator
     ```
 
 ## Creating Your First Character
@@ -27,7 +27,7 @@ First, let's install a validator so you can check your work:
 Create a new file called `alice.yaml` with this content:
 
 ```yaml title="alice.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-alice-adventurer"
 names:
   canon: "Alice"
@@ -46,7 +46,7 @@ Let's break down each field:
 
 ### Required Fields
 
-- **`ocs_version`**: The version of the OCS specification this character uses
+- **`ocd_version`**: The version of the OCD specification this character uses
 - **`id`**: A unique identifier for this character (use `char-` prefix)
 - **`names.canon`**: The character's canonical name
 - **`identity.kind`**: The type of entity (`humanoid`, `animal`, `construct`, etc.)
@@ -63,13 +63,13 @@ Now let's validate your character:
 === "Python"
 
     ```bash
-    ocs-validate alice.yaml
+    ocd-validate alice.yaml
     ```
 
 === "Node.js"
 
     ```bash
-    npx @ocs-tools/validator alice.yaml
+    npx @ocd-tools/validator alice.yaml
     ```
 
 You should see output like:
@@ -84,7 +84,7 @@ You should see output like:
 Let's enhance Alice with some additional details:
 
 ```yaml title="alice-enhanced.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-alice-adventurer"
 names:
   canon: "Alice"
@@ -143,7 +143,7 @@ meta:
 Run the validator again on your enhanced character:
 
 ```bash
-ocs-validate alice-enhanced.yaml
+ocd-validate alice-enhanced.yaml
 ```
 
 You should still see a successful validation. The validator will normalize some values (like converting tags to lowercase) but won't show warnings for valid optional fields.
@@ -158,15 +158,15 @@ Here are some common issues you might encounter:
 # This will fail validation
 names:
   canon: "Alice"
-# Missing ocs_version, id, identity, and meta.versioning
+# Missing ocd_version, id, identity, and meta.versioning
 ```
 
-**Error:** `Missing required field: ocs_version`
+**Error:** `Missing required field: ocd_version`
 
 ### Invalid Field Values
 
 ```yaml title="invalid-field-values.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-alice"
 names:
   canon: "Alice"
@@ -193,14 +193,14 @@ meta:
 
 ## What's Next?
 
-Congratulations! You've created your first OCS character. In the next step, you'll learn about the trait model and add personality traits to make Alice more interesting.
+Congratulations! You've created your first OCD character. In the next step, you'll learn about the trait model and add personality traits to make Alice more interesting.
 
 **Next:** [Step 2: Adding Personality](personality.md)
 
 ## Quick Reference
 
 ### Required Fields Checklist
-- [ ] `ocs_version`
+- [ ] `ocd_version`
 - [ ] `id` (with `char-` prefix)
 - [ ] `names.canon`
 - [ ] `identity.kind`

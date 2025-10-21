@@ -1,13 +1,13 @@
 ## Integration: Python
 
-Canonical: `python/README.md`, `python/src/ocs/`
+Canonical: `python/README.md`, `python/src/ocd/`
 Rendered docs: `https://eVirgil.github.io/OpenCharacter-Specification/integration/python-validator/`
 
 Quickstart:
 ```bash
 cd python
-pip install ocs
-python -m ocs --help
+pip install ocd
+python -m ocd --help
 ```
 
 Notes:

@@ -5,7 +5,7 @@ Rendered examples index in docs: `https://eVirgil.github.io/OpenCharacter-Specif
 
 Highlights:
 - Valid/invalid feature-focused YAMLs
-- Cross-fixtures with normalized JSON, OCST, and warnings
+- Cross-fixtures with normalized JSON, OCD, and warnings
 - Templates: `examples/templates/character-full.json`, `character-lite.json`
 
 Try:

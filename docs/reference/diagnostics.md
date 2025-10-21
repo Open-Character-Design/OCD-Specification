@@ -1,10 +1,10 @@
 # Diagnostics Reference
 
-Comprehensive reference for OCS validation diagnostics, warnings, and error messages.
+Comprehensive reference for OCD validation diagnostics, warnings, and error messages.
 
 ## Understanding Diagnostics
 
-OCS validators provide three types of feedback:
+OCD validators provide three types of feedback:
 
 - **✅ Success**: Character is valid with no issues
 - **⚠️ Warnings**: Suggestions for improvement (validation still succeeds)
@@ -22,7 +22,7 @@ OCS validators provide three types of feedback:
 ```yaml
 personality:
   traits:
-    - name: "violent↔pacifist"
+    - name: "violent-pacifist"
       polarity: 0.8  # Leans violent
 meta_properties:
   appropriateness:
@@ -180,11 +180,11 @@ id: "char_my_character"  # Normalized to "char-my-character"
 ```yaml
 personality:
   traits:
-    - name: "introversion-extraversion"  # Normalized to "introversion↔extraversion"
+    - name: "introversion-extraversion"  # Normalized to "introversion-extraversion"
 ```
 
 **How to Fix:**
-- Use `↔` separator for bipolar traits
+- Use `-` separator for bipolar traits
 - Update trait names to use standard format
 
 #### `NORMALIZED_TAGS`
@@ -229,7 +229,7 @@ state_dynamics:
 **Description:** Required field is missing.
 
 **Common Missing Fields:**
-- `ocs_version`
+- `ocd_version`
 - `id`
 - `names.canon`
 - `identity.kind`
@@ -262,7 +262,7 @@ meta:
 # Invalid trait polarity
 personality:
   traits:
-    - name: "introversion↔extraversion"
+    - name: "introversion-extraversion"
       polarity: 1.5  # Must be between -1 and 1
 ```
 
@@ -273,15 +273,15 @@ personality:
 
 #### `INVALID_SCHEMA_VERSION`
 **Severity:** Error  
-**Description:** OCS version is not supported.
+**Description:** OCD version is not supported.
 
 **Example:**
 ```yaml
-ocs_version: "99.99.99"  # Unsupported version
+ocd_version: "99.99.99"  # Unsupported version
 ```
 
 **How to Fix:**
-- Use supported OCS version: `"0.0.1"`
+- Use supported OCD version: `"0.0.1"`
 - Check validator compatibility
 - Update to latest version
 
@@ -333,7 +333,7 @@ meta:
 
 ### Pre-Validation Checklist
 - [ ] All required fields present
-- [ ] Valid OCS version specified
+- [ ] Valid OCD version specified
 - [ ] Proper timestamp format
 - [ ] Valid enum values
 - [ ] Trait values within ranges
@@ -357,7 +357,7 @@ meta:
 1. **Use Standard Formats**
    - Hyphenated IDs: `"char-alice-adventurer"`
    - ISO 8601 timestamps: `"2024-01-01T00:00:00Z"`
-   - Standard trait names: `"introversion↔extraversion"`
+   - Standard trait names: `"introversion-extraversion"`
 
 2. **Complete Character Information**
    - Add skill tags for categorization
@@ -390,18 +390,18 @@ meta:
 ### Command Line Validation
 ```bash
 # Basic validation
-ocs-validate character.yaml
+ocd-validate character.yaml
 
 # With warnings as errors
-ocs-validate character.yaml --warnings-as-errors
+ocd-validate character.yaml --warnings-as-errors
 
 # Print normalized output
-ocs-validate character.yaml --print
+ocd-validate character.yaml --print
 ```
 
 ### Programmatic Validation
 ```python
-from ocs.ocs_validate import validate_and_normalize
+from ocd.ocd_validate import validate_and_normalize
 
 result = validate_and_normalize(document)
 if result["ok"]:
@@ -414,10 +414,10 @@ else:
 ### Batch Validation
 ```bash
 # Validate all characters
-find . -name "*.yaml" -exec ocs-validate {} \;
+find . -name "*.yaml" -exec ocd-validate {} \;
 
 # Validate with error on warnings
-find . -name "*.yaml" -exec ocs-validate {} --warnings-as-errors \;
+find . -name "*.yaml" -exec ocd-validate {} --warnings-as-errors \;
 ```
 
 ## Troubleshooting Common Issues
@@ -445,7 +445,7 @@ find . -name "*.yaml" -exec ocs-validate {} --warnings-as-errors \;
 ## Quick Reference
 
 ### Required Fields
-- `ocs_version`, `id`, `names.canon`
+- `ocd_version`, `id`, `names.canon`
 - `identity.kind`, `identity.species`
 - `meta.versioning.created_at`, `meta.versioning.last_modified`
 
@@ -463,11 +463,11 @@ find . -name "*.yaml" -exec ocs-validate {} --warnings-as-errors \;
 ### Validation Commands
 ```bash
 # Basic validation
-ocs-validate character.yaml
+ocd-validate character.yaml
 
 # Strict validation
-ocs-validate character.yaml --warnings-as-errors
+ocd-validate character.yaml --warnings-as-errors
 
 # Normalized output
-ocs-validate character.yaml --print
+ocd-validate character.yaml --print
 ```

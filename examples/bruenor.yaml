@@ -1,4 +1,4 @@
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-bruenor-battlehammer"
 names:
   canon: "Bruenor Battlehammer"
@@ -29,13 +29,13 @@ personality:
   summary: "Gruff, stubborn, fiercely loyal; embodies dwarven honor and leadership."
   archetype: "warlord-king / loyal father figure"
   traits:
-    - name: "introversion↔extraversion"
+    - name: "introversion-extraversion"
       polarity: 0.2
       intensity: 0.6
-    - name: "cooperative↔competitive"
+    - name: "cooperative-competitive"
       polarity: 0.7
       intensity: 0.8
-    - name: "serious↔playful"
+    - name: "serious-playful"
       polarity: -0.5
       intensity: 0.7
   quirks: ["calls companions by nicknames", "bellows when frustrated", "fond of dwarven ale"]
@@ -56,7 +56,7 @@ background:
     - at: "maturity"
       event: "Adopted Catti-brie after her parents’ death."
     - at: "later"
-      event: "Befriends Drizzt, Wulfgar, Regis — the Companions of the Hall."
+      event: "Befriends Drizzt, Wulfgar, Regis ,  the Companions of the Hall."
     - at: "climactic arc"
       event: "Leads reclaiming of Mithral Hall from evil forces."
   affiliations: ["Battlehammer Clan", "Companions of the Hall"]
@@ -180,7 +180,7 @@ x-dnd5e:
   race: "Shield Dwarf (Mountain Dwarf)"
   class: "Fighter (Battle Master)"
   level: 12
-  background: "Noble (Clan Leader) — secondary: Guild Artisan (Smith)"
+  background: "Noble (Clan Leader) ,  secondary: Guild Artisan (Smith)"
   proficiency_bonus: +4
 
   ability_scores:
@@ -228,7 +228,7 @@ x-dnd5e:
       - "Indomitable (2/long rest)"
       - "Battle Master Maneuvers (see below)"
     background:
-      - "Position of Privilege (Noble) — audience with nobility, social sway"
+      - "Position of Privilege (Noble) ,  audience with nobility, social sway"
     feats:
       - "Shield Master"
       - "Tough"

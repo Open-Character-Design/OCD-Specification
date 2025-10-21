@@ -1,2 +1,2 @@
 # Examples
-Round-trippable OCS examples in YAML and OCS-T. Use them for validator tests.
+Round-trippable OCD examples in YAML and OCD-T. Use them for validator tests.

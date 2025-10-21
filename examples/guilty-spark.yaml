@@ -1,4 +1,4 @@
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-343-guilty-spark"
 names:
   canon: "343 Guilty Spark"
@@ -28,13 +28,13 @@ personality:
   summary: "Cheerfully clinical AI, detached from human morality."
   archetype: "trickster / unreliable guide"
   traits:
-    - name: "introversion↔extraversion"
+    - name: "introversion-extraversion"
       polarity: -0.3
       intensity: 0.8
-    - name: "cooperative↔competitive"
+    - name: "cooperative-competitive"
       polarity: 0.5
       intensity: 0.7
-    - name: "serious↔playful"
+    - name: "serious-playful"
       polarity: 0.4
       intensity: 0.6
   quirks: ["giggles during ominous statements", "obsessed with protocol"]
@@ -131,7 +131,7 @@ meta_properties:
     violence: "clinical descriptions, non-graphic"
     sexuality: "none"
     language: "formal, clean"
-    cultural_sensitivity: ["avoid caricature of AI as 'mad robot' cliché — highlight alienness"]
+    cultural_sensitivity: ["avoid caricature of AI as 'mad robot' cliché ,  highlight alienness"]
   content_ratings:
     - system: "ESRB"
       rating: "T"

@@ -1,6 +1,6 @@
 # Step 2: Adding Personality
 
-In this step, you'll learn about OCS's powerful trait model and add personality traits to your character.
+In this step, you'll learn about OCD's powerful trait model and add personality traits to your character.
 
 ## What You'll Build
 
@@ -8,10 +8,10 @@ A character with detailed personality traits using bipolar axes, scalar values, 
 
 ## Understanding the Trait Model
 
-OCS supports three types of traits:
+OCD supports three types of traits:
 
 ### Bipolar Traits
-Traits that exist on a spectrum between two opposites, like `introversion↔extraversion`.
+Traits that exist on a spectrum between two opposites, like `introversion-extraversion`.
 
 ### Scalar Traits
 Single-dimension traits measured from 0 to 1, like `combat-readiness` or `empathy`.
@@ -24,7 +24,7 @@ Binary on/off traits, like `psionic` or `licensed-medic`.
 Let's enhance Alice with personality traits:
 
 ```yaml title="alice-personality.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-alice-adventurer"
 names:
   canon: "Alice"
@@ -49,15 +49,15 @@ personality:
   summary: "Brave, curious, and always ready for adventure."
   traits:
     # Bipolar traits - Alice leans toward extraversion and cooperation
-    - name: "introversion↔extraversion"
+    - name: "introversion-extraversion"
       kind: "bipolar"
       polarity: 0.7
       intensity: 0.8
-    - name: "competitive↔cooperative"
+    - name: "competitive-cooperative"
       kind: "bipolar"
       polarity: 0.6
       intensity: 0.7
-    - name: "serious↔playful"
+    - name: "serious-playful"
       kind: "bipolar"
       polarity: 0.3
       intensity: 0.6
@@ -120,7 +120,7 @@ Bipolar traits use two values:
   - `1` = trait is very prominent
 
 !!! tip "Reading Bipolar Traits"
-    Alice's `introversion↔extraversion: polarity 0.7, intensity 0.8` means she's quite extraverted (0.7 toward extraversion) and this trait is very prominent in her personality (0.8 intensity).
+    Alice's `introversion-extraversion: polarity 0.7, intensity 0.8` means she's quite extraverted (0.7 toward extraversion) and this trait is very prominent in her personality (0.8 intensity).
 
 ### Scalar Traits
 
@@ -141,12 +141,12 @@ Flag traits are simple boolean values:
 Run the validator on your enhanced character:
 
 ```bash
-ocs-validate alice-personality.yaml
+ocd-validate alice-personality.yaml
 ```
 
 The validator will normalize trait names and values. For example:
 
-- Bipolar trait separators are normalized to `↔`
+- Bipolar trait separators are normalized to `-`
 - Trait names are converted to lowercase
 - Values are validated to be within correct ranges
 
@@ -156,11 +156,11 @@ The validator will normalize trait names and values. For example:
 
 ```yaml
 traits:
-  - name: "selfish↔selfless"
+  - name: "selfish-selfless"
     kind: "bipolar"
     polarity: 0.8
     intensity: 0.9
-  - name: "cowardly↔brave"
+  - name: "cowardly-brave"
     kind: "bipolar"
     polarity: 0.9
     intensity: 0.8
@@ -173,7 +173,7 @@ traits:
 
 ```yaml
 traits:
-  - name: "intuition↔logic"
+  - name: "intuition-logic"
     kind: "bipolar"
     polarity: 0.7
     intensity: 0.8
@@ -189,11 +189,11 @@ traits:
 
 ```yaml
 traits:
-  - name: "serious↔playful"
+  - name: "serious-playful"
     kind: "bipolar"
     polarity: 0.8
     intensity: 0.9
-  - name: "honest↔deceptive"
+  - name: "honest-deceptive"
     kind: "bipolar"
     polarity: -0.6
     intensity: 0.7
@@ -243,13 +243,13 @@ values: ["honor", "family", "justice", "freedom"]
 
 **Invalid polarity range:**
 ```yaml
-- name: "introversion↔extraversion"
+- name: "introversion-extraversion"
   polarity: 1.5  # Error: must be between -1 and 1
 ```
 
 **Invalid intensity range:**
 ```yaml
-- name: "introversion↔extraversion"
+- name: "introversion-extraversion"
   intensity: 2.0  # Error: must be between 0 and 1
 ```
 
@@ -273,13 +273,13 @@ Great! You've added personality traits to Alice. In the next step, you'll learn 
 - **Flag**: `value: true/false`
 
 ### Common Bipolar Axes
-- `introversion↔extraversion`
-- `competitive↔cooperative`
-- `serious↔playful`
-- `selfish↔selfless`
-- `cowardly↔brave`
-- `intuition↔logic`
-- `honest↔deceptive`
+- `introversion-extraversion`
+- `competitive-cooperative`
+- `serious-playful`
+- `selfish-selfless`
+- `cowardly-brave`
+- `intuition-logic`
+- `honest-deceptive`
 
 ### Common Scalar Traits
 - `combat-readiness`

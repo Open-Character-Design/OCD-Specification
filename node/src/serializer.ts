@@ -1,4 +1,4 @@
-import type { OcstHeaders, OcstParseResult } from './parser.js';
+import type { OcdtHeaders, OcdtParseResult } from './parser.js';
 
 type JsonValue = string | number | boolean | null | JsonValue[] | { [key: string]: JsonValue };
 
@@ -20,11 +20,11 @@ function formatHeaderValue(value: HeaderValue): string {
   return JSON.stringify(value);
 }
 
-function serializeHeaders(headers: OcstHeaders): string {
+function serializeHeaders(headers: OcdtHeaders): string {
   const lines: string[] = [`ocd-t: ${headers.revision}`];
 
   if (headers.version !== undefined) {
-    lines.push(`ocs-version: ${JSON.stringify(headers.version)}`);
+    lines.push(`ocd-version: ${JSON.stringify(headers.version)}`);
   }
 
   if (headers.extras) {
@@ -55,7 +55,7 @@ function sortObjectKeys(value: JsonValue): JsonValue {
   return value;
 }
 
-export function stringifyOcst(doc: OcstParseResult): string {
+export function stringifyOcdt(doc: OcdtParseResult): string {
   const headerBlock = serializeHeaders(doc.headers);
   const normalizedBody = sortObjectKeys(doc.body as JsonValue);
   const bodyBlock = JSON.stringify(normalizedBody, null, 2);

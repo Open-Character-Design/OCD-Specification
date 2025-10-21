@@ -1,12 +1,13 @@
+
+## Open Character Specification
+
 <div class="hero-section">
-
-# Open Character Specification
-
-**A structured, portable format for defining characters across games, film/TV, books, and AI role-play.**
+A structured, portable format for defining characters across games, film/TV, books, and AI role-play.
+</div>
 
 Transform your character development workflow with a unified specification that works everywhere.
 
-</div>
+[Get Started Now](getting-started.md){ .md-button .md-button--primary }
 
 ## Quick Start
 
@@ -15,78 +16,134 @@ Get up and running in minutes with our validators:
 === "Python"
 
     ```bash
-    pip install ocs==1.0.0
-    ocs-validate examples/bruenor.yaml --print
+    pip install ocd
+    ocd-validate examples/bruenor.yaml --print
     ```
 
 === "Node.js"
 
     ```bash
-    npm install @ocs-tools/validator@1.0.0
-    npx @ocs-tools/validator examples/bruenor.yaml --print
+    npm install @ocd-tools/validator
+    npx @ocd-tools/validator examples/bruenor.yaml --print
     ```
 
-## Why OCS?
+## Why OCD?
 
 <div class="features-grid">
 
 <div class="feature-card">
 
-<span class="emoji">🎭</span>
-
-### Multi-Genre Support
+🌐 **Multi-Genre Support**
 
 Works across fantasy, sci-fi, modern, and any genre. Define characters for games, AI platforms, and media with consistent structure.
 
+*Perfect for: Game developers, writers, AI developers*
+
 </div>
 
 <div class="feature-card">
 
-<span class="emoji">🔧</span>
-
-### System Integration
+⚙️ **System Integration**
 
 Built-in support for D&D 5e, custom game systems, and AI platforms. Extensible with `x-*` namespaces for any framework.
 
+*Perfect for: Technical teams, system integrators*
+
 </div>
 
 <div class="feature-card">
 
-<span class="emoji">📝</span>
-
-### Author-Friendly Formats
+✏️ **Author-Friendly Formats**
 
 Choose from YAML, JSON, or OCD-T (our concise textual format). All formats validate to the same schema.
 
+*Perfect for: Writers, artists, content creators*
+
 </div>
 
 <div class="feature-card">
 
-<span class="emoji">✅</span>
-
-### Built-in Validation
+✅ **Built-in Validation**
 
 Python and JavaScript validators with normalization, linting, and comprehensive diagnostics. Catch issues before deployment.
 
-</div>
-
-<div class="feature-card">
-
-<span class="emoji">🔄</span>
-
-### Portable & Interoperable
-
-Characters work across platforms. Export from your game, import to AI, share with collaborators—all with the same format.
+*Perfect for: Developers, quality assurance teams*
 
 </div>
 
 <div class="feature-card">
 
-<span class="emoji">🎯</span>
+🔗 **Portable & Interoperable**
 
-### Production Ready
+Characters work across platforms. Export from your game, import to AI, share with collaborators, all with the same format.
+
+*Perfect for: Cross-platform teams, collaborative projects*
+
+</div>
+
+<div class="feature-card">
+
+🏭 **Production Ready**
 
 Used in production by game studios, AI platforms, and content creators. Battle-tested with comprehensive tooling.
+
+*Perfect for: Professional studios, enterprise teams*
+
+</div>
+
+</div>
+
+## Use Cases
+
+Transform your creative workflow with OCD's structured approach to character design across different applications and industries.
+
+<div class="features-grid">
+
+<div class="feature-card">
+
+### 🎭 [Creative Applications](use-cases/creative.md)
+
+**Character Design Framework & Worldbuilding**
+
+Transform your creative process with structured character development that works across any medium. From concept art to final production, maintain consistency and enable true creative collaboration.
+
+[Explore Creative Use Cases →](use-cases/creative.md)
+
+</div>
+
+<div class="feature-card">
+
+### ⚙️ [Technical Applications](use-cases/technical.md)
+
+**Metadata Management & AI Integration**
+
+Build robust character systems with OCD's technical capabilities. Perfect for procedural generation, AI training datasets, API integration, and version control workflows.
+
+[Explore Technical Use Cases →](use-cases/technical.md)
+
+</div>
+
+<div class="feature-card">
+
+### 🎮 [Interactive & Storytelling](use-cases/interactive.md)
+
+**Game Engines & AI-Driven Experiences**
+
+Create immersive interactive experiences with OCD-powered characters. From game engines to AI NPCs, bring your characters to life in digital worlds.
+
+[Explore Interactive Use Cases →](use-cases/interactive.md)
+
+</div>
+
+<div class="feature-card">
+
+### 🌐 [Community & Open Source](use-cases/community.md)
+
+**Collaboration & Cross-Media Adaptation**
+
+Join the open creative ecosystem. Share characters, collaborate across teams, and adapt content seamlessly across different media and platforms.
+
+[Explore Community Use Cases →](use-cases/community.md)
 
 </div>
 
@@ -94,10 +151,10 @@ Used in production by game studios, AI platforms, and content creators. Battle-t
 
 ## Your First Character
 
-Here's a minimal OCS character to get you started:
+Here's a minimal OCD character to get you started:
 
 ```yaml title="my-character.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "my-first-character"
 names:
   canon: "Alice"
@@ -113,7 +170,7 @@ meta:
 ```
 
 !!! tip "Try It Now"
-    Save this as `my-character.yaml` and run `ocs-validate my-character.yaml` to see it in action!
+    Save this as `my-character.yaml` and run `ocd-validate my-character.yaml` to see it in action!
 
 ## What's Next?
 
@@ -121,7 +178,7 @@ meta:
 
 <div class="feature-card">
 
-### 🚀 [Get Started](getting-started.md)
+🚀 [Get Started](getting-started.md)
 
 Install validators, create your first character, and understand the basics.
 
@@ -129,15 +186,15 @@ Install validators, create your first character, and understand the basics.
 
 <div class="feature-card">
 
-### 📚 [Browse Examples](authoring/examples.md)
+📖 [Browse Examples](authoring/examples.md)
 
-Explore character examples from D&D warriors to sci-fi heroes. See OCS in action.
+Explore character examples from D&D warriors to sci-fi heroes. See OCD in action.
 
 </div>
 
 <div class="feature-card">
 
-### 📖 [Read the Spec](spec/schema-overview.md)
+📝 [Read the Spec](spec/schema-overview.md)
 
 Deep dive into the specification. Understand blocks, traits, and validation rules.
 
@@ -145,9 +202,9 @@ Deep dive into the specification. Understand blocks, traits, and validation rule
 
 <div class="feature-card">
 
-### 🛠️ [Integration Guide](integration/python-validator.md)
+🔌 [Integration Guide](integration/python-validator.md)
 
-Integrate OCS into your applications with our Python and JavaScript validators.
+Integrate OCD into your applications with our Python and JavaScript validators.
 
 </div>
 
@@ -156,9 +213,9 @@ Integrate OCS into your applications with our Python and JavaScript validators.
 ## Community
 
 - **GitHub**: [OpenCharacter-Specification](https://github.com/eVirgil/OpenCharacter-Specification)
-- **Issues**: Report bugs or request features
-- **Discussions**: Ask questions and share examples
-- **Contributing**: Help improve the specification
+- **Issues**: [Report bugs or request features](https://github.com/eVirgil/OpenCharacter-Specification/issues)
+- **Discussions**: [Ask questions and share examples](https://github.com/eVirgil/OpenCharacter-Specification/discussions)
+- **Contributing**: [Help improve the specification](governance/contributing-to-spec.md)
 
 !!! note "Open Source"
-    OCS is open source under Apache 2.0 (code) and CC-BY-4.0 (specification). Contributions welcome!
+    OCD is open source under Apache 2.0 (code) and CC-BY-4.0 (specification). Contributions welcome!

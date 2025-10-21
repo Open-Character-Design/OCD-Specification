@@ -102,7 +102,7 @@ export interface Meta {
 
 export interface CharacterDefinition {
   kind: 'CharacterDefinition';
-  ocs_version: string;
+  ocd_version: string;
   $schema?: string;
   $id?: string;
   id: UUID;
@@ -157,7 +157,7 @@ export interface InstanceState {
 
 export interface CharacterInstance {
   kind: 'CharacterInstance';
-  ocs_version: string;
+  ocd_version: string;
   $schema?: string;
   $id?: string;
   instance_id: UUID;

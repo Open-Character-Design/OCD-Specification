@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from ocs.ocs_lint import lint
+from ocd.ocd_lint import lint
 
 
 def extract_codes(warnings):

@@ -1,16 +1,73 @@
 # FAQ
 
-Frequently asked questions about OCS (Open Character Specification).
+Frequently asked questions about OCD (Open Character Specification).
+
+## Use Case Questions
+
+### When should I use OCD?
+
+OCD is perfect for:
+
+- **Character-driven projects** that need consistency across multiple mediums
+- **Collaborative teams** working on shared character universes
+- **AI applications** that need structured character data for training or interaction
+- **Game development** requiring rich, portable character systems
+- **Cross-media projects** where characters appear in multiple formats
+- **Educational programs** teaching systematic character design
+
+### What types of projects benefit most from OCD?
+
+**High-value use cases:**
+- **Game Studios**: Consistent character development across multiple games
+- **AI Platforms**: Training data for character-driven AI systems
+- **Animation Studios**: Character consistency across different productions
+- **Educational Institutions**: Teaching structured character design
+- **Open Source Projects**: Building shared character libraries
+- **Transmedia IP**: Characters that appear across multiple media
+
+### How does OCD compare to other character formats?
+
+**OCD vs. proprietary formats:**
+- **Open source** vs. locked-in proprietary systems
+- **Cross-platform** vs. single-platform solutions
+- **Extensible** vs. rigid, fixed schemas
+- **Community-driven** vs. vendor-controlled development
+
+**OCD vs. unstructured approaches:**
+- **Validated** vs. error-prone manual processes
+- **Searchable** vs. scattered notes and documents
+- **Version controlled** vs. no change tracking
+- **Collaborative** vs. single-person workflows
+
+### Can OCD handle complex character relationships?
+
+Yes! OCD supports sophisticated relationship modeling:
+
+- **Character-to-character relationships** with sentiment and role tracking
+- **Faction and organization memberships** with hierarchical structures
+- **Timeline-based relationships** that evolve over time
+- **Cross-reference validation** to ensure relationship consistency
+- **Relationship analytics** for understanding character networks
+
+### Is OCD suitable for AI training data?
+
+Absolutely! OCD is designed with AI applications in mind:
+
+- **Structured data** perfect for machine learning
+- **Attribution tracking** for ethical AI training
+- **Validation** ensures data quality
+- **Extensibility** supports custom AI training needs
+- **Community datasets** for collaborative AI development
 
 ## General Questions
 
-### What is OCS?
+### What is OCD?
 
-OCS (Open Character Specification) is a structured, portable format for defining characters across games, film/TV, books, and AI role-play. It provides a unified way to represent character data that works across different platforms and systems.
+OCD (Open Character Specification) is a structured, portable format for defining characters across games, film/TV, books, and AI role-play. It provides a unified way to represent character data that works across different platforms and systems.
 
-### Why should I use OCS?
+### Why should I use OCD?
 
-OCS offers several benefits:
+OCD offers several benefits:
 
 - **Portability**: Characters work across games, AI platforms, and media
 - **Consistency**: Standardized structure ensures reliable character representation
@@ -18,9 +75,9 @@ OCS offers several benefits:
 - **Extensibility**: Support for custom game systems via extension blocks
 - **Interoperability**: Easy to convert between different platforms
 
-### Is OCS free to use?
+### Is OCD free to use?
 
-Yes! OCS is open source:
+Yes! OCD is open source:
 - **Code**: Licensed under Apache 2.0
 - **Specification**: Licensed under CC-BY-4.0
 - **Free for commercial and personal use**
@@ -59,7 +116,7 @@ Yes! Both Python and JavaScript validators provide APIs:
 === "Python"
 
     ```python
-    from ocs.ocs_validate import validate_and_normalize
+    from ocd.ocd_validate import validate_and_normalize
     
     result = validate_and_normalize(document)
     if result["ok"]:
@@ -71,7 +128,7 @@ Yes! Both Python and JavaScript validators provide APIs:
 === "JavaScript"
 
     ```javascript
-    import { validateAndNormalize } from '@ocs-tools/validator';
+    import { validateAndNormalize } from '@ocd-tools/validator';
     
     const result = validateAndNormalize(document);
     if (result.ok) {
@@ -85,7 +142,7 @@ Yes! Both Python and JavaScript validators provide APIs:
 
 Common validation issues:
 
-- **Missing required fields**: `ocs_version`, `id`, `names.canon`, etc.
+- **Missing required fields**: `ocd_version`, `id`, `names.canon`, etc.
 - **Invalid field values**: Wrong identity kinds, malformed timestamps
 - **Unresolved references**: `target_ref` pointing to non-existent characters
 - **Content rating conflicts**: Traits contradicting appropriateness ratings
@@ -107,7 +164,7 @@ The validator will check that referenced characters exist.
 
 ## Integration Questions
 
-### How do I integrate OCS with my AI platform?
+### How do I integrate OCD with my AI platform?
 
 See the [Agents & Runtime guide](integration/agents.md) for patterns including:
 - LangChain integration
@@ -115,9 +172,9 @@ See the [Agents & Runtime guide](integration/agents.md) for patterns including:
 - Runtime orchestration
 - Memory management
 
-### Can I use OCS with existing game systems?
+### Can I use OCD with existing game systems?
 
-Yes! OCS supports popular systems:
+Yes! OCD supports popular systems:
 - **D&D 5e**: Via `x-dnd5e` extension
 - **Pathfinder**: Via `x-pf2e` extension
 - **Custom systems**: Create your own `x-*` extensions
@@ -127,7 +184,7 @@ Yes! OCS supports popular systems:
 Conversion depends on your source format:
 
 1. **From JSON**: Direct mapping with field translation
-2. **From XML**: Parse and restructure to OCS format
+2. **From XML**: Parse and restructure to OCD format
 3. **From proprietary**: Create mapping rules for your specific format
 
 ### Is there a character database or registry?
@@ -164,7 +221,7 @@ Use standardized trait names for consistency:
 
 ```yaml
 # Good
-- name: "introversion↔extraversion"
+- name: "introversion-extraversion"
 - name: "combat-readiness"
 
 # Avoid
@@ -190,7 +247,7 @@ names:
 ### What does normalization do?
 
 The validator normalizes:
-- **Trait names**: Standardizes separators (`↔`)
+- **Trait names**: Standardizes separators (`-`)
 - **Tags**: Lowercases and deduplicates
 - **Slugs**: Normalizes separators
 - **Timestamps**: Ensures ISO 8601 format
@@ -200,7 +257,7 @@ The validator normalizes:
 Use the `--warnings-as-errors` flag:
 
 ```bash
-ocs-validate character.yaml --warnings-as-errors
+ocd-validate character.yaml --warnings-as-errors
 ```
 
 ### Can I validate multiple files at once?
@@ -209,10 +266,10 @@ Yes! Use shell commands:
 
 ```bash
 # Validate all YAML files
-find . -name "*.yaml" -exec ocs-validate {} \;
+find . -name "*.yaml" -exec ocd-validate {} \;
 
 # Validate with error on warnings
-find . -name "*.yaml" -exec ocs-validate {} --warnings-as-errors \;
+find . -name "*.yaml" -exec ocd-validate {} --warnings-as-errors \;
 ```
 
 ### What's the difference between errors and warnings?
@@ -239,7 +296,7 @@ x-my-system:
 
 ### Can I validate extension data?
 
-OCS validators don't validate extension blocks (they're system-specific). Each game system would need its own validator for extension data.
+OCD validators don't validate extension blocks (they're system-specific). Each game system would need its own validator for extension data.
 
 ### How do I share extensions with the community?
 
@@ -288,7 +345,7 @@ created_at: "2024-01-01"
 
 ### The validator is too strict
 
-OCS validation is designed to catch common issues. If you need to bypass validation:
+OCD validation is designed to catch common issues. If you need to bypass validation:
 
 1. **For development**: Use `--format` to force parsing
 2. **For production**: Fix the validation issues
@@ -303,7 +360,7 @@ OCS validation is designed to catch common issues. If you need to bypass validat
 3. **Community**: Ask on [GitHub Discussions](https://github.com/eVirgil/OpenCharacter-Specification/discussions)
 4. **Issues**: Report bugs on [GitHub Issues](https://github.com/eVirgil/OpenCharacter-Specification/issues)
 
-### How do I contribute to OCS?
+### How do I contribute to OCD?
 
 See the [Contributing guide](governance/contributing-to-spec.md) for:
 - Code contributions
@@ -328,4 +385,4 @@ If you don't see your question here:
 3. **Ask on Discussions** for community help
 4. **Create an Issue** for bugs or feature requests
 
-We're here to help make OCS work for your use case!
+We're here to help make OCD work for your use case!

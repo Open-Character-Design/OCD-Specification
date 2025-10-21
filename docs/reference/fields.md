@@ -1,6 +1,6 @@
 # Field Reference
 
-Comprehensive reference for all OCS fields, types, and constraints. See `spec/core.schema.json` for normative validation rules.
+Comprehensive reference for all OCD fields, types, and constraints. See `spec/core.schema.json` for normative validation rules.
 
 ## Core Fields
 
@@ -8,7 +8,7 @@ Comprehensive reference for all OCS fields, types, and constraints. See `spec/co
 
 | Field | Type | Description | Example |
 |-------|------|-------------|---------|
-| `ocs_version` | string | OCS specification version | `"0.0.1"` |
+| `ocd_version` | string | OCD specification version | `"0.0.1"` |
 | `id` | string | Unique character identifier | `"char-alice-adventurer"` |
 | `names.canon` | string | Character's canonical name | `"Alice"` |
 | `identity.kind` | enum | Entity type | `"humanoid"` |
@@ -70,6 +70,21 @@ The `identity` block defines the character's fundamental nature and characterist
 | `continuity` | object | ❌ | Canon/timeline info | `{"canon": "official", "timeline_ids": ["main-campaign"]}` |
 | `roles` | array | ❌ | Character roles | `["protagonist", "mentor", "ally"]` |
 | `composite_of` | array | ❌ | Composite identity | See [Composite Identities](#composite-identities) |
+
+### Composite Identities
+
+Some characters may be composed of multiple entities or have complex identity structures. The `composite_of` field allows you to define these relationships:
+
+```yaml
+identity:
+  kind: "hivemind"
+  species: "Collective Consciousness"
+  composite_of:
+    - id: "individual-1"
+      role: "primary"
+    - id: "individual-2" 
+      role: "secondary"
+```
 | `secret_identities` | array | ❌ | Secret identities | `[{"identity": "char-batman", "exposure": "secret"}]` |
 
 ### Examples
@@ -156,7 +171,7 @@ The `personality` block defines character traits, behaviors, and psychological c
 |-------|------|----------|-------------|---------|
 | `summary` | string | ❌ | Brief personality description | `"Brave, curious, and always ready for adventure"` |
 | `archetype` | string | ❌ | Character archetype | `"heroic mage / reluctant leader"` |
-| `traits` | array | ❌ | Personality traits | See [Trait Model](trait-model.md) |
+| `traits` | array | ❌ | Personality traits | See [Trait Model](../spec/trait-model.md) |
 | `quirks` | array | ❌ | Behavioral quirks | `["taps fingers when thinking", "always checks for traps"]` |
 | `humor_styles` | array | ❌ | Types of humor | `["dry wit", "self-deprecating"]` |
 
@@ -175,7 +190,7 @@ The `personality` block defines character traits, behaviors, and psychological c
 personality:
   summary: "Brave and determined adventurer"
   traits:
-    - name: "introversion↔extraversion"
+    - name: "introversion-extraversion"
       kind: "bipolar"
       polarity: 0.7
       intensity: 0.8
@@ -190,11 +205,11 @@ personality:
   summary: "Brave, curious, and always ready for adventure. A natural leader who puts others before herself."
   archetype: "heroic mage / reluctant leader"
   traits:
-    - name: "introversion↔extraversion"
+    - name: "introversion-extraversion"
       kind: "bipolar"
       polarity: 0.7
       intensity: 0.8
-    - name: "selfish↔selfless"
+    - name: "selfish-selfless"
       kind: "bipolar"
       polarity: 0.8
       intensity: 0.9
@@ -470,7 +485,7 @@ meta:
 meta:
   tags: ["adventurer", "hero", "fantasy", "mage", "leader", "dnd5e"]
   authorship:
-    created_by: "OCS Tutorial"
+    created_by: "OCD Tutorial"
     source: "Tutorial Example"
     contributors: ["Tutorial Author"]
   versioning:
@@ -539,7 +554,7 @@ x-my-game:
 ## Validation Rules
 
 ### Required Fields
-- `ocs_version`: Must be a valid version string
+- `ocd_version`: Must be a valid version string
 - `id`: Must be unique, alphanumeric with hyphens
 - `names.canon`: Must be non-empty string
 - `identity.kind`: Must be valid enum value
@@ -557,7 +572,7 @@ x-my-game:
 The validator normalizes:
 - **Slugs**: Converts underscores to hyphens
 - **Tags**: Lowercases and deduplicates
-- **Trait names**: Standardizes separators to `↔`
+- **Trait names**: Standardizes separators to `-`
 - **Timestamps**: Ensures ISO 8601 format
 
 ## Quick Reference

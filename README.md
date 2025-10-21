@@ -1,6 +1,6 @@
-# Open Character Specification (OCS) v1.0
+# Open Character Specification (OCD) v1.0
 
-OCS is a portable, machine-validated format for character definitions across games, film/TV, books, and AI role-play.
+OCD is a portable, machine-validated format for character definitions across games, film/TV, books, and AI role-play.
 
 It ships with:
 - **Core schema** (JSON Schema v1.0) and **Legend & Adoption Guide**
@@ -14,23 +14,23 @@ It ships with:
 ### Python
 
 ```bash
-pip install ocs==1.0.0
+pip install ocd==1.0.0
 
 # Validate a document and print the normalized JSON
-ocs-validate examples/bruenor.yaml --print
+ocd-validate examples/bruenor.yaml --print
 ```
 
 ### Node.js
 
 ```bash
-npm install @ocs-tools/validator@1.0.0
+npm install @ocd-tools/validator@1.0.0
 
 # Validate using the packaged CLI
-npx @ocs-tools/validator examples/bruenor.yaml --print
+npx @ocd-tools/validator examples/bruenor.yaml --print
 
 # Or install globally
-npm install --global @ocs-tools/validator@1.0.0
-ocs-validate examples/bruenor.yaml --print
+npm install --global @ocd-tools/validator@1.0.0
+ocd-validate examples/bruenor.yaml --print
 ```
 
 Structure
@@ -39,9 +39,9 @@ spec/ – schemas and docs
 
 grammar/ – OCD-T spec and grammar
 
-python/ – validator library & CLI (publishable as `ocs`) and tests
+python/ – validator library & CLI (publishable as `ocd`) and tests
 
-node/ – JS/TS validator, parser, and CLI tooling (publishable as `@ocs-tools/validator`)
+node/ – JS/TS validator, parser, and CLI tooling (publishable as `@ocd-tools/validator`)
 
 examples/ – sample characters (YAML/OCD-T)
 

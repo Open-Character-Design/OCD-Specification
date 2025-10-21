@@ -2,12 +2,12 @@
 
 The legend is the canonical companion to `spec/core.schema.json`. It
 summarises the structural guarantees of the Open Character Specification
-(OCS) and describes how definition documents should be authored so that
+(OCD) and describes how definition documents should be authored so that
 validators, engines, and pipelines observe the same semantics.
 
 ## Root entities
 
-OCS separates timeless authorial intent from runtime state by defining
+OCD separates timeless authorial intent from runtime state by defining
 two root documents:
 
 - **CharacterDefinition** – captures the stable description of a
@@ -23,7 +23,7 @@ two root documents:
 | --- | --- | --- |
 | `kind` | ✅ | Must equal `"CharacterDefinition"` so validators can
   dispatch correctly. |
-| `ocs_version` | ✅ | Semantic version of the OCS feature set the document
+| `ocd_version` | ✅ | Semantic version of the OCD feature set the document
   targets (e.g. `"0.9.0"`). |
 | `$schema` | ➖ | Optional draft-2020-12 schema URI for downstream tooling. |
 | `$id` | ➖ | Optional URI identifier for schema-aware repositories. |
@@ -35,7 +35,7 @@ two root documents:
   portraits. |
 | `metaphysics` | ➖ | Optional power systems, abilities, constraints, and
   vulnerabilities. |
-| `personality` | ➖ | Optional OCS-T trait bundle, motivations, and speech
+| `personality` | ➖ | Optional OCD-T trait bundle, motivations, and speech
   cues. |
 | `background` | ⭐ | Recommended biography, affiliations, relationships, and
   milestones. |
@@ -93,7 +93,7 @@ include:
 | Key | Required | Purpose |
 | --- | --- | --- |
 | `kind` | ✅ | Must equal `"CharacterInstance"`. |
-| `ocs_version` | ✅ | Version of the runtime state format. |
+| `ocd_version` | ✅ | Version of the runtime state format. |
 | `$schema`, `$id` | ➖ | Optional schema metadata for tooling. |
 | `instance_id` | ✅ | UUID representing this specific runtime snapshot. |
 | `from_def` | ✅ | UUID reference to the source CharacterDefinition. |
@@ -110,7 +110,7 @@ instance at runtime when presenting a playable character record.
 
 ## Trait kinds
 
-OCS-T traits share a `kind` discriminator and are normalised so that
+OCD-T traits share a `kind` discriminator and are normalised so that
 validator behaviour is consistent across toolchains:
 
 - **BipolarTrait** – expresses an axis between two labelled poles.

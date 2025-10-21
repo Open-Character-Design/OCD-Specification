@@ -1,7 +1,7 @@
 # OCD-T Text Format (Draft)
 
 OCD-T is a concise textual notation that mirrors the JSON structure of an
-OCS document while remaining author friendly. This draft captures the
+OCD document while remaining author friendly. This draft captures the
 lexical expectations and normalisation rules that downstream parsers MUST
 honour.
 
@@ -9,12 +9,12 @@ honour.
 
 - Provide a deterministic mapping to JSON objects.
 - Reject duplicate object keys (enforced via parser or post-pass).
-- Preserve canonical trait axes using the Unicode double arrow (`↔`).
+- Preserve canonical trait axes using the Unicode double arrow (`-`).
 
 ## Document Structure
 
 1. A header with `ocd-t: <integer>` indicating the grammar revision.
-2. An optional `ocs-version: "<semver>"` header.
+2. An optional `ocd-version: "<semver>"` header.
 3. A root object enclosed in `{ ... }` using relaxed punctuation rules
    (commas are optional before newlines; trailing commas permitted).
 
@@ -31,7 +31,7 @@ Whitespace is insignificant. Comments use `# ...` to end of line.
 
 When the parser encounters a bipolar trait `name`, it MUST normalise
 ASCII separators (`-`, `_`) to the Unicode double arrow if both sides of
-the separator contain text. Producers SHOULD already use `↔`.
+the separator contain text. Producers SHOULD already use `-`.
 
 ## Duplicate Key Policy
 

@@ -11,7 +11,7 @@ what the parser expects.
 1. **Start with a preamble** (optional) that declares document metadata.
    ```ocd
    ocd-t: 1
-   ocs-version: 0.9
+   ocd-version: 0.9
    ```
 2. **Define your base character block** using `character "Name" { ... }`.
 3. **Add traits and stats** as objects or arrays. Trailing commas are allowed.
@@ -31,13 +31,13 @@ the grammar.
 ```ocd
 # Preamble → PreambleLine+
 ocd-t: 1
-ocs-version: 0.9
+ocd-version: 0.9
 
 # CharacterDocument → CharacterBlock+
 character "Kestrel" {
   id: "kestrel"
   traits: [
-    { trait-id: "combat", kind: bipolar, axis: "↔" },
+    { trait-id: "combat", kind: bipolar, axis: "-" },
     { trait-id: "tactics", kind: scalar, value: 5 }
   ]
 
@@ -66,14 +66,14 @@ round-trips losslessly to structured formats.
 
 ```json
 {
-  "ocs-t": 1,
-  "ocs-version": 0.9,
+  "ocd-t": 1,
+  "ocd-version": 0.9,
   "characters": [
     {
       "name": "Kestrel",
       "id": "kestrel",
       "traits": [
-        { "trait-id": "combat", "kind": "bipolar", "axis": "↔" },
+        { "trait-id": "combat", "kind": "bipolar", "axis": "-" },
         { "trait-id": "tactics", "kind": "scalar", "value": 5 }
       ],
       "bio": "Field-tested scout with an eye for detail.\nPrefers swift strikes and minimal collateral."
@@ -103,15 +103,15 @@ round-trips losslessly to structured formats.
 ### OCD-T → YAML
 
 ```yaml
-ocs-t: 1
-ocs-version: 0.9
+ocd-t: 1
+ocd-version: 0.9
 characters:
   - name: Kestrel
     id: kestrel
     traits:
       - trait-id: combat
         kind: bipolar
-        axis: "↔"
+        axis: "-"
       - trait-id: tactics
         kind: scalar
         value: 5

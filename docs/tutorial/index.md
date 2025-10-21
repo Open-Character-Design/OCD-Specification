@@ -1,12 +1,29 @@
 # Tutorial Overview
 
-Welcome to the OCS Tutorial! This step-by-step guide will take you from complete beginner to creating production-ready character definitions.
+Welcome to the OCD Tutorial! This step-by-step guide will take you from complete beginner to creating production-ready character definitions.
+
+## Why Learn OCD?
+
+OCD transforms how you think about character creation. Instead of scattered notes and inconsistent designs, OCD gives you a structured, collaborative approach that works across any medium, from games to novels to AI applications.
+
+**What makes OCD special:**
+- **Structured Creativity**: Transform chaotic character development into organized, systematic workflows
+- **True Collaboration**: Enable multiple creators to work on the same character simultaneously
+- **Cross-Media Portability**: Create characters that work seamlessly across games, books, AI, and more
+- **Technical Integration**: Build applications that understand and work with your character data
+
+**Perfect for:**
+- **Writers** building consistent character universes
+- **Game Developers** creating rich, interactive character systems  
+- **AI Developers** training models with structured character data
+- **Creative Teams** collaborating on character-driven projects
+- **Educators** teaching systematic character design approaches
 
 ## What You'll Learn
 
 By the end of this tutorial, you'll be able to:
 
-- ✅ Install and use OCS validators
+- ✅ Install and use OCD validators
 - ✅ Create valid character definitions from scratch
 - ✅ Add personality traits and background information
 - ✅ Integrate with game systems like D&D 5e
@@ -30,6 +47,8 @@ Learn the basics by creating a minimal valid character and running your first va
 
 **What you'll build:** A simple human character with basic identity information.
 
+**Use Case Connection:** Perfect for [Creative Applications](use-cases/creative.md) - learn the foundation of structured character design.
+
 </div>
 
 <div class="feature-card">
@@ -39,6 +58,8 @@ Learn the basics by creating a minimal valid character and running your first va
 Explore the trait model by adding personality traits, bipolar axes, and scalar values.
 
 **What you'll build:** A character with detailed personality traits and behavioral tendencies.
+
+**Use Case Connection:** Essential for [Interactive & Storytelling](use-cases/interactive.md) - personality drives AI behavior and dialogue systems.
 
 </div>
 
@@ -50,6 +71,8 @@ Add timeline events, affiliations, and relationships between characters.
 
 **What you'll build:** A character with rich background and connections to other characters.
 
+**Use Case Connection:** Core to [Community & Open Source](use-cases/community.md) - relationships enable collaborative worldbuilding.
+
 </div>
 
 <div class="feature-card">
@@ -60,6 +83,8 @@ Integrate with game systems using extension blocks like `x-dnd5e`.
 
 **What you'll build:** A D&D 5e character with stats, abilities, and equipment.
 
+**Use Case Connection:** Key for [Technical Applications](use-cases/technical.md) - learn how to extend OCD for specific platforms.
+
 </div>
 
 <div class="feature-card">
@@ -69,6 +94,8 @@ Integrate with game systems using extension blocks like `x-dnd5e`.
 Learn best practices for validation, normalization, and deployment workflows.
 
 **What you'll build:** A production-ready character with proper metadata and validation.
+
+**Use Case Connection:** Critical for all use cases - learn how to deploy OCD characters in real-world applications.
 
 </div>
 
@@ -85,7 +112,7 @@ Throughout the tutorial, you'll see these helpful elements:
     Pay attention to these warnings about common mistakes or important concepts.
 
 !!! note "Key Concepts"
-    These boxes explain important OCS concepts you'll need to understand.
+    These boxes explain important OCD concepts you'll need to understand.
 
 ## Getting Help
 

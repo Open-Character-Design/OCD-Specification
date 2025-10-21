@@ -1,6 +1,6 @@
-## Open Character Specification (OCS)
+## Open Character Specification (OCD)
 
-Welcome to the Open Character Specification (OCS) wiki.
+Welcome to the Open Character Specification (OCD) wiki.
 
 - **Getting Started**: [[Getting-Started]]
 - **Spec Overview**: [[Specification]]

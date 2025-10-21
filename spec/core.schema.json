@@ -276,7 +276,7 @@
       "type": "object",
       "required": [
         "kind",
-        "ocs_version",
+        "ocd_version",
         "id",
         "slug",
         "names",
@@ -285,7 +285,7 @@
       ],
       "properties": {
         "kind": { "const": "CharacterDefinition" },
-        "ocs_version": { "type": "string" },
+        "ocd_version": { "type": "string" },
         "$schema": { "type": "string", "format": "uri" },
         "$id": { "type": "string", "format": "uri" },
         "id": { "$ref": "#/$defs/UUID" },
@@ -307,14 +307,14 @@
       "type": "object",
       "required": [
         "kind",
-        "ocs_version",
+        "ocd_version",
         "instance_id",
         "from_def",
         "state"
       ],
       "properties": {
         "kind": { "const": "CharacterInstance" },
-        "ocs_version": { "type": "string" },
+        "ocd_version": { "type": "string" },
         "$schema": { "type": "string", "format": "uri" },
         "$id": { "type": "string", "format": "uri" },
         "instance_id": { "$ref": "#/$defs/UUID" },

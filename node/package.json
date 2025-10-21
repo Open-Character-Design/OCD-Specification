@@ -1,5 +1,5 @@
 {
-  "name": "@ocs-tools/validator",
+  "name": "@ocd-tools/validator",
   "version": "1.0.0",
   "description": "Open Character Specification validator and CLI for Node.js",
   "author": "Open Character Specification Team",
@@ -29,14 +29,14 @@
     "LICENSE"
   ],
   "bin": {
-    "ocs-validate": "./dist/cli.js"
+    "ocd-validate": "./dist/cli.js"
   },
   "sideEffects": false,
   "engines": {
     "node": ">=18"
   },
   "keywords": [
-    "ocs",
+    "ocd",
     "open-character-specification",
     "validator",
     "cli"

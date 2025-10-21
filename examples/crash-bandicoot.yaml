@@ -1,4 +1,4 @@
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-crash-bandicoot"
 names:
   canon: "Crash Bandicoot"
@@ -28,13 +28,13 @@ personality:
   summary: "Lovable, goofy, reckless hero with limited speech."
   archetype: "comic relief hero"
   traits:
-    - name: "introversion↔extraversion"
+    - name: "introversion-extraversion"
       polarity: 0.7
       intensity: 0.9
-    - name: "cooperative↔competitive"
+    - name: "cooperative-competitive"
       polarity: 0.2
       intensity: 0.6
-    - name: "serious↔playful"
+    - name: "serious-playful"
       polarity: -0.9
       intensity: 1.0
   quirks: ["spins uncontrollably to attack", "dances after victories", "obsessed with Wumpa fruit"]
@@ -44,7 +44,7 @@ personality:
     long_term: ["Thwart Doctor Neo Cortex", "Protect Wumpa Islands"]
   values: ["loyalty", "fun", "courage"]
   conflicts:
-    internal: "Simple-minded — not prone to deep conflict"
+    internal: "Simple-minded ,  not prone to deep conflict"
     external: "Constant battles with Cortex and minions"
 
 background:

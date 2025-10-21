@@ -4,6 +4,7 @@ from typing import Any, Dict, List
 
 ARROW = "↔"
 TOKEN_MAP = {
+    "↔": "-",
     "⇒": "-",
     "_": "-",
 }
@@ -13,7 +14,7 @@ def canonical_axis(name: str) -> str:
     """
     Normalize bipolar axis names:
     - accept '-', '_' or '↔' as separators
-    - canonicalize to the Unicode double arrow '↔'
+    - canonicalize to the dash '-' separator
     """
     for sep in (ARROW, "-", "_"):
         if sep in name:

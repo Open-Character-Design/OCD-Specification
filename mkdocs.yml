@@ -22,7 +22,7 @@ nav:
     - Trait Model: spec/trait-model.md
     - OCD-T Grammar: spec/grammar-ocd.md
   - Authoring:
-    - Writing OCS Files: authoring/writing-ocs-files.md
+    - Writing OCD Files: authoring/writing-ocd-files.md
     - OCD-T Guide: authoring/ocd-authoring-guide.md
     - Examples Gallery: authoring/examples.md
   - Integration:
@@ -34,6 +34,22 @@ nav:
     - Fields: reference/fields.md
     - Vocabularies: reference/vocabularies.md
     - Diagnostics: reference/diagnostics.md
+  - Use Cases:
+    - Overview: use-cases/index.md
+    - Creative Applications: use-cases/creative.md
+    - Technical Applications: use-cases/technical.md
+    - Interactive & Storytelling: use-cases/interactive.md
+    - Game Engines:
+      - Unity: use-cases/unity.md
+      - Unreal Engine: use-cases/unreal.md
+      - Godot: use-cases/godot.md
+    - Creative Applications:
+      - Visual Novels & RPGs: use-cases/visual-novels.md
+      - AI NPCs: use-cases/ai-npcs.md
+      - Interactive Storytelling: use-cases/storytelling.md
+    - Production:
+      - Virtual Production: use-cases/virtual-production.md
+    - Community & Open Source: use-cases/community.md
   - Community:
     - FAQ: faq.md
     - Contributing: governance/contributing-to-spec.md

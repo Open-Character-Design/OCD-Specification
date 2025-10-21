@@ -1,20 +1,20 @@
-import { parse as generateParse } from './generated/ocs-t-parser.js';
+import { parse as generateParse } from './generated/ocd-t-parser.js';
 
-export interface OcstHeaders {
+export interface OcdtHeaders {
   revision: number;
   version?: string;
   extras?: Record<string, unknown>;
 }
 
-export interface OcstParseResult {
-  headers: OcstHeaders;
+export interface OcdtParseResult {
+  headers: OcdtHeaders;
   body: unknown;
 }
 
-type GeneratedParse = (input: string) => OcstParseResult;
+type GeneratedParse = (input: string) => OcdtParseResult;
 
 const parseImpl = generateParse as GeneratedParse;
 
-export function parseOcst(input: string): OcstParseResult {
+export function parseOcdt(input: string): OcdtParseResult {
   return parseImpl(input);
 }

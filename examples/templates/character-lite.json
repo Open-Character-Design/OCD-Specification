@@ -1,5 +1,5 @@
 {
-  "ocs_version": "1.0.0",
+  "ocd_version": "1.0.0",
   "character": {
     "id": "template-lite",
     "name": "Template Lite",

@@ -3,7 +3,7 @@
 This guide is the practical companion to [`spec/legend.md`](legend.md) and
 the normative JSON Schema published in
 [`spec/core.schema.json`](core.schema.json). It explains every block that
-appears in an OCS `CharacterDefinition` and `CharacterInstance`, calls out the
+appears in an OCD `CharacterDefinition` and `CharacterInstance`, calls out the
 controlled vocabularies that validators enforce, and offers adoption
 playbooks and cross-references so teams can wire the spec into their
 pipelines with confidence.
@@ -12,13 +12,13 @@ pipelines with confidence.
 
 ## 1. Root documents
 
-OCS separates timeless authorial intent from runtime telemetry. A project
+OCD separates timeless authorial intent from runtime telemetry. A project
 **must** distinguish between the two root entities:
 
 | Document | Purpose | Minimum keys | Schema reference |
 | --- | --- | --- | --- |
-| `CharacterDefinition` | Stable canon for how a persona should be portrayed across media. | `kind`, `ocs_version`, `id`, `slug`, `names`, `identity`, `meta`. | `core.schema.json#/$defs/CharacterDefinition` |
-| `CharacterInstance` | Ephemeral snapshot of a definition inside a save slot, campaign, or simulation tick. | `kind`, `ocs_version`, `instance_id`, `from_def`, `state`. | `core.schema.json#/$defs/CharacterInstance` |
+| `CharacterDefinition` | Stable canon for how a persona should be portrayed across media. | `kind`, `ocd_version`, `id`, `slug`, `names`, `identity`, `meta`. | `core.schema.json#/$defs/CharacterDefinition` |
+| `CharacterInstance` | Ephemeral snapshot of a definition inside a save slot, campaign, or simulation tick. | `kind`, `ocd_version`, `instance_id`, `from_def`, `state`. | `core.schema.json#/$defs/CharacterInstance` |
 
 Instances may inherit read-only properties from the linked definition at
 runtime, but only the instance `state` block is mutable by engines. Authoring
@@ -67,7 +67,7 @@ Additional sub-blocks:
 
 ### 2.2 Appearance & metaphysics
 
-OCS splits physical form and extraordinary affordances.
+OCD splits physical form and extraordinary affordances.
 
 - `appearance` supports:
   - `forms`: array describing shapeshifts or loadouts. Controlled labels:
@@ -83,7 +83,7 @@ OCS splits physical form and extraordinary affordances.
 
 ### 2.3 Personality & cognition
 
-Personality uses the OCS-T trait bundle described in [`legend.md`](legend.md).
+Personality uses the OCD-T trait bundle described in [`legend.md`](legend.md).
 Controlled vocabularies include:
 
 | Trait kind | Discriminator | Payload |
@@ -233,7 +233,7 @@ view before presenting the character sheet to players.
 
 ## 4. Controlled vocabularies & cross-references
 
-The following vocabularies are canonical across OCS projects unless a local
+The following vocabularies are canonical across OCD projects unless a local
 extension explicitly augments them. Values originate from
 [`core.schema.json`](core.schema.json) and are reiterated here for easy lookup.
 
@@ -261,7 +261,7 @@ legend in [`legend.md`](legend.md#trait-kinds) or shipping a
 
 1. **Authoring** – model the data-entry experience directly on this legend.
    Provide UI affordances for controlled vocabularies and slug normalisation.
-2. **Validation** – run `python tools/ocs-validate.py <file>` or your own
+2. **Validation** – run `python tools/ocd-validate.py <file>` or your own
    JSON Schema tooling pointed at `core.schema.json`. Store normalised output
    so diffs remain human-reviewable.
 3. **Integration** – fuse definitions with instances in-engine, respecting the
@@ -279,7 +279,7 @@ legend in [`legend.md`](legend.md#trait-kinds) or shipping a
 
 ```yaml
 kind: "CharacterDefinition"
-ocs_version: "0.9.0"
+ocd_version: "0.9.0"
 id: "71f6c3a0-912d-4c4f-8a8e-86667a33c9d5"
 slug: "elysian-chorus"
 names:
@@ -318,7 +318,7 @@ metaphysics:
 personality:
   traits:
     - kind: "BipolarTrait"
-      axis: "aggression↔conciliation"
+      axis: "aggression-conciliation"
       value: -0.8
     - kind: "ProfileTrait"
       facets:
@@ -362,7 +362,7 @@ meta:
 
 ```yaml
 kind: "CharacterDefinition"
-ocs_version: "0.9.0"
+ocd_version: "0.9.0"
 id: "5d0b1f0c-0a0a-40f0-bcff-a035fb30f04a"
 slug: "duskbound-pact"
 names:

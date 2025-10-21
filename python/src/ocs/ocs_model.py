@@ -367,7 +367,7 @@ class MediaProfiles(BaseModel):
 
 class CharacterDefinition(BaseModel):
     kind: Literal["CharacterDefinition"]
-    ocs_version: str
+    ocd_version: str
     id: str
     slug: str
     names: Names
@@ -444,7 +444,7 @@ class InstanceState(BaseModel):
 
 class CharacterInstance(BaseModel):
     kind: Literal["CharacterInstance"]
-    ocs_version: str
+    ocd_version: str
     instance_id: str
     from_def: str
     state: InstanceState

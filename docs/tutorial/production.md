@@ -1,6 +1,6 @@
 # Step 5: Production Tips
 
-In this final step, you'll learn best practices for production deployment, validation workflows, and maintaining OCS characters.
+In this final step, you'll learn best practices for production deployment, validation workflows, and maintaining OCD characters.
 
 ## What You'll Learn
 
@@ -15,7 +15,7 @@ In this final step, you'll learn best practices for production deployment, valid
 Let's create a final, production-ready version of Alice:
 
 ```yaml title="alice-production.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-alice-adventurer"
 names:
   canon: "Alice"
@@ -57,19 +57,19 @@ personality:
   summary: "Brave, curious, and always ready for adventure. A natural leader who puts others before herself."
   archetype: "heroic mage / reluctant leader"
   traits:
-    - name: "introversion↔extraversion"
+    - name: "introversion-extraversion"
       kind: "bipolar"
       polarity: 0.7
       intensity: 0.8
-    - name: "competitive↔cooperative"
+    - name: "competitive-cooperative"
       kind: "bipolar"
       polarity: 0.6
       intensity: 0.7
-    - name: "serious↔playful"
+    - name: "serious-playful"
       kind: "bipolar"
       polarity: 0.3
       intensity: 0.6
-    - name: "selfish↔selfless"
+    - name: "selfish-selfless"
       kind: "bipolar"
       polarity: 0.8
       intensity: 0.9
@@ -368,7 +368,7 @@ x-dnd5e:
 meta:
   tags: ["adventurer", "hero", "fantasy", "mage", "leader", "dnd5e", "protagonist"]
   authorship:
-    created_by: "OCS Tutorial"
+    created_by: "OCD Tutorial"
     source: "Tutorial Example"
     contributors: ["Tutorial Author"]
   versioning:
@@ -445,10 +445,10 @@ Set up validation before committing changes:
 
 ```bash
 # Validate all characters
-find . -name "*.yaml" -exec ocs-validate {} \;
+find . -name "*.yaml" -exec ocd-validate {} \;
 
 # Validate with warnings as errors
-ocs-validate character.yaml --warnings-as-errors
+ocd-validate character.yaml --warnings-as-errors
 ```
 
 ### CI/CD Integration
@@ -456,7 +456,7 @@ ocs-validate character.yaml --warnings-as-errors
 Add validation to your CI pipeline:
 
 ```yaml title=".github/workflows/validate.yml"
-name: Validate OCS Characters
+name: Validate OCD Characters
 
 on: [push, pull_request]
 
@@ -469,11 +469,11 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
-      - name: Install OCS validator
-        run: pip install ocs==1.0.0
+      - name: Install OCD validator
+        run: pip install ocd
       - name: Validate characters
         run: |
-          find . -name "*.yaml" -exec ocs-validate {} \;
+          find . -name "*.yaml" -exec ocd-validate {} \;
 ```
 
 ### Batch Validation Script
@@ -483,12 +483,12 @@ Create a script for validating multiple characters:
 ```bash title="validate-all.sh"
 #!/bin/bash
 
-echo "Validating all OCS characters..."
+echo "Validating all OCD characters..."
 
 # Find all YAML files
 find . -name "*.yaml" -not -path "./node_modules/*" | while read file; do
   echo "Validating $file..."
-  if ! ocs-validate "$file" --warnings-as-errors; then
+  if ! ocd-validate "$file" --warnings-as-errors; then
     echo "❌ Validation failed for $file"
     exit 1
   fi
@@ -532,7 +532,7 @@ Use standardized trait names:
 
 ```yaml
 # Good
-- name: "introversion↔extraversion"
+- name: "introversion-extraversion"
 - name: "combat-readiness"
 
 # Avoid
@@ -600,10 +600,10 @@ Keep validators updated:
 
 ```bash
 # Update Python validator
-pip install --upgrade ocs
+pip install --upgrade ocd
 
 # Update Node.js validator
-npm update @ocs-tools/validator
+npm update @ocd-tools/validator
 ```
 
 ### 3. Schema Evolution
@@ -625,7 +625,7 @@ meta:
 Always check for unresolved references:
 
 ```bash
-ocs-validate character.yaml
+ocd-validate character.yaml
 # Look for: UNRESOLVED_REF warnings
 ```
 
@@ -637,7 +637,7 @@ Ensure consistency between traits and ratings:
 # This will cause RATING_CONFLICT warning
 personality:
   traits:
-    - name: "violent↔pacifist"
+    - name: "violent-pacifist"
       polarity: 0.8  # Leans violent
 meta_properties:
   appropriateness:
@@ -656,9 +656,9 @@ meta:
 
 ## What's Next?
 
-Congratulations! You've completed the OCS Tutorial. You now have:
+Congratulations! You've completed the OCD Tutorial. You now have:
 
-- ✅ A complete understanding of OCS structure
+- ✅ A complete understanding of OCD structure
 - ✅ A production-ready character definition
 - ✅ Knowledge of validation workflows
 - ✅ Best practices for deployment and maintenance
@@ -669,7 +669,7 @@ Congratulations! You've completed the OCS Tutorial. You now have:
 - **[Specification](../spec/schema-overview.md)**: Deep dive into the technical details
 - **[Integration Guide](../integration/python-validator.md)**: Learn about validator APIs
 - **[FAQ](../faq.md)**: Common questions and answers
-- **[Contributing](../governance/contributing-to-spec.md)**: Help improve OCS
+- **[Contributing](../governance/contributing-to-spec.md)**: Help improve OCD
 
 ## Quick Reference
 
@@ -686,13 +686,13 @@ Congratulations! You've completed the OCS Tutorial. You now have:
 ### Validation Commands
 ```bash
 # Basic validation
-ocs-validate character.yaml
+ocd-validate character.yaml
 
 # With warnings as errors
-ocs-validate character.yaml --warnings-as-errors
+ocd-validate character.yaml --warnings-as-errors
 
 # Print normalized output
-ocs-validate character.yaml --print
+ocd-validate character.yaml --print
 ```
 
 ### Common Extensions

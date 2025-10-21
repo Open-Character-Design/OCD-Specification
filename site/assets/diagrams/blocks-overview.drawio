@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="app.diagrams.net" modified="2025-01-01T00:00:00.000Z" agent="Mozilla/5.0 (X11; Linux x86_64)" etag="OCSBlocks" version="22.1.5" type="device">
+<mxfile host="app.diagrams.net" modified="2025-01-01T00:00:00.000Z" agent="Mozilla/5.0 (X11; Linux x86_64)" etag="OCDBlocks" version="22.1.5" type="device">
   <diagram id="blocks-overview" name="Block Relationships">
     <mxGraphModel dx="1416" dy="850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -8,7 +8,7 @@
         <mxCell id="core" value="CharacterDefinition" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;shadow=0" parent="1" vertex="1">
           <mxGeometry x="420" y="200" width="220" height="90" as="geometry"/>
         </mxCell>
-        <mxCell id="coreIds" value="Core Identifiers\nkind, ocs_version, id, slug" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1" parent="1" vertex="1">
+        <mxCell id="coreIds" value="Core Identifiers\nkind, ocd_version, id, slug" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1" parent="1" vertex="1">
           <mxGeometry x="420" y="50" width="220" height="80" as="geometry"/>
         </mxCell>
         <mxCell id="names" value="Names\ncanon, display, aliases" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" parent="1" vertex="1">

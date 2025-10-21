@@ -9,9 +9,9 @@ const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
 const repoRoot = path.resolve(projectRoot, '..');
 
-const grammarPath = path.join(repoRoot, 'grammar', 'ocs-t.peggy');
+const grammarPath = path.join(repoRoot, 'grammar', 'ocd-t.peggy');
 const outputDir = path.join(projectRoot, 'src', 'generated');
-const outputFile = path.join(outputDir, 'ocs-t-parser.ts');
+const outputFile = path.join(outputDir, 'ocd-t-parser.ts');
 
 async function buildParser() {
   const grammar = await readFile(grammarPath, 'utf8');

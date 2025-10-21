@@ -17,7 +17,7 @@
 
   <rect x="420" y="50" width="220" height="80" class="box" fill="#d5e8d4" stroke="#82b366" />
   <text x="530" y="90" class="title" text-anchor="middle">Core Identifiers</text>
-  <text x="530" y="112" class="body" text-anchor="middle">kind · ocs_version · id · slug</text>
+  <text x="530" y="112" class="body" text-anchor="middle">kind · ocd_version · id · slug</text>
 
   <rect x="130" y="150" width="200" height="80" class="box" fill="#ffe6cc" stroke="#d79b00" />
   <text x="230" y="190" class="title" text-anchor="middle">Names</text>

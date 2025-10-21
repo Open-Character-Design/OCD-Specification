@@ -1,6 +1,6 @@
 # Step 4: System Extensions
 
-In this step, you'll learn how to integrate OCS with specific game systems using extension blocks.
+In this step, you'll learn how to integrate OCD with specific game systems using extension blocks.
 
 ## What You'll Build
 
@@ -8,9 +8,9 @@ A character with D&D 5e stats, abilities, and equipment using the `x-dnd5e` exte
 
 ## Understanding Extensions
 
-OCS uses `x-*` namespaces to add system-specific data without cluttering the core specification. This allows you to:
+OCD uses `x-*` namespaces to add system-specific data without cluttering the core specification. This allows you to:
 
-- Keep the core OCS portable across systems
+- Keep the core OCD portable across systems
 - Add detailed game mechanics when needed
 - Maintain compatibility with different platforms
 
@@ -19,7 +19,7 @@ OCS uses `x-*` namespaces to add system-specific data without cluttering the cor
 Let's enhance Alice with D&D 5e stats:
 
 ```yaml title="alice-dnd5e.yaml"
-ocs_version: "0.0.1"
+ocd_version: "0.0.1"
 id: "char-alice-adventurer"
 names:
   canon: "Alice"
@@ -43,15 +43,15 @@ appearance:
 personality:
   summary: "Brave, curious, and always ready for adventure."
   traits:
-    - name: "introversion↔extraversion"
+    - name: "introversion-extraversion"
       kind: "bipolar"
       polarity: 0.7
       intensity: 0.8
-    - name: "competitive↔cooperative"
+    - name: "competitive-cooperative"
       kind: "bipolar"
       polarity: 0.6
       intensity: 0.7
-    - name: "serious↔playful"
+    - name: "serious-playful"
       kind: "bipolar"
       polarity: 0.3
       intensity: 0.6
@@ -266,7 +266,7 @@ x-dnd5e:
 ```
 
 !!! tip "Extension Naming"
-    Always use `x-` prefix for extensions. This keeps system-specific data separate from the core OCS specification.
+    Always use `x-` prefix for extensions. This keeps system-specific data separate from the core OCD specification.
 
 ### Core D&D Fields
 
@@ -347,22 +347,22 @@ x-my-game:
 
 ## Validation with Extensions
 
-The OCS validator will validate the core fields but won't validate extension blocks (since they're system-specific):
+The OCD validator will validate the core fields but won't validate extension blocks (since they're system-specific):
 
 ```bash
-ocs-validate alice-dnd5e.yaml
+ocd-validate alice-dnd5e.yaml
 ```
 
-You should see successful validation of the core OCS fields. Extension blocks are preserved but not validated by the OCS validator.
+You should see successful validation of the core OCD fields. Extension blocks are preserved but not validated by the OCD validator.
 
 !!! note "Extension Validation"
-    Extension blocks are not validated by OCS validators. Each game system would need its own validator to check extension data.
+    Extension blocks are not validated by OCD validators. Each game system would need its own validator to check extension data.
 
 ## Best Practices for Extensions
 
 ### Keep Core Data Separate
 ```yaml
-# Core OCS data
+# Core OCD data
 personality:
   traits:
     - name: "combat-readiness"
@@ -455,7 +455,7 @@ Perfect! You've integrated Alice with D&D 5e using extension blocks. In the fina
 
 ### Extension Structure
 - Use `x-` prefix for all extensions
-- Keep core OCS data separate from system data
+- Keep core OCD data separate from system data
 - Document custom extension schemas
 
 ### Common Extensions

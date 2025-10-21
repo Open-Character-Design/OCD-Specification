@@ -1,6 +1,6 @@
 # Contributing to the Spec
 
-OpenCharacter Specification (OCS) contributions follow a documented governance path to keep the core schema stable while allowing extensions to thrive. This page outlines the required steps depending on the type of change you would like to make.
+OpenCharacter Specification (OCD) contributions follow a documented governance path to keep the core schema stable while allowing extensions to thrive. This page outlines the required steps depending on the type of change you would like to make.
 
 ## Core Specification Proposals
 

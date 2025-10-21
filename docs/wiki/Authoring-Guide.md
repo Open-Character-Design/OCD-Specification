@@ -1,9 +1,9 @@
 ## Authoring Guide
 
-Canonical: `docs/authoring/ocst-authoring-guide.md` (rendered: `https://eVirgil.github.io/OpenCharacter-Specification/authoring/ocst-authoring-guide/`), `docs/authoring/writing-ocs-files.md` (rendered: `https://eVirgil.github.io/OpenCharacter-Specification/authoring/writing-ocs-files/`), `docs/authoring/examples.md` (rendered: `https://eVirgil.github.io/OpenCharacter-Specification/authoring/examples/`)
+Canonical: `docs/authoring/ocd-authoring-guide.md` (rendered: `https://eVirgil.github.io/OpenCharacter-Specification/authoring/ocd-authoring-guide/`), `docs/authoring/writing-ocd-files.md` (rendered: `https://eVirgil.github.io/OpenCharacter-Specification/authoring/writing-ocd-files/`), `docs/authoring/examples.md` (rendered: `https://eVirgil.github.io/OpenCharacter-Specification/authoring/examples/`)
 
 Contents:
-- Writing OCS files (YAML/OCST)
+- Writing OCD files (YAML/OCD)
 - Style conventions and best practices
 - End-to-end examples with explanations
 

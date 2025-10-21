@@ -43,6 +43,11 @@ ocd-validate = "ocd.validate.validator:main"
 
 [tool.hatch.build]
 packages = ["src/ocd"]
+include = [
+    "src/ocd/**/*.py",
+    "src/ocd/**/*.json",
+    "spec/ocd-default-spec.ocd"
+]
 
 [tool.hatch.envs.default]
 dependencies = ["pytest"]

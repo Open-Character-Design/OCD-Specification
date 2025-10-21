@@ -7,15 +7,19 @@ const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
 const repoRoot = path.resolve(projectRoot, '..');
 
-const source = path.join(repoRoot, 'spec', 'core.schema.json');
-const destination = path.join(projectRoot, 'dist', 'schema', 'core.schema.json');
+const sources = [
+  { src: path.join(repoRoot, 'spec', 'core.schema.json'), dest: path.join(projectRoot, 'dist', 'schema', 'core.schema.json') },
+  { src: path.join(repoRoot, 'spec', 'ocd-default-spec.ocd'), dest: path.join(projectRoot, 'dist', 'schema', 'ocd-default-spec.ocd') }
+];
 
-async function copySchema() {
-  await mkdir(path.dirname(destination), { recursive: true });
-  await copyFile(source, destination);
+async function copySchemas() {
+  for (const { src, dest } of sources) {
+    await mkdir(path.dirname(dest), { recursive: true });
+    await copyFile(src, dest);
+  }
 }
 
-copySchema().catch((error) => {
+copySchemas().catch((error) => {
   console.error(error);
   process.exit(1);
 });

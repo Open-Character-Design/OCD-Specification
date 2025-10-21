@@ -21,7 +21,6 @@ nav:
     - Trait Model: spec/trait-model.md
   - Authoring:
     - Writing OCD Files: authoring/writing-ocd-files.md
-    - OCD-T Guide: authoring/ocd-t-guide.md
     - Examples Gallery: authoring/examples.md
   - Integration:
     - Python Validator: integration/python-validator.md
@@ -30,6 +29,7 @@ nav:
     - Extensions: integration/extensions-and-namespaces.md
     - Validator Roadmap: integration/validator-roadmap-todo.md
   - Reference:
+    - Validation: reference/validation.md
     - Fields: reference/fields.md
     - Vocabularies: reference/vocabularies.md
     - Diagnostics: reference/diagnostics.md

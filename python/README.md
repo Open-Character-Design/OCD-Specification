@@ -17,11 +17,19 @@ After installation the `ocd-validate` entry point becomes available:
 ```bash
 # Validate a YAML document and print the normalized JSON
 ocd-validate examples/bruenor.yaml --print
+
+# Use strict validation mode
+ocd-validate examples/bruenor.yaml --mode strict
+
+# Use custom specification overlay
+ocd-validate examples/bruenor.yaml --spec my-project-spec.ocd
 ```
 
 Key options:
 
 - `--format {auto,json,yaml}` – override automatic format detection.
+- `--mode {relaxed,strict}` – validation mode (default: relaxed).
+- `--spec PATH` – path to custom OCD specification overlay file.
 - `--print` – emit the normalized document to standard output.
 - `--indent N` – control the indentation used with `--print` (default: 2).
 - `--warnings-as-errors` – exit with status 2 if lint warnings are encountered.
@@ -36,9 +44,18 @@ from ocd.validate import validate_and_normalize, safe_load
 with open("examples/bruenor.yaml", "r", encoding="utf-8") as handle:
     document = safe_load(handle.read())
 
+# Basic validation (relaxed mode)
 result = validate_and_normalize(document)
+
+# Strict validation mode
+result = validate_and_normalize(document, mode="strict")
+
+# With custom specification overlay
+result = validate_and_normalize(document, spec_path="my-project-spec.ocd")
+
 if result["ok"]:
     print("Normalized:", result["data"])
+    print("Warnings:", result["warnings"])
 else:
     print("Errors:", result["errors"])
 ```

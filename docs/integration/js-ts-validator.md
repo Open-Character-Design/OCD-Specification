@@ -485,8 +485,17 @@ class CharacterLibraryApp {
 ### CLI
 
 ```bash
-# Validate a file
+# Validate a file (relaxed mode by default)
 npx @ocd-tools/validator character.yaml
+
+# Use strict validation mode
+npx @ocd-tools/validator character.yaml --mode strict
+
+# Use custom specification overlay
+npx @ocd-tools/validator character.yaml --spec my-project-spec.ocd
+
+# Combine mode and spec
+npx @ocd-tools/validator character.yaml --mode strict --spec my-project-spec.ocd
 
 # Print normalized output
 npx @ocd-tools/validator character.yaml --print
@@ -505,8 +514,17 @@ npx @ocd-tools/validator character.yaml --format yaml
     ```typescript
     import { validateAndNormalize } from '@ocd-tools/validator';
     
-    // Validate a document
-    const result = validateAndNormalize(document);
+    // Basic validation (relaxed mode)
+    const result = await validateAndNormalize(document);
+    
+    // Strict validation mode
+    const result = await validateAndNormalize(document, 'strict');
+    
+    // With custom specification overlay
+    const result = await validateAndNormalize(document, 'relaxed', 'my-project-spec.ocd');
+    
+    // Combine mode and spec
+    const result = await validateAndNormalize(document, 'strict', 'my-project-spec.ocd');
     
     if (result.ok) {
         console.log('Valid:', result.data);
@@ -550,6 +568,8 @@ Arguments:
 
 Options:
   --format [auto|json|yaml]  Force the input parser. Defaults to 'auto'.
+  --mode [relaxed|strict]    Validation mode (default: relaxed).
+  --spec PATH                Path to custom OCD specification overlay file.
   --print                    Print the normalized document to stdout on success.
   --indent INTEGER           Indent level to use when printing normalized JSON (default: 2).
   --warnings-as-errors       Exit with code 2 if any warnings are produced.
@@ -558,15 +578,17 @@ Options:
 
 ## API Reference
 
-### `validateAndNormalize(doc: any): ValidationResult`
+### `validateAndNormalize(doc: any, mode?: ValidationMode, specPath?: string): Promise<ValidationResult>`
 
 Validates and normalizes an OCD document.
 
 **Parameters:**
 - `doc`: The document to validate (object, array, or primitive)
+- `mode`: Validation mode - "relaxed" for structure-only, "strict" for full validation (default: "relaxed")
+- `specPath`: Optional path to custom OCD specification overlay file
 
 **Returns:**
-- `ValidationResult`: Result object with the following structure:
+- `Promise<ValidationResult>`: Result object with the following structure:
   - `ok: boolean`: Whether validation succeeded
   - `data?: object`: Normalized document (if valid)
   - `errors?: ValidationError[]`: Validation errors (if invalid)

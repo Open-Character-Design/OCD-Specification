@@ -14,6 +14,8 @@ type Format = 'auto' | 'json' | 'yaml';
 interface CliOptions {
   path: string;
   format: Format;
+  mode: 'relaxed' | 'strict';
+  spec?: string;
   printNormalized: boolean;
   indent: number;
   warningsAsErrors: boolean;
@@ -32,6 +34,7 @@ function createDefaultOptions(): CliOptions {
   return {
     path: '',
     format: 'auto',
+    mode: 'relaxed',
     printNormalized: false,
     indent: 2,
     warningsAsErrors: false,
@@ -59,6 +62,25 @@ function parseArgs(args: string[]): CliParseResult {
     }
     if (arg === '--warnings-as-errors') {
       options.warningsAsErrors = true;
+      continue;
+    }
+    if (arg === '--mode') {
+      const next = args[++index];
+      if (!next) {
+        throw new Error('--mode requires a value');
+      }
+      if (next !== 'relaxed' && next !== 'strict') {
+        throw new Error("--mode must be one of 'relaxed' or 'strict'");
+      }
+      options.mode = next;
+      continue;
+    }
+    if (arg === '--spec') {
+      const next = args[++index];
+      if (!next) {
+        throw new Error('--spec requires a value');
+      }
+      options.spec = next;
       continue;
     }
     if (arg === '--indent') {
@@ -106,6 +128,8 @@ function printHelp(): void {
   console.log('  -h, --help                 Show this help message and exit');
   console.log('  -v, --version              Print the CLI version and exit');
   console.log('  -f, --format <auto|json|yaml>  Force the input document parser');
+  console.log('      --mode <relaxed|strict>  Validation mode (default: relaxed)');
+  console.log('      --spec <path>          Path to custom OCD specification overlay');
   console.log('      --print                Emit normalized JSON to stdout on success');
   console.log('      --indent <n>           Indentation to use with --print (default: 2)');
   console.log('      --warnings-as-errors   Exit with code 2 if warnings are produced');
@@ -188,7 +212,7 @@ async function run(options: CliOptions): Promise<number> {
     return 2;
   }
 
-  const result: Result<unknown> = await validateAndNormalize(document);
+  const result: Result<unknown> = await validateAndNormalize(document, options.mode, options.spec);
   if (!result.ok) {
     printErrors(result.errors ?? []);
     return 1;

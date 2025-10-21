@@ -12,10 +12,6 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./parser": {
-      "types": "./dist/parser.d.ts",
-      "import": "./dist/parser.js"
-    },
     "./validate": {
       "types": "./dist/validate.d.ts",
       "import": "./dist/validate.js"
@@ -51,7 +47,6 @@
   },
   "homepage": "https://github.com/opencharacter/OpenCharacter-Specification#readme",
   "scripts": {
-    "prebuild": "node scripts/build-parser.js",
     "build": "tsc -p tsconfig.json",
     "postbuild": "node scripts/copy-schema.js",
     "test": "npm run build && node dist/check-fixtures.js"

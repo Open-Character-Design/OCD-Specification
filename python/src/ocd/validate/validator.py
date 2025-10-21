@@ -4,7 +4,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Sequence, Tuple
+from typing import Any, Dict, Iterable, List, Literal, Optional, Sequence, Tuple
 
 from jsonschema import Draft202012Validator
 from jsonschema.exceptions import ValidationError as JSONSchemaValidationError
@@ -16,6 +16,7 @@ from .linter import lint
 from .yaml_loader import safe_load
 
 _CORE_SCHEMA_VALIDATOR: Draft202012Validator | None = None
+_DEFAULT_SPEC: Dict[str, Any] | None = None
 
 
 def _load_core_schema_validator() -> Draft202012Validator:
@@ -49,6 +50,61 @@ def _load_core_schema() -> Dict[str, Any]:
     raise FileNotFoundError(message)
 
 
+def _load_default_spec() -> Dict[str, Any]:
+    """Load the bundled default OCD specification."""
+    global _DEFAULT_SPEC
+    if _DEFAULT_SPEC is None:
+        candidate_paths: Iterable[Path] = (
+            Path(__file__).resolve().parents[3] / "spec" / "ocd-default-spec.ocd",
+            Path(__file__).resolve().parents[3] / "docs" / "examples" / "ocd-default-spec.ocd",
+        )
+
+        last_error: Exception | None = None
+        for path in candidate_paths:
+            try:
+                with path.open("r", encoding="utf-8") as handle:
+                    # Parse OCD spec file (YAML-like format)
+                    _DEFAULT_SPEC = safe_load(handle.read())
+                    break
+            except Exception as exc:
+                last_error = exc
+                continue
+
+        if _DEFAULT_SPEC is None:
+            message = "could not locate bundled ocd-default-spec.ocd"
+            if last_error is not None:
+                raise FileNotFoundError(message) from last_error
+            raise FileNotFoundError(message)
+    
+    return _DEFAULT_SPEC
+
+
+def _load_spec_overlay(spec_path: str) -> Dict[str, Any]:
+    """Load a custom OCD specification overlay."""
+    path = Path(spec_path)
+    if not path.exists():
+        raise FileNotFoundError(f"Specification file not found: {spec_path}")
+    
+    with path.open("r", encoding="utf-8") as handle:
+        return safe_load(handle.read())
+
+
+def _merge_specs(base_spec: Dict[str, Any], overlay_spec: Dict[str, Any]) -> Dict[str, Any]:
+    """Merge overlay specification into base specification."""
+    # Deep merge the specifications
+    merged = base_spec.copy()
+    
+    def deep_merge(base: Dict[str, Any], overlay: Dict[str, Any]) -> None:
+        for key, value in overlay.items():
+            if key in base and isinstance(base[key], dict) and isinstance(value, dict):
+                deep_merge(base[key], value)
+            else:
+                base[key] = value
+    
+    deep_merge(merged, overlay_spec)
+    return merged
+
+
 def _format_schema_error(error: JSONSchemaValidationError) -> Dict[str, Any]:
     location: Tuple[Any, ...] = tuple(error.absolute_path)
     return {
@@ -64,10 +120,36 @@ def _collect_schema_errors(doc: Any) -> List[Dict[str, Any]]:
     return [_format_schema_error(error) for error in errors]
 
 
-def validate_and_normalize(doc: Any) -> Dict[str, Any]:
+def validate_and_normalize(
+    doc: Any, 
+    mode: Literal["relaxed", "strict"] = "relaxed",
+    spec_path: Optional[str] = None
+) -> Dict[str, Any]:
     """
+    Validate and normalize an OCD document.
+    
+    Args:
+        doc: The document to validate
+        mode: Validation mode - "relaxed" for structure-only, "strict" for full validation
+        spec_path: Optional path to custom OCD specification overlay
+        
     Returns: { ok: bool, data?: dict, errors?: list, warnings?: list }
     """
+    # Load specification
+    try:
+        base_spec = _load_default_spec()
+        if spec_path:
+            overlay_spec = _load_spec_overlay(spec_path)
+            spec = _merge_specs(base_spec, overlay_spec)
+        else:
+            spec = base_spec
+    except Exception as exc:
+        return {"ok": False, "errors": [{"loc": ("spec",), "msg": str(exc), "type": "spec_error"}]}
+    
+    # Override mode from spec if provided
+    if "validation" in spec and "mode" in spec["validation"]:
+        mode = spec["validation"]["mode"]
+    
     model = CharacterDefinition
     schema_errors = _collect_schema_errors(doc)
     unsupported_kind_error: Dict[str, Any] | None = None
@@ -83,7 +165,19 @@ def validate_and_normalize(doc: Any) -> Dict[str, Any]:
             }
 
     errors: List[Dict[str, Any]] = []
-    errors.extend(schema_errors)
+    
+    # In relaxed mode, only add critical schema errors
+    if mode == "relaxed":
+        # Filter to only critical errors (missing required fields, type mismatches)
+        critical_errors = []
+        for error in schema_errors:
+            if error.get("type") in ["jsonschema.required", "jsonschema.type"]:
+                critical_errors.append(error)
+        errors.extend(critical_errors)
+    else:
+        # In strict mode, include all schema errors
+        errors.extend(schema_errors)
+    
     if unsupported_kind_error is not None:
         errors.append(unsupported_kind_error)
 
@@ -92,7 +186,16 @@ def validate_and_normalize(doc: Any) -> Dict[str, Any]:
         try:
             obj = model.model_validate(doc)
         except ValidationError as exc:
-            errors.extend(exc.errors())
+            if mode == "strict":
+                errors.extend(exc.errors())
+            else:
+                # In relaxed mode, convert validation errors to warnings
+                for error in exc.errors():
+                    warnings.append({
+                        "code": "VALIDATION_WARNING",
+                        "path": _format_location(error.get("loc")),
+                        "detail": error.get("msg", "validation warning")
+                    })
 
     if errors:
         return {"ok": False, "errors": errors}
@@ -168,6 +271,16 @@ def main(argv: Sequence[str] | None = None) -> int:
         help="Force the input parser. Defaults to 'auto'.",
     )
     parser.add_argument(
+        "--mode",
+        choices=("relaxed", "strict"),
+        default="relaxed",
+        help="Validation mode: 'relaxed' for structure-only validation, 'strict' for full validation (default: relaxed).",
+    )
+    parser.add_argument(
+        "--spec",
+        help="Path to custom OCD specification overlay file.",
+    )
+    parser.add_argument(
         "--print",
         dest="print_normalized",
         action="store_true",
@@ -207,7 +320,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         print(str(exc), file=sys.stderr)
         return 2
 
-    result = validate_and_normalize(document)
+    result = validate_and_normalize(document, mode=args.mode, spec_path=args.spec)
     if not result.get("ok"):
         _print_errors(result.get("errors", []))
         return 1

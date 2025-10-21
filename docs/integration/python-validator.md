@@ -328,8 +328,17 @@ class CharacterLibraryManager:
 ### CLI
 
 ```bash
-# Validate a file
+# Validate a file (relaxed mode by default)
 ocd-validate character.yaml
+
+# Use strict validation mode
+ocd-validate character.yaml --mode strict
+
+# Use custom specification overlay
+ocd-validate character.yaml --spec my-project-spec.ocd
+
+# Combine mode and spec
+ocd-validate character.yaml --mode strict --spec my-project-spec.ocd
 
 # Print normalized output
 ocd-validate character.yaml --print
@@ -346,8 +355,17 @@ ocd-validate character.yaml --format yaml
 ```python
 from ocd.ocd_validate import validate_and_normalize
 
-# Validate a document
+# Basic validation (relaxed mode)
 result = validate_and_normalize(document)
+
+# Strict validation mode
+result = validate_and_normalize(document, mode="strict")
+
+# With custom specification overlay
+result = validate_and_normalize(document, spec_path="my-project-spec.ocd")
+
+# Combine mode and spec
+result = validate_and_normalize(document, mode="strict", spec_path="my-project-spec.ocd")
 
 if result["ok"]:
     print("Valid:", result["data"])
@@ -366,6 +384,8 @@ Arguments:
 
 Options:
   --format [auto|json|yaml]  Force the input parser. Defaults to 'auto'.
+  --mode [relaxed|strict]    Validation mode (default: relaxed).
+  --spec PATH                Path to custom OCD specification overlay file.
   --print                    Print the normalized document to stdout on success.
   --indent INTEGER           Indent level to use when printing normalized JSON (default: 2).
   --warnings-as-errors       Exit with code 2 if any warnings are produced.
@@ -374,12 +394,14 @@ Options:
 
 ## API Reference
 
-### `validate_and_normalize(doc: Any) -> Dict[str, Any]`
+### `validate_and_normalize(doc: Any, mode: str = "relaxed", spec_path: str = None) -> Dict[str, Any]`
 
 Validates and normalizes an OCD document.
 
 **Parameters:**
 - `doc`: The document to validate (dict, list, or primitive)
+- `mode`: Validation mode - "relaxed" for structure-only, "strict" for full validation (default: "relaxed")
+- `spec_path`: Optional path to custom OCD specification overlay file
 
 **Returns:**
 - `Dict[str, Any]`: Result object with the following structure:

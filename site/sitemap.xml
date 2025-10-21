@@ -1,159 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/Agents/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/Agents/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/changelog/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/changelog/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/faq/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/faq/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/getting-started/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/getting-started/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/glossary/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/glossary/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/authoring/examples/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/authoring/examples/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/authoring/ocd-t-guide/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/authoring/ocd-t-guide/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/authoring/writing-ocd-files/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/authoring/writing-ocd-files/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/governance/contributing-to-spec/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/governance/contributing-to-spec/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/governance/versioning-and-roadmap/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/governance/versioning-and-roadmap/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/integration/agents/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/integration/agents/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/integration/extensions-and-namespaces/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/integration/extensions-and-namespaces/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/integration/js-ts-validator/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/integration/js-ts-validator/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/integration/python-validator/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/integration/python-validator/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/integration/validator-roadmap-todo/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/integration/validator-roadmap-todo/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/reference/diagnostics/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/reference/diagnostics/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/reference/fields/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/reference/fields/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/reference/vocabularies/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/reference/vocabularies/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/spec/schema-overview/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/spec/schema-overview/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/spec/trait-model/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/spec/trait-model/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/tutorial/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/tutorial/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/tutorial/background/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/tutorial/background/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/tutorial/extensions/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/tutorial/extensions/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/tutorial/first-character/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/tutorial/first-character/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/tutorial/personality/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/tutorial/personality/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/tutorial/production/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/tutorial/production/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/use-cases/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/use-cases/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/use-cases/ai-npcs/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/use-cases/ai-npcs/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/use-cases/community/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/use-cases/community/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/use-cases/creative/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/use-cases/creative/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/use-cases/godot/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/use-cases/godot/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/use-cases/interactive/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/use-cases/interactive/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/use-cases/storytelling/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/use-cases/storytelling/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/use-cases/technical/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/use-cases/technical/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/use-cases/unity/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/use-cases/unity/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/use-cases/unreal/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/use-cases/unreal/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/use-cases/virtual-production/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/use-cases/virtual-production/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
     <url>
-         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/use-cases/visual-novels/</loc>
+         <loc>https://open-character-design.github.io/OCD-Specification/use-cases/visual-novels/</loc>
          <lastmod>2025-10-21</lastmod>
     </url>
 </urlset>

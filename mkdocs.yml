@@ -1,6 +1,6 @@
 site_name: Open Character Specification
 site_description: A structured, portable format for defining characters across games, film/TV, books, and AI role-play
-site_url: https://Open-Character-Design.github.io/OpenCharacter-Specification/
+site_url: https://open-character-design.github.io/OCD-Specification/
 repo_url: https://github.com/Open-Character-Design/OCD-Specification
 repo_name: OpenCharacter-Specification
 edit_uri: edit/main/docs/

@@ -24,7 +24,7 @@ Get up and running in minutes with our validators (WIP - Not actually ready yet)
     npx @ocd-tools/validator examples/bruenor.yaml --print
     ```
 
-[Get Started Now](getting-started.md){ .md-button .md-button--primary }
+[Get Started Now](getting-started/){ .md-button .md-button--primary }
 
 
 ## Why OCD?
@@ -36,48 +36,63 @@ It helps creators maintain consistency, enhance collaboration, and connect chara
 
 ## Use Cases
 
-Transform your creative and technical workflows with OCD’s unified character design framework.
+Transform your creative and technical workflows with OCD's unified character design framework.
 
 From storytelling to simulation, OCD connects creativity, data, and collaboration across five core domains:
 
-### 🎨 [Creative Design](use-cases/creative.md)
+<div class="features-grid">
 
-**Character Design Framework & Worldbuilding**
+<div class="feature-card">
 
-Bring structure and depth to your creative process. OCD enables consistent character development from concept to implementation, supporting visual artists, writers, and transmedia creators in building cohesive worlds.
+<h3>🎨 <a href="use-cases/creative/">Creative Design</a></h3>
 
-*For: Writers, artists, content creators*
+<p>Bring structure and depth to your creative process. OCD enables consistent character development from concept to implementation, supporting visual artists, writers, and transmedia creators in building cohesive worlds.</p>
 
-### ⚙️ [Technical Integration & Data Systems](use-cases/technical.md)
+<p><em>For: Writers, artists, content creators</em></p>
 
-Bridge creativity and computation. OCD provides a structured metadata layer for character systems—ideal for AI datasets, API integration, procedural pipelines, and version control in complex productions.
+</div>
 
-*For: Developers, data engineers, AI researchers*
+<div class="feature-card">
 
+<h3>⚙️ <a href="use-cases/technical/">Technical Integration & Data Systems</a></h3>
 
-### 🎮 [Interactive & Game Development](use-cases/interactive.md)
+<p>Bridge creativity and computation. OCD provides a structured metadata layer for character systems—ideal for AI datasets, API integration, procedural pipelines, and version control in complex productions.</p>
 
-**Games & Interactive Experiences**
+<p><em>For: Developers, data engineers, AI researchers</em></p>
 
-Design and deploy interactive characters for games, simulations, and virtual worlds. OCD ensures your NPCs, avatars, and agents maintain personality consistency across gameplay and updates.
+</div>
 
-*For: Game developers, AI engineers*
+<div class="feature-card">
 
-### 🎬 [Virtual & Real-Time Production](use-cases/virtual-production.md)
+<h3>🎮 <a href="use-cases/interactive/">Interactive & Game Development</a></h3>
 
-**Real-time Character Rendering**
+<p>Design and deploy interactive characters for games, simulations, and virtual worlds. OCD ensures your NPCs, avatars, and agents maintain personality consistency across gameplay and updates.</p>
 
-Integrate OCD characters into film, TV, and live digital production. Manage character consistency across real-time rendering pipelines and virtual performance systems.
+<p><em>For: Game developers, AI engineers</em></p>
 
-*For: Film studios, virtual production teams*
+</div>
 
-### 🌐 [Collaboration & Open Ecosystem](use-cases/community.md)
+<div class="feature-card">
 
-**Collaboration & Cross-Media Adaptation**
+<h3>🎬 <a href="use-cases/virtual-production/">Virtual & Real-Time Production</a></h3>
 
-Join a shared creative standard. OCD’s open specification enables creators to exchange, remix, and evolve characters across projects, teams, and platforms.
+<p>Integrate OCD characters into film, TV, and live digital production. Manage character consistency across real-time rendering pipelines and virtual performance systems.</p>
 
-*For: Open-source collaborators, cross-media teams*
+<p><em>For: Film studios, virtual production teams</em></p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>🌐 <a href="use-cases/community/">Collaboration & Open Ecosystem</a></h3>
+
+<p>Join a shared creative standard. OCD's open specification enables creators to exchange, remix, and evolve characters across projects, teams, and platforms.</p>
+
+<p><em>For: Open-source collaborators, cross-media teams</em></p>
+
+</div>
+
+</div>
 
 ## Your First Character
 
@@ -87,14 +102,14 @@ Here's a minimal OCD character to get you started:
 ocd_version: "0.0.1"
 id: "my-first-character"
 names:
-  canon: "Alice"
+  canon: "Rita"
 identity:
   kind: "humanoid"
   species: "Human"
 personality:
-  summary: "Brave and curious adventurer"
+  summary: "Bold and fun socialite"
 meta:
-  tags: [adventurer, human, brave]
+  tags: [mentor, human, brave]
   versioning:
     created_at: "2024-01-01T00:00:00Z"
     last_modified: "2024-01-01T00:00:00Z"
@@ -105,29 +120,49 @@ meta:
 
 ## What's Next?
 
-### 🚀 [Get Started](getting-started.md)
+<div class="features-grid">
 
-Install validators, create your first character, and understand the basics.
+<div class="feature-card">
 
-*For: New users, quick setup*
+<h3>🚀 <a href="getting-started/">Get Started</a></h3>
 
-### 📖 [Browse Examples](authoring/examples.md)
+<p>Install validators, create your first character, and understand the basics.</p>
 
-Explore character examples from D&D warriors to sci-fi heroes. See OCD in action.
+<p><em>For: New users, quick setup</em></p>
 
-*For: Learning by example, inspiration*
+</div>
 
-### 📝 [Read the Spec](spec/schema-overview.md)
+<div class="feature-card">
 
-Deep dive into the specification. Understand blocks, traits, and validation rules.
+<h3>📖 <a href="authoring/examples/">Browse Examples</a></h3>
 
-*For: Technical implementation, detailed understanding*
+<p>Explore character examples from D&D warriors to sci-fi heroes. See OCD in action.</p>
 
-### 🔌 [Integration Guide](integration/python-validator.md)
+<p><em>For: Learning by example, inspiration</em></p>
 
-Integrate OCD into your applications with our Python and JavaScript validators.
+</div>
 
-*For: Developers, system integration*
+<div class="feature-card">
+
+<h3>📝 <a href="spec/schema-overview/">Read the Spec</a></h3>
+
+<p>Deep dive into the specification. Understand blocks, traits, and validation rules.</p>
+
+<p><em>For: Technical implementation, detailed understanding</em></p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>🔌 <a href="integration/python-validator/">Integration Guide</a></h3>
+
+<p>Integrate OCD into your applications with our Python and JavaScript validators.</p>
+
+<p><em>For: Developers, system integration</em></p>
+
+</div>
+
+</div>
 
 ## Community
 

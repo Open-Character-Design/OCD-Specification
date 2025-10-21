@@ -9,48 +9,52 @@ nav:
   - Home: index.md
   - Getting Started:
     - Installation: getting-started.md
-    - Tutorial:
-      - Overview: tutorial/index.md
-      - Your First Character: tutorial/first-character.md
-      - Adding Personality: tutorial/personality.md
-      - Background & Relationships: tutorial/background.md
-      - System Extensions: tutorial/extensions.md
-      - Production Tips: tutorial/production.md
+    - Migration Guide: migration-guide.md
+    - FAQ: faq.md
+  - Tutorial:
+    - Overview: tutorial/index.md
+    - Your First Character: tutorial/first-character.md
+    - Adding Personality: tutorial/personality.md
+    - Background & Relationships: tutorial/background.md
+    - Validation Modes: tutorial/validation-modes.md
+    - System Extensions: tutorial/extensions.md
+    - Production Tips: tutorial/production.md
   - Specification:
     - Overview: spec/schema-overview.md
     - Trait Model: spec/trait-model.md
+    - OCD Specification Format: spec/ocd-specification-format.md
+    - Fields Reference: reference/fields.md
+    - Vocabularies: reference/vocabularies.md
   - Authoring:
     - Writing OCD Files: authoring/writing-ocd-files.md
     - Examples Gallery: authoring/examples.md
+  - Validation:
+    - Overview: reference/validation.md
+    - Troubleshooting: troubleshooting.md
+    - Diagnostics: reference/diagnostics.md
   - Integration:
     - Python Validator: integration/python-validator.md
     - JavaScript/TypeScript: integration/js-ts-validator.md
+    - Integration Examples: integration/examples.md
     - Agents & Runtime: integration/agents.md
     - Extensions: integration/extensions-and-namespaces.md
     - Validator Roadmap: integration/validator-roadmap-todo.md
-  - Reference:
-    - Validation: reference/validation.md
-    - Fields: reference/fields.md
-    - Vocabularies: reference/vocabularies.md
-    - Diagnostics: reference/diagnostics.md
   - Use Cases:
     - Overview: use-cases/index.md
-    - Creative Applications: use-cases/creative.md
+    - Creative Workflows: use-cases/creative.md
     - Technical Applications: use-cases/technical.md
     - Interactive & Storytelling: use-cases/interactive.md
-    - Game Engines:
+    - Game Development:
       - Unity: use-cases/unity.md
       - Unreal Engine: use-cases/unreal.md
       - Godot: use-cases/godot.md
-    - Creative Applications:
-      - Visual Novels & RPGs: use-cases/visual-novels.md
+    - AI & Machine Learning:
       - AI NPCs: use-cases/ai-npcs.md
       - Interactive Storytelling: use-cases/storytelling.md
-    - Production:
+      - Visual Novels & RPGs: use-cases/visual-novels.md
       - Virtual Production: use-cases/virtual-production.md
-    - Community & Open Source: use-cases/community.md
+    - Community Projects: use-cases/community.md
   - Community:
-    - FAQ: faq.md
     - Contributing: governance/contributing-to-spec.md
     - Versioning: governance/versioning-and-roadmap.md
     - Changelog: changelog.md

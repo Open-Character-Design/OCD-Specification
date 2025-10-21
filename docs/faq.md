@@ -1,388 +1,425 @@
-# FAQ
-
-Frequently asked questions about OCD (Open Character Specification).
-
-## Use Case Questions
-
-### When should I use OCD?
-
-OCD is For:
-
-- **Character-driven projects** that need consistency across multiple mediums
-- **Collaborative teams** working on shared character universes
-- **AI applications** that need structured character data for training or interaction
-- **Game development** requiring rich, portable character systems
-- **Cross-media projects** where characters appear in multiple formats
-- **Educational programs** teaching systematic character design
-
-### What types of projects benefit most from OCD?
-
-**High-value use cases:**
-- **Game Studios**: Consistent character development across multiple games
-- **AI Platforms**: Training data for character-driven AI systems
-- **Animation Studios**: Character consistency across different productions
-- **Educational Institutions**: Teaching structured character design
-- **Open Source Projects**: Building shared character libraries
-- **Transmedia IP**: Characters that appear across multiple media
-
-### How does OCD compare to other character formats?
-
-**OCD vs. proprietary formats:**
-- **Open source** vs. locked-in proprietary systems
-- **Cross-platform** vs. single-platform solutions
-- **Extensible** vs. rigid, fixed schemas
-- **Community-driven** vs. vendor-controlled development
-
-**OCD vs. unstructured approaches:**
-- **Validated** vs. error-prone manual processes
-- **Searchable** vs. scattered notes and documents
-- **Version controlled** vs. no change tracking
-- **Collaborative** vs. single-person workflows
-
-### Can OCD handle complex character relationships?
-
-Yes! OCD supports sophisticated relationship modeling:
-
-- **Character-to-character relationships** with sentiment and role tracking
-- **Faction and organization memberships** with hierarchical structures
-- **Timeline-based relationships** that evolve over time
-- **Cross-reference validation** to ensure relationship consistency
-- **Relationship analytics** for understanding character networks
-
-### Is OCD suitable for AI training data?
-
-Absolutely! OCD is designed with AI applications in mind:
-
-- **Structured data** perfect for machine learning
-- **Attribution tracking** for ethical AI training
-- **Validation** ensures data quality
-- **Extensibility** supports custom AI training needs
-- **Community datasets** for collaborative AI development
+# Frequently Asked Questions
 
 ## General Questions
 
-### What is OCD?
+### What is the Open Character Specification (OCD)?
 
-OCD (Open Character Specification) is a structured, portable format for defining characters across games, film/TV, books, and AI role-play. It provides a unified way to represent character data that works across different platforms and systems.
+The Open Character Specification is a standardized format for describing characters in a structured, machine-readable way. It's designed to be flexible enough for creative use cases while providing enough structure for technical applications like AI systems, game engines, and APIs.
 
-### Why should I use OCD?
+### Why should I use OCD instead of other character formats?
 
-OCD offers several benefits:
+OCD provides several advantages:
 
-- **Portability**: Characters work across games, AI platforms, and media
-- **Consistency**: Standardized structure ensures reliable character representation
-- **Validation**: Built-in schema validation catches errors before deployment
-- **Extensibility**: Support for custom game systems via extension blocks
-- **Interoperability**: Easy to convert between different platforms
+- **Standardization**: Consistent format across different tools and platforms
+- **Validation**: Built-in validation ensures data quality and consistency
+- **Flexibility**: Supports both simple and complex character descriptions
+- **Extensibility**: Custom specifications allow project-specific requirements
+- **Interoperability**: Works with multiple programming languages and tools
+- **Future-proof**: Designed to evolve with changing needs
+
+### What file formats does OCD support?
+
+OCD supports both YAML and JSON formats for character data. The specification itself uses a YAML-like format (`.ocd` files) for defining validation rules.
 
 ### Is OCD free to use?
 
-Yes! OCD is open source:
-- **Code**: Licensed under Apache 2.0
-- **Specification**: Licensed under CC-BY-4.0
-- **Free for commercial and personal use**
+Yes, OCD is completely free and open source. It's released under the Apache 2.0 license for code and CC BY 4.0 for the specification.
+
+## Validation Questions
+
+### What are the different validation modes?
+
+OCD provides two validation modes:
+
+- **Relaxed Mode (Default)**: Structure-only validation, soft enums, allows unknown fields
+- **Strict Mode**: Complete validation with strict type checking and enum enforcement
+
+### When should I use relaxed mode vs strict mode?
+
+- **Use Relaxed Mode** for:
+  - Development and prototyping
+  - Creative workflows
+  - Legacy data migration
+  - When flexibility is important
+
+- **Use Strict Mode** for:
+  - Production systems
+  - Data quality assurance
+  - Team consistency
+  - Final validation before deployment
+
+### How do I create custom validation rules?
+
+Create a custom specification file (`.ocd`) with your validation rules:
+
+```yaml
+id: my-project-spec
+type: validationSpec
+metadata:
+  name: My Project Validation Rules
+
+validation:
+  mode: strict
+  rules:
+    custom_validation:
+      - code: MINIMUM_TRAITS
+        condition: "personality.traits.length >= 3"
+        message: "Characters must have at least 3 personality traits"
+        severity: error
+```
+
+Then use it with:
+```bash
+ocd-validate character.yaml --spec my-project-spec.ocd
+```
+
+### Can I override the validation mode in a custom specification?
+
+Yes, you can set the default mode in your custom specification:
+
+```yaml
+validation:
+  mode: strict  # This becomes the default mode
+  constraints:
+    allowUnknownFields: false
+```
+
+You can still override it with the `--mode` flag:
+```bash
+ocd-validate character.yaml --spec my-spec.ocd --mode relaxed
+```
 
 ## Technical Questions
 
-### Do I have to use OCD-T?
+### What programming languages are supported?
 
-No! You can use any of these formats:
-- **YAML**: Human-readable, great for authoring
-- **JSON**: Machine-readable, perfect for APIs
-- **OCD-T**: Concise textual format for quick authoring
+Currently, OCD validators are available for:
 
-All formats validate to the same schema.
+- **Python**: `ocd-validate` package
+- **Node.js/TypeScript**: `@ocd-tools/validator` package
 
-### How do I add custom game system data?
+More languages may be added in the future based on community demand.
 
-Use extension blocks with the `x-` prefix:
+### How do I integrate OCD into my application?
 
-```yaml
-x-dnd5e:
-  class: "Wizard"
-  level: 8
-  # ... D&D specific data
+Integration depends on your platform:
 
-x-my-game:
-  system: "MyFantasyRPG"
-  character_type: "Mage"
-  # ... custom system data
+**Web Applications:**
+```typescript
+import { validateAndNormalize } from '@ocd-tools/validator';
+
+const result = await validateAndNormalize(characterData, 'strict');
+if (result.ok) {
+  // Use validated character data
+  console.log(result.data);
+} else {
+  // Handle validation errors
+  console.error(result.errors);
+}
 ```
 
-### Can I validate files programmatically?
+**Python Applications:**
+```python
+from ocd.validate import validate_and_normalize
 
-Yes! Both Python and JavaScript validators provide APIs:
-
-=== "Python"
-
-    ```python
-    from ocd.ocd_validate import validate_and_normalize
-    
-    result = validate_and_normalize(document)
-    if result["ok"]:
-        print("Valid:", result["data"])
-    else:
-        print("Errors:", result["errors"])
-    ```
-
-=== "JavaScript"
-
-    ```javascript
-    import { validateAndNormalize } from '@ocd-tools/validator';
-    
-    const result = validateAndNormalize(document);
-    if (result.ok) {
-        console.log('Valid:', result.data);
-    } else {
-        console.log('Errors:', result.errors);
-    }
-    ```
-
-### What validation errors should I watch for?
-
-Common validation issues:
-
-- **Missing required fields**: `ocd_version`, `id`, `names.canon`, etc.
-- **Invalid field values**: Wrong identity kinds, malformed timestamps
-- **Unresolved references**: `target_ref` pointing to non-existent characters
-- **Content rating conflicts**: Traits contradicting appropriateness ratings
-
-### How do I handle character relationships?
-
-Use the `relationships` array in the background block:
-
-```yaml
-background:
-  relationships:
-    - target_ref: "char-other-character"
-      role: "friend"
-      sentiment: 0.8
-      notes: "Close ally from childhood"
+result = validate_and_normalize(character_data, mode="strict")
+if result["ok"]:
+    # Use validated character data
+    print(result["data"])
+else:
+    # Handle validation errors
+    print(result["errors"])
 ```
 
-The validator will check that referenced characters exist.
+**CLI Integration:**
+```bash
+# Validate single character
+ocd-validate character.yaml
 
-## Integration Questions
+# Validate with custom spec
+ocd-validate character.yaml --spec my-spec.ocd
 
-### How do I integrate OCD with my AI platform?
+# Batch validation
+for file in characters/*.yaml; do
+  ocd-validate "$file" --mode strict
+done
+```
 
-See the [Agents & Runtime guide](integration/agents.md) for patterns including:
-- LangChain integration
-- LlamaIndex compatibility
-- Runtime orchestration
-- Memory management
+### Can I use OCD with game engines like Unity or Unreal?
 
-### Can I use OCD with existing game systems?
+Yes, OCD can be integrated with game engines. The validation can be done at build time or runtime, and the validated character data can be used to drive game systems like dialogue, AI behavior, or character customization.
 
-Yes! OCD supports popular systems:
-- **D&D 5e**: Via `x-dnd5e` extension
-- **Pathfinder**: Via `x-pf2e` extension
-- **Custom systems**: Create your own `x-*` extensions
+See [Integration Examples](integration/examples.md) for specific implementation examples.
 
-### How do I convert from other character formats?
+### How do I handle validation errors in my application?
 
-Conversion depends on your source format:
+Handle validation errors gracefully:
 
-1. **From JSON**: Direct mapping with field translation
-2. **From XML**: Parse and restructure to OCD format
-3. **From proprietary**: Create mapping rules for your specific format
+```typescript
+try {
+  const result = await validateAndNormalize(characterData, 'strict');
+  
+  if (result.ok) {
+    // Success - use validated data
+    processCharacter(result.data);
+  } else {
+    // Validation failed - show errors to user
+    showValidationErrors(result.errors);
+  }
+} catch (error) {
+  // Unexpected error - log and handle
+  console.error('Validation error:', error);
+  showGenericError();
+}
+```
 
-### Is there a character database or registry?
+## Data Questions
 
-Not yet, but we're planning:
-- Community character sharing
-- Extension registry
-- Validation service API
+### What's the difference between a character and a validation specification?
 
-## Authoring Questions
+- **Character**: Contains actual character data (names, personality, background, etc.)
+- **Validation Specification**: Defines rules for validating character data
 
-### What's the difference between YAML, JSON, and OCD-T?
+Characters are typically stored as `.yaml` or `.json` files, while specifications are stored as `.ocd` files.
 
-| Format | Best For | Pros | Cons |
-|--------|----------|------|------|
-| **YAML** | Human authoring | Readable, comments | Larger file size |
-| **JSON** | APIs, automation | Compact, universal | Less readable |
-| **OCD-T** | Quick authoring | Concise, markdown-friendly | Learning curve |
+### Can I add custom fields to my characters?
 
-### How do I handle character updates?
+Yes, in relaxed mode you can add custom fields. In strict mode, only fields defined in the schema are allowed.
 
-Use semantic versioning in metadata:
+```yaml
+# This works in relaxed mode
+ocd_version: "0.9.0"
+id: "my-character"
+names:
+  canon: "My Character"
+# Custom field
+custom_field: "custom value"
+```
+
+### How do I migrate from other character formats?
+
+Migration depends on your source format:
+
+1. **Identify the mapping** between your format and OCD
+2. **Create a conversion script** to transform the data
+3. **Validate the converted data** using OCD validators
+4. **Test thoroughly** with both relaxed and strict modes
+
+### Can I use OCD for non-human characters?
+
+Yes, OCD supports various entity types:
+
+```yaml
+identity:
+  entity_kind: "creature"  # For animals, monsters, etc.
+  species: "dragon"
+  sapience_level: "sapient"
+```
+
+Or for AI characters:
+
+```yaml
+identity:
+  entity_kind: "ai"
+  species: "artificial"
+  sapience_level: "transcendent"
+```
+
+## Performance Questions
+
+### How fast is OCD validation?
+
+Validation speed depends on:
+
+- **Character complexity**: More fields = longer validation
+- **Validation mode**: Strict mode is slower than relaxed mode
+- **Custom specifications**: Complex rules slow down validation
+- **File size**: Larger files take longer to process
+
+For typical character files, validation should complete in milliseconds.
+
+### Can I validate large numbers of characters?
+
+Yes, but consider:
+
+- **Batch processing**: Validate multiple characters in a single operation
+- **Parallel processing**: Use multiple processes/threads for large datasets
+- **Caching**: Cache validation results when possible
+- **Incremental validation**: Only validate changed characters
+
+### How much memory does OCD validation use?
+
+Memory usage depends on:
+
+- **Character file size**: Larger files use more memory
+- **Validation mode**: Strict mode uses more memory
+- **Custom specifications**: Complex rules increase memory usage
+
+For typical character files, memory usage should be minimal.
+
+## Troubleshooting Questions
+
+### My validation is failing but I don't know why. What should I do?
+
+1. **Check the error messages** - they usually indicate the specific problem
+2. **Try relaxed mode** - this often reveals if it's a strict validation issue
+3. **Validate with a minimal example** - start with the simplest possible character
+4. **Check the documentation** - see [Troubleshooting Guide](troubleshooting.md)
+5. **Ask for help** - use GitHub Issues or Discussions
+
+### Why is my custom specification not working?
+
+Common issues:
+
+1. **Invalid YAML syntax** - check for proper indentation and formatting
+2. **Missing required fields** - ensure `id`, `type`, and `validation` are present
+3. **Invalid rule syntax** - check condition expressions and rule structure
+4. **File path issues** - ensure the specification file exists and is readable
+
+### Can I validate characters without installing the validators?
+
+Yes, you can use online validation tools or integrate validation into your existing workflow. However, for production use, we recommend installing the appropriate validator package.
+
+## Community Questions
+
+### How can I contribute to OCD?
+
+There are many ways to contribute:
+
+1. **Report bugs** - use GitHub Issues
+2. **Suggest features** - use GitHub Discussions
+3. **Submit pull requests** - contribute code improvements
+4. **Write documentation** - help improve the docs
+5. **Share examples** - contribute character examples
+6. **Help others** - answer questions in Discussions
+
+### Where can I get help?
+
+- **GitHub Issues**: For bug reports and feature requests
+- **GitHub Discussions**: For questions and community discussion
+- **Documentation**: Check the guides and reference materials
+- **Examples**: Look at the example characters and integration examples
+
+### Is there a community Discord or Slack?
+
+Currently, community discussion happens on GitHub Discussions. We may add other platforms in the future based on community needs.
+
+### Can I use OCD in commercial projects?
+
+Yes, OCD is free to use in commercial projects. The code is licensed under Apache 2.0 and the specification under CC BY 4.0, both of which allow commercial use.
+
+### How often is OCD updated?
+
+OCD follows semantic versioning and is updated based on community needs and feedback. Major updates are announced on GitHub and in the changelog.
+
+## Advanced Questions
+
+### Can I extend OCD with my own field types?
+
+Yes, you can create custom specifications that define additional field types and validation rules. However, for maximum compatibility, we recommend using the standard field types when possible.
+
+### How do I handle versioning of character data?
+
+OCD includes built-in versioning support:
 
 ```yaml
 meta:
   versioning:
-    version: "1.2.0"  # Major.Minor.Patch
+    created_at: "2024-01-01T00:00:00Z"
     last_modified: "2024-01-01T00:00:00Z"
+    version: "1.0.0"
 ```
 
-### What are the best practices for trait naming?
+You can also use external version control systems like Git for more advanced versioning needs.
 
-Use standardized trait names for consistency:
+### Can I use OCD with databases?
 
-```yaml
-# Good
-- name: "introversion-extraversion"
-- name: "combat-readiness"
+Yes, OCD character data can be stored in databases. The validation can be done:
 
-# Avoid
-- name: "Introversion vs Extraversion"
-- name: "Combat Readiness"
-```
+- **At insertion time** - validate before storing
+- **At retrieval time** - validate when loading from database
+- **Asynchronously** - validate in background processes
 
-### How do I handle localization?
+### How do I handle large-scale character management?
 
-Use the `display` field for multiple languages:
+For large-scale character management:
 
-```yaml
-names:
-  canon: "Alice"
-  display:
-    en-US: "Alice"
-    es-ES: "Alicia"
-    fr-FR: "Alice"
-```
+1. **Use databases** for storage and indexing
+2. **Implement caching** for frequently accessed characters
+3. **Use batch validation** for bulk operations
+4. **Consider sharding** for very large datasets
+5. **Implement search** and filtering capabilities
 
-## Validation Questions
+### Can I use OCD with AI/ML systems?
 
-### What does normalization do?
+Yes, OCD is designed to work well with AI/ML systems:
 
-The validator normalizes:
-- **Trait names**: Standardizes separators (`-`)
-- **Tags**: Lowercases and deduplicates
-- **Slugs**: Normalizes separators
-- **Timestamps**: Ensures ISO 8601 format
+- **Structured data** makes it easy to extract features
+- **Validation ensures data quality** for training
+- **Flexible schema** allows for custom fields
+- **Standardized format** enables data sharing
 
-### How do I treat warnings as errors?
+### How do I handle internationalization?
 
-Use the `--warnings-as-errors` flag:
+OCD supports internationalization through:
 
-```bash
-ocd-validate character.yaml --warnings-as-errors
-```
+- **Unicode support** in all text fields
+- **Custom field names** in different languages
+- **Localized validation messages** in custom specifications
+- **Character encoding** support (UTF-8)
 
-### Can I validate multiple files at once?
+### Can I use OCD with real-time systems?
 
-Yes! Use shell commands:
+Yes, OCD can be used in real-time systems:
 
-```bash
-# Validate all YAML files
-find . -name "*.yaml" -exec ocd-validate {} \;
+- **Fast validation** - typically completes in milliseconds
+- **Caching** - validate once, use many times
+- **Incremental validation** - only validate changed fields
+- **Async validation** - validate in background threads
 
-# Validate with error on warnings
-find . -name "*.yaml" -exec ocd-validate {} --warnings-as-errors \;
-```
+### How do I handle character relationships and references?
 
-### What's the difference between errors and warnings?
+OCD supports character relationships through:
 
-- **Errors**: Prevent validation (missing required fields, invalid values)
-- **Warnings**: Suggest improvements (normalization applied, potential issues)
+- **Reference fields** - link to other character IDs
+- **Relationship objects** - define specific relationship types
+- **Validation of references** - ensure referenced characters exist
+- **Circular reference handling** - prevent infinite loops
 
-## Extension Questions
+### Can I use OCD with version control systems?
 
-### How do I create custom extensions?
+Yes, OCD works well with version control:
 
-1. Choose a namespace: `x-my-system`
-2. Define your schema
-3. Document the fields
-4. Use consistently across characters
+- **Text-based format** - easy to diff and merge
+- **Structured data** - clear conflict resolution
+- **Validation** - ensure data integrity after merges
+- **Git hooks** - validate on commit
 
-```yaml
-x-my-system:
-  # Document your fields
-  system: "MyFantasyRPG"
-  version: "2.1"
-  character_type: "Mage"
-```
+### How do I handle character data migration?
 
-### Can I validate extension data?
+For character data migration:
 
-OCD validators don't validate extension blocks (they're system-specific). Each game system would need its own validator for extension data.
+1. **Map source fields** to OCD fields
+2. **Create conversion scripts** to transform data
+3. **Validate converted data** using OCD validators
+4. **Test thoroughly** with sample data
+5. **Implement rollback** procedures for safety
 
-### How do I share extensions with the community?
+### Can I use OCD with cloud services?
 
-1. Document your extension schema
-2. Provide examples
-3. Submit to the community registry (coming soon)
-4. Follow naming conventions (`x-system-name`)
+Yes, OCD can be used with cloud services:
 
-## Troubleshooting
+- **API integration** - validate characters via REST APIs
+- **Cloud storage** - store character data in cloud databases
+- **Serverless functions** - validate characters in serverless environments
+- **CDN integration** - serve validated character data via CDN
 
-### My character validates but doesn't work in my game
+### How do I handle character data backup and recovery?
 
-This usually means:
-1. **Missing extension data**: Add system-specific fields
-2. **Wrong field values**: Check your game system's requirements
-3. **Incomplete character**: Add missing personality/background details
+For backup and recovery:
 
-### I'm getting "UNRESOLVED_REF" warnings
-
-This means a `target_ref` points to a character that doesn't exist:
-
-```yaml
-# This will warn if char-friend doesn't exist
-relationships:
-  - target_ref: "char-friend"
-    role: "ally"
-```
-
-**Solutions:**
-1. Create the referenced character
-2. Remove the reference
-3. Use a placeholder ID
-
-### My timestamps are invalid
-
-Use ISO 8601 format:
-
-```yaml
-# Correct
-created_at: "2024-01-01T00:00:00Z"
-
-# Incorrect
-created_at: "January 1, 2024"
-created_at: "2024-01-01"
-```
-
-### The validator is too strict
-
-OCD validation is designed to catch common issues. If you need to bypass validation:
-
-1. **For development**: Use `--format` to force parsing
-2. **For production**: Fix the validation issues
-3. **For custom fields**: Use extension blocks
-
-## Getting Help
-
-### Where can I get help?
-
-1. **Documentation**: Check the [Specification](spec/schema-overview.md)
-2. **Examples**: Browse the [Examples Gallery](authoring/examples.md)
-3. **Community**: Ask on [GitHub Discussions](https://github.com/Open-Character-Design/OCD-Specification/discussions)
-4. **Issues**: Report bugs on [GitHub Issues](https://github.com/Open-Character-Design/OCD-Specification/issues)
-
-### How do I contribute to OCD?
-
-See the [Contributing guide](governance/contributing-to-spec.md) for:
-- Code contributions
-- Specification improvements
-- Documentation updates
-- Community support
-
-### Can I suggest new features?
-
-Yes! We welcome feature requests:
-1. **Check existing issues** first
-2. **Create a new issue** with detailed description
-3. **Provide examples** of how it would work
-4. **Consider contributing** the implementation
-
-## Still Have Questions?
-
-If you don't see your question here:
-
-1. **Search the documentation** for related topics
-2. **Check GitHub Issues** for similar questions
-3. **Ask on Discussions** for community help
-4. **Create an Issue** for bugs or feature requests
-
-We're here to help make OCD work for your use case!
+1. **Regular backups** - backup character data regularly
+2. **Validation on restore** - validate data after recovery
+3. **Version control** - use Git for character data
+4. **Incremental backups** - only backup changed characters
+5. **Testing** - regularly test backup and recovery procedures

@@ -8,12 +8,12 @@ Transform your character development workflow with a unified specification that 
 
 ## Quick Start
 
-Get up and running in minutes with our validators (WIP - Not actually ready yet):
+Get up and running in minutes with our validators:
 
 === "Python"
 
     ```bash
-    pip install ocd
+    pip install ocd-validate
     ocd-validate examples/bruenor.yaml --print
     ```
 

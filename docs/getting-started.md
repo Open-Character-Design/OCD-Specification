@@ -23,7 +23,7 @@ Choose your preferred validator. OCD (will be) available for both **Python** and
 ### 🐍 Python
 
 ```bash
-pip install ocd-
+pip install ocd-validate
 ```
 
 **Requirements:** Python 3.8+ and `pip`
@@ -31,7 +31,7 @@ pip install ocd-
 ### 🟦 Node.js
 
 ```bash
-npm install -g ocd-
+npm install -g @ocd-tools/validator
 ```
 
 ## Choose Your Path
@@ -88,18 +88,19 @@ Learn how to contribute to open character libraries and shared creative projects
 
 ## Quick Validation
 
-Let’s validate your first character file.
+Let's validate your first character file.
 
 `sample-character.yaml`
 
 ```yaml
-ocd_version: "0.0.1"
+ocd_version: "0.9.0"
 id: "char-sample-hero"
 names:
   canon: "Sample Hero"
 identity:
-  kind: "humanoid"
-  species: "Human"
+  entity_kind: "person"
+  species: "human"
+  sapience_level: "sapient"
 meta:
   versioning:
     created_at: "2024-01-01T00:00:00Z"
@@ -120,6 +121,67 @@ You should see:
 ```
 
 If you do — congrats! Your OCD validator is working.
+
+## Validation Modes
+
+The OCD validation system provides two modes to suit different needs:
+
+### Relaxed Mode (Default)
+- **Structure validation**: Ensures required fields are present
+- **Soft type checking**: Basic validation for critical fields
+- **Flexible enums**: Invalid enum values generate warnings
+- **Unknown fields**: Allows additional fields not in the schema
+
+```bash
+# Relaxed mode (default)
+ocd-validate character.yaml
+
+# Explicit relaxed mode
+ocd-validate character.yaml --mode relaxed
+```
+
+### Strict Mode
+- **Complete validation**: All schema rules are enforced
+- **Enum enforcement**: Invalid enum values cause validation failures
+- **Type strictness**: Exact type matching required
+- **No unknown fields**: Additional fields cause validation failures
+
+```bash
+# Strict mode
+ocd-validate character.yaml --mode strict
+```
+
+## Custom Validation Specifications
+
+Create custom validation rules for your project:
+
+```yaml title="my-project-spec.ocd"
+id: my-project-spec
+type: validationSpec
+metadata:
+  name: My Project Validation Rules
+  description: Custom validation for my project
+
+validation:
+  mode: strict
+  constraints:
+    allowUnknownFields: false
+    softEnums: false
+    strictTypes: true
+
+  rules:
+    custom_validation:
+      - code: MINIMUM_TRAITS
+        condition: "personality.traits.length >= 3"
+        message: "Characters must have at least 3 personality traits"
+        severity: error
+```
+
+Use your custom specification:
+
+```bash
+ocd-validate character.yaml --spec my-project-spec.ocd
+```
 
 ---
 

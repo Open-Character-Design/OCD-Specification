@@ -25,7 +25,7 @@ A portable, machine-validated format for character definitions across games, fil
 
 ```
 ├── spec/           # Core schemas and specification docs
-├── grammar/        # OCD-T grammar specification
+├── grammar/        # OCD grammar specification
 ├── python/         # Python validator library & CLI
 ├── node/           # TypeScript validator and tooling
 ├── examples/       # Sample character files

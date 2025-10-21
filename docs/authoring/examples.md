@@ -574,10 +574,10 @@ find . -name "*.yaml" -exec ocd-validate {} \;
 ```
 
 ### Individual Downloads
-- [Bruenor Battlehammer](https://raw.githubusercontent.com/eVirgil/OpenCharacter-Specification/main/examples/bruenor.yaml)
-- [Commander Shepard](https://raw.githubusercontent.com/eVirgil/OpenCharacter-Specification/main/examples/commander-shepard.yaml)
-- [Crash Bandicoot](https://raw.githubusercontent.com/eVirgil/OpenCharacter-Specification/main/examples/crash-bandicoot.yaml)
-- [Eve](https://raw.githubusercontent.com/eVirgil/OpenCharacter-Specification/main/examples/eve.yaml)
+- [Bruenor Battlehammer](https://raw.githubusercontent.com/Open-Character-Design/OpenCharacter-Specification/main/examples/bruenor.yaml)
+- [Commander Shepard](https://raw.githubusercontent.com/Open-Character-Design/OpenCharacter-Specification/main/examples/commander-shepard.yaml)
+- [Crash Bandicoot](https://raw.githubusercontent.com/Open-Character-Design/OpenCharacter-Specification/main/examples/crash-bandicoot.yaml)
+- [Eve](https://raw.githubusercontent.com/Open-Character-Design/OpenCharacter-Specification/main/examples/eve.yaml)
 
 ## Contributing Examples
 

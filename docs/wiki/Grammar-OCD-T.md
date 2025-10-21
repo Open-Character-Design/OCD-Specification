@@ -1,6 +1,6 @@
 ## OCD-T Grammar
 
-Canonical: `docs/spec/grammar-ocd.md` (rendered: `https://eVirgil.github.io/OpenCharacter-Specification/spec/grammar-ocd/`)
+Canonical: `docs/spec/grammar-ocd.md` (rendered: `https://Open-Character-Design.github.io/OpenCharacter-Specification/spec/grammar-ocd/`)
 Grammar source: `grammar/ocd-t.peggy`
 
 Focus:

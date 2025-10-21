@@ -1,219 +1,219 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/Agents/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/Agents/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/Open%20Character%20Specification%20Legend/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/Open%20Character%20Specification%20Legend/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/changelog/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/changelog/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/faq/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/faq/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/getting-started/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/getting-started/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/glossary/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/glossary/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/authoring/examples/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/authoring/examples/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/authoring/ocd-authoring-guide/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/authoring/ocd-authoring-guide/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/authoring/writing-ocd-files/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/authoring/writing-ocd-files/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/governance/contributing-to-spec/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/governance/contributing-to-spec/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/governance/versioning-and-roadmap/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/governance/versioning-and-roadmap/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/integration/agents/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/integration/agents/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/integration/extensions-and-namespaces/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/integration/extensions-and-namespaces/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/integration/js-ts-validator/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/integration/js-ts-validator/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/integration/python-validator/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/integration/python-validator/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/integration/validator-roadmap-todo/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/integration/validator-roadmap-todo/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/reference/diagnostics/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/reference/diagnostics/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/reference/fields/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/reference/fields/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/reference/vocabularies/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/reference/vocabularies/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/spec/grammar-ocd/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/spec/grammar-ocd/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/spec/legend/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/spec/legend/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/spec/schema-overview/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/spec/schema-overview/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/spec/trait-model/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/spec/trait-model/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/tutorial/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/tutorial/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/tutorial/background/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/tutorial/background/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/tutorial/extensions/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/tutorial/extensions/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/tutorial/first-character/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/tutorial/first-character/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/tutorial/personality/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/tutorial/personality/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/tutorial/production/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/tutorial/production/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/Agents/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/Agents/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/Authoring-Guide/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/Authoring-Guide/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/Changelog/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/Changelog/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/Contributing/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/Contributing/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/Examples/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/Examples/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/FAQ/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/FAQ/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/Getting-Started/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/Getting-Started/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/Glossary/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/Glossary/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/Governance/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/Governance/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/Grammar-OCD-T/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/Grammar-OCD-T/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/Home/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/Home/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/Integration-Node/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/Integration-Node/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/Integration-Python/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/Integration-Python/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/Legend/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/Legend/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/License/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/License/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/Reference-Diagnostics/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/Reference-Diagnostics/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/Reference-Fields/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/Reference-Fields/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/Reference-Vocabularies/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/Reference-Vocabularies/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/Schema-Overview/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/Schema-Overview/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/Specification/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/Specification/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/Trait-Model/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/Trait-Model/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/Validators/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/Validators/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
     <url>
-         <loc>https://evirgil.github.io/OpenCharacter-Specification/wiki/Versioning-and-Roadmap/</loc>
+         <loc>https://Open-Character-Design.github.io/OpenCharacter-Specification/wiki/Versioning-and-Roadmap/</loc>
          <lastmod>2025-10-20</lastmod>
     </url>
 </urlset>

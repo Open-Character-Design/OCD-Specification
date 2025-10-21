@@ -1,7 +1,7 @@
 ## Integration: Python
 
 Canonical: `python/README.md`, `python/src/ocd/`
-Rendered docs: `https://eVirgil.github.io/OpenCharacter-Specification/integration/python-validator/`
+Rendered docs: `https://Open-Character-Design.github.io/OpenCharacter-Specification/integration/python-validator/`
 
 Quickstart:
 ```bash

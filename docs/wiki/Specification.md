@@ -1,8 +1,8 @@
 ## Specification Overview
 
-Canonical: `docs/spec/schema-overview.md` (rendered: `https://eVirgil.github.io/OpenCharacter-Specification/spec/schema-overview/`)
-Related: `docs/spec/trait-model.md` (rendered: `https://eVirgil.github.io/OpenCharacter-Specification/spec/trait-model/`), `docs/spec/legend.md` (rendered: `https://eVirgil.github.io/OpenCharacter-Specification/spec/legend/`)
-Grammar: `grammar/ocd-t.peggy`, `docs/spec/grammar-ocd.md` (rendered: `https://eVirgil.github.io/OpenCharacter-Specification/spec/grammar-ocd/`)
+Canonical: `docs/spec/schema-overview.md` (rendered: `https://Open-Character-Design.github.io/OpenCharacter-Specification/spec/schema-overview/`)
+Related: `docs/spec/trait-model.md` (rendered: `https://Open-Character-Design.github.io/OpenCharacter-Specification/spec/trait-model/`), `docs/spec/legend.md` (rendered: `https://Open-Character-Design.github.io/OpenCharacter-Specification/spec/legend/`)
+Grammar: `grammar/ocd-t.peggy`, `docs/spec/grammar-ocd.md` (rendered: `https://Open-Character-Design.github.io/OpenCharacter-Specification/spec/grammar-ocd/`)
 
 Contents:
 - High-level model and core schema

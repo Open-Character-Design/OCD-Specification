@@ -1,6 +1,6 @@
 ## Getting Started
 
-Canonical: `docs/getting-started.md` (rendered: `https://eVirgil.github.io/OpenCharacter-Specification/getting-started/`)
+Canonical: `docs/getting-started.md` (rendered: `https://Open-Character-Design.github.io/OpenCharacter-Specification/getting-started/`)
 
 Quick start (from repo root):
 

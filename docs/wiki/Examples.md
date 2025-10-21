@@ -1,7 +1,7 @@
 ## Examples
 
 Canonical: `examples/` and `fixtures/cross/`
-Rendered examples index in docs: `https://eVirgil.github.io/OpenCharacter-Specification/authoring/examples/`
+Rendered examples index in docs: `https://Open-Character-Design.github.io/OpenCharacter-Specification/authoring/examples/`
 
 Highlights:
 - Valid/invalid feature-focused YAMLs

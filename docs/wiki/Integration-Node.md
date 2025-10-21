@@ -1,7 +1,7 @@
 ## Integration: Node (JS/TS)
 
 Canonical: `node/README.md`
-Rendered docs: `https://eVirgil.github.io/OpenCharacter-Specification/integration/js-ts-validator/`
+Rendered docs: `https://Open-Character-Design.github.io/OpenCharacter-Specification/integration/js-ts-validator/`
 Entrypoints: `node/src/*.ts` and `node/dist/*.js`
 
 Quickstart:

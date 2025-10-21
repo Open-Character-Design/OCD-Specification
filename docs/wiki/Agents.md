@@ -1,6 +1,6 @@
 ## Agents
 
-Canonical: `docs/Agents.md` (rendered: `https://eVirgil.github.io/OpenCharacter-Specification/Agents/`)
+Canonical: `docs/Agents.md` (rendered: `https://Open-Character-Design.github.io/OpenCharacter-Specification/Agents/`)
 
 Contents:
 - Agent concepts within OCD ecosystem

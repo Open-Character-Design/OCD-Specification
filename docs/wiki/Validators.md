@@ -1,6 +1,6 @@
 ## Validators
 
-Rendered docs: `https://eVirgil.github.io/OpenCharacter-Specification/integration/js-ts-validator/`, `https://eVirgil.github.io/OpenCharacter-Specification/integration/python-validator/`
+Rendered docs: `https://Open-Character-Design.github.io/OpenCharacter-Specification/integration/js-ts-validator/`, `https://Open-Character-Design.github.io/OpenCharacter-Specification/integration/python-validator/`
 
 - Node (JS/TS): [[Integration-Node]]
 - Python: [[Integration-Python]]

@@ -10,9 +10,9 @@ from jsonschema import Draft202012Validator
 from jsonschema.exceptions import ValidationError as JSONSchemaValidationError
 from pydantic import ValidationError
 
-from .ocd_model import CharacterDefinition, CharacterInstance
-from .ocd_normalize import normalize_in_place
-from .ocd_lint import lint
+from .models import CharacterDefinition, CharacterInstance
+from .normalizer import normalize_in_place
+from .linter import lint
 from .yaml_loader import safe_load
 
 _CORE_SCHEMA_VALIDATOR: Draft202012Validator | None = None

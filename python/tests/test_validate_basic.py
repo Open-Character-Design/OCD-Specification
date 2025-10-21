@@ -3,8 +3,7 @@ from __future__ import annotations
 from copy import deepcopy
 from pathlib import Path
 
-from ocd.ocd_validate import validate_and_normalize
-from ocd.yaml_loader import safe_load
+from ocd.validate import validate_and_normalize, safe_load
 
 
 FIXTURE_DIR = Path(__file__).parent / "fixtures"

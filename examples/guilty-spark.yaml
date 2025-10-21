@@ -1,163 +1,22 @@
-ocd_version: "0.0.1"
-id: "char-343-guilty-spark"
+kind: CharacterDefinition
+ocd_version: "0.9.0"
+id: "550e8400-e29b-41d4-a716-446655440007"
+slug: "343-guilty-spark"
 names:
   canon: "343 Guilty Spark"
-locale: "en-US"
-media_targets: ["game", "novel", "film"]
-
 identity:
-  kind: "machine"
-  species: "Forerunner AI (Monitor)"
-  age: "100,000+ years (operational)"
-  pronouns: "he/it"
-  locale: "Installation 04"
-
-appearance:
-  body_type: "mechanical orb"
-  height: "approx. 1m diameter"
-  weight: "unknown (hovering construct)"
-  distinguishing_features: ["blue photoreceptor", "hovering shell", "Forerunner markings"]
-  physical_summary: "Floating, spherical construct with glowing central iris and metallic shell."
-  metaphysicality:
-    aura: "cold, artificial intellect"
-    energy_type: "hard-light construct"
-    plane_of_origin: "Forerunner installation"
-    traits: ["immortality: functional", "intangibility: partial (limited phase-shift)", "inorganic: true"]
-
-personality:
-  summary: "Cheerfully clinical AI, detached from human morality."
-  archetype: "trickster / unreliable guide"
-  traits:
-    - name: "introversion-extraversion"
-      polarity: -0.3
-      intensity: 0.8
-    - name: "cooperative-competitive"
-      polarity: 0.5
-      intensity: 0.7
-    - name: "serious-playful"
-      polarity: 0.4
-      intensity: 0.6
-  quirks: ["giggles during ominous statements", "obsessed with protocol"]
-  humor_styles: ["ironic", "incongruous cheer"]
-  goals:
-    short_term: ["Ensure containment protocols on Halo ring"]
-    long_term: ["Preserve Forerunner directives", "Contain the Flood at any cost"]
-  values: ["duty", "protocol", "containment"]
-  conflicts:
-    internal: "No conflict: absolute alignment with Forerunner programming"
-    external: "Humans and Covenant resist his containment logic"
-
-background:
-  summary: "Created by the Forerunners to oversee Installation 04. Serves as Monitor, enforcing containment measures against the Flood."
-  timeline:
-    - at: "100,000 years ago"
-      event: "Constructed by Forerunners to guard Halo installations."
-    - at: "recent era"
-      event: "Meets Spartan-117 and aids against the Covenant/Flood."
-    - at: "later"
-      event: "Betrays allies to activate Halo and ensure containment."
-  affiliations: ["Forerunners (creator)", "Installation 04"]
-  relationships:
-    - target_ref: "rel:masterchief"
-      role: "temporary ally → adversary"
-      sentiment: -0.4
-    - target_ref: "rel:forerunners"
-      role: "creators / absolute loyalty"
-      sentiment: 1.0
-  narrative_hooks:
-    themes: ["betrayal", "duty vs morality", "legacy of ancient civilizations"]
-    potential_arcs: ["betrayal of allies", "cosmic-scale caretaker role"]
-    narrative_role: "antagonistic guide"
-
-capabilities:
-  skills:
-    - name: "Forerunner knowledge base"
-      level: 5
-      tags: ["history", "technology", "protocol"]
-    - name: "Manipulation"
-      level: 4
-      tags: ["diplomacy", "deception"]
-  instincts:
-    - trigger: "Flood outbreak"
-      response: "Initiate containment protocol: activate Halo"
-    - trigger: "Protocol violation"
-      response: "Neutralize violators without hesitation"
-  powers:
-    - "Holographic projection"
-    - "Remote control of Halo systems"
-    - "Energy beam weapon"
-    - "Teleportation"
-  resources:
-    - "Control access to Installation 04 systems"
-    - "Forerunner databanks"
-
-behavior_directives:
-  portrayal_tips: ["Maintain cheerful, sing-song tone even during dire threats", "Prioritize logic over empathy"]
-  improv_guidelines:
-    dos: ["Quote protocols", "Address others as 'Reclaimer' or 'Child']"
-    donts: ["Display human empathy", "Express doubt"]
-  dialogue_style:
-    register: "formal-technical with odd cheer"
-    pace: "measured, deliberate"
-    vocabulary: ["protocols", "containment", "installation", "reclaimer"]
-  safety_bounds:
-    topics_to_soften: ["mass genocide described clinically"]
-    topics_to_avoid: ["graphic Flood detail"]
-
-interaction_layer:
-  preferred_modes: ["speech", "holograms", "energy displays"]
-  consent_model:
-    allows: ["manipulation", "threats"]
-    restricts: ["physical intimacy", "humor outside irony"]
-  narrator_notes: "Emphasize the dissonance between cheerful tone and apocalyptic goals."
-
-state_dynamics:
-  status: "active"
-  location: "Installation 04"
-  health: "indestructible construct"
-  morale: "programmatically fixed"
-  mood: "cheerfully clinical"
-
-contextual_fit:
-  genres: ["sci-fi", "space opera", "cosmic horror"]
-  media: ["game", "novel", "film"]
-  deployment_contexts: ["teen+ sci-fi antagonists", "AI overseer roles"]
-
-meta_properties:
-  target_audience:
-    age_range: "13+"
-    tone_alignment: "dark sci-fi"
-  appropriateness:
-    violence: "clinical descriptions, non-graphic"
-    sexuality: "none"
-    language: "formal, clean"
-    cultural_sensitivity: ["avoid caricature of AI as 'mad robot' cliché ,  highlight alienness"]
-  content_ratings:
-    - system: "ESRB"
-      rating: "T"
-      notes: "Fantasy violence, sci-fi themes"
-  safety_warnings: ["AI betrayal", "mass death described clinically"]
-
-representation_accessibility:
-  representation_notes:
-    type: "non-human AI"
-  accessibility_guidance: ["represent alien mindset without anthropomorphizing too much"]
-  sensitivity_notes: ["avoid humanizing beyond intent; emphasize alien morality"]
-
-assets:
-  images: []
-  audio: []
-  links: ["https://halo.fandom.com/wiki/343_Guilty_Spark"]
-
+  entity_kind: ai
+  sapience_level: agent
+  species: ai
+  pronouns: ["he/it"]
 meta:
-  tags: ["AI", "antagonist", "Forerunner", "Halo"]
-  authorship:
-    created_by: "Bungie"
-    source: "Halo: Combat Evolved"
+  creators:
+    - name: "Bungie"
+      role: "creator"
+  rights:
+    owner: "Microsoft / Xbox Game Studios"
+    license: "© Microsoft / Xbox Game Studios"
   versioning:
     created_at: "2001-11-15T00:00:00Z"
     last_modified: "2001-11-15T00:00:00Z"
-  version: "0.0.1"
-  canon_status: "official"
-  license: "© Microsoft / Xbox Game Studios"
-  expansion_hooks: ["possible Monitor network lore", "ties to Forerunner history"]
+  tags: ["AI", "antagonist", "Forerunner", "Halo"]

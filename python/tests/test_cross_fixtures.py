@@ -5,8 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from ocd.ocd_validate import validate_and_normalize
-from ocd.yaml_loader import safe_load
+from ocd.validate import validate_and_normalize, safe_load
 
 FIXTURE_DIR = Path(__file__).resolve().parents[2] / "fixtures" / "cross"
 

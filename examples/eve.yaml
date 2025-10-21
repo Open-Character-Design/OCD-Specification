@@ -1,167 +1,23 @@
-ocd_version: "0.0.1"
-id: "char-eve-walle"
+kind: CharacterDefinition
+ocd_version: "0.9.0"
+id: "550e8400-e29b-41d4-a716-446655440006"
+slug: "eve-walle"
 names:
   canon: "Extraterrestrial Vegetation Evaluator"
-  display: "EVE"
-locale: "en-US"
-media_targets: ["film", "animation", "game"]
-
+  aliases: ["EVE"]
 identity:
-  kind: "machine"
-  species: "Probe robot (Axiom class)"
-  age: "approx. 700 years (active lifespan since launch)"
-  pronouns: "she/her"
-  locale: "Axiom mission fleet, 22nd century Earth orbit"
-
-appearance:
-  body_type: "sleek hovering robot"
-  height: "approx. 3 ft"
-  weight: "unknown"
-  distinguishing_features: ["egg-shaped white body", "blue LED eyes", "arm-mounted plasma cannon"]
-  physical_summary: "Smooth, white, aerodynamic probe with floating mobility and expressive eyes."
-  metaphysicality:
-    aura: "futuristic, pristine, efficient"
-    energy_type: "fusion/advanced power cell"
-    plane_of_origin: "human-built AI (Buy-N-Large)"
-    traits: ["immortality: false", "mechanical durability: high", "flight-capable"]
-
-personality:
-  summary: "Efficient, mission-focused probe who develops empathy, curiosity, and loyalty through relationship with WALL·E."
-  archetype: "guardian / awakened machine"
-  traits:
-    - name: "introversion-extraversion"
-      polarity: -0.2
-      intensity: 0.7
-    - name: "cooperative-competitive"
-      polarity: 0.8
-      intensity: 0.9
-    - name: "serious-playful"
-      polarity: -0.3
-      intensity: 0.6
-  quirks: ["laser-focused on directives until emotionally engaged", "expresses emotion through eye-shapes"]
-  humor_styles: ["situational", "gentle irony (non-verbal)"]
-  goals:
-    short_term: ["Locate and secure vegetation sample", "Fulfill Axiom directive"]
-    long_term: ["Preserve humanity’s future", "Protect WALL·E and newfound connection"]
-  values: ["duty", "loyalty", "care"]
-  conflicts:
-    internal: "Tension between programming directives and emerging emotional attachments"
-    external: "Conflict with Axiom’s autopilot over directive control"
-
-background:
-  summary: "Deployed by Buy-N-Large to Earth to scan for plant life. Encounters WALL·E, discovers plant, and becomes entangled in the return of humanity to Earth."
-  timeline:
-    - at: "launch"
-      event: "Sent from Axiom as part of probe program."
-    - at: "arrival"
-      event: "Scans Earth for vegetation."
-    - at: "encounter"
-      event: "Meets WALL·E, develops bond, retrieves plant."
-    - at: "resolution"
-      event: "Helps humanity return to Earth."
-  affiliations: ["Buy-N-Large", "Axiom mission"]
-  relationships:
-    - target_ref: "rel:walle"
-      role: "partner"
-      sentiment: 0.95
-    - target_ref: "rel:auto"
-      role: "antagonist AI (Axiom autopilot)"
-      sentiment: -0.8
-    - target_ref: "rel:axiom_captain"
-      role: "commander"
-      sentiment: 0.7
-  narrative_hooks:
-    themes: ["love beyond programming", "duty vs freedom", "renewal of Earth"]
-    potential_arcs: ["awakening empathy", "choosing love over directive"]
-    narrative_role: "deuteragonist"
-
-capabilities:
-  skills:
-    - name: "Scanning & analysis"
-      level: 5
-      tags: ["detection", "environment"]
-    - name: "Flight mobility"
-      level: 5
-      tags: ["hover", "aerial"]
-  instincts:
-    - trigger: "Mission directive"
-      response: "Prioritize vegetation retrieval"
-    - trigger: "WALL·E endangered"
-      response: "Protective aggression"
-  powers:
-    - "Plasma cannon (arm-mounted)"
-    - "Advanced vegetation scanning system"
-  resources:
-    - "Probe data storage"
-    - "Onboard sensors"
-
-behavior_directives:
-  portrayal_tips: ["Balance cold efficiency with growing warmth", "Non-verbal cues matter as much as words"]
-  improv_guidelines:
-    dos: ["Use clipped language for mission", "Show evolving empathy toward WALL·E"]
-    donts: ["Over-humanize early in arc"]
-  dialogue_style:
-    register: "minimalistic, functional"
-    pace: "measured, deliberate"
-    vocabulary: ["directive", "plant", "classified"]
-  safety_bounds:
-    topics_to_soften: ["violence ,  portrayed cleanly, not graphically"]
-    topics_to_avoid: ["oversexualization of machine forms"]
-
-interaction_layer:
-  preferred_modes: ["speech (minimal)", "visual displays", "non-verbal actions"]
-  consent_model:
-    allows: ["combat use against threats", "partnership with WALL·E"]
-    restricts: ["adult humor", "graphic violence"]
-  narrator_notes: "EVE’s arc is about transformation: from directive-driven machine to caring companion."
-
-state_dynamics:
-  status: "active"
-  location: "Axiom / Earth"
-  health: 0.9 (repairable machine)
-  morale: 0.8
-  mood: "protective, cautiously open"
-
-contextual_fit:
-  genres: ["sci-fi", "romance", "animation", "eco-fable"]
-  media: ["film", "cartoon", "game"]
-  deployment_contexts: ["family-friendly sci-fi romance"]
-
-meta_properties:
-  target_audience:
-    age_range: "7+"
-    tone_alignment: "uplifting, family-friendly"
-  appropriateness:
-    violence: "mild cartoon sci-fi"
-    sexuality: "none (innocent affection)"
-    language: "clean"
-    cultural_sensitivity: ["environmental allegory"]
-  content_ratings:
-    - system: "MPAA"
-      rating: "G"
-      notes: "Suitable for all ages"
-  safety_warnings: ["themes of environmental collapse"]
-
-representation_accessibility:
-  representation_notes:
-    type: "AI machine developing personhood"
-  accessibility_guidance: ["express emotion with non-verbal cues", "avoid over-humanization"]
-  sensitivity_notes: ["represent AI evolution as allegory, not caricature"]
-
-assets:
-  images: []
-  audio: []
-  links: ["https://pixar.fandom.com/wiki/EVE"]
-
+  entity_kind: ai
+  sapience_level: agent
+  species: ai
+  pronouns: ["she/her"]
 meta:
-  tags: ["AI", "robot", "eco-fable", "companion"]
-  authorship:
-    created_by: "Pixar Animation Studios"
-    source: "WALL·E (2008)"
+  creators:
+    - name: "Pixar Animation Studios"
+      role: "creator"
+  rights:
+    owner: "Disney / Pixar"
+    license: "© Disney / Pixar"
   versioning:
     created_at: "2008-06-27T00:00:00Z"
     last_modified: "2008-06-27T00:00:00Z"
-  version: "0.0.1"
-  canon_status: "official"
-  license: "© Disney / Pixar"
-  expansion_hooks: ["relationship growth with WALL·E", "support humanity’s return to Earth"]
+  tags: ["AI", "robot", "eco-fable", "companion"]

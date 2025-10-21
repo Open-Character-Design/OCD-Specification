@@ -3,7 +3,7 @@ requires = ["hatchling>=1.21.0"]
 build-backend = "hatchling.build"
 
 [project]
-name = "ocd"
+name = "ocd-validate"
 version = "1.0.0"
 description = "Open Character Specification: Python validator and CLI tools"
 authors = [
@@ -39,7 +39,7 @@ Documentation = "https://github.com/opencharacter/OpenCharacter-Specification#re
 Issues = "https://github.com/opencharacter/OpenCharacter-Specification/issues"
 
 [project.scripts]
-ocd-validate = "ocd.ocd_validate:main"
+ocd-validate = "ocd.validate.validator:main"
 
 [tool.hatch.build]
 packages = ["src/ocd"]

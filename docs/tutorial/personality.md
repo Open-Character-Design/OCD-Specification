@@ -21,14 +21,14 @@ Binary on/off traits, like `psionic` or `licensed-medic`.
 
 ## Adding Personality Traits
 
-Let's enhance Alice with personality traits:
+Let's enhance Rita with personality traits:
 
-```yaml title="alice-personality.yaml"
+```yaml title="rita-personality.yaml"
 ocd_version: "0.0.1"
-id: "char-alice-adventurer"
+id: "char-rita-adventurer"
 names:
-  canon: "Alice"
-  aliases: ["Alice the Brave", "Adventurer Alice"]
+  canon: "Rita"
+  aliases: ["Rita the Brave", "Adventurer Rita"]
 locale: "en-US"
 media_targets: ["game", "novel"]
 
@@ -48,7 +48,7 @@ appearance:
 personality:
   summary: "Brave, curious, and always ready for adventure."
   traits:
-    # Bipolar traits - Alice leans toward extraversion and cooperation
+    # Bipolar traits - Rita leans toward extraversion and cooperation
     - name: "introversion-extraversion"
       kind: "bipolar"
       polarity: 0.7
@@ -62,7 +62,7 @@ personality:
       polarity: 0.3
       intensity: 0.6
     
-    # Scalar traits - Alice's abilities and tendencies
+    # Scalar traits - Rita's abilities and tendencies
     - name: "combat-readiness"
       kind: "scalar"
       value: 0.7
@@ -73,7 +73,7 @@ personality:
       kind: "scalar"
       value: 0.6
     
-    # Flag traits - Alice's special capabilities
+    # Flag traits - Rita's special capabilities
     - name: "magic-sensitive"
       kind: "flag"
       value: true
@@ -120,7 +120,7 @@ Bipolar traits use two values:
   - `1` = trait is very prominent
 
 !!! tip "Reading Bipolar Traits"
-    Alice's `introversion-extraversion: polarity 0.7, intensity 0.8` means she's quite extraverted (0.7 toward extraversion) and this trait is very prominent in her personality (0.8 intensity).
+    Rita's `introversion-extraversion: polarity 0.7, intensity 0.8` means she's quite extraverted (0.7 toward extraversion) and this trait is very prominent in her personality (0.8 intensity).
 
 ### Scalar Traits
 
@@ -141,7 +141,7 @@ Flag traits are simple boolean values:
 Run the validator on your enhanced character:
 
 ```bash
-ocd-validate alice-personality.yaml
+ocd-validate rita-personality.yaml
 ```
 
 The validator will normalize trait names and values. For example:
@@ -261,7 +261,7 @@ values: ["honor", "family", "justice", "freedom"]
 
 ## What's Next?
 
-Great! You've added personality traits to Alice. In the next step, you'll learn about background information, relationships, and how characters connect to each other.
+Great! You've added personality traits to Rita. In the next step, you'll learn about background information, relationships, and how characters connect to each other.
 
 **Next:** [Step 3: Background & Relationships](background.md)
 

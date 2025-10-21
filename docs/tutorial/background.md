@@ -8,14 +8,14 @@ A character with detailed background, timeline events, affiliations, and relatio
 
 ## Adding Background Information
 
-Let's enhance Alice with background details:
+Let's enhance Rita with background details:
 
-```yaml title="alice-background.yaml"
+```yaml title="rita-background.yaml"
 ocd_version: "0.0.1"
-id: "char-alice-adventurer"
+id: "char-rita-adventurer"
 names:
-  canon: "Alice"
-  aliases: ["Alice the Brave", "Adventurer Alice"]
+  canon: "Rita"
+  aliases: ["Rita the Brave", "Adventurer Rita"]
 locale: "en-US"
 media_targets: ["game", "novel"]
 
@@ -204,7 +204,7 @@ narrative_hooks:
 
 ## Creating Related Characters
 
-To make relationships work properly, you need to create the referenced characters. Here's Marcus, Alice's father:
+To make relationships work properly, you need to create the referenced characters. Here's Marcus, Rita's father:
 
 ```yaml title="marcus-blacksmith.yaml"
 ocd_version: "0.0.1"
@@ -250,23 +250,23 @@ personality:
       value: 0.8
 
 background:
-  summary: "Village blacksmith who raised Alice after her magical abilities emerged."
+  summary: "Village blacksmith who raised Rita after her magical abilities emerged."
   timeline:
     - at: "youth"
       event: "Apprenticed to his father as a blacksmith"
     - at: "age 25"
       event: "Married Elena, the village healer"
     - at: "age 27"
-      event: "Alice was born"
+      event: "Rita was born"
     - at: "age 39"
-      event: "Alice's first magical incident - helped her understand her gift"
+      event: "Rita's first magical incident - helped her understand her gift"
     - at: "age 45"
-      event: "Alice left for Mage's Guild - proud but worried"
+      event: "Rita left for Mage's Guild - proud but worried"
     - at: "present"
-      event: "Continues blacksmithing, awaits Alice's visits"
+      event: "Continues blacksmithing, awaits Rita's visits"
 
   relationships:
-    - target_ref: "char-alice-adventurer"
+    - target_ref: "char-rita-adventurer"
       role: "daughter"
       sentiment: 0.9
       notes: "Proud of her achievements but worried about her safety"
@@ -284,10 +284,10 @@ meta:
 
 ## Validation and Reference Resolution
 
-When you validate Alice's character, the validator will check if the referenced characters exist:
+When you validate Rita's character, the validator will check if the referenced characters exist:
 
 ```bash
-ocd-validate alice-background.yaml
+ocd-validate rita-background.yaml
 ```
 
 If Marcus's file is in the same directory or accessible, the validator will confirm the relationship references are valid.
@@ -380,7 +380,7 @@ relationships:
 
 ## What's Next?
 
-Excellent! You've added rich background and relationships to Alice. In the next step, you'll learn how to integrate OCD with specific game systems using extension blocks.
+Excellent! You've added rich background and relationships to Rita. In the next step, you'll learn how to integrate OCD with specific game systems using extension blocks.
 
 **Next:** [Step 4: System Extensions](extensions.md)
 

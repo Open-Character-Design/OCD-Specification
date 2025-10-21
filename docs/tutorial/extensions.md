@@ -16,14 +16,14 @@ OCD uses `x-*` namespaces to add system-specific data without cluttering the cor
 
 ## Adding D&D 5e Integration
 
-Let's enhance Alice with D&D 5e stats:
+Let's enhance Rita with D&D 5e stats:
 
-```yaml title="alice-dnd5e.yaml"
+```yaml title="rita-dnd5e.yaml"
 ocd_version: "0.0.1"
-id: "char-alice-adventurer"
+id: "char-rita-adventurer"
 names:
-  canon: "Alice"
-  aliases: ["Alice the Brave", "Adventurer Alice"]
+  canon: "Rita"
+  aliases: ["Rita the Brave", "Adventurer Rita"]
 locale: "en-US"
 media_targets: ["game", "novel"]
 
@@ -350,7 +350,7 @@ x-my-game:
 The OCD validator will validate the core fields but won't validate extension blocks (since they're system-specific):
 
 ```bash
-ocd-validate alice-dnd5e.yaml
+ocd-validate rita-dnd5e.yaml
 ```
 
 You should see successful validation of the core OCD fields. Extension blocks are preserved but not validated by the OCD validator.
@@ -447,7 +447,7 @@ x-dnd5e:
 
 ## What's Next?
 
-Perfect! You've integrated Alice with D&D 5e using extension blocks. In the final step, you'll learn best practices for production deployment and validation workflows.
+Perfect! You've integrated Rita with D&D 5e using extension blocks. In the final step, you'll learn best practices for production deployment and validation workflows.
 
 **Next:** [Step 5: Production Tips](production.md)
 

@@ -9,8 +9,8 @@ Comprehensive reference for all OCD fields, types, and constraints. See `spec/co
 | Field | Type | Description | Example |
 |-------|------|-------------|---------|
 | `ocd_version` | string | OCD specification version | `"0.0.1"` |
-| `id` | string | Unique character identifier | `"char-alice-adventurer"` |
-| `names.canon` | string | Character's canonical name | `"Alice"` |
+| `id` | string | Unique character identifier | `"char-rita-adventurer"` |
+| `names.canon` | string | Character's canonical name | `"Rita"` |
 | `identity.kind` | enum | Entity type | `"humanoid"` |
 | `identity.species` | enum | Specific species | `"Human"` |
 | `meta.versioning.created_at` | string | Creation timestamp (ISO 8601) | `"2024-01-01T00:00:00Z"` |
@@ -27,25 +27,25 @@ The `names` block handles character identification and localization.
 
 | Field | Type | Required | Description | Example |
 |-------|------|----------|-------------|---------|
-| `canon` | string | ✅ | Canonical name | `"Alice"` |
-| `display` | object/array | ❌ | Localized display names | `{"en-US": "Alice", "es-ES": "Alicia"}` |
-| `aliases` | array | ❌ | Alternative names/titles | `["Alice the Brave", "Adventurer Alice"]` |
+| `canon` | string | ✅ | Canonical name | `"Rita"` |
+| `display` | object/array | ❌ | Localized display names | `{"en-US": "Rita", "es-ES": "Alicia"}` |
+| `aliases` | array | ❌ | Alternative names/titles | `["Rita the Brave", "Adventurer Rita"]` |
 
 ### Examples
 
 ```yaml title="Basic Names"
 names:
-  canon: "Alice"
+  canon: "Rita"
 ```
 
 ```yaml title="Localized Names"
 names:
-  canon: "Alice"
+  canon: "Rita"
   display:
-    en-US: "Alice"
+    en-US: "Rita"
     es-ES: "Alicia"
-    fr-FR: "Alice"
-  aliases: ["Alice the Brave", "Adventurer Alice"]
+    fr-FR: "Rita"
+  aliases: ["Rita the Brave", "Adventurer Rita"]
 ```
 
 ## Identity Block

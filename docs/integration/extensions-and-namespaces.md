@@ -192,7 +192,7 @@ Don't duplicate core OCD functionality:
 ```yaml
 # ❌ Don't duplicate core fields
 x-my-system:
-  name: "Alice"  # Use names.canon instead
+  name: "Rita"  # Use names.canon instead
   species: "Human"  # Use identity.species instead
 
 # ✅ Use extensions for system-specific data

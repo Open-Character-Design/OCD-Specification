@@ -12,18 +12,18 @@ In this final step, you'll learn best practices for production deployment, valid
 
 ## Production-Ready Character
 
-Let's create a final, production-ready version of Alice:
+Let's create a final, production-ready version of Rita:
 
-```yaml title="alice-production.yaml"
+```yaml title="rita-production.yaml"
 ocd_version: "0.0.1"
-id: "char-alice-adventurer"
+id: "char-rita-adventurer"
 names:
-  canon: "Alice"
-  aliases: ["Alice the Brave", "Adventurer Alice", "The Green-Eyed Mage"]
+  canon: "Rita"
+  aliases: ["Rita the Brave", "Adventurer Rita", "The Green-Eyed Mage"]
   display:
-    en-US: "Alice"
+    en-US: "Rita"
     es-ES: "Alicia"
-    fr-FR: "Alice"
+    fr-FR: "Rita"
 locale: "en-US"
 media_targets: ["game", "novel", "ai-platform"]
 
@@ -214,7 +214,7 @@ interaction_layer:
   consent_model:
     allows: ["heroic violence", "magical effects", "emotional support"]
     restricts: ["romantic intimacy", "excessive gore"]
-  narrator_notes: "Alice is the heart of the party - brave, caring, and magical. She leads through example and protects those she loves."
+  narrator_notes: "Rita is the heart of the party - brave, caring, and magical. She leads through example and protects those she loves."
 
 state_dynamics:
   status: "active"
@@ -254,8 +254,8 @@ assets:
   images: []
   audio: []
   links: 
-    - "https://example.com/alice-character-art"
-    - "https://example.com/alice-backstory"
+    - "https://example.com/rita-character-art"
+    - "https://example.com/rita-backstory"
 
 # D&D 5e Extension Block
 x-dnd5e:
@@ -410,12 +410,12 @@ Include display names for multiple languages:
 
 ```yaml
 names:
-  canon: "Alice"
+  canon: "Rita"
   display:
-    en-US: "Alice"
+    en-US: "Rita"
     es-ES: "Alicia"
-    fr-FR: "Alice"
-    de-DE: "Alice"
+    fr-FR: "Rita"
+    de-DE: "Rita"
 ```
 
 ### 3. Comprehensive Content Ratings
@@ -505,11 +505,11 @@ Use consistent naming conventions:
 
 ```yaml
 # Good
-id: "char-alice-adventurer"
+id: "char-rita-adventurer"
 tags: ["adventurer", "hero", "fantasy"]
 
 # Avoid
-id: "Alice_Adventurer_001"
+id: "Rita_Adventurer_001"
 tags: ["Adventurer", "HERO", "Fantasy"]
 ```
 
@@ -575,12 +575,12 @@ Include proper asset references:
 ```yaml
 assets:
   images:
-    - url: "https://cdn.example.com/alice-portrait.jpg"
-      alt: "Alice portrait"
+    - url: "https://cdn.example.com/rita-portrait.jpg"
+      alt: "Rita portrait"
       license: "CC-BY-4.0"
   audio:
-    - url: "https://cdn.example.com/alice-voice.mp3"
-      description: "Alice's voice sample"
+    - url: "https://cdn.example.com/rita-voice.mp3"
+      description: "Rita's voice sample"
 ```
 
 ## Maintenance and Updates

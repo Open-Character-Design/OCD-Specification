@@ -24,13 +24,13 @@ First, let's install a validator so you can check your work:
 
 ## Creating Your First Character
 
-Create a new file called `alice.yaml` with this content:
+Create a new file called `rita.yaml` with this content:
 
-```yaml title="alice.yaml"
+```yaml title="rita.yaml"
 ocd_version: "0.0.1"
-id: "char-alice-adventurer"
+id: "char-rita-adventurer"
 names:
-  canon: "Alice"
+  canon: "Rita"
 identity:
   kind: "humanoid"
   species: "Human"
@@ -54,7 +54,7 @@ Let's break down each field:
 - **`meta.versioning`**: Timestamps for tracking changes
 
 !!! tip "ID Convention"
-    Use descriptive IDs like `char-alice-adventurer` or `char-bruenor-battlehammer`. This helps identify characters in logs and references.
+    Use descriptive IDs like `char-rita-adventurer` or `char-bruenor-battlehammer`. This helps identify characters in logs and references.
 
 ## Validating Your Character
 
@@ -63,13 +63,13 @@ Now let's validate your character:
 === "Python"
 
     ```bash
-    ocd-validate alice.yaml
+    ocd-validate rita.yaml
     ```
 
 === "Node.js"
 
     ```bash
-    npx @ocd-tools/validator alice.yaml
+    npx @ocd-tools/validator rita.yaml
     ```
 
 You should see output like:
@@ -81,14 +81,14 @@ You should see output like:
 
 ## Adding More Information
 
-Let's enhance Alice with some additional details:
+Let's enhance Rita with some additional details:
 
-```yaml title="alice-enhanced.yaml"
+```yaml title="rita-enhanced.yaml"
 ocd_version: "0.0.1"
-id: "char-alice-adventurer"
+id: "char-rita-adventurer"
 names:
-  canon: "Alice"
-  aliases: ["Alice the Brave", "Adventurer Alice"]
+  canon: "Rita"
+  aliases: ["Rita the Brave", "Adventurer Rita"]
 locale: "en-US"
 media_targets: ["game", "novel"]
 
@@ -143,7 +143,7 @@ meta:
 Run the validator again on your enhanced character:
 
 ```bash
-ocd-validate alice-enhanced.yaml
+ocd-validate rita-enhanced.yaml
 ```
 
 You should still see a successful validation. The validator will normalize some values (like converting tags to lowercase) but won't show warnings for valid optional fields.
@@ -157,7 +157,7 @@ Here are some common issues you might encounter:
 ```yaml title="invalid-missing-fields.yaml"
 # This will fail validation
 names:
-  canon: "Alice"
+  canon: "Rita"
 # Missing ocd_version, id, identity, and meta.versioning
 ```
 
@@ -167,9 +167,9 @@ names:
 
 ```yaml title="invalid-field-values.yaml"
 ocd_version: "0.0.1"
-id: "char-alice"
+id: "char-rita"
 names:
-  canon: "Alice"
+  canon: "Rita"
 identity:
   kind: "invalid-kind"  # Not a valid identity kind
 meta:
@@ -193,7 +193,7 @@ meta:
 
 ## What's Next?
 
-Congratulations! You've created your first OCD character. In the next step, you'll learn about the trait model and add personality traits to make Alice more interesting.
+Congratulations! You've created your first OCD character. In the next step, you'll learn about the trait model and add personality traits to make Rita more interesting.
 
 **Next:** [Step 2: Adding Personality](personality.md)
 

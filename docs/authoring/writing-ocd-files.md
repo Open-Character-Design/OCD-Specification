@@ -52,11 +52,11 @@ meta:
 ```yaml title="best-practices.yaml"
 # Character metadata
 ocd_version: "0.0.1"
-id: "char-alice-adventurer"  # Use descriptive IDs
+id: "char-rita-adventurer"  # Use descriptive IDs
 
 names:
-  canon: "Alice"  # Primary name
-  aliases: ["Al", "Adventurer Alice"]  # Alternative names
+  canon: "Rita"  # Primary name
+  aliases: ["Rit", "Adventurer Rita"]  # Alternative names
 
 personality:
   summary: "Brave and curious adventurer"  # Quote descriptive text
@@ -72,9 +72,9 @@ personality:
 ```yaml title="avoid-this.yaml"
 # ❌ Don't do this
 ocd_version: 0.0.1  # Missing quotes
-id: "Alice"  # Not descriptive enough
+id: "Rita"  # Not descriptive enough
 names:
-  canon: Alice  # Missing quotes
+  canon: Rita  # Missing quotes
 personality:
   summary: Brave adventurer  # Missing quotes
   traits:
@@ -121,8 +121,8 @@ OCD-T is a concise textual format for quick character authoring:
 ocd-t: 1
 ocd-version: 0.0.1
 
-character "Alice" {
-  id: "char-alice-adventurer"
+character "Rita" {
+  id: "char-rita-adventurer"
   
   personality {
     summary: "Brave and curious adventurer"
@@ -190,7 +190,7 @@ ocd-validate character.yaml --print
 ```
 characters/
 ├── protagonists/
-│   ├── alice.yaml
+│   ├── rita.yaml
 │   └── bob.yaml
 ├── antagonists/
 │   └── villain.yaml
@@ -201,8 +201,8 @@ characters/
 
 ### Naming Conventions
 
-- **Files**: Use descriptive names: `alice-adventurer.yaml`
-- **IDs**: Use consistent prefixes: `char-alice-adventurer`
+- **Files**: Use descriptive names: `rita-adventurer.yaml`
+- **IDs**: Use consistent prefixes: `char-rita-adventurer`
 - **Tags**: Use lowercase with hyphens: `["fantasy", "adventurer", "hero"]`
 
 ## Advanced Techniques

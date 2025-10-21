@@ -98,7 +98,7 @@ names:
 ```
 
 **How to Fix:**
-- Use proper character name: `"Alice"` or `"Sir Galahad"`
+- Use proper character name: `"Rita"` or `"Sir Galahad"`
 - Avoid IDs or codes in canon field
 
 ### Composite Identity Warnings
@@ -355,7 +355,7 @@ meta:
 
 ### Preventing Warnings
 1. **Use Standard Formats**
-   - Hyphenated IDs: `"char-alice-adventurer"`
+   - Hyphenated IDs: `"char-rita-adventurer"`
    - ISO 8601 timestamps: `"2024-01-01T00:00:00Z"`
    - Standard trait names: `"introversion-extraversion"`
 

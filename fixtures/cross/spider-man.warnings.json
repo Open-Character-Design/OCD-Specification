@@ -6,12 +6,7 @@
   },
   {
     "code": "NORMALIZED_AXIS",
-    "detail": "'responsibility_impulsivity' \u2192 'responsibility\u2194impulsivity'",
-    "path": "personality.traits[].key"
-  },
-  {
-    "code": "NORMALIZED_AXIS",
-    "detail": "'scientific-curiosity' \u2192 'scientific\u2194curiosity'",
+    "detail": "'responsibility_impulsivity' → 'responsibility-impulsivity'",
     "path": "personality.traits[].key"
   },
   {

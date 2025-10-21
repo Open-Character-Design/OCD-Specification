@@ -5,11 +5,6 @@
     "path": "slug"
   },
   {
-    "code": "NORMALIZED_AXIS",
-    "detail": "'fear-courage' \u2192 'fear\u2194courage'",
-    "path": "personality.traits[].key"
-  },
-  {
     "code": "NONCANONICAL_CANON_NAME",
     "detail": "slug 'ripley-lv426' does not match canonical name slug 'ellen-ripley'",
     "path": "names.canon"

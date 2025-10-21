@@ -6,7 +6,7 @@
   },
   {
     "code": "NORMALIZED_AXIS",
-    "detail": "'stage_screen' \u2192 'stage\u2194screen'",
+    "detail": "'stage_screen' → 'stage-screen'",
     "path": "personality.traits[].key"
   }
 ]

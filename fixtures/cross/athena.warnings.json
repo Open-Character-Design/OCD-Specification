@@ -6,12 +6,7 @@
   },
   {
     "code": "NORMALIZED_AXIS",
-    "detail": "'wisdom_war' \u2192 'wisdom\u2194war'",
-    "path": "personality.traits[].key"
-  },
-  {
-    "code": "NORMALIZED_AXIS",
-    "detail": "'patron-of-heroes' \u2192 'patron\u2194of-heroes'",
+    "detail": "'wisdom_war' → 'wisdom-war'",
     "path": "personality.traits[].key"
   },
   {

@@ -22,7 +22,7 @@ def canonical_axis(name: str) -> str:
             left = left.strip()
             right = right.strip()
             if left and right:
-                return f"{left}{ARROW}{right}"
+                return f"{left}-{right}"
     return name.strip()
 
 

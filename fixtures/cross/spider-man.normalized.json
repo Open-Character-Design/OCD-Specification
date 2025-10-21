@@ -59,7 +59,7 @@
     "traits": [
       {
         "id": null,
-        "key": "responsibility\u2194impulsivity",
+        "key": "responsibility-impulsivity",
         "kind": "bipolar",
         "label": null,
         "poles": null,
@@ -67,7 +67,7 @@
       },
       {
         "id": null,
-        "key": "scientific\u2194curiosity",
+        "key": "scientific-curiosity",
         "kind": "flag",
         "label": null,
         "value": true

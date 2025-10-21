@@ -50,7 +50,7 @@ class _MiniYamlParser:
             if current_indent > indent:
                 break
 
-            if content.startswith("- "):
+            if content.startswith("-"):
                 if mapping:
                     raise ValueError("cannot mix mapping and sequence at same indent")
                 if sequence is None:

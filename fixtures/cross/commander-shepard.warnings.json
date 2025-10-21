@@ -6,7 +6,7 @@
   },
   {
     "code": "NORMALIZED_AXIS",
-    "detail": "'paragon_renegade' \u2192 'paragon\u2194renegade'",
+    "detail": "'paragon_renegade' → 'paragon-renegade'",
     "path": "personality.traits[].key"
   },
   {

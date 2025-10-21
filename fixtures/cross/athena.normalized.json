@@ -53,7 +53,7 @@
     "traits": [
       {
         "id": null,
-        "key": "wisdom\u2194war",
+        "key": "wisdom-war",
         "kind": "bipolar",
         "label": null,
         "poles": null,
@@ -61,7 +61,7 @@
       },
       {
         "id": null,
-        "key": "patron\u2194of-heroes",
+        "key": "patron-of-heroes",
         "kind": "flag",
         "label": null,
         "value": true

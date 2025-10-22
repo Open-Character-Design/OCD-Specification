@@ -12,31 +12,31 @@ def run_python_validator(character_path: str, mode: str, spec_path: str) -> Dict
     """Run Python validator and return results."""
     try:
         cmd = [
-            sys.executable, "-m", "ocd.validate.validator",
-            character_path,
+            sys.executable, "-m", "ocd.validate",
+            f"../{character_path}",
             "--mode", mode,
-            "--spec", spec_path,
+            "--spec", f"../{spec_path}",
             "--output", "json"
         ]
         
         result = subprocess.run(cmd, capture_output=True, text=True, cwd="python")
         
-        if result.returncode == 0:
-            return {"ok": True, "errors": 0, "warnings": 0}
-        elif result.returncode == 1:
-            # Parse JSON output to count errors
-            try:
-                output = json.loads(result.stdout)
-                error_count = len(output.get("errors", []))
-                warning_count = len(output.get("warnings", []))
-                return {"ok": False, "errors": error_count, "warnings": warning_count}
-            except json.JSONDecodeError:
-                return {"ok": False, "errors": 1, "warnings": 0}
-        else:
-            return {"ok": False, "errors": 1, "warnings": 0}
+        # Parse JSON output
+        try:
+            output = json.loads(result.stdout)
+            return {
+                "ok": output.get("ok", False),
+                "errors": len(output.get("errors", [])),
+                "warnings": len(output.get("warnings", [])),
+                "messages": [e.get("msg", "") for e in output.get("errors", [])]
+            }
+        except json.JSONDecodeError:
+            print(f"Failed to parse Python validator output: {result.stdout}")
+            print(f"Stderr: {result.stderr}")
+            return {"ok": False, "errors": 1, "warnings": 0, "messages": []}
     except Exception as e:
         print(f"Python validator error: {e}")
-        return {"ok": False, "errors": 1, "warnings": 0}
+        return {"ok": False, "errors": 1, "warnings": 0, "messages": []}
 
 
 def run_node_validator(character_path: str, mode: str, spec_path: str) -> Dict[str, Any]:
@@ -44,30 +44,30 @@ def run_node_validator(character_path: str, mode: str, spec_path: str) -> Dict[s
     try:
         cmd = [
             "node", "dist/cli.js",
-            character_path,
+            f"../{character_path}",
             "--mode", mode,
-            "--spec", spec_path,
+            "--spec", f"../{spec_path}",
             "--output", "json"
         ]
         
         result = subprocess.run(cmd, capture_output=True, text=True, cwd="node")
         
-        if result.returncode == 0:
-            return {"ok": True, "errors": 0, "warnings": 0}
-        elif result.returncode == 1:
-            # Parse JSON output to count errors
-            try:
-                output = json.loads(result.stdout)
-                error_count = len(output.get("errors", []))
-                warning_count = len(output.get("warnings", []))
-                return {"ok": False, "errors": error_count, "warnings": warning_count}
-            except json.JSONDecodeError:
-                return {"ok": False, "errors": 1, "warnings": 0}
-        else:
-            return {"ok": False, "errors": 1, "warnings": 0}
+        # Parse JSON output
+        try:
+            output = json.loads(result.stdout)
+            return {
+                "ok": output.get("ok", False),
+                "errors": len(output.get("errors", [])),
+                "warnings": len(output.get("warnings", [])),
+                "messages": [e.get("message", e.get("msg", "")) for e in output.get("errors", [])]
+            }
+        except json.JSONDecodeError:
+            print(f"Failed to parse Node validator output: {result.stdout}")
+            print(f"Stderr: {result.stderr}")
+            return {"ok": False, "errors": 1, "warnings": 0, "messages": []}
     except Exception as e:
         print(f"Node validator error: {e}")
-        return {"ok": False, "errors": 1, "warnings": 0}
+        return {"ok": False, "errors": 1, "warnings": 0, "messages": []}
 
 
 def run_spec_schema_test(test_case: Dict[str, Any]) -> bool:
@@ -76,7 +76,7 @@ def run_spec_schema_test(test_case: Dict[str, Any]) -> bool:
     expect_valid = test_case["expect"]["valid"]
     
     try:
-        cmd = ["ajv", "validate", "-s", "schema/ocd-validation-spec.schema.json", "-d", spec_file]
+        cmd = ["npx", "ajv", "validate", "-s", "schema/ocd-validation-spec.schema.json", "-d", spec_file]
         result = subprocess.run(cmd, capture_output=True, text=True)
         
         actual_valid = result.returncode == 0
@@ -120,9 +120,19 @@ def run_character_validation_test(test_case: Dict[str, Any]) -> bool:
     
     # Check for specific messages
     if "containsMessages" in expect:
-        # This would require parsing the actual output messages
-        # For now, we'll skip this check
-        pass
+        expected_messages = expect["containsMessages"]
+        python_messages = python_result.get("messages", [])
+        node_messages = node_result.get("messages", [])
+        
+        for expected_msg in expected_messages:
+            python_found = any(expected_msg.lower() in msg.lower() for msg in python_messages)
+            node_found = any(expected_msg.lower() in msg.lower() for msg in node_messages)
+            
+            if not python_found or not node_found:
+                print(f"Expected message not found: {expected_msg}")
+                print(f"  Python messages: {python_messages}")
+                print(f"  Node messages: {node_messages}")
+                return False
     
     return True
 
@@ -156,10 +166,10 @@ def main():
             success = False
         
         if success:
-            print(f"  ✅ PASSED")
+            print(f"  [PASS]")
             passed += 1
         else:
-            print(f"  ❌ FAILED")
+            print(f"  [FAIL]")
             failed += 1
     
     print(f"\nResults: {passed} passed, {failed} failed")

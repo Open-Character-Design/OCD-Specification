@@ -3,9 +3,7 @@
 ## v1.0.0
 - **BREAKING**: Schema version updated to 1.0
 - **BREAKING**: Go validator moved to post-1.0 roadmap
-- **BREAKING**: Textual format renamed from OCD-T to OCD-T (Open Character Design - Textual format)
 - **BREAKING**: File extension changed from `.ocdt` to `.ocd`
-- **BREAKING**: Header declaration changed from `ocd-t:` to `ocd-t:`
 - **NOTE**: Schema field `ocd_version` unchanged for backward compatibility
 - **NOTE**: Package names (`@ocd-tools/validator`, `ocd`) unchanged for backward compatibility
 - Python and TypeScript validators certified for production use

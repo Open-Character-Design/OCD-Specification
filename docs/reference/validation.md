@@ -265,12 +265,12 @@ validation:
 
 ## Migration Guide
 
-### From OCD-T Format
+### From Previous Format
 
-If you have existing OCD-T files, they need to be converted to YAML or JSON:
+If you have existing previous format files, they need to be converted to YAML or JSON:
 
-1. **Convert OCD-T to YAML/JSON**: Use the existing conversion tools
-2. **Update validation calls**: Remove any OCD-T specific validation
+1. **Convert previous format to YAML/JSON**: Use the existing conversion tools
+2. **Update validation calls**: Remove any previous format specific validation
 3. **Use new CLI flags**: Replace custom validation with `--mode` and `--spec`
 
 ### From Custom Validation

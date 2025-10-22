@@ -92,6 +92,7 @@ export class SpecLoader {
       const candidates = [
         new URL(`../${this.schemaPath}`, import.meta.url),
         new URL(`../../${this.schemaPath}`, import.meta.url),
+        new URL(`../../../${this.schemaPath}`, import.meta.url),
       ];
 
       let lastError: Error | null = null;

@@ -93,7 +93,7 @@ Normalized CharacterDefinition JSON
 
 ### Key Stages
 
-1. **Authoring** — Narrative teams write OCD-T Markdown with structured JSON fragments.
+1. **Authoring** — Narrative teams write structured OCD files in YAML or JSON format.
 2. **Controlled Vocabularies** — Validation ensures consistent tags, registers, and rating terms.
 3. **Validation & Normalization** — Validators check schema, align traits, and issue diagnostics.
 4. **Runtime JSON** — Normalized data feeds into AI prompts, memory stores, or game logic systems.

@@ -16,7 +16,7 @@
   </defs>
   <rect x="120" y="120" width="260" height="100" class="box" fill="#dae8fc" stroke="#6c8ebf" />
   <text x="250" y="160" class="title" text-anchor="middle">Authoring Workspace</text>
-  <text x="250" y="184" class="body" text-anchor="middle">OCD-T markdown + JSON fragments</text>
+  <text x="250" y="184" class="body" text-anchor="middle">Structured markdown + JSON fragments</text>
 
   <rect x="420" y="120" width="240" height="90" class="box" fill="#e1d5e7" stroke="#9673a6" />
   <text x="540" y="160" class="title" text-anchor="middle">Source Control &amp; Reviews</text>

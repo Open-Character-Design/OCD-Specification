@@ -204,7 +204,6 @@ OCD makes this possible through:
 **Format Flexibility:**
 - YAML for human editing
 - JSON for technical integration
-- OCD-T for concise authoring
 - All formats validate to the same schema
 
 **Platform Integration:**

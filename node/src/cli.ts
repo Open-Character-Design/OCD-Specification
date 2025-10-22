@@ -16,6 +16,7 @@ interface CliOptions {
   format: Format;
   mode: 'relaxed' | 'strict';
   spec?: string;
+  output: 'text' | 'json';
   printNormalized: boolean;
   indent: number;
   warningsAsErrors: boolean;
@@ -35,6 +36,7 @@ function createDefaultOptions(): CliOptions {
     path: '',
     format: 'auto',
     mode: 'relaxed',
+    output: 'text',
     printNormalized: false,
     indent: 2,
     warningsAsErrors: false,
@@ -81,6 +83,17 @@ function parseArgs(args: string[]): CliParseResult {
         throw new Error('--spec requires a value');
       }
       options.spec = next;
+      continue;
+    }
+    if (arg === '--output') {
+      const next = args[++index];
+      if (!next) {
+        throw new Error('--output requires a value');
+      }
+      if (next !== 'text' && next !== 'json') {
+        throw new Error("--output must be one of 'text' or 'json'");
+      }
+      options.output = next;
       continue;
     }
     if (arg === '--indent') {
@@ -130,6 +143,7 @@ function printHelp(): void {
   console.log('  -f, --format <auto|json|yaml>  Force the input document parser');
   console.log('      --mode <relaxed|strict>  Validation mode (default: relaxed)');
   console.log('      --spec <path>          Path to custom OCD specification overlay');
+  console.log('      --output <text|json>   Output format (default: text)');
   console.log('      --print                Emit normalized JSON to stdout on success');
   console.log('      --indent <n>           Indentation to use with --print (default: 2)');
   console.log('      --warnings-as-errors   Exit with code 2 if warnings are produced');
@@ -213,24 +227,37 @@ async function run(options: CliOptions): Promise<number> {
   }
 
   const result: Result<unknown> = await validateAndNormalize(document, options.mode, options.spec);
-  if (!result.ok) {
-    printErrors(result.errors ?? []);
-    return 1;
-  }
 
-  printWarnings(result.warnings ?? []);
-  if ((result.warnings?.length ?? 0) > 0 && options.warningsAsErrors) {
-    return 2;
-  }
-
-  if (options.printNormalized) {
-    const indent = options.indent > 0 ? options.indent : undefined;
-    console.log(JSON.stringify(result.data, null, indent));
+  if (options.output === 'json') {
+    // JSON output: just diagnostics
+    const output = {
+      ok: result.ok,
+      errors: result.errors ?? [],
+      warnings: result.warnings ?? []
+    };
+    console.log(JSON.stringify(output, null, 2));
+    return result.ok ? 0 : 1;
   } else {
-    console.log('Validation succeeded.');
-  }
+    // Text output (existing behavior)
+    if (!result.ok) {
+      printErrors(result.errors ?? []);
+      return 1;
+    }
 
-  return 0;
+    printWarnings(result.warnings ?? []);
+    if ((result.warnings?.length ?? 0) > 0 && options.warningsAsErrors) {
+      return 2;
+    }
+
+    if (options.printNormalized) {
+      const indent = options.indent > 0 ? options.indent : undefined;
+      console.log(JSON.stringify(result.data, null, indent));
+    } else {
+      console.log('Validation succeeded.');
+    }
+
+    return 0;
+  }
 }
 
 async function main(): Promise<number> {

@@ -26,7 +26,7 @@ class SpecLoader:
             schema_path = Path(self.schema_path)
             if not schema_path.exists():
                 # Try relative to current file
-                schema_path = Path(__file__).parent.parent.parent.parent / "schema" / "ocd-validation-spec.schema.json"
+                schema_path = Path(__file__).parent.parent.parent.parent.parent / "schema" / "ocd-validation-spec.schema.json"
             
             with schema_path.open("r", encoding="utf-8") as f:
                 schema = json.load(f)

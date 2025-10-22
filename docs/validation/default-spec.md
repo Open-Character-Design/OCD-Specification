@@ -387,11 +387,11 @@ constraints:
 
 ## Migration Notes
 
-The default specification replaces the previous OCD-T format validation. Key changes:
+The default specification replaces the previous validation format. Key changes:
 
 - **Unified Format**: All validation now uses `.ocd` specification files
-- **Flexible Rules**: More powerful rule system than OCD-T
+- **Flexible Rules**: More powerful rule system than previous formats
 - **Better Error Handling**: Detailed error codes and messages
 - **Extensible Design**: Easy to customize for specific projects
 
-For migration from OCD-T, see the [Migration Guide](../migration-guide.md).
+For migration from previous formats, see the [Migration Guide](../migration-guide.md).

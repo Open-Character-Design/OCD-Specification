@@ -36,25 +36,26 @@ def validate_and_normalize(
     try:
         # Load specifications
         loader = SpecLoader()
-        
-        # Load default spec
-        default_spec_path = Path(__file__).parent.parent.parent.parent / "spec" / "ocd-default-spec.ocd"
-        if not default_spec_path.exists():
-            # Try tests directory
-            default_spec_path = Path(__file__).parent.parent.parent.parent / "tests" / "specs" / "ocd-default-spec.ocd"
-        
-        if not default_spec_path.exists():
-            return {
-                "ok": False, 
-                "errors": [{"loc": ("spec",), "msg": "Default specification not found", "type": "spec_error"}]
-            }
-        
-        specs_to_merge = [loader.load_spec(str(default_spec_path))]
+        specs_to_merge = []
         
         # Load custom spec if provided
         if spec_path:
             custom_spec = loader.load_spec(spec_path)
             specs_to_merge.append(custom_spec)
+        else:
+            # Load default spec only if no custom spec provided
+            default_spec_path = Path(__file__).parent.parent.parent.parent.parent / "spec" / "ocd-default-spec.ocd"
+            if not default_spec_path.exists():
+                # Try tests directory
+                default_spec_path = Path(__file__).parent.parent.parent.parent.parent / "tests" / "specs" / "ocd-default-spec.ocd"
+            
+            if not default_spec_path.exists():
+                return {
+                    "ok": False, 
+                    "errors": [{"loc": ("spec",), "msg": "Default specification not found", "type": "spec_error"}]
+                }
+            
+            specs_to_merge.append(loader.load_spec(str(default_spec_path)))
         
         # Merge specifications
         merger = SpecMerger()
@@ -309,6 +310,12 @@ def main(argv: Sequence[str] | None = None) -> int:
         action="store_true",
         help="Exit with code 2 if any warnings are produced.",
     )
+    parser.add_argument(
+        "--output",
+        choices=("text", "json"),
+        default="text",
+        help="Output format: 'text' for human-readable, 'json' for machine-readable diagnostics.",
+    )
 
     args = parser.parse_args(argv)
 
@@ -333,24 +340,37 @@ def main(argv: Sequence[str] | None = None) -> int:
         return 2
 
     result = validate_and_normalize(document, mode=args.mode, spec_path=args.spec)
-    if not result.get("ok"):
-        _print_errors(result.get("errors", []))
-        return 1
-
-    warnings = result.get("warnings", [])
-    if warnings:
-        _print_warnings(warnings)
-        if args.warnings_as_errors:
-            return 2
-
-    if args.print_normalized:
-        indent = args.indent if args.indent > 0 else None
-        json.dump(result.get("data"), sys.stdout, indent=indent)
+    
+    if args.output == "json":
+        # JSON output: just diagnostics
+        output = {
+            "ok": result.get("ok", False),
+            "errors": result.get("errors", []),
+            "warnings": result.get("warnings", [])
+        }
+        json.dump(output, sys.stdout, indent=2)
         sys.stdout.write("\n")
+        return 0 if result.get("ok") else 1
     else:
-        print("Validation succeeded.")
-
-    return 0
+        # Text output (existing behavior)
+        if not result.get("ok"):
+            _print_errors(result.get("errors", []))
+            return 1
+        
+        warnings = result.get("warnings", [])
+        if warnings:
+            _print_warnings(warnings)
+            if args.warnings_as_errors:
+                return 2
+        
+        if args.print_normalized:
+            indent = args.indent if args.indent > 0 else None
+            json.dump(result.get("data"), sys.stdout, indent=indent)
+            sys.stdout.write("\n")
+        else:
+            print("Validation succeeded.")
+        
+        return 0
 
 
 if __name__ == "__main__":  # pragma: no cover - CLI entry point

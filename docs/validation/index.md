@@ -279,6 +279,3 @@ The validation system provides detailed error information:
 - **Severity Levels**: Distinguish between errors and warnings
 - **Custom Messages**: Meaningful descriptions for end users
 
-## Migration from OCD-T
-
-If you're migrating from the old OCD-T format, see the [Migration Guide](../migration-guide.md) for detailed instructions on converting your validation rules to the new specification format.

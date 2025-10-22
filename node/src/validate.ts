@@ -36,40 +36,13 @@ export async function validateAndNormalize(
   try {
     // Load specifications
     const loader = new SpecLoader();
-    
-    // Load default spec
-    const defaultSpecPath = 'tests/specs/ocd-default-spec.ocd';
     let specsToMerge;
-    
-    try {
-      const defaultSpec = await loader.loadSpec(defaultSpecPath);
-      specsToMerge = [defaultSpec];
-    } catch (error) {
-      // Try alternative path
-      try {
-        const altSpecPath = 'spec/ocd-default-spec.ocd';
-        const defaultSpec = await loader.loadSpec(altSpecPath);
-        specsToMerge = [defaultSpec];
-      } catch {
-        return {
-          ok: false,
-          warnings: [],
-          errors: [{
-            message: 'Default specification not found',
-            instancePath: '/spec',
-            schemaPath: '#/spec',
-            keyword: 'spec_error',
-            params: { error: String(error) }
-          }]
-        };
-      }
-    }
     
     // Load custom spec if provided
     if (specPath) {
       try {
         const customSpec = await loader.loadSpec(specPath);
-        specsToMerge.push(customSpec);
+        specsToMerge = [customSpec];
       } catch (error) {
         return {
           ok: false,
@@ -82,6 +55,33 @@ export async function validateAndNormalize(
             params: { error: String(error) }
           }]
         };
+      }
+    } else {
+      // Load default spec only if no custom spec provided
+      const defaultSpecPath = 'tests/specs/ocd-default-spec.ocd';
+      
+      try {
+        const defaultSpec = await loader.loadSpec(defaultSpecPath);
+        specsToMerge = [defaultSpec];
+      } catch (error) {
+        // Try alternative path
+        try {
+          const altSpecPath = 'spec/ocd-default-spec.ocd';
+          const defaultSpec = await loader.loadSpec(altSpecPath);
+          specsToMerge = [defaultSpec];
+        } catch {
+          return {
+            ok: false,
+            warnings: [],
+            errors: [{
+              message: 'Default specification not found',
+              instancePath: '/spec',
+              schemaPath: '#/spec',
+              keyword: 'spec_error',
+              params: { error: String(error) }
+            }]
+          };
+        }
       }
     }
     

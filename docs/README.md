@@ -2,7 +2,7 @@
 
 ## 📍 Summary
 
-The **Open Character Specification (OCD)** ,  and its companion textual format **OCD-T** ,  is an open, interoperable standard for defining, exchanging, and interpreting characters across any medium or technology. From video games and novels to film, theater, comics, AI systems, and beyond, OCD provides a structured, portable blueprint that captures every aspect of a character in a way that's both human-authorable and machine-readable.
+The **Open Character Specification (OCD)** is an open, interoperable standard for defining, exchanging, and interpreting characters across any medium or technology. From video games and novels to film, theater, comics, AI systems, and beyond, OCD provides a structured, portable blueprint that captures every aspect of a character in a way that's both human-authorable and machine-readable.
 
 ---
 
@@ -30,15 +30,12 @@ OCD solves this by establishing a **standardized character model** that works ac
 2. **Composability** – Break down a character into modular components: identity, appearance, metaphysical traits, personality, relationships, narrative role, etc.
 3. **Interoperability** – Make definitions portable across authoring tools, engines, pipelines, and AI frameworks.
 4. **Extensibility** – Support project- or domain-specific extensions (`x-*`) without breaking compatibility.
-5. **Human + Machine Symbiosis** – Be easy to write and read by humans (via YAML or OCD-T) while also being strictly structured for validation and automation.
+5. **Human + Machine Symbiosis** – Be easy to write and read by humans (via YAML or JSON) while also being strictly structured for validation and automation.
 6. **Safety & Responsibility** – Include built-in fields for audience targeting, content ratings, and representation considerations.
 7. **Lifecycle Awareness** – Support dynamic state changes (mood, health, location, arc progression) as well as static biography.
 
 ---
 
-### OCD-T: The Author-First Format
-
-While OCD can be serialized as YAML or JSON, **OCD-T** provides a more natural textual syntax designed for writers, narrative designers, and AI trainers. It reads like annotated prose but parses into structured data, making character creation more intuitive while preserving technical fidelity.
 
 ---
 

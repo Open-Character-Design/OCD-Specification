@@ -1,12 +1,10 @@
-import { readFile } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
+/** Main validator module using the new OCD validation spec pipeline. */
 
-import { type ErrorObject, type ValidateFunction } from 'ajv';
-import Ajv2020 from 'ajv/dist/2020.js';
-import addFormats from 'ajv-formats';
-import YAML from 'yaml';
-
-import type { CharacterDefinition, CoreDocument } from './types.js';
+import { SpecLoader } from './loader.js';
+import { SpecMerger } from './merger.js';
+import { PathMatcher } from './matcher.js';
+import { RuleEvaluator } from './evaluator.js';
+import { Diagnostic, ValidationResult, Severity } from './result.js';
 import { normalizeInPlace } from './normalize.js';
 import { lint } from './lint.js';
 import type { Warning } from './warnings.js';
@@ -30,261 +28,225 @@ export interface Result<T> {
 
 export type ValidationMode = 'relaxed' | 'strict';
 
-const ajv = new Ajv2020({
-  strict: true,
-  allErrors: true,
-  allowUnionTypes: true,
-});
-addFormats(ajv);
-
-let validatorPromise: Promise<ValidateFunction<CoreDocument>> | null = null;
-let defaultSpecPromise: Promise<Record<string, unknown>> | null = null;
-
-async function readCoreSchema(): Promise<string> {
-  const candidates = [
-    new URL('../schema/core.schema.json', import.meta.url),
-    new URL('../../spec/core.schema.json', import.meta.url),
-  ];
-
-  let lastError: Error | null = null;
-  for (const url of candidates) {
-    try {
-      const schemaPath = fileURLToPath(url);
-      return await readFile(schemaPath, 'utf8');
-    } catch (error) {
-      const err = error as NodeJS.ErrnoException;
-      if (err.code === 'ENOENT') {
-        lastError = err;
-        continue;
-      }
-      throw err;
-    }
-  }
-
-  if (lastError) {
-    throw new Error('core.schema.json could not be located');
-  }
-  throw new Error('core.schema.json is missing');
-}
-
-async function readDefaultSpec(): Promise<Record<string, unknown>> {
-  if (!defaultSpecPromise) {
-    defaultSpecPromise = (async () => {
-      const candidates = [
-        new URL('../../spec/ocd-default-spec.ocd', import.meta.url),
-        new URL('../../docs/examples/ocd-default-spec.ocd', import.meta.url),
-      ];
-
-      let lastError: Error | null = null;
-      for (const url of candidates) {
-        try {
-          const specPath = fileURLToPath(url);
-          const content = await readFile(specPath, 'utf8');
-          return YAML.parse(content) as Record<string, unknown>;
-        } catch (error) {
-          const err = error as NodeJS.ErrnoException;
-          if (err.code === 'ENOENT') {
-            lastError = err;
-            continue;
-          }
-          throw err;
-        }
-      }
-
-      if (lastError) {
-        throw new Error('ocd-default-spec.ocd could not be located');
-      }
-      throw new Error('ocd-default-spec.ocd is missing');
-    })();
-  }
-
-  return defaultSpecPromise;
-}
-
-async function loadSpecOverlay(specPath: string): Promise<Record<string, unknown>> {
-  const content = await readFile(specPath, 'utf8');
-  return YAML.parse(content) as Record<string, unknown>;
-}
-
-function mergeSpecs(baseSpec: Record<string, unknown>, overlaySpec: Record<string, unknown>): Record<string, unknown> {
-  const merged = { ...baseSpec };
-  
-  function deepMerge(base: Record<string, unknown>, overlay: Record<string, unknown>): void {
-    for (const [key, value] of Object.entries(overlay)) {
-      if (key in base && typeof base[key] === 'object' && typeof value === 'object' && base[key] !== null && value !== null) {
-        deepMerge(base[key] as Record<string, unknown>, value as Record<string, unknown>);
-      } else {
-        base[key] = value;
-      }
-    }
-  }
-  
-  deepMerge(merged, overlaySpec);
-  return merged;
-}
-
-async function loadValidator(): Promise<ValidateFunction<CoreDocument>> {
-  if (!validatorPromise) {
-    validatorPromise = (async () => {
-      const schemaContent = await readCoreSchema();
-      const schema = JSON.parse(schemaContent);
-      return ajv.compile<CoreDocument>(schema);
-    })();
-  }
-
-  return validatorPromise;
-}
-
-function mapErrors(errors: ErrorObject[] | null | undefined): ValidationError[] {
-  if (!errors) {
-    return [];
-  }
-
-  return errors.map((err) => ({
-    message: err.message ?? 'validation error',
-    instancePath: err.instancePath,
-    schemaPath: err.schemaPath,
-    keyword: err.keyword,
-    params: err.params as Record<string, unknown>,
-  }));
-}
-
-function isMeasurement(value: unknown): boolean {
-  return (
-    typeof value === 'object' &&
-    value !== null &&
-    typeof (value as { value?: unknown }).value === 'number' &&
-    typeof (value as { unit?: unknown }).unit === 'string'
-  );
-}
-
-function collectSemanticErrors(doc: CoreDocument): ValidationError[] {
-  const errors: ValidationError[] = [];
-
-  if (doc.kind === 'CharacterDefinition') {
-    errors.push(...checkAppearanceMeasurements(doc));
-  }
-
-  return errors;
-}
-
-function checkAppearanceMeasurements(doc: CharacterDefinition): ValidationError[] {
-  const errors: ValidationError[] = [];
-  const appearance = doc.appearance;
-  if (!appearance || typeof appearance !== 'object') {
-    return errors;
-  }
-
-  const baseline = (appearance as Record<string, unknown>).baseline;
-  if (baseline && typeof baseline === 'object') {
-    const height = (baseline as Record<string, unknown>).height;
-    if (height !== undefined && !isMeasurement(height)) {
-      errors.push({
-        message: 'height must use { value, unit }',
-        instancePath: '/appearance/baseline/height',
-        schemaPath: '#/properties/appearance/properties/baseline/properties/height',
-        keyword: 'semantic',
-        params: { expected: '{ value, unit }' },
-      });
-    }
-  }
-
-  return errors;
-}
-
 export async function validateAndNormalize(
   doc: unknown,
   mode: ValidationMode = 'relaxed',
   specPath?: string
-): Promise<Result<CoreDocument>> {
-  // Load specification
-  let spec: Record<string, unknown>;
+): Promise<Result<any>> {
   try {
-    const baseSpec = await readDefaultSpec();
-    if (specPath) {
-      const overlaySpec = await loadSpecOverlay(specPath);
-      spec = mergeSpecs(baseSpec, overlaySpec);
-    } else {
-      spec = baseSpec;
+    // Load specifications
+    const loader = new SpecLoader();
+    
+    // Load default spec
+    const defaultSpecPath = 'tests/specs/ocd-default-spec.ocd';
+    let specsToMerge;
+    
+    try {
+      const defaultSpec = await loader.loadSpec(defaultSpecPath);
+      specsToMerge = [defaultSpec];
+    } catch (error) {
+      // Try alternative path
+      try {
+        const altSpecPath = 'spec/ocd-default-spec.ocd';
+        const defaultSpec = await loader.loadSpec(altSpecPath);
+        specsToMerge = [defaultSpec];
+      } catch {
+        return {
+          ok: false,
+          warnings: [],
+          errors: [{
+            message: 'Default specification not found',
+            instancePath: '/spec',
+            schemaPath: '#/spec',
+            keyword: 'spec_error',
+            params: { error: String(error) }
+          }]
+        };
+      }
     }
+    
+    // Load custom spec if provided
+    if (specPath) {
+      try {
+        const customSpec = await loader.loadSpec(specPath);
+        specsToMerge.push(customSpec);
+      } catch (error) {
+        return {
+          ok: false,
+          warnings: [],
+          errors: [{
+            message: `Failed to load custom spec: ${error}`,
+            instancePath: '/spec',
+            schemaPath: '#/spec',
+            keyword: 'spec_error',
+            params: { error: String(error) }
+          }]
+        };
+      }
+    }
+    
+    // Merge specifications
+    const merger = new SpecMerger();
+    const mergedSpec = merger.mergeSpecs(specsToMerge);
+    const resolvedSpec = merger.resolveReferences(mergedSpec);
+    
+    // Initialize components
+    const matcher = new PathMatcher();
+    const evaluator = new RuleEvaluator(mode);
+    
+    // Collect diagnostics
+    const allDiagnostics: Diagnostic[] = [];
+    
+    // Evaluate rules
+    if (resolvedSpec.rules) {
+      for (const rule of resolvedSpec.rules) {
+        const matches = matcher.findMatches(doc, rule.path);
+        const ruleDiagnostics = evaluator.evaluateRule(
+          rule, matches, resolvedSpec.id || 'unknown', resolvedSpec.schemaVersion || 1
+        );
+        allDiagnostics.push(...ruleDiagnostics);
+      }
+    }
+    
+    // Evaluate constraints
+    if (resolvedSpec.constraints) {
+      const constraintDiagnostics = evaluateConstraints(
+        resolvedSpec.constraints, doc, matcher, evaluator, resolvedSpec.id || 'unknown', resolvedSpec.schemaVersion || 1
+      );
+      allDiagnostics.push(...constraintDiagnostics);
+    }
+    
+    // Determine if validation passed
+    const errors = allDiagnostics.filter(d => d.severity === Severity.ERROR);
+    const warnings = allDiagnostics.filter(d => d.severity === Severity.WARNING);
+    
+    const validationPassed = errors.length === 0;
+    
+    // Normalize data if validation passed
+    let normalizedData;
+    if (validationPassed) {
+      normalizedData = JSON.parse(JSON.stringify(doc)); // Deep copy
+      const normalizeWarnings: Warning[] = [];
+      normalizeInPlace(normalizedData, normalizeWarnings);
+      
+      // Add linter warnings
+      const linterWarnings = lint(normalizedData);
+      normalizeWarnings.push(...linterWarnings);
+      
+      // Convert to legacy format for compatibility
+      return {
+        ok: true,
+        data: normalizedData,
+        warnings: normalizeWarnings
+      };
+    }
+    
+    // Convert to legacy format for compatibility
+    return {
+      ok: false,
+      warnings: warnings.map(w => ({
+        code: w.code,
+        path: w.path,
+        detail: w.message
+      })),
+      errors: errors.map(e => ({
+        message: e.message,
+        instancePath: e.path,
+        schemaPath: '#/validation',
+        keyword: e.code,
+        params: {}
+      }))
+    };
+    
   } catch (error) {
     return {
       ok: false,
       warnings: [],
       errors: [{
-        message: `Failed to load specification: ${error}`,
-        instancePath: '/spec',
-        schemaPath: '#/spec',
-        keyword: 'spec_error',
-        params: { error: String(error) },
-      }],
+        message: `Validation error: ${error}`,
+        instancePath: '/validation',
+        schemaPath: '#/validation',
+        keyword: 'validation_error',
+        params: { error: String(error) }
+      }]
     };
   }
+}
 
-  // Override mode from spec if provided
-  if (spec.validation && typeof spec.validation === 'object' && 'mode' in spec.validation) {
-    const specMode = (spec.validation as Record<string, unknown>).mode;
-    if (specMode === 'relaxed' || specMode === 'strict') {
-      mode = specMode;
-    }
-  }
-
-  const validator = await loadValidator();
-  const isValid = validator(doc);
-
-  if (!isValid) {
-    const errors = mapErrors(validator.errors);
-    
-    // In relaxed mode, filter to only critical errors
-    if (mode === 'relaxed') {
-      const criticalErrors = errors.filter(error => 
-        error.keyword === 'required' || error.keyword === 'type'
-      );
-      return {
-        ok: false,
-        warnings: [],
-        errors: criticalErrors,
-      };
-    }
-    
-    return {
-      ok: false,
-      warnings: [],
-      errors,
-    };
-  }
-
-  const cloned = JSON.parse(JSON.stringify(doc)) as CoreDocument;
-
-  const semanticErrors = collectSemanticErrors(cloned);
-  if (semanticErrors.length > 0) {
-    if (mode === 'strict') {
-      return {
-        ok: false,
-        warnings: [],
-        errors: semanticErrors,
-      };
-    }
-    // In relaxed mode, convert semantic errors to warnings
-  }
-
-  const warnings: Warning[] = [];
+function evaluateConstraints(
+  constraints: any,
+  doc: any,
+  matcher: PathMatcher,
+  evaluator: RuleEvaluator,
+  specId: string,
+  schemaVersion: number
+): Diagnostic[] {
+  const diagnostics: Diagnostic[] = [];
   
-  // Convert semantic errors to warnings in relaxed mode
-  if (mode === 'relaxed' && semanticErrors.length > 0) {
-    warnings.push(...semanticErrors.map(error => ({
-      code: 'VALIDATION_WARNING',
-      path: error.instancePath,
-      detail: error.message,
-    })));
+  // Evaluate require constraints
+  if (constraints.require) {
+    for (const req of constraints.require) {
+      const path = typeof req === 'string' ? req : req.path;
+      
+      if (!matcher.pathExists(doc, path)) {
+        diagnostics.push(new Diagnostic(
+          'REQUIRED_CONSTRAINT_MISSING',
+          Severity.ERROR,
+          `Required path missing: ${path}`,
+          path,
+          { path, presence: 'required' },
+          specId,
+          schemaVersion
+        ));
+      }
+    }
   }
   
-  normalizeInPlace(cloned as unknown as Record<string, unknown>, warnings);
-  warnings.push(...lint(cloned as unknown as Record<string, unknown>));
-
-  return {
-    ok: true,
-    data: cloned,
-    warnings,
-  };
+  // Evaluate forbid constraints
+  if (constraints.forbid) {
+    for (const forbid of constraints.forbid) {
+      const path = typeof forbid === 'string' ? forbid : forbid.path;
+      
+      if (matcher.pathExists(doc, path)) {
+        diagnostics.push(new Diagnostic(
+          'FORBIDDEN_CONSTRAINT_PRESENT',
+          Severity.ERROR,
+          `Forbidden path present: ${path}`,
+          path,
+          { path, presence: 'forbidden' },
+          specId,
+          schemaVersion
+        ));
+      }
+    }
+  }
+  
+  // Evaluate disallow constraints
+  if (constraints.disallow) {
+    const disallow = constraints.disallow;
+    if (disallow.tags) {
+      const forbiddenTags = disallow.tags;
+      const tagMatches = matcher.findMatches(doc, 'meta.tags');
+      
+      for (const match of tagMatches) {
+        if (Array.isArray(match.value)) {
+          for (const tag of match.value) {
+            if (forbiddenTags.includes(tag)) {
+              diagnostics.push(new Diagnostic(
+                'DISALLOWED_TAG',
+                Severity.ERROR,
+                `Tag "${tag}" not allowed`,
+                match.path,
+                { path: match.path, disallow: { tags: forbiddenTags } },
+                specId,
+                schemaVersion
+              ));
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  return diagnostics;
 }

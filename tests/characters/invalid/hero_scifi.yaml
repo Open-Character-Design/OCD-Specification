@@ -1,0 +1,7 @@
+id: "char-002"
+profile:
+  name: "Zed Nova"
+species: "android"
+tags: ["sci-fi","space"]     # disallowed by fantasy spec
+equipment:
+  - name: "Laser Pistol"     # forbidden by fantasy spec pattern

@@ -1,0 +1,28 @@
+id: ocd-default-spec
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: OCD Default Validation
+  description: Minimal structural baseline.
+policy:
+  allowUnknownFields: true
+  unknownFieldSeverity: warning
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "id"
+    presence: required
+    type: string
+    minLength: 1
+
+  - path: "profile.name"
+    presence: required
+    type: string
+    minLength: 1
+
+  - path: "tags[]"
+    type: string
+    maxLength: 32

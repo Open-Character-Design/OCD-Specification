@@ -1,0 +1,55 @@
+name: Validate OCD Specs
+
+on:
+  push:
+    branches: [ main, dev ]
+    paths:
+      - 'schema/**'
+      - 'tests/specs/**'
+      - 'spec/**'
+  pull_request:
+    branches: [ main, dev ]
+    paths:
+      - 'schema/**'
+      - 'tests/specs/**'
+      - 'spec/**'
+
+jobs:
+  validate-specs:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: 'node/package-lock.json'
+    
+    - name: Install dependencies
+      run: |
+        cd node
+        npm ci
+    
+    - name: Install Ajv CLI
+      run: npm install -g ajv-cli
+    
+    - name: Validate default spec
+      run: |
+        ajv validate -s schema/ocd-validation-spec.schema.json -d spec/ocd-default-spec.ocd
+    
+    - name: Validate test specs
+      run: |
+        ajv validate -s schema/ocd-validation-spec.schema.json -d tests/specs/ocd-default-spec.ocd
+        ajv validate -s schema/ocd-validation-spec.schema.json -d tests/specs/project-fantasy-spec.ocd
+    
+    - name: Validate invalid spec (should fail)
+      run: |
+        if ajv validate -s schema/ocd-validation-spec.schema.json -d tests/specs/invalid-spec-missing-type.ocd; then
+          echo "Expected validation to fail for invalid spec"
+          exit 1
+        else
+          echo "Invalid spec correctly failed validation"
+        fi

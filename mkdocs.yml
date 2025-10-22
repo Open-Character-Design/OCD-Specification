@@ -39,6 +39,9 @@ nav:
       - Examples Gallery: authoring/examples.md
   - Validate & QA:
     - Validation Overview: reference/validation.md
+    - Validation System: validation/index.md
+    - Specification Reference: validation/spec-reference.md
+    - Default Specification: validation/default-spec.md
     - Validation Modes: tutorial/validation-modes.md
     - Troubleshooting Guide: troubleshooting.md
     - Diagnostics Reference: reference/diagnostics.md

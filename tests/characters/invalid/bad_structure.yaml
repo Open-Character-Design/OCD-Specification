@@ -1,0 +1,3 @@
+profile:
+  name: 42        # wrong type (string required)
+tags: "rogue"     # wrong type (array required if rules target tags[])

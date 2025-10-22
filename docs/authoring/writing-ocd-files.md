@@ -1,6 +1,6 @@
 ---
 title: Authoring Playbook
-description: Best practices for structuring OCD files across YAML, JSON, and OCD-T formats.
+description: Best practices for structuring OCD files across YAML and JSON formats.
 search:
   boost: 2
 tags:
@@ -11,7 +11,7 @@ tags:
 
 # Writing OCD Files
 
-This guide covers best practices for authoring OCD files in YAML, JSON, and OCD-T formats.
+This guide covers best practices for authoring OCD files in YAML and JSON formats.
 
 ## Format Selection
 
@@ -21,7 +21,6 @@ Choose the format that best fits your workflow:
 |--------|----------|------|------|
 | **YAML** | Human authoring | Readable, comments, flexible | Larger file size |
 | **JSON** | APIs, automation | Compact, universal, strict | Less readable |
-| **OCD-T** | Quick authoring | Concise, markdown-friendly | Learning curve |
 
 ## YAML Authoring Guidelines
 
@@ -112,33 +111,6 @@ personality:
 - **String quotes**: Always use double quotes
 - **No comments**: JSON doesn't support comments
 - **Validation**: Always validate JSON syntax
-
-## OCD-T Authoring Guidelines
-
-OCD-T is a concise textual format for quick character authoring:
-
-```ocd title="character.ocd"
-ocd-t: 1
-ocd-version: 0.0.1
-
-character "Rita" {
-  id: "char-rita-adventurer"
-  
-  personality {
-    summary: "Brave and curious adventurer"
-    traits: [
-      { name: "introversion-extraversion", kind: bipolar, polarity: 0.7, intensity: 0.8 }
-    ]
-  }
-}
-```
-
-### OCD-T Features
-
-- **Concise syntax**: Less verbose than YAML/JSON
-- **Markdown-friendly**: Easy to embed in documentation
-- **Multiline strings**: Support for long descriptions
-- **Extension blocks**: Easy to add system-specific data
 
 ## Validation Workflow
 

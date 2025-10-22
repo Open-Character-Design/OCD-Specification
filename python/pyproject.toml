@@ -14,6 +14,7 @@ dependencies = [
   "jsonschema>=4.22",
   "pydantic>=2.7",
   "pyyaml>=6.0",
+  "jsonpath-ng>=1.6",
 ]
 readme = "README.md"
 license = { text = "Apache-2.0" }

@@ -1,0 +1,109 @@
+name: Test Validators
+
+on:
+  push:
+    branches: [ main, dev ]
+    paths:
+      - 'python/**'
+      - 'node/**'
+      - 'tests/**'
+      - 'schema/**'
+  pull_request:
+    branches: [ main, dev ]
+    paths:
+      - 'python/**'
+      - 'node/**'
+      - 'tests/**'
+      - 'schema/**'
+
+jobs:
+  test-python-validator:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install Python dependencies
+      run: |
+        cd python
+        pip install -e .
+    
+    - name: Run Python validator tests
+      run: |
+        cd python
+        python -m pytest tests/ -v
+    
+    - name: Test Python CLI against fixtures
+      run: |
+        cd python
+        python -m ocd.validate.validator tests/characters/valid/hero_fantasy.yaml --mode strict --spec ../tests/specs/project-fantasy-spec.ocd
+        python -m ocd.validate.validator tests/characters/invalid/hero_scifi.yaml --mode strict --spec ../tests/specs/project-fantasy-spec.ocd
+        python -m ocd.validate.validator tests/characters/invalid/bad_structure.yaml --mode relaxed --spec ../tests/specs/ocd-default-spec.ocd
+
+  test-node-validator:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: 'node/package-lock.json'
+    
+    - name: Install Node dependencies
+      run: |
+        cd node
+        npm ci
+    
+    - name: Build Node validator
+      run: |
+        cd node
+        npm run build
+    
+    - name: Test Node CLI against fixtures
+      run: |
+        cd node
+        node dist/cli.js ../tests/characters/valid/hero_fantasy.yaml --mode strict --spec ../tests/specs/project-fantasy-spec.ocd
+        node dist/cli.js ../tests/characters/invalid/hero_scifi.yaml --mode strict --spec ../tests/specs/project-fantasy-spec.ocd
+        node dist/cli.js ../tests/characters/invalid/bad_structure.yaml --mode relaxed --spec ../tests/specs/ocd-default-spec.ocd
+
+  test-fixture-manifest:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: 'node/package-lock.json'
+    
+    - name: Install Python dependencies
+      run: |
+        cd python
+        pip install -e .
+    
+    - name: Install Node dependencies
+      run: |
+        cd node
+        npm ci
+        npm run build
+    
+    - name: Run fixture manifest tests
+      run: |
+        python tools/test-fixtures.py tests/cases.manifest.json

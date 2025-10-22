@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Spec validates against schema (default)",
+    "kind": "spec-schema",
+    "file": "tests/specs/ocd-default-spec.ocd",
+    "expect": { "valid": true }
+  },
+  {
+    "name": "Spec validates against schema (fantasy)",
+    "kind": "spec-schema",
+    "file": "tests/specs/project-fantasy-spec.ocd",
+    "expect": { "valid": true }
+  },
+  {
+    "name": "Spec fails schema (missing type)",
+    "kind": "spec-schema",
+    "file": "tests/specs/invalid-spec-missing-type.ocd",
+    "expect": { "valid": false }
+  },
+
+  {
+    "name": "Character passes relaxed with default spec",
+    "kind": "character-validate",
+    "character": "tests/characters/valid/hero_fantasy.yaml",
+    "mode": "relaxed",
+    "spec": "tests/specs/ocd-default-spec.ocd",
+    "expect": { "errors": 0 }
+  },
+  {
+    "name": "Character passes strict with fantasy spec",
+    "kind": "character-validate",
+    "character": "tests/characters/valid/hero_fantasy.yaml",
+    "mode": "strict",
+    "spec": "tests/specs/project-fantasy-spec.ocd",
+    "expect": { "errors": 0 }
+  },
+  {
+    "name": "Sci-fi character fails strict with fantasy spec",
+    "kind": "character-validate",
+    "character": "tests/characters/invalid/hero_scifi.yaml",
+    "mode": "strict",
+    "spec": "tests/specs/project-fantasy-spec.ocd",
+    "expect": {
+      "errorsAtLeast": 2,
+      "containsMessages": [
+        "Sci-fi equipment is not allowed",
+        "Tag \"sci-fi\" not allowed"
+      ]
+    }
+  },
+  {
+    "name": "Bad structure fails even in relaxed mode",
+    "kind": "character-validate",
+    "character": "tests/characters/invalid/bad_structure.yaml",
+    "mode": "relaxed",
+    "spec": "tests/specs/ocd-default-spec.ocd",
+    "expect": { "errorsAtLeast": 1 }
+  }
+]

@@ -1,0 +1,8 @@
+id: "char-001"
+profile:
+  name: "Aria Ironleaf"
+species: "elf"
+tags: ["fantasy","archer"]
+equipment:
+  - name: "Longbow"
+  - name: "Leather Armor"

@@ -1,0 +1,25 @@
+id: project-fantasy-spec
+type: validationSpec
+schemaVersion: 1
+extends: [ocd-default-spec]
+metadata:
+  name: Fantasy Project Spec
+  description: Restrict to medieval fantasy.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums:
+    Species: ["human","elf","dwarf","orc","halfling"]
+
+rules:
+  - path: "species"
+    enum: "@enums.Species"
+  - path: "equipment[*].name"
+    type: string
+    pattern: "^((?!laser|plasma|railgun).)*$"
+    message: "Sci-fi equipment is not allowed"
+
+constraints:
+  disallow:
+    tags: ["sci-fi","space","cyberpunk"]

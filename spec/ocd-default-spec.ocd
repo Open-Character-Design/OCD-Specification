@@ -94,7 +94,156 @@ rules:
     enum: "@enums.TraitKind"
 
   - path: "personality.traits[].value"
-    type: number
+    type: ["number", "boolean"]
+
+  # Core Fields Validation - Based on Research Findings
+  # Identity Fields
+  - path: "identity.gender"
+    type: string
+    description: "Gender identity and expression"
+
+  # Physical Characteristics  
+  - path: "appearance"
+    type: object
+    description: "Physical characteristics and appearance"
+
+  - path: "appearance.physical_description"
+    type: string
+    description: "Visual description of physical features"
+
+  - path: "appearance.distinctive_features"
+    type: array
+    items:
+      type: string
+    description: "Unique physical characteristics"
+
+  - path: "appearance.clothing_style"
+    type: string
+    description: "Typical attire and fashion preferences"
+
+  - path: "appearance.body_language"
+    type: array
+    items:
+      type: string
+    description: "Characteristic postures and gestures"
+
+  # Psychological Profile
+  - path: "personality.personality_traits"
+    type: array
+    items:
+      type: string
+    description: "Core personality characteristics"
+
+  - path: "personality.motivations"
+    type: array
+    items:
+      type: string
+    description: "Primary drives and goals"
+
+  - path: "personality.fears"
+    type: array
+    items:
+      type: string
+    description: "Core anxieties and vulnerabilities"
+
+  - path: "personality.values"
+    type: array
+    items:
+      type: string
+    description: "Moral and ethical principles"
+
+  - path: "personality.beliefs"
+    type: array
+    items:
+      type: string
+    description: "Philosophical or religious convictions"
+
+  # Abilities and Skills
+  - path: "metaphysics"
+    type: object
+    description: "Abilities, skills, and special capabilities"
+
+  - path: "metaphysics.strengths"
+    type: array
+    items:
+      type: string
+    description: "Areas of expertise and natural talents"
+
+  - path: "metaphysics.weaknesses"
+    type: array
+    items:
+      type: string
+    description: "Areas of limitation or vulnerability"
+
+  - path: "metaphysics.special_abilities"
+    type: array
+    items:
+      type: string
+    description: "Unique powers or capabilities"
+
+  - path: "metaphysics.skills"
+    type: array
+    items:
+      type: string
+    description: "Learned abilities and competencies"
+
+  # Communication Style
+  - path: "communication"
+    type: object
+    description: "Communication patterns and speech style"
+
+  - path: "communication.speech_patterns"
+    type: array
+    items:
+      type: string
+    description: "Characteristic ways of speaking"
+
+  - path: "communication.vocabulary"
+    type: array
+    items:
+      type: string
+    description: "Typical word choices and language use"
+
+  - path: "communication.tone"
+    type: array
+    items:
+      type: string
+    description: "Emotional expression patterns"
+
+  - path: "communication.communication_preferences"
+    type: array
+    items:
+      type: string
+    description: "Preferred methods of interaction"
+
+  # Background and History
+  - path: "background.origin"
+    type: string
+    description: "Place and circumstances of birth/creation"
+
+  - path: "background.family"
+    type: array
+    items:
+      type: object
+    description: "Family relationships and dynamics"
+
+  - path: "background.education"
+    type: array
+    items:
+      type: string
+    description: "Learning background and skills"
+
+  - path: "background.significant_events"
+    type: array
+    items:
+      type: object
+    description: "Key life experiences that shaped the character"
+
+  - path: "background.relationships"
+    type: array
+    items:
+      type: object
+    description: "Important connections with other characters"
 
   - path: "personality.quirks"
     type: array

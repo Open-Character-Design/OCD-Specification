@@ -1,0 +1,312 @@
+{
+  "kind": "CharacterDefinition",
+  "ocd_version": "1.0.0",
+  "$schema": "https://opencharacter.dev/schema/core-1.0.json",
+  "$id": "https://example.com/characters/sherlock-holmes",
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "slug": "sherlock-holmes",
+  "names": {
+    "canon": "Sherlock Holmes",
+    "display": {
+      "en": "Sherlock Holmes",
+      "es": "Sherlock Holmes"
+    },
+    "aliases": ["The Great Detective", "Mr. Holmes", "Sherlock"]
+  },
+  "identity": {
+    "entity_kind": "person",
+    "species": "human",
+    "sapience_level": "sapient",
+    "gender": "male",
+    "pronouns": ["he", "him", "his"],
+    "age": {
+      "nominal": {
+        "value": 35,
+        "unit": "years"
+      },
+      "chronological": {
+        "value": 35,
+        "unit": "years"
+      },
+      "rationale": "Peak of his detective career"
+    },
+    "origins": {
+      "universe": "Arthur Conan Doyle's Literary Universe",
+      "birthplace": "England",
+      "debut_date": "1887-11-01",
+      "creation_context": "Victorian Era London"
+    },
+    "continuity": {
+      "canon": "prime",
+      "timeline_ids": ["550e8400-e29b-41d4-a716-446655440001"]
+    },
+    "roles": ["protagonist", "detective"]
+  },
+  "appearance": {
+    "physical_description": "Tall, lean figure with sharp, angular features and piercing eyes",
+    "distinctive_features": [
+      "Sharp, hawk-like nose",
+      "Piercing gray eyes",
+      "Tall, lean build",
+      "Distinctive deerstalker hat"
+    ],
+    "clothing_style": "Victorian gentleman's attire, often wearing a deerstalker cap and Inverness cape",
+    "body_language": [
+      "Stands very still when thinking",
+      "Uses magnifying glass gestures",
+      "Strokes chin when pondering"
+    ],
+    "height": {
+      "value": 6,
+      "unit": "feet"
+    },
+    "eye_color": "gray",
+    "hair_color": "dark brown"
+  },
+  "personality": {
+    "personality_traits": [
+      "Analytical",
+      "Observant", 
+      "Deductive",
+      "Eccentric",
+      "Independent"
+    ],
+    "motivations": [
+      "Solve complex mysteries",
+      "Apply logical reasoning",
+      "Challenge his intellect",
+      "Serve justice"
+    ],
+    "fears": [
+      "Boredom and inactivity",
+      "Cases that lack intellectual challenge",
+      "Emotional attachments that cloud judgment"
+    ],
+    "values": [
+      "Truth and accuracy",
+      "Logical reasoning",
+      "Justice",
+      "Intellectual honesty"
+    ],
+    "beliefs": [
+      "Everything can be explained through observation and deduction",
+      "Emotions cloud logical thinking",
+      "The mind is the most powerful tool"
+    ],
+    "summary": "A brilliant but eccentric consulting detective with extraordinary powers of observation and deduction",
+    "traits": [
+      {
+        "name": "logic-intuition",
+        "kind": "bipolar",
+        "polarity": 0.9,
+        "intensity": 0.95
+      },
+      {
+        "name": "introversion-extraversion",
+        "kind": "bipolar", 
+        "polarity": -0.7,
+        "intensity": 0.8
+      },
+      {
+        "name": "detective-insight",
+        "kind": "scalar",
+        "value": 0.98,
+        "unit": "proficiency"
+      },
+      {
+        "name": "violence-tolerance",
+        "kind": "scalar",
+        "value": 0.3,
+        "unit": "tolerance"
+      }
+    ]
+  },
+  "metaphysics": {
+    "strengths": [
+      "Extraordinary powers of observation",
+      "Deductive reasoning",
+      "Memory palace technique",
+      "Forensic analysis",
+      "Disguise and acting"
+    ],
+    "weaknesses": [
+      "Poor social skills",
+      "Addiction to cocaine",
+      "Emotional detachment",
+      "Impatience with slow minds"
+    ],
+    "special_abilities": [
+      "Photographic memory",
+      "Ability to read people's professions from their appearance",
+      "Master of disguise",
+      "Expert in various fields of knowledge"
+    ],
+    "skills": [
+      "Violin playing",
+      "Boxing",
+      "Chemistry",
+      "Forensics",
+      "Multiple languages"
+    ],
+    "powers": [],
+    "constraints": [
+      "Bound by Victorian social conventions",
+      "Limited by technology of the era",
+      "Emotional detachment limits relationships"
+    ],
+    "vulnerabilities": [
+      "Cocaine addiction",
+      "Boredom leads to depression",
+      "Emotional isolation"
+    ]
+  },
+  "background": {
+    "origin": "Created by Sir Arthur Conan Doyle",
+    "birthplace": "England",
+    "family": [
+      {
+        "relationship": "brother",
+        "name": "Mycroft Holmes",
+        "description": "Elder brother, government official, even more brilliant but lazy"
+      }
+    ],
+    "education": [
+      "Private tutoring",
+      "Self-taught in various sciences",
+      "University education (implied)"
+    ],
+    "significant_events": [
+      {
+        "event": "Meeting Dr. Watson",
+        "date": "1881",
+        "impact": "Gained a companion and chronicler"
+      },
+      {
+        "event": "The Great Hiatus",
+        "date": "1891-1894",
+        "impact": "Presumed dead, returned after three years"
+      }
+    ],
+    "relationships": [
+      {
+        "character_ref": "550e8400-e29b-41d4-a716-446655440002",
+        "relationship_type": "friend",
+        "description": "Dr. John Watson - closest friend and chronicler"
+      },
+      {
+        "character_ref": "550e8400-e29b-41d4-a716-446655440003", 
+        "relationship_type": "adversary",
+        "description": "Professor Moriarty - criminal mastermind"
+      }
+    ],
+    "affiliations": [
+      "Baker Street Irregulars",
+      "Scotland Yard (consulting)",
+      "Private detective"
+    ],
+    "milestones": [
+      "Established consulting detective practice",
+      "Met Dr. Watson",
+      "Solved numerous high-profile cases",
+      "Defeated Professor Moriarty"
+    ]
+  },
+  "communication": {
+    "speech_patterns": [
+      "Uses formal Victorian English",
+      "Often speaks in deductions",
+      "Prefers facts over opinions",
+      "Uses 'Elementary, my dear Watson'"
+    ],
+    "vocabulary": [
+      "Technical and scientific terms",
+      "Latin phrases",
+      "Formal address",
+      "Precise language"
+    ],
+    "tone": [
+      "Analytical",
+      "Confident",
+      "Sometimes condescending",
+      "Intellectually superior"
+    ],
+    "communication_preferences": [
+      "Face-to-face conversation",
+      "Written correspondence",
+      "Telegram for urgent matters"
+    ],
+    "catchphrases": [
+      "Elementary, my dear Watson",
+      "The game is afoot",
+      "Data! Data! Data!"
+    ],
+    "speech_quirks": [
+      "Often mutters to himself",
+      "Uses 'indeed' frequently",
+      "Prefers questions to statements"
+    ]
+  },
+  "behavior": {
+    "instincts": [
+      "Immediately observes details about people",
+      "Cracks jokes when tension is high",
+      "Becomes restless when inactive"
+    ],
+    "ai_hooks": {
+      "reasoning_style": "deductive",
+      "observation_mode": "hypervigilant",
+      "social_awareness": "low"
+    }
+  },
+  "media_profiles": {
+    "literature": {
+      "style": "Victorian prose",
+      "voice": "Third person limited"
+    },
+    "film": {
+      "visual_style": "Period drama",
+      "casting_notes": "Tall, angular actor"
+    }
+  },
+  "meta": {
+    "creators": [
+      {
+        "name": "Sir Arthur Conan Doyle",
+        "role": "original_author"
+      }
+    ],
+    "rights": {
+      "owner": "Public Domain",
+      "license": "Public Domain",
+      "usage_notes": "Character is in public domain, but specific adaptations may have copyright"
+    },
+    "versioning": {
+      "created_at": "2024-01-01T00:00:00Z",
+      "last_modified": "2024-01-01T00:00:00Z",
+      "change_log": [
+        "Initial character definition based on research findings"
+      ]
+    },
+    "external_ids": {
+      "wikipedia": "Sherlock_Holmes",
+      "goodreads": "sherlock-holmes"
+    },
+    "tags": [
+      "detective",
+      "victorian",
+      "literature",
+      "classic",
+      "mystery"
+    ],
+    "audit": {
+      "edited_by": "OCD Research Team",
+      "source_files": [
+        "docs/deep-dives/research/common-character-fields.md"
+      ]
+    }
+  },
+  "extras": {
+    "notes": "This character definition demonstrates the implementation of all core fields identified in the research paper",
+    "research_basis": "Based on Common Character Definition Fields Across All Mediums research"
+  }
+}

@@ -1,0 +1,257 @@
+kind: "CharacterDefinition"
+ocd_version: "1.0.0"
+$schema: "https://opencharacter.dev/schema/core-1.0.json"
+$id: "https://example.com/characters/miles-morales"
+id: "550e8400-e29b-41d4-a716-446655440000"
+slug: "miles-morales"
+names:
+  canon: "Miles Morales"
+  display:
+    en: "Miles Morales"
+    es: "Miles Morales"
+  aliases: ["Spider-Man", "Kid Arachnid", "Miles"]
+identity:
+  entity_kind: "person"
+  species: "human"
+  sapience_level: "sapient"
+  gender: "male"
+  pronouns: ["he", "him", "his"]
+  age:
+    nominal:
+      value: 16
+      unit: "years"
+    chronological:
+      value: 16
+      unit: "years"
+    rationale: "High school student age"
+  origins:
+    universe: "Marvel Comics Universe"
+    birthplace: "Brooklyn, New York"
+    debut_date: "2011-08-01"
+    creation_context: "Ultimate Marvel Universe"
+  continuity:
+    canon: "prime"
+    timeline_ids: ["550e8400-e29b-41d4-a716-446655440001"]
+  roles: ["protagonist", "superhero", "avatar"]
+appearance:
+  physical_description: "Teenage African-American and Puerto Rican boy with a lean, athletic build"
+  distinctive_features:
+    - "Curly black hair"
+    - "Brown eyes"
+    - "Athletic build"
+    - "Red and black spider-suit"
+  clothing_style: "Modern streetwear when not in costume, red and black spider-suit with web patterns"
+  body_language:
+    - "Confident posture when swinging"
+    - "Nervous fidgeting when stressed"
+    - "Protective stance around loved ones"
+  height:
+    value: 5.6
+    unit: "feet"
+  eye_color: "brown"
+  hair_color: "black"
+personality:
+  personality_traits:
+    - "Determined"
+    - "Compassionate"
+    - "Intelligent"
+    - "Artistic"
+    - "Responsible"
+  motivations:
+    - "Protect his family and friends"
+    - "Live up to Spider-Man's legacy"
+    - "Make his father proud"
+    - "Use his powers responsibly"
+  fears:
+    - "Failing to protect loved ones"
+    - "Not being worthy of the Spider-Man mantle"
+    - "His powers hurting innocent people"
+  values:
+    - "Family"
+    - "Justice"
+    - "Responsibility"
+    - "Community"
+    - "Art and creativity"
+  beliefs:
+    - "Anyone can wear the mask"
+    - "With great power comes great responsibility"
+    - "Community support is essential"
+  summary: "A young superhero balancing high school life with the responsibilities of being Spider-Man"
+  traits:
+    - name: "confidence-anxiety"
+      kind: "bipolar"
+      polarity: 0.3
+      intensity: 0.7
+    - name: "introversion-extraversion"
+      kind: "bipolar"
+      polarity: 0.2
+      intensity: 0.6
+    - name: "spider-sense"
+      kind: "scalar"
+      value: 0.9
+      unit: "proficiency"
+    - name: "artistic-ability"
+      kind: "scalar"
+      value: 0.8
+      unit: "skill"
+metaphysics:
+  strengths:
+    - "Spider-sense"
+    - "Wall-crawling"
+    - "Super strength"
+    - "Web-slinging"
+    - "Camouflage ability"
+    - "Bio-electric venom blast"
+  weaknesses:
+    - "Inexperience"
+    - "Self-doubt"
+    - "Balancing school and hero work"
+    - "Emotional vulnerability"
+  special_abilities:
+    - "Spider-sense (danger detection)"
+    - "Bio-electric venom blast"
+    - "Camouflage/invisibility"
+    - "Wall-crawling"
+    - "Superhuman strength and agility"
+  skills:
+    - "Art and drawing"
+    - "Music"
+    - "Web-slinging"
+    - "Combat"
+    - "Problem-solving"
+  powers:
+    - "Spider-sense"
+    - "Bio-electric venom blast"
+    - "Camouflage"
+    - "Wall-crawling"
+    - "Super strength"
+    - "Super agility"
+  constraints:
+    - "Must maintain secret identity"
+    - "School responsibilities"
+    - "Family obligations"
+    - "Limited experience compared to other heroes"
+  vulnerabilities:
+    - "Emotional attachments"
+    - "Self-doubt"
+    - "Inexperience"
+    - "Pressure to live up to legacy"
+background:
+  origin: "Bitten by a radioactive spider"
+  birthplace: "Brooklyn, New York"
+  family:
+    - relationship: "father"
+      name: "Jefferson Davis"
+      description: "NYPD officer, initially disapproved of Spider-Man"
+    - relationship: "mother"
+      name: "Rio Morales"
+      description: "Nurse, supportive of Miles"
+    - relationship: "uncle"
+      name: "Aaron Davis"
+      description: "Prowler, conflicted relationship"
+  education:
+    - "Brooklyn Visions Academy"
+    - "Art classes"
+    - "Self-taught hero skills"
+  significant_events:
+    - event: "Spider bite"
+      date: "2011"
+      impact: "Gained spider powers"
+    - event: "Meeting Peter Parker"
+      date: "2011"
+      impact: "Learned about responsibility and legacy"
+    - event: "Father's death"
+      date: "2011"
+      impact: "Motivated to become a better hero"
+  relationships:
+    - character_ref: "550e8400-e29b-41d4-a716-446655440002"
+      relationship_type: "mentor"
+      description: "Peter Parker - original Spider-Man, mentor figure"
+    - character_ref: "550e8400-e29b-41d4-a716-446655440003"
+      relationship_type: "friend"
+      description: "Ganke Lee - best friend and confidant"
+  affiliations:
+    - "Brooklyn Visions Academy"
+    - "Spider-Verse"
+    - "Champions (occasionally)"
+  milestones:
+    - "Gained spider powers"
+    - "Met Peter Parker"
+    - "Became Spider-Man"
+    - "Joined Spider-Verse"
+communication:
+  speech_patterns:
+    - "Modern teenage slang"
+    - "Brooklyn accent"
+    - "Enthusiastic and energetic"
+    - "Uses 'yo' and 'dude' frequently"
+  vocabulary:
+    - "Modern slang"
+    - "Art terminology"
+    - "Superhero jargon"
+    - "Spanish phrases"
+  tone:
+    - "Energetic"
+    - "Optimistic"
+    - "Sometimes nervous"
+    - "Determined"
+  communication_preferences:
+    - "Text messages"
+    - "Face-to-face conversation"
+    - "Art as expression"
+  catchphrases:
+    - "Hey, everyone!"
+    - "Let's do this!"
+    - "I got this!"
+  speech_quirks:
+    - "Uses 'yo' frequently"
+    - "Gets excited easily"
+    - "Sometimes stutters when nervous"
+behavior:
+  instincts:
+    - "Protects others instinctively"
+    - "Uses humor to diffuse tension"
+    - "Seeks approval from mentors"
+    - "Creates art when stressed"
+  ai_hooks:
+    reasoning_style: "intuitive"
+    observation_mode: "alert"
+    social_awareness: "high"
+media_profiles:
+  comics:
+    style: "Modern superhero"
+    voice: "First person"
+  film:
+    visual_style: "Animated"
+    casting_notes: "Young actor with Brooklyn roots"
+meta:
+  creators:
+    - name: "Brian Michael Bendis"
+      role: "writer"
+    - name: "Sara Pichelli"
+      role: "artist"
+  rights:
+    owner: "Marvel Comics"
+    license: "Marvel Comics"
+    usage_notes: "Character owned by Marvel Comics, used under fair use for educational purposes"
+  versioning:
+    created_at: "2024-01-01T00:00:00Z"
+    last_modified: "2024-01-01T00:00:00Z"
+    change_log:
+      - "Initial character definition based on Marvel Comics"
+  external_ids:
+    marvel: "miles-morales"
+    wikipedia: "Miles_Morales"
+  tags:
+    - "superhero"
+    - "spider-man"
+    - "teenager"
+    - "brooklyn"
+    - "marvel"
+  audit:
+    edited_by: "OCD Template Team"
+    source_files:
+      - "examples/templates/character-full.yaml"
+extras:
+  notes: "This character definition demonstrates a modern superhero template"
+  cultural_significance: "First major Afro-Latino Spider-Man in mainstream comics"

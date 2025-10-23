@@ -99,9 +99,14 @@
             "transcendent"
           ]
         },
+        "gender": {
+          "type": "string",
+          "description": "Gender identity and expression"
+        },
         "pronouns": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": { "type": "string" },
+          "description": "Preferred pronouns for the character"
         },
         "age": {
           "type": "object",
@@ -119,7 +124,8 @@
           "properties": {
             "universe": { "type": "string" },
             "birthplace": { "type": "string" },
-            "debut_date": { "type": "string", "format": "date" }
+            "debut_date": { "type": "string", "format": "date" },
+            "creation_context": { "type": "string" }
           },
           "additionalProperties": false
         },
@@ -273,6 +279,193 @@
       },
       "additionalProperties": false
     },
+    "Appearance": {
+      "type": "object",
+      "properties": {
+        "physical_description": { "type": "string" },
+        "distinctive_features": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "clothing_style": { "type": "string" },
+        "body_language": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "height": { "$ref": "#/$defs/AgeMeasurement" },
+        "weight": { "$ref": "#/$defs/AgeMeasurement" },
+        "eye_color": { "type": "string" },
+        "hair_color": { "type": "string" },
+        "skin_tone": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "PsychologicalProfile": {
+      "type": "object",
+      "properties": {
+        "personality_traits": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "motivations": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "fears": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "values": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "beliefs": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "summary": { "type": "string" },
+        "traits": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "kind"],
+            "properties": {
+              "name": { "type": "string" },
+              "kind": {
+                "type": "string",
+                "enum": ["bipolar", "scalar", "flag"]
+              },
+              "value": { "type": ["number", "boolean"] },
+              "polarity": { "type": "number", "minimum": -1, "maximum": 1 },
+              "intensity": { "type": "number", "minimum": 0, "maximum": 1 },
+              "unit": { "type": "string" }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "AbilitiesAndSkills": {
+      "type": "object",
+      "properties": {
+        "strengths": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "weaknesses": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "special_abilities": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "skills": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "powers": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "constraints": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "vulnerabilities": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "CommunicationStyle": {
+      "type": "object",
+      "properties": {
+        "speech_patterns": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "vocabulary": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "tone": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "communication_preferences": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "catchphrases": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "speech_quirks": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "Background": {
+      "type": "object",
+      "properties": {
+        "origin": { "type": "string" },
+        "birthplace": { "type": "string" },
+        "family": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "relationship": { "type": "string" },
+              "name": { "type": "string" },
+              "description": { "type": "string" }
+            },
+            "additionalProperties": true
+          }
+        },
+        "education": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "significant_events": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "event": { "type": "string" },
+              "date": { "type": "string" },
+              "impact": { "type": "string" }
+            },
+            "additionalProperties": true
+          }
+        },
+        "relationships": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "character_ref": { "$ref": "#/$defs/UUID" },
+              "relationship_type": { "type": "string" },
+              "description": { "type": "string" }
+            },
+            "additionalProperties": true
+          }
+        },
+        "affiliations": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "milestones": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": true
+    },
     "CharacterDefinition": {
       "type": "object",
       "required": [
@@ -293,10 +486,11 @@
         "slug": { "$ref": "#/$defs/Slug" },
         "names": { "$ref": "#/$defs/Names" },
         "identity": { "$ref": "#/$defs/Identity" },
-        "appearance": { "type": "object", "additionalProperties": true },
-        "metaphysics": { "type": "object", "additionalProperties": true },
-        "personality": { "type": "object", "additionalProperties": true },
-        "background": { "type": "object", "additionalProperties": true },
+        "appearance": { "$ref": "#/$defs/Appearance" },
+        "metaphysics": { "$ref": "#/$defs/AbilitiesAndSkills" },
+        "personality": { "$ref": "#/$defs/PsychologicalProfile" },
+        "background": { "$ref": "#/$defs/Background" },
+        "communication": { "$ref": "#/$defs/CommunicationStyle" },
         "behavior": { "type": "object", "additionalProperties": true },
         "media_profiles": { "type": "object", "additionalProperties": true },
         "meta": { "$ref": "#/$defs/Meta" },

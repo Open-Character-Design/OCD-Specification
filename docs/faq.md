@@ -2,9 +2,9 @@
 
 ## General Questions
 
-### What is the Open Character Specification (OCD)?
+### What is the Open Character Design Specification (OCD)?
 
-The Open Character Specification is a standardized format for describing characters in a structured, machine-readable way. It's designed to be flexible enough for creative use cases while providing enough structure for technical applications like AI systems, game engines, and APIs.
+The Open Character Design Specification is a standardized format for describing characters in a structured, machine-readable way. It's designed to be flexible enough for creative use cases while providing enough structure for technical applications like AI systems, game engines, and APIs.
 
 ### Why should I use OCD instead of other character formats?
 

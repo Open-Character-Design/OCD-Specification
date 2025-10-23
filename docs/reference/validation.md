@@ -1,39 +1,27 @@
 # Validation
 
-The Open Character Specification provides flexible validation with two distinct modes and support for custom specification overlays.
+The Open Character Design Specification provides flexible validation with two distinct modes and support for custom specification overlays.
+
+!!! tip "Validation Methodology"
+    For systematic approaches to character validation and quality assessment, see our [Methodology Guides](../../deep-dives/methodology/index.md) section, including the Character Analysis Framework for comprehensive validation strategies.
+
+!!! info "Research Foundation"
+    The validation criteria are based on research into universal character definition fields across all mediums. See [Common Character Definition Fields Across All Mediums](../../deep-dives/research/common-character-fields.md) for the theoretical foundation behind OCD's validation approach.
 
 ## Validation Modes
 
-### Relaxed Mode (Default)
+The Open Character Design Specification provides two distinct validation modes:
 
-Relaxed mode provides structure-only validation with minimal enforcement:
+| Feature | ⚡ Relaxed Mode (Default) | 🛡️ Strict Mode |
+|---------|---------------------------|----------------|
+| **Validation** | 🎨 Structure and Fields<br>Ensures required fields and general structure | 💻 Complete enforcement<br>All schema rules are enforced |
+| **Type Checking** | 🔓 Basic validation<br>Basic type validation for critical fields | 🔒Strict validation<br>Exact type matching required |
+| **Enum Handling** | 🤷Soft enforcement<br>Enum violations generate warnings, not errors | 🙎 Hard enforcement<br>Invalid enum values cause validation failures |
+| **Unknown Fields** | ✅ Allowed<br>Allows additional fields not defined in the schema | ❌ Not allowed<br>Undefined fields cause validation failures |
+| **Type Flexibility** | 🔭 Broad acceptance<br>Accepts broader type ranges where possible | 🔬 Strict acceptance<br>Only accepts defined type matches |
+| **Reference Validation** | N/A | 🔎 Required<br>All references must be resolvable |
+| **Usage**              | <pre><code>ocd-validate character.yaml<br/>ocd-validate character.yaml --mode relaxed</code></pre> | <pre><code><br/>ocd-validate character.yaml --mode strict</code></pre> |
 
-- **Structure validation**: Ensures required fields are present
-- **Type checking**: Basic type validation for critical fields
-- **Soft enums**: Enum violations generate warnings, not errors
-- **Unknown fields**: Allows additional fields not defined in the schema
-- **Flexible types**: Accepts broader type ranges where possible
-
-```bash
-# Use relaxed mode (default)
-ocd-validate character.yaml
-ocd-validate character.yaml --mode relaxed
-```
-
-### Strict Mode
-
-Strict mode provides comprehensive validation with full enforcement:
-
-- **Complete validation**: All schema rules are enforced
-- **Enum enforcement**: Invalid enum values cause validation failures
-- **Type strictness**: Exact type matching required
-- **Reference validation**: All references must be resolvable
-- **No unknown fields**: Additional fields cause validation failures
-
-```bash
-# Use strict mode
-ocd-validate character.yaml --mode strict
-```
 
 ## Specification Overlays
 

@@ -1,7 +1,7 @@
-# Open Character Specification – Legend (v1.0)
+# Open Character Design Specification – Legend (v1.0)
 
 The legend is the canonical companion to `spec/core.schema.json`. It
-summarises the structural guarantees of the Open Character Specification
+summarises the structural guarantees of the Open Character Design Specification
 (OCD) and describes how definition documents should be authored so that
 validators, engines, and pipelines observe the same semantics.
 

@@ -1,6 +1,6 @@
 # Default OCD Specification
 
-The Default OCD Specification provides a lenient baseline validation for Open Character Specification documents. It ensures basic structural integrity while allowing flexibility for diverse character types and use cases.
+The Default OCD Specification provides a lenient baseline validation for Open Character Design Specification documents. It ensures basic structural integrity while allowing flexibility for diverse character types and use cases.
 
 ## Design Philosophy
 

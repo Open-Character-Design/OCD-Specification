@@ -1,6 +1,6 @@
 ---
 title: Orientation
-description: Start here to understand the Open Character Specification documentation flow and pick the right next step.
+description: Start here to understand the Open Character Design Specification documentation flow and pick the right next step.
 search:
   boost: 2
 tags:
@@ -11,7 +11,7 @@ tags:
 
 # Start Here 🧭
 
-Welcome! This orientation page helps you navigate the Open Character Specification (OCD) documentation and choose the right path for your needs.
+Welcome! This orientation page helps you navigate the Open Character Design Specification (OCD) documentation and choose the right path for your needs.
 
 ## Choose Your Journey
 

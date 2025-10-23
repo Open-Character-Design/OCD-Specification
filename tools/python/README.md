@@ -1,6 +1,6 @@
 # OCD Python Tools
 
-The `ocd-validate` package provides validation, normalization, and linting helpers for the Open Character Specification.
+The `ocd-validate` package provides validation, normalization, and linting helpers for the Open Character Design Specification.
 
 ## Installation
 

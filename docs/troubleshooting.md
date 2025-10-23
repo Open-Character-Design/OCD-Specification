@@ -1,6 +1,6 @@
 # Troubleshooting Guide
 
-This guide helps you resolve common issues when working with the Open Character Specification validation system.
+This guide helps you resolve common issues when working with the Open Character Design Specification validation system.
 
 ## Common Validation Issues
 

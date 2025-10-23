@@ -2,6 +2,9 @@
 
 In this final step, you'll learn best practices for production deployment, validation workflows, and maintaining OCD characters.
 
+!!! tip "Production Case Studies"
+    For real-world examples of OCD implementation in production environments, see our [Case Studies](../../deep-dives/case-studies/index.md) section, including detailed accounts of game studio integrations and enterprise deployments.
+
 ## What You'll Learn
 
 - Production-ready character structure

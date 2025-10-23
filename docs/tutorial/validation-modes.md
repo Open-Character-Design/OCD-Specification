@@ -11,7 +11,7 @@ tags:
 
 # Validation Modes
 
-This tutorial explains how to use the two validation modes in the Open Character Specification: relaxed and strict. You'll learn when to use each mode and how to create custom validation specifications.
+This tutorial explains how to use the two validation modes in the Open Character Design Specification: relaxed and strict. You'll learn when to use each mode and how to create custom validation specifications.
 
 !!! info "Need the full rule reference?"
     The normative rules live in the [Validation Overview](../reference/validation.md) and [Diagnostics Reference](../reference/diagnostics.md). Come back here when you want the narrative walkthrough and examples.

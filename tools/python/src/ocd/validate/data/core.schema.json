@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://opencharacter.dev/schema/core-0.9.json",
-  "title": "Open Character Specification Core",
+  "title": "Open Character Design Specification Core",
   "oneOf": [
     { "$ref": "#/$defs/CharacterDefinition" },
     { "$ref": "#/$defs/CharacterInstance" }

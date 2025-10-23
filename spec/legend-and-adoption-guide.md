@@ -1,4 +1,4 @@
-# Open Character Specification – Legend & Adoption Guide (v0.9)
+# Open Character Design Specification – Legend & Adoption Guide (v0.9)
 
 This guide is the practical companion to [`spec/legend.md`](legend.md) and
 the normative JSON Schema published in

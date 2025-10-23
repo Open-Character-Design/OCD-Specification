@@ -135,7 +135,7 @@ function printHelp(): void {
   const scriptName = path.basename(process.argv[1] ?? 'ocd-validate');
   console.log(`Usage: ${scriptName} [options] <path | ->`);
   console.log('');
-  console.log('Validate and normalize an Open Character Specification document.');
+  console.log('Validate and normalize an Open Character Design Specification document.');
   console.log('');
   console.log('Options:');
   console.log('  -h, --help                 Show this help message and exit');

@@ -1,6 +1,6 @@
 # @ocd-tools/validator
 
-The `@ocd-tools/validator` package delivers the Open Character Specification validator, parser, and command line tooling for Node.js consumers.
+The `@ocd-tools/validator` package delivers the Open Character Design Specification validator, parser, and command line tooling for Node.js consumers.
 
 ## Installation
 

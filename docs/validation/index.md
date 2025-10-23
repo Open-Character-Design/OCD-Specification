@@ -1,6 +1,6 @@
 # OCD Validation System
 
-The OCD Validation System provides comprehensive validation for Open Character Specification documents using customizable validation rules defined in `.ocd` specification files.
+The OCD Validation System provides comprehensive validation for Open Character Design Specification documents using customizable validation rules defined in `.ocd` specification files.
 
 ## Overview
 

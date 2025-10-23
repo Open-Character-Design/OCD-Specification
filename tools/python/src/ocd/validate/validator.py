@@ -271,7 +271,7 @@ def _print_warnings(warnings: List[Dict[str, Any]]) -> None:
 def main(argv: Sequence[str] | None = None) -> int:
     """Main CLI entry point."""
     parser = argparse.ArgumentParser(
-        description="Validate and normalize an Open Character Specification document",
+        description="Validate and normalize an Open Character Design Specification document",
     )
     parser.add_argument(
         "path",

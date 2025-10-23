@@ -1,8 +1,8 @@
 {
   "name": "@ocd-tools/validator",
   "version": "1.0.0",
-  "description": "Open Character Specification validator and CLI for Node.js",
-  "author": "Open Character Specification Team",
+  "description": "Open Character Design Specification validator and CLI for Node.js",
+  "author": "Open Character Design Specification Team",
   "license": "Apache-2.0",
   "type": "module",
   "main": "./dist/index.js",

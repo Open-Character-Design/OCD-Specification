@@ -1,4 +1,4 @@
-site_name: Open Character Specification
+site_name: Open Character Design Specification
 site_description: A structured, portable format for defining characters across games, film/TV, books, and AI role-play
 site_url: https://open-character-design.github.io/OCD-Specification/
 repo_url: https://github.com/Open-Character-Design/OCD-Specification
@@ -62,6 +62,12 @@ nav:
     - Contributing: governance/contributing-to-spec.md
     - Versioning & Roadmap: governance/versioning-and-roadmap.md
     - Changelog: changelog.md
+  - Deep Dives:
+    - Overview: deep-dives/index.md
+    - Research Papers: deep-dives/research/index.md
+    - Case Studies: deep-dives/case-studies/index.md
+    - White Papers: deep-dives/white-papers/index.md
+    - Methodology Guides: deep-dives/methodology/index.md
     - Agents Directory: Agents.md
 
 theme:

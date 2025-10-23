@@ -1,6 +1,6 @@
 # Integration Examples
 
-This guide provides practical examples of integrating the Open Character Specification validation system into various applications and workflows.
+This guide provides practical examples of integrating the Open Character Design Specification validation system into various applications and workflows.
 
 ## Web Applications
 

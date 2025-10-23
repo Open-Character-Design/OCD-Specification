@@ -1,8 +1,8 @@
-# Open Character Specification (OCD) – Mission & Overview
+# Open Character Design Specification (OCD) – Mission & Overview
 
 ## 📍 Summary
 
-The **Open Character Specification (OCD)** is an open, interoperable standard for defining, exchanging, and interpreting characters across any medium or technology. From video games and novels to film, theater, comics, AI systems, and beyond, OCD provides a structured, portable blueprint that captures every aspect of a character in a way that's both human-authorable and machine-readable.
+The **Open Character Design Specification (OCD)** is an open, interoperable standard for defining, exchanging, and interpreting characters across any medium or technology. From video games and novels to film, theater, comics, AI systems, and beyond, OCD provides a structured, portable blueprint that captures every aspect of a character in a way that's both human-authorable and machine-readable.
 
 ---
 
@@ -10,7 +10,7 @@ The **Open Character Specification (OCD)** is an open, interoperable standard fo
 
 ### What Is OCD?
 
-The **Open Character Specification (OCD)** is a structured, extensible data model for describing characters ,  fictional or real, physical or digital, human or otherwise. It defines a unified schema that captures the full spectrum of a character’s identity, appearance, psychology, backstory, relationships, abilities, behaviors, and meta-context.
+The **Open Character Design Specification (OCD)** is a structured, extensible data model for describing characters ,  fictional or real, physical or digital, human or otherwise. It defines a unified schema that captures the full spectrum of a character’s identity, appearance, psychology, backstory, relationships, abilities, behaviors, and meta-context.
 
 The goal is simple but ambitious: **to create a common language for character data that can flow seamlessly between creative, technical, and AI-driven systems.** By doing so, OCD allows writers, designers, developers, and researchers to work from the same source of truth ,  no matter what toolchain, platform, or medium they use.
 

@@ -1,4 +1,4 @@
-# Open Character Specification (OCD)
+# Open Character Design Specification (OCD)
 
 A portable, machine-validated format for character definitions across games, film/TV, books, and AI role-play.
 

@@ -18,17 +18,17 @@ OCD transforms how you think about character creation. Instead of scattered note
 
 **What makes OCD special:**  
 
-- **Structured Creativity**: Transform chaotic character development into organized, systematic workflows.  
-- **True Collaboration**: Enable multiple creators to work on the same character simultaneously.  
-- **Cross-Media Portability**: Create characters that work seamlessly across games, books, AI, and more.  
-- **Technical Integration**: Build applications that understand and work with your character data.  
+- **Structured Creativity**: Turn imagination into reality with systems that channel creativity without ever constraining it  
+- **True Collaboration**: Empower multiple creators to shape the same character in real time.  
+- **Cross-Media Portability**: Design characters that move effortlessly across games, books, AI, and beyond.
+- **Technical Integration**: Build tools and applications that truly understand and interact with your character data.
 
 **Who benefits:**  
 
-- **Writers** building rich and detailed characters for your stories, novels, and other media.  
-- **Game Developers** creating portable, procedural character profiles for games and other interactive media.  
-- **AI Developers** training and prompt models with structured character data.  
-- **Creative Teams** collaborating on character-driven projects. 
+- **Writers**: Bring your characters to life with depth and consistency. OCD helps you keep every trait, motive, and backstory organized so your creations feel real on every page.
+- **Game Developers**: Build dynamic, data-driven characters that travel effortlessly between engines, systems, and worlds. Create once, play everywhere.
+- **AI Developers**: Train smarter, more authentic AI models using structured character data that captures nuance, personality, and intent.
+- **Creative Teams**: Collaborate seamlessly. OCD keeps everyone from artists to writers to engineers aligned on the same character vision, in real time.
 
 ??? info "Already comfortable with JSON/YAML?"
     Skip ahead to [Step 3](background.md) or dive straight into the [Authoring Playbook](../authoring/writing-ocd-files.md). Each lesson links back to the detailed references so you can drill into specifics when needed.

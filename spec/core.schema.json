@@ -4,6 +4,7 @@
   "title": "Open Character Specification Core",
   "oneOf": [
     { "$ref": "#/$defs/CharacterDefinition" },
+    { "$ref": "#/$defs/CharacterDefinitionLite" },
     { "$ref": "#/$defs/CharacterInstance" }
   ],
   "$defs": {
@@ -300,6 +301,31 @@
         "media_profiles": { "type": "object", "additionalProperties": true },
         "meta": { "$ref": "#/$defs/Meta" },
         "extras": { "type": "object", "additionalProperties": true }
+      },
+      "additionalProperties": false
+    },
+    "CharacterDefinitionLite": {
+      "type": "object",
+      "required": [
+        "name",
+        "type",
+        "summary"
+      ],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "type": {
+          "type": "string",
+          "enum": [
+            "person",
+            "collective",
+            "creature",
+            "object",
+            "place",
+            "abstract",
+            "ai"
+          ]
+        },
+        "summary": { "type": "string", "minLength": 1 }
       },
       "additionalProperties": false
     },

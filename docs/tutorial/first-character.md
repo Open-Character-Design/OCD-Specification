@@ -24,37 +24,42 @@ First, let's install a validator so you can check your work:
 
 ## Creating Your First Character
 
-Create a new file called `rita.yaml` with this content:
+Let's start with the simplest possible character format. Create a new file called `virgil.yaml` with this minimal content:
 
-```yaml title="rita.yaml"
-ocd_version: "0.0.1"
-id: "char-rita-adventurer"
-names:
-  canon: "Rita"
-identity:
-  kind: "humanoid"
-  species: "Human"
-meta:
-  versioning:
-    created_at: "2024-01-01T00:00:00Z"
-    last_modified: "2024-01-01T00:00:00Z"
+```yaml title="virgil.yaml"
+name: "Virgil Hawkins"
+type: "humanoid"
+summary: "A man with a passion for science and technology who can control electricity and magnetism."
 ```
+
+This minimal format requires only three fields:
+- **`name`**: The character's canonical name
+- **`type`**: The entity type (must be one of: `person`, `collective`, `creature`, `object`, `place`, `abstract`, `ai`)
+- **`summary`**: A brief description of the character
+
+!!! note "Minimal Format"
+    This minimal format is perfect for quick character creation. Future validator releases will automatically expand it to the full OCD format by adding required fields like `ocd_version`, `id`, and metadata.
 
 ## Understanding the Structure
 
 Let's break down each field:
 
-### Required Fields
+### Minimal Format Fields
 
-- **`ocd_version`**: The version of the OCD specification this character uses
-- **`id`**: A unique identifier for this character (use `char-` prefix)
-- **`names.canon`**: The character's canonical name
-- **`identity.kind`**: The type of entity (`humanoid`, `animal`, `construct`, etc.)
-- **`identity.species`**: The specific species or type
-- **`meta.versioning`**: Timestamps for tracking changes
+- **`name`**: The character's canonical name (maps to `names.canon` in full format)
+- **`type`**: The type of entity (maps to `identity.entity_kind` in full format)
+- **`summary`**: A brief character description (becomes a top-level field in full format)
 
-!!! tip "ID Convention"
-    Use descriptive IDs like `char-rita-adventurer` or `char-bruenor-battlehammer`. This helps identify characters in logs and references.
+### Valid Type Values
+
+The `type` field must be one of these values:
+- `person` - Human-like beings
+- `collective` - Groups or organizations
+- `creature` - Non-human animals or beings
+- `object` - Inanimate objects with character
+- `place` - Locations with personality
+- `abstract` - Concepts or ideas
+- `ai` - Artificial intelligence entities
 
 ## Validating Your Character
 
@@ -63,13 +68,13 @@ Now let's validate your character:
 === "Python"
 
     ```bash
-    ocd-validate rita.yaml
+    ocd-validate virgil.yaml
     ```
 
 === "Node.js"
 
     ```bash
-    npx @ocd-tools/validator rita.yaml
+    npx @ocd-tools/validator virgil.yaml
     ```
 
 You should see output like:
@@ -77,6 +82,27 @@ You should see output like:
 ```
 ✅ Validation successful
 📝 0 warnings
+```
+
+## Expanding to Full Format
+
+For production use or when you need more detailed character information, you can expand to the full OCD format. Here's how Virgil would look in the complete format:
+
+```yaml title="virgil-full.yaml"
+ocd_version: "1.0.0"
+id: "char-virgil-hawkins"
+slug: "virgil-hawkins"
+names:
+  canon: "Virgil Hawkins"
+identity:
+  entity_kind: "person"
+  sapience_level: "sapient"
+  species: "human"
+summary: "A man with a passion for science and technology who can control electricity and magnetism."
+meta:
+  versioning:
+    created_at: "2024-01-01T00:00:00Z"
+    last_modified: "2024-01-01T00:00:00Z"
 ```
 
 ## Adding More Information

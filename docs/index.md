@@ -124,7 +124,7 @@ meta:
 
 <div class="feature-card">
 
-<h3>🚀 <a href="getting-started.md">Get Started</a></h3>
+<h3>🚀 <a href="getting-started">Get Started</a></h3>
 
 <p>Install validators, create your first character, and understand the basics.</p>
 

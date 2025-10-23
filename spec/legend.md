@@ -35,7 +35,7 @@ two root documents:
   portraits. |
 | `metaphysics` | ➖ | Optional power systems, abilities, constraints, and
   vulnerabilities. |
-| `personality` | ➖ | Optional OCD-T trait bundle, motivations, and speech
+| `personality` | ➖ | Optional trait bundle, motivations, and speech
   cues. |
 | `background` | ⭐ | Recommended biography, affiliations, relationships, and
   milestones. |
@@ -110,7 +110,7 @@ instance at runtime when presenting a playable character record.
 
 ## Trait kinds
 
-OCD-T traits share a `kind` discriminator and are normalised so that
+OCD traits share a `kind` discriminator and are normalised so that
 validator behaviour is consistent across toolchains:
 
 - **BipolarTrait** – expresses an axis between two labelled poles.

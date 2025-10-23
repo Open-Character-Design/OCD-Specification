@@ -46,14 +46,11 @@ Use cases showcase how OCD bridges creative intent and technical delivery.
 
 ## Progressive Disclosure
 
-Each major section now opens with a high-level overview followed by drill-down topics:
-
 - **Build Characters** starts with the tutorial overview before diving into each step.
 - **Validate & QA** highlights quick wins first, then advanced diagnostics.
 - **Integrate & Automate** separates validator setup from ecosystem extensions.
 - **Reference & Governance** keeps normative specs, decision records, and glossary entries together.
 
-This layout reduces cognitive load: scan the overview, then expand the `???` callouts and tabs when you need the deeper material.
 
 ## Related Resources
 

@@ -3,7 +3,7 @@
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { type ErrorObject, type ValidateFunction } from 'ajv';
-import Ajv2020 from 'ajv/dist/2020.js';
+import Ajv2020 from 'ajv/dist/2020';
 import addFormats from 'ajv-formats';
 import YAML from 'yaml';
 

@@ -2,6 +2,56 @@
 
 Comprehensive reference for all OCD fields, types, and constraints. See `spec/core.schema.json` for normative validation rules.
 
+## Minimal Character Format
+
+The OCD specification supports a minimal character format that requires only three fields. This format is perfect for quick character creation and will be automatically expanded to the full format by validators in future releases.
+
+### Required Fields
+
+| Field | Type | Description | Valid Values | Example |
+|-------|------|-------------|--------------|---------|
+| `name` | string | Character's canonical name | Non-empty string | `"Virgil Hawkins"` |
+| `type` | string | Entity type | `person`, `collective`, `creature`, `object`, `place`, `abstract`, `ai` | `"humanoid"` |
+| `summary` | string | Brief character description | Non-empty string | `"A man with a passion for science and technology who can control electricity and magnetism."` |
+
+### Examples
+
+```yaml title="Minimal Character (YAML)"
+name: "Virgil Hawkins"
+type: "humanoid"
+summary: "A man with a passion for science and technology who can control electricity and magnetism."
+```
+
+```json title="Minimal Character (JSON)"
+{
+  "name": "Virgil Hawkins",
+  "type": "humanoid",
+  "summary": "A man with a passion for science and technology who can control electricity and magnetism."
+}
+```
+
+### Field Mappings
+
+When expanded to the full format, minimal fields map as follows:
+
+- `name` → `names.canon`
+- `type` → `identity.entity_kind`
+- `summary` → top-level `summary` field
+
+### Auto-population (Future Feature)
+
+Future validator releases will automatically generate these required fields:
+
+- `ocd_version` = "1.0.0"
+- `id` = random UUID v4
+- `kind` = "CharacterDefinition"
+- `slug` = slugified version of name
+- `identity.sapience_level` = "sapient" (sensible default)
+- `meta.versioning.created_at` = current timestamp
+- `meta.versioning.last_modified` = current timestamp
+
+---
+
 ## Core Fields
 
 ### Required Fields

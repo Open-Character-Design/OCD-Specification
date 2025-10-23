@@ -1,12 +1,5 @@
 {
-  "ocd_version": "1.0.0",
-  "character": {
-    "id": "template-lite",
-    "name": "Template Lite",
-    "summary": "One-line summary of the character.",
-    "persona": {
-      "traits": ["curious", "supportive"],
-      "description": "Concise description of the core persona."
-    }
-  }
+  "name": "Virgil Hawkins",
+  "type": "humanoid",
+  "summary": "A man with a passion for science and technology who can control electricity and magnetism."
 }

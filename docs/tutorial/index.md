@@ -16,20 +16,21 @@ Welcome to the OCD tutorial track! Start here to understand how the step-by-step
 
 OCD transforms how you think about character creation. Instead of scattered notes and inconsistent designs, OCD gives you a structured, collaborative approach that works across any medium, from games to novels to AI applications.
 
-**What makes OCD special:**
-- **Structured Creativity**: Transform chaotic character development into organized, systematic workflows.
-- **True Collaboration**: Enable multiple creators to work on the same character simultaneously.
-- **Cross-Media Portability**: Create characters that work seamlessly across games, books, AI, and more.
-- **Technical Integration**: Build applications that understand and work with your character data.
+**What makes OCD special:**  
 
-**Who benefits:**
-- **Writers** building consistent character universes.
-- **Game Developers** creating rich, interactive character systems.
-- **AI Developers** training models with structured character data.
-- **Creative Teams** collaborating on character-driven projects.
-- **Educators** teaching systematic character design approaches.
+- **Structured Creativity**: Transform chaotic character development into organized, systematic workflows.  
+- **True Collaboration**: Enable multiple creators to work on the same character simultaneously.  
+- **Cross-Media Portability**: Create characters that work seamlessly across games, books, AI, and more.  
+- **Technical Integration**: Build applications that understand and work with your character data.  
 
-??? info "Already comfortable with YAML and validators?"
+**Who benefits:**  
+
+- **Writers** building rich and detailed characters for your stories, novels, and other media.  
+- **Game Developers** creating portable, procedural character profiles for games and other interactive media.  
+- **AI Developers** training and prompt models with structured character data.  
+- **Creative Teams** collaborating on character-driven projects. 
+
+??? info "Already comfortable with JSON/YAML?"
     Skip ahead to [Step 3](background.md) or dive straight into the [Authoring Playbook](../authoring/writing-ocd-files.md). Each lesson links back to the detailed references so you can drill into specifics when needed.
 
 ## What You'll Learn
@@ -39,7 +40,7 @@ By the end of this tutorial, you'll be able to:
 - Install and use OCD validators on your machine.
 - Create valid character definitions from scratch.
 - Add personality traits and background information.
-- Integrate with game systems like D&D 5e.
+- Integrate with other systems like D&D 5e, ChatGPT, and other AI models.
 - Follow best practices for production deployment.
 
 Each step concludes with "Next up" pointers so you can branch into advanced topics without losing momentum.
@@ -50,33 +51,58 @@ Each step concludes with "Next up" pointers so you can branch into advanced topi
 
 Learn the basics by creating a minimal valid character and running your first validation.
 
-**What you'll build:** A simple human character with basic identity information.
+**What you'll build:** 
 
-**Use Case Connection:** Perfect for [Creative Applications](../use-cases/creative.md) - learn the foundation of structured character design.
+- A simple human character with basic identity information.
+
+**Use Case Connection:** 
+
+- Perfect for [Creative Applications](../use-cases/creative.md) 
+- Learn the foundation of structured character design.
 
 ### [Step 2: Personality & Traits](personality.md)
 
 Explore the trait model by adding personality traits, bipolar axes, and scalar values.
 
-**What you'll build:** A character with detailed personality traits and behavioral tendencies.
+**What you'll build:** 
 
-**Use Case Connection:** Essential for [Interactive & Storytelling](../use-cases/interactive.md) - personality drives AI behavior and dialogue systems. Need the raw trait schema? Check the [Trait Model reference](../spec/trait-model.md).
+- A character with detailed personality traits and behavioral tendencies.
+
+**Use Case Connection:** 
+
+- Essential for [Interactive & Storytelling](../use-cases/interactive.md)
+- Personality drives AI behavior and dialogue systems  
+
+Need the raw trait schema? Check the [Trait Model reference](../spec/trait-model.md).
 
 ### [Step 3: Background & Relationships](background.md)
 
 Add timeline events, affiliations, and relationships between characters.
 
-**What you'll build:** A character with rich background and connections to other characters.
+**What you'll build:** 
 
-**Use Case Connection:** Core to [Community & Open Source](../use-cases/community.md) - relationships enable collaborative worldbuilding. Cross-check relationship fields in the [Field Reference](../reference/fields.md#relationships).
+- A character with rich background and connections to other characters.
+
+**Use Case Connection:** 
+
+- Core to [Community & Open Source](../use-cases/community.md)
+- Relationships enable collaborative worldbuilding
+- Cross-check relationship fields in the [Field Reference](../reference/fields.md#relationships)
 
 ### [Step 4: System Extensions](extensions.md)
 
 Integrate with game systems using extension blocks like `x-dnd5e`.
 
-**What you'll build:** A D&D 5e character with stats, abilities, and equipment.
+**What you'll build:** 
 
-**Use Case Connection:** Key for [Technical Applications](../use-cases/technical.md) - learn how to extend OCD for specific platforms. You'll also touch the [Extensions & Namespaces guide](../integration/extensions-and-namespaces.md).
+- A D&D 5e character with stats, abilities, and equipment.
+- ~~An AI character profile for ChatGPT, etc.~~ (Coming soon)
+
+**Use Case Connection:** 
+
+- Key for [Technical Applications](../use-cases/technical.md)
+- Learn how to extend OCD for specific platforms
+- You'll also touch the [Extensions & Namespaces guide](../integration/extensions-and-namespaces.md)
 
 ### [Step 5: Production Tips](production.md)
 

@@ -466,6 +466,225 @@
       },
       "additionalProperties": true
     },
+    "AIAgentProfile": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "role": { "type": "string", "minLength": 1 },
+        "use_cases": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["text_chat", "voice_assistant", "avatar_video", "multi_agent"]
+          }
+        },
+        "system_prompt": { "type": "string" },
+        "persona": { "$ref": "#/$defs/AIPersona" },
+        "tone_and_style": { "$ref": "#/$defs/AIToneAndStyle" },
+        "communication_mediums": { "$ref": "#/$defs/AICommunicationMediums" },
+        "memory": { "$ref": "#/$defs/AIMemoryConfiguration" },
+        "safety_and_alignment": { "$ref": "#/$defs/AISafetyAndAlignment" },
+        "orchestration": { "$ref": "#/$defs/AIOrchestration" }
+      },
+      "additionalProperties": true
+    },
+    "AIPersona": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "description": { "type": "string" },
+        "domain_expertise": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "traits": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "AIToneAndStyle": {
+      "type": "object",
+      "properties": {
+        "tone": { "type": "string" },
+        "formality": {
+          "type": "string",
+          "enum": ["casual", "moderate", "formal", "academic"]
+        },
+        "vocabulary_level": {
+          "type": "string",
+          "enum": ["simple", "general_public", "technical", "expert"]
+        },
+        "verbosity": {
+          "type": "string",
+          "enum": ["concise", "short", "moderate", "detailed"]
+        },
+        "formatting": {
+          "type": "object",
+          "properties": {
+            "allow_markdown": { "type": "boolean" },
+            "allow_emojis": { "type": "boolean" }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "AICommunicationMediums": {
+      "type": "object",
+      "properties": {
+        "text_chat": {
+          "type": "object",
+          "properties": {
+            "instructions": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "additionalProperties": true
+        },
+        "voice_assistant": {
+          "type": "object",
+          "properties": {
+            "instructions": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "ssml_enabled": { "type": "boolean" },
+            "preferred_voice": { "type": "string" }
+          },
+          "additionalProperties": true
+        },
+        "avatar_video": {
+          "type": "object",
+          "properties": {
+            "instructions": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "visual_emotion_tags": { "type": "boolean" }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "AIMemoryConfiguration": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["none", "short_term", "long_term", "hybrid"]
+        },
+        "short_term": {
+          "type": "object",
+          "properties": {
+            "context_window": { "type": "string" },
+            "summarization_strategy": { "type": "string" }
+          },
+          "additionalProperties": true
+        },
+        "long_term": {
+          "type": "object",
+          "properties": {
+            "vector_db": { "type": "boolean" },
+            "memory_scope": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "additionalProperties": true
+        },
+        "personalization": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean" },
+            "profile_keys": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "AISafetyAndAlignment": {
+      "type": "object",
+      "properties": {
+        "refusal_behavior": {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string",
+              "enum": ["polite_redirection", "direct_refusal", "topic_change"]
+            },
+            "template": { "type": "string" }
+          },
+          "additionalProperties": true
+        },
+        "disallowed_topics": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "model_alignment": { "type": "string" },
+        "external_filters": {
+          "type": "object",
+          "properties": {
+            "input_filtering": { "type": "boolean" },
+            "output_moderation": { "type": "boolean" },
+            "categories": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "AIOrchestration": {
+      "type": "object",
+      "properties": {
+        "multi_agent_support": { "type": "boolean" },
+        "agent_role": { "type": "string" },
+        "team_context": { "type": "string" },
+        "interaction_protocol": {
+          "type": "object",
+          "properties": {
+            "speak_when_addressed": { "type": "boolean" },
+            "context_sharing": { "type": "boolean" },
+            "shared_memory_scope": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "additionalProperties": true
+        },
+        "coordinator": {
+          "type": "object",
+          "properties": {
+            "agent_id": { "type": "string" },
+            "function": { "type": "string" }
+          },
+          "additionalProperties": true
+        },
+        "tool_access": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "trigger_condition": { "type": "string" },
+              "method": { "type": "string" },
+              "output_handling": { "type": "string" }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
     "CharacterDefinition": {
       "type": "object",
       "required": [
@@ -493,6 +712,7 @@
         "communication": { "$ref": "#/$defs/CommunicationStyle" },
         "behavior": { "type": "object", "additionalProperties": true },
         "media_profiles": { "type": "object", "additionalProperties": true },
+        "ai_agent": { "$ref": "#/$defs/AIAgentProfile" },
         "meta": { "$ref": "#/$defs/Meta" },
         "extras": { "type": "object", "additionalProperties": true }
       },

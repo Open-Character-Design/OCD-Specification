@@ -550,6 +550,259 @@ meta:
     - "True heritage revelation"
 ```
 
+## AI Agent Configuration Block
+
+The `ai_agent` block provides comprehensive configuration for AI-powered character interactions across multiple mediums. This optional field enables standardized AI behavior modeling while remaining optional even in strict validation mode.
+
+!!! info "AI Agent Research"
+    For comprehensive research on AI agent configuration patterns and implementation strategies, see our [AI Agent Fields Research](../../deep-dives/research/ai-agent-fields-research.md) paper.
+
+### Core Fields
+
+| Field | Type | Required | Description | Example |
+|-------|------|----------|-------------|---------|
+| `id` | string | ❌ | Unique AI agent identifier | `"weather_assistant_enrico"` |
+| `role` | string | ❌ | Agent's purpose and function | `"Helpful Weather Expert"` |
+| `use_cases` | array | ❌ | Supported interaction contexts | `["text_chat", "voice_assistant"]` |
+| `system_prompt` | string | ❌ | Core behavior instructions | `"You are Enrico, a friendly weather assistant..."` |
+
+### Persona Configuration
+
+| Field | Type | Required | Description | Example |
+|-------|------|----------|-------------|---------|
+| `persona.name` | string | ❌ | AI agent identity name | `"Enrico"` |
+| `persona.description` | string | ❌ | Detailed persona characteristics | `"A cheerful meteorologist..."` |
+| `persona.domain_expertise` | array | ❌ | Areas of specialized knowledge | `["meteorology", "climate trends"]` |
+| `persona.traits` | array | ❌ | Behavioral characteristics | `["friendly", "concise", "knowledgeable"]` |
+
+### Communication Style
+
+| Field | Type | Required | Description | Valid Values |
+|-------|------|----------|-------------|--------------|
+| `tone_and_style.tone` | string | ❌ | Emotional expression patterns | Any descriptive string |
+| `tone_and_style.formality` | enum | ❌ | Communication formality level | `casual`, `moderate`, `formal`, `academic` |
+| `tone_and_style.vocabulary_level` | enum | ❌ | Language complexity | `simple`, `general_public`, `technical`, `expert` |
+| `tone_and_style.verbosity` | enum | ❌ | Response length preference | `concise`, `short`, `moderate`, `detailed` |
+| `tone_and_style.formatting.allow_markdown` | boolean | ❌ | Enable markdown formatting | `true`, `false` |
+| `tone_and_style.formatting.allow_emojis` | boolean | ❌ | Enable emoji usage | `true`, `false` |
+
+### Medium-Specific Instructions
+
+#### Text Chat Configuration
+| Field | Type | Required | Description | Example |
+|-------|------|----------|-------------|---------|
+| `communication_mediums.text_chat.instructions` | array | ❌ | Text-specific behavior rules | `["Use bullet points for lists", "Avoid emojis"]` |
+
+#### Voice Assistant Configuration
+| Field | Type | Required | Description | Example |
+|-------|------|----------|-------------|---------|
+| `communication_mediums.voice_assistant.instructions` | array | ❌ | Audio-specific behavior rules | `["Speak clearly", "Use pauses"]` |
+| `communication_mediums.voice_assistant.ssml_enabled` | boolean | ❌ | Enable SSML speech markup | `true`, `false` |
+| `communication_mediums.voice_assistant.preferred_voice` | string | ❌ | Voice selection preference | `"en-US-Neural2-A"` |
+
+#### Avatar Video Configuration
+| Field | Type | Required | Description | Example |
+|-------|------|----------|-------------|---------|
+| `communication_mediums.avatar_video.instructions` | array | ❌ | Visual behavior rules | `["Use warm expressions", "Smile when greeting"]` |
+| `communication_mediums.avatar_video.visual_emotion_tags` | boolean | ❌ | Enable emotion-based visual cues | `true`, `false` |
+
+### Memory Configuration
+
+| Field | Type | Required | Description | Valid Values |
+|-------|------|----------|-------------|--------------|
+| `memory.type` | enum | ❌ | Memory system type | `none`, `short_term`, `long_term`, `hybrid` |
+| `memory.short_term.context_window` | string | ❌ | Conversation history retention | `"12 turns"` |
+| `memory.short_term.summarization_strategy` | string | ❌ | Memory summarization approach | `"windowed_summary"` |
+| `memory.long_term.vector_db` | boolean | ❌ | Enable vector database storage | `true`, `false` |
+| `memory.long_term.memory_scope` | array | ❌ | Types of information to remember | `["user_preferences", "past_queries"]` |
+| `memory.personalization.enabled` | boolean | ❌ | Enable user personalization | `true`, `false` |
+| `memory.personalization.profile_keys` | array | ❌ | User data keys to track | `["preferred_units", "location"]` |
+
+### Safety and Alignment
+
+| Field | Type | Required | Description | Valid Values |
+|-------|------|----------|-------------|--------------|
+| `safety_and_alignment.refusal_behavior.method` | enum | ❌ | How to handle inappropriate requests | `polite_redirection`, `direct_refusal`, `topic_change` |
+| `safety_and_alignment.refusal_behavior.template` | string | ❌ | Refusal response template | `"I'm here to help with weather info only."` |
+| `safety_and_alignment.disallowed_topics` | array | ❌ | Topics to avoid or redirect | `["politics", "medical_advice"]` |
+| `safety_and_alignment.model_alignment` | string | ❌ | Safety training description | `"RLHF tuned on weather compliance"` |
+| `safety_and_alignment.external_filters.input_filtering` | boolean | ❌ | Enable input content filtering | `true`, `false` |
+| `safety_and_alignment.external_filters.output_moderation` | boolean | ❌ | Enable output content moderation | `true`, `false` |
+| `safety_and_alignment.external_filters.categories` | array | ❌ | Content categories to filter | `["hate", "self-harm", "PII_leakage"]` |
+
+### Orchestration and Multi-Agent Support
+
+| Field | Type | Required | Description | Example |
+|-------|------|----------|-------------|---------|
+| `orchestration.multi_agent_support` | boolean | ❌ | Enable multi-agent capabilities | `true`, `false` |
+| `orchestration.agent_role` | string | ❌ | Role in multi-agent systems | `"Weather Agent"` |
+| `orchestration.team_context` | string | ❌ | Team or system context | `"Smart Home Assistant"` |
+| `orchestration.interaction_protocol.speak_when_addressed` | boolean | ❌ | Only respond when directly addressed | `true`, `false` |
+| `orchestration.interaction_protocol.context_sharing` | boolean | ❌ | Share context with other agents | `true`, `false` |
+| `orchestration.interaction_protocol.shared_memory_scope` | array | ❌ | Shared information types | `["location", "time", "user_preferences"]` |
+| `orchestration.coordinator.agent_id` | string | ❌ | Coordinator agent identifier | `"orchestrator_ai"` |
+| `orchestration.coordinator.function` | string | ❌ | Coordinator's role | `"routes queries to appropriate specialist"` |
+
+### Tool Access Configuration
+
+| Field | Type | Required | Description | Example |
+|-------|------|----------|-------------|---------|
+| `orchestration.tool_access.{tool_name}.trigger_condition` | string | ❌ | When to use this tool | `"user asks about current weather"` |
+| `orchestration.tool_access.{tool_name}.method` | string | ❌ | How to invoke the tool | `"tool_call"` |
+| `orchestration.tool_access.{tool_name}.output_handling` | string | ❌ | How to present tool results | `"natural language rephrasing"` |
+
+### Examples
+
+```yaml title="Basic AI Agent Configuration"
+ai_agent:
+  id: "weather_assistant_enrico"
+  role: "Helpful Weather Expert"
+  use_cases: ["text_chat", "voice_assistant"]
+  system_prompt: |
+    You are Enrico, a friendly and helpful weather assistant.
+    Your responses will be converted to audio, so avoid using symbols or special formatting.
+    Always stay on-topic about weather, climate, or environmental conditions.
+    Use concise, clear sentences and keep your tone friendly and conversational.
+  persona:
+    name: "Enrico"
+    description: "A cheerful meteorologist who explains weather in simple terms."
+    domain_expertise: ["meteorology", "climate trends", "forecasts"]
+    traits: ["friendly", "concise", "knowledgeable", "avoids jargon"]
+  tone_and_style:
+    tone: "Friendly and conversational"
+    formality: "moderate"
+    vocabulary_level: "general_public"
+    verbosity: "short"
+    formatting:
+      allow_markdown: false
+      allow_emojis: false
+```
+
+```yaml title="Comprehensive AI Agent Configuration"
+ai_agent:
+  id: "weather_assistant_enrico"
+  role: "Helpful Weather Expert"
+  use_cases: ["text_chat", "voice_assistant", "avatar_video"]
+  system_prompt: |
+    You are Enrico, a friendly and helpful weather assistant.
+    Your responses will be converted to audio, so avoid using symbols or special formatting.
+    Always stay on-topic about weather, climate, or environmental conditions.
+    Use concise, clear sentences and keep your tone friendly and conversational.
+  persona:
+    name: "Enrico"
+    description: "A cheerful meteorologist who explains weather in simple terms."
+    domain_expertise: ["meteorology", "climate trends", "forecasts"]
+    traits: ["friendly", "concise", "knowledgeable", "avoids jargon"]
+  tone_and_style:
+    tone: "Friendly and conversational"
+    formality: "moderate"
+    vocabulary_level: "general_public"
+    verbosity: "short"
+    formatting:
+      allow_markdown: false
+      allow_emojis: false
+  communication_mediums:
+    text_chat:
+      instructions:
+        - "Use bullet points for forecasts if user asks for multi-day overview"
+        - "Do not use emojis or special characters"
+    voice_assistant:
+      instructions:
+        - "Speak clearly with short sentences"
+        - "Avoid spelling or symbols"
+        - "Use pauses between day forecasts"
+      ssml_enabled: true
+      preferred_voice: "en-US-Neural2-A"
+    avatar_video:
+      instructions:
+        - "Use warm, expressive body language"
+        - "Smile when greeting or giving good news"
+        - "Do not reference physical body unless avatar system supports it"
+      visual_emotion_tags: true
+  memory:
+    type: "hybrid"
+    short_term:
+      context_window: "12 turns"
+      summarization_strategy: "windowed_summary"
+    long_term:
+      vector_db: true
+      memory_scope:
+        - "past user queries"
+        - "location preferences"
+        - "recurring alerts"
+    personalization:
+      enabled: true
+      profile_keys:
+        - "preferred_units (e.g., Celsius/Fahrenheit)"
+        - "location"
+        - "weather alert opt-in"
+  safety_and_alignment:
+    refusal_behavior:
+      method: "polite_redirection"
+      template: "I'm here to help with weather info only. Please ask me about that."
+    disallowed_topics:
+      - "politics"
+      - "personal medical advice"
+      - "emergencies or disasters"
+    model_alignment: "RLHF tuned on weather compliance"
+    external_filters:
+      input_filtering: true
+      output_moderation: true
+      categories:
+        - "hate"
+        - "self-harm"
+        - "PII_leakage"
+  orchestration:
+    multi_agent_support: false
+    tool_access:
+      get_weather_api:
+        trigger_condition: "user asks about current weather or forecast"
+        method: "tool_call"
+        output_handling: "natural language rephrasing"
+```
+
+### Multi-Agent Configuration Example
+
+```yaml title="Multi-Agent Weather System"
+ai_agent:
+  id: "weather_agent_specialist"
+  role: "Weather Specialist Agent"
+  use_cases: ["multi_agent"]
+  orchestration:
+    multi_agent_support: true
+    agent_role: "Weather Agent"
+    team_context: "Smart Home Multi-Agent Assistant"
+    interaction_protocol:
+      speak_when_addressed: true
+      context_sharing: true
+      shared_memory_scope:
+        - "location"
+        - "time"
+        - "user preferences"
+    coordinator:
+      agent_id: "orchestrator_ai"
+      function: "routes queries to appropriate specialist"
+```
+
+### Validation Behavior
+
+- **Optional Fields**: All AI agent fields are optional, even in strict validation mode
+- **Strict Mode**: Errors on malformed or malstructured AI agent data
+- **Relaxed Mode**: Warnings on malformed AI agent data
+- **Enum Validation**: Restricted values enforced for critical fields
+- **Structure Validation**: Nested objects validated for proper types and required fields
+
+### Best Practices
+
+1. **Start Simple**: Begin with basic persona and tone configuration
+2. **Medium-Specific**: Configure instructions for each interaction medium
+3. **Safety First**: Always include appropriate safety and alignment settings
+4. **Memory Strategy**: Choose memory type based on use case requirements
+5. **Tool Integration**: Define clear tool access patterns for external APIs
+6. **Multi-Agent Planning**: Design interaction protocols for team-based systems
+
+---
+
 ## Extension Blocks
 
 Extension blocks use the `x-` prefix for system-specific data.

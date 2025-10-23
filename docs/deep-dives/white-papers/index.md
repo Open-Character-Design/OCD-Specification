@@ -46,7 +46,13 @@ White papers provide comprehensive technical analysis of OCD's design decisions,
 
 ## Current White Papers
 
-*Coming soon: White papers will be added as they are completed and reviewed.*
+### Research Foundation
+- [Schema Updates - Core Fields Implementation](schema-core-fields-implementation.md) - Documentation of schema changes to align with research findings on universal character definition fields
+
+### AI and Technical Implementation
+- [AI Agent Fields Research](../../research/ai-agent-fields-research.md) - Comprehensive research on AI agent configuration patterns and their implementation in OCD specification for standardized AI persona modeling
+
+*Additional white papers will be added as they are completed and reviewed.*
 
 ## White Paper Structure
 

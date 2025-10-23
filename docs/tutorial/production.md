@@ -5,6 +5,9 @@ In this final step, you'll learn best practices for production deployment, valid
 !!! tip "Production Case Studies"
     For real-world examples of OCD implementation in production environments, see our [Case Studies](../../deep-dives/case-studies/index.md) section, including detailed accounts of game studio integrations and enterprise deployments.
 
+!!! tip "AI Agent Production Configuration"
+    For AI-powered characters, use OCD's `ai_agent` fields to configure production-ready AI behavior. This includes safety settings, memory configuration, and multi-agent orchestration. See our [AI Agent Fields Research](../../deep-dives/research/ai-agent-fields-research.md) for comprehensive guidance on AI agent configuration best practices.
+
 ## What You'll Learn
 
 - Production-ready character structure

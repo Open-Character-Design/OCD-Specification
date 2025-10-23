@@ -19,6 +19,9 @@ Single-dimension traits measured from 0 to 1, like `combat-readiness` or `empath
 ### Flag Traits
 Binary on/off traits, like `psionic` or `licensed-medic`.
 
+!!! tip "AI Agent Integration"
+    Personality traits work seamlessly with OCD's `ai_agent` configuration fields. The traits you define here can be referenced in AI agent persona configuration to ensure consistent behavior across AI-powered interactions. See our [AI Agent Configuration Reference](../../reference/fields.md#ai-agent-configuration-block) for details.
+
 ## Adding Personality Traits
 
 Let's enhance Rita with personality traits:

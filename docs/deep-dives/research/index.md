@@ -59,6 +59,19 @@ This section contains peer-reviewed research, academic papers, and theoretical a
 
 **Impact**: This research directly informs the OCD core schema design and validation criteria, ensuring interoperability and consistency across diverse applications.
 
+### [AI Agent Configuration Fields for Human-Interactive Systems](ai-agent-fields-research.md)
+**Authors**: OCD Research Team  
+**Date**: 2024  
+**Abstract**: Analysis of essential configuration fields required for creating consistent, safe, and effective AI agents that interact with humans across multiple mediums. Through comprehensive analysis of modern AI systems including ChatGPT personas, voice assistants, avatar systems, and multi-agent orchestration platforms, this research identifies core configuration patterns that enable standardized AI behavior modeling.
+
+**Key Findings**:
+- Identification of 7 universal AI agent configuration categories
+- Safety and alignment patterns in modern AI systems
+- Multi-agent orchestration configuration standards
+- Cross-platform AI application validation
+
+**Impact**: This research forms the foundation for OCD's AI agent configuration fields, enabling standardized AI behavior modeling across text chat, voice assistants, avatar video, and multi-agent systems.
+
 ## Submission Guidelines
 
 We welcome research contributions that advance the field of character modeling and interoperability. Research papers should:

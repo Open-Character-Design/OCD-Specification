@@ -21,7 +21,7 @@ Leverage Godot's node-based architecture and GDScript's simplicity for dynamic c
 Create immersive visual novels and RPG experiences with personality-driven dialogue trees, expression systems, and character progression. Features dialogue engines, expression management, and branching narrative systems.
 
 ### [AI-Driven NPC Personalities](ai-npcs.md)
-Build sophisticated AI-driven NPCs with behavior trees, memory systems, and learning algorithms. Includes personality-driven decision making, social interaction systems, and adaptive behavior patterns.
+Build sophisticated AI-driven NPCs with behavior trees, memory systems, and learning algorithms. Includes personality-driven decision making, social interaction systems, and adaptive behavior patterns. Features OCD's new `ai_agent` configuration fields for standardized AI behavior modeling.
 
 ### [Interactive Storytelling Tools](storytelling.md)
 Create dynamic, adaptive storytelling experiences with narrative generation, branching storylines, and contextual dialogue systems. Features story engines, dialogue systems, and story branching logic.
@@ -44,7 +44,7 @@ Choose your development path based on your project needs:
 ### Creative Applications
 
 - **[Visual Novels & RPGs](visual-novels.md)** - Dialogue systems and character progression
-- **[AI NPCs](ai-npcs.md)** - Behavior trees and learning systems
+- **[AI NPCs](ai-npcs.md)** - Behavior trees, learning systems, and AI agent configuration
 - **[Interactive Storytelling](storytelling.md)** - Dynamic narrative generation
 
 ### Production Workflows

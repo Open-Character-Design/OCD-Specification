@@ -16,6 +16,12 @@ definitions:
     Species: ["human", "ai", "alien", "collective", "object", "deity", "other"]
     SapienceLevel: ["animal", "tool", "agent", "sapient", "transcendent"]
     TraitKind: ["bipolar", "scalar", "flag"]
+    AIUseCases: ["text_chat", "voice_assistant", "avatar_video", "multi_agent"]
+    AIFormality: ["casual", "moderate", "formal", "academic"]
+    AIVocabularyLevel: ["simple", "general_public", "technical", "expert"]
+    AIVerbosity: ["concise", "short", "moderate", "detailed"]
+    AIMemoryType: ["none", "short_term", "long_term", "hybrid"]
+    AIRefusalMethod: ["polite_redirection", "direct_refusal", "topic_change"]
 
 rules:
   # Basic structure validation
@@ -325,3 +331,280 @@ rules:
 
   - path: "extensions"
     type: object
+
+  # AI Agent Configuration Validation
+  # All AI agent fields are optional, but if present must be properly structured
+  - path: "ai_agent"
+    type: object
+    presence: optional
+
+  - path: "ai_agent.id"
+    type: string
+    minLength: 1
+    presence: optional
+
+  - path: "ai_agent.role"
+    type: string
+    minLength: 1
+    presence: optional
+
+  - path: "ai_agent.use_cases"
+    type: array
+    items:
+      type: string
+      enum: "@enums.AIUseCases"
+    presence: optional
+
+  - path: "ai_agent.system_prompt"
+    type: string
+    presence: optional
+
+  - path: "ai_agent.persona"
+    type: object
+    presence: optional
+
+  - path: "ai_agent.persona.name"
+    type: string
+    minLength: 1
+    presence: optional
+
+  - path: "ai_agent.persona.description"
+    type: string
+    presence: optional
+
+  - path: "ai_agent.persona.domain_expertise"
+    type: array
+    items:
+      type: string
+    presence: optional
+
+  - path: "ai_agent.persona.traits"
+    type: array
+    items:
+      type: string
+    presence: optional
+
+  - path: "ai_agent.tone_and_style"
+    type: object
+    presence: optional
+
+  - path: "ai_agent.tone_and_style.tone"
+    type: string
+    presence: optional
+
+  - path: "ai_agent.tone_and_style.formality"
+    type: string
+    enum: "@enums.AIFormality"
+    presence: optional
+
+  - path: "ai_agent.tone_and_style.vocabulary_level"
+    type: string
+    enum: "@enums.AIVocabularyLevel"
+    presence: optional
+
+  - path: "ai_agent.tone_and_style.verbosity"
+    type: string
+    enum: "@enums.AIVerbosity"
+    presence: optional
+
+  - path: "ai_agent.tone_and_style.formatting"
+    type: object
+    presence: optional
+
+  - path: "ai_agent.tone_and_style.formatting.allow_markdown"
+    type: boolean
+    presence: optional
+
+  - path: "ai_agent.tone_and_style.formatting.allow_emojis"
+    type: boolean
+    presence: optional
+
+  - path: "ai_agent.communication_mediums"
+    type: object
+    presence: optional
+
+  - path: "ai_agent.communication_mediums.text_chat"
+    type: object
+    presence: optional
+
+  - path: "ai_agent.communication_mediums.text_chat.instructions"
+    type: array
+    items:
+      type: string
+    presence: optional
+
+  - path: "ai_agent.communication_mediums.voice_assistant"
+    type: object
+    presence: optional
+
+  - path: "ai_agent.communication_mediums.voice_assistant.instructions"
+    type: array
+    items:
+      type: string
+    presence: optional
+
+  - path: "ai_agent.communication_mediums.voice_assistant.ssml_enabled"
+    type: boolean
+    presence: optional
+
+  - path: "ai_agent.communication_mediums.voice_assistant.preferred_voice"
+    type: string
+    presence: optional
+
+  - path: "ai_agent.communication_mediums.avatar_video"
+    type: object
+    presence: optional
+
+  - path: "ai_agent.communication_mediums.avatar_video.instructions"
+    type: array
+    items:
+      type: string
+    presence: optional
+
+  - path: "ai_agent.communication_mediums.avatar_video.visual_emotion_tags"
+    type: boolean
+    presence: optional
+
+  - path: "ai_agent.memory"
+    type: object
+    presence: optional
+
+  - path: "ai_agent.memory.type"
+    type: string
+    enum: "@enums.AIMemoryType"
+    presence: optional
+
+  - path: "ai_agent.memory.short_term"
+    type: object
+    presence: optional
+
+  - path: "ai_agent.memory.short_term.context_window"
+    type: string
+    presence: optional
+
+  - path: "ai_agent.memory.short_term.summarization_strategy"
+    type: string
+    presence: optional
+
+  - path: "ai_agent.memory.long_term"
+    type: object
+    presence: optional
+
+  - path: "ai_agent.memory.long_term.vector_db"
+    type: boolean
+    presence: optional
+
+  - path: "ai_agent.memory.long_term.memory_scope"
+    type: array
+    items:
+      type: string
+    presence: optional
+
+  - path: "ai_agent.memory.personalization"
+    type: object
+    presence: optional
+
+  - path: "ai_agent.memory.personalization.enabled"
+    type: boolean
+    presence: optional
+
+  - path: "ai_agent.memory.personalization.profile_keys"
+    type: array
+    items:
+      type: string
+    presence: optional
+
+  - path: "ai_agent.safety_and_alignment"
+    type: object
+    presence: optional
+
+  - path: "ai_agent.safety_and_alignment.refusal_behavior"
+    type: object
+    presence: optional
+
+  - path: "ai_agent.safety_and_alignment.refusal_behavior.method"
+    type: string
+    enum: "@enums.AIRefusalMethod"
+    presence: optional
+
+  - path: "ai_agent.safety_and_alignment.refusal_behavior.template"
+    type: string
+    presence: optional
+
+  - path: "ai_agent.safety_and_alignment.disallowed_topics"
+    type: array
+    items:
+      type: string
+    presence: optional
+
+  - path: "ai_agent.safety_and_alignment.model_alignment"
+    type: string
+    presence: optional
+
+  - path: "ai_agent.safety_and_alignment.external_filters"
+    type: object
+    presence: optional
+
+  - path: "ai_agent.safety_and_alignment.external_filters.input_filtering"
+    type: boolean
+    presence: optional
+
+  - path: "ai_agent.safety_and_alignment.external_filters.output_moderation"
+    type: boolean
+    presence: optional
+
+  - path: "ai_agent.safety_and_alignment.external_filters.categories"
+    type: array
+    items:
+      type: string
+    presence: optional
+
+  - path: "ai_agent.orchestration"
+    type: object
+    presence: optional
+
+  - path: "ai_agent.orchestration.multi_agent_support"
+    type: boolean
+    presence: optional
+
+  - path: "ai_agent.orchestration.agent_role"
+    type: string
+    presence: optional
+
+  - path: "ai_agent.orchestration.team_context"
+    type: string
+    presence: optional
+
+  - path: "ai_agent.orchestration.interaction_protocol"
+    type: object
+    presence: optional
+
+  - path: "ai_agent.orchestration.interaction_protocol.speak_when_addressed"
+    type: boolean
+    presence: optional
+
+  - path: "ai_agent.orchestration.interaction_protocol.context_sharing"
+    type: boolean
+    presence: optional
+
+  - path: "ai_agent.orchestration.interaction_protocol.shared_memory_scope"
+    type: array
+    items:
+      type: string
+    presence: optional
+
+  - path: "ai_agent.orchestration.coordinator"
+    type: object
+    presence: optional
+
+  - path: "ai_agent.orchestration.coordinator.agent_id"
+    type: string
+    presence: optional
+
+  - path: "ai_agent.orchestration.coordinator.function"
+    type: string
+    presence: optional
+
+  - path: "ai_agent.orchestration.tool_access"
+    type: object
+    presence: optional

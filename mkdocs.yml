@@ -114,6 +114,7 @@ extra:
     property: !ENV GOOGLE_ANALYTICS_KEY
 extra_javascript:
   - assets/jokes.js
+  - assets/theme-auto-detect.js
 markdown_extensions:
   - abbr
   - admonition

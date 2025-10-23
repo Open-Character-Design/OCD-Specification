@@ -9,18 +9,25 @@ tags:
   - orientation
 ---
 
-# Start Here
+# Start Here 🧭
 
-Welcome! This orientation page maps the documentation to the journey most teams follow when adopting the Open Character Specification (OCD). Follow the path in order, or jump straight to the section that matches your goal.
+Welcome! This orientation page helps you navigate the Open Character Specification (OCD) documentation and choose the right path for your needs.
 
-## Step-by-step Journey
+## Choose Your Journey
 
-1. **Spin up a validator** – Use the [Quick Install guide](../getting-started.md) to validate sample characters in minutes.
-2. **Learn the basics** – The [Guided Tutorial](../tutorial/index.md) walks you through building a character with increasing depth.
-3. **Level up authoring skills** – Move into the [Authoring Playbook](../authoring/writing-ocd-files.md) to structure larger casts of characters.
-4. **Guard quality** – Configure checks using the [Validation Overview](../reference/validation.md) and [Validation Modes](../tutorial/validation-modes.md).
-5. **Ship integrations** – Plug OCD data into your tools with the [Integration guides](../integration/python-validator.md).
-6. **Reference details** – Look up field-level rules any time in the [Field Reference](../reference/fields.md).
+### 💻 **Ready to Get Started?**
+If you want to install validators and validate your first character right now:
+**[Go to Quick Install →](../getting-started.md)**
+
+### 🗺️ **Want to Explore First?**
+Follow the step-by-step journey most teams take when adopting OCD:
+
+1. **Install & Validate** – Use the [Quick Install guide](../getting-started.md) to validate sample characters in minutes.
+2. **Learn the Basics** – The [Guided Tutorial](../tutorial/index.md) walks you through building a character with increasing depth.
+3. **Level up Authoring Skills** – Move into the [Authoring Playbook](../authoring/writing-ocd-files.md) to structure larger casts of characters.
+4. **Guard Quality** – Configure checks using the [Validation Overview](../reference/validation.md) and [Validation Modes](../tutorial/validation-modes.md).
+5. **Ship Integrations** – Plug OCD data into your tools with the [Integration guides](../integration/python-validator.md).
+6. **Reference Details** – Look up field-level rules any time in the [Field Reference](../reference/fields.md).
 
 !!! tip "Need a shortcut?"
     Use the global search (`/` to focus) with keywords like `traits`, `extensions`, or `validators`. Section tags and synonyms were added across the docs so relevant pages surface even if they're in different folders.
@@ -44,18 +51,18 @@ Use cases showcase how OCD bridges creative intent and technical delivery.
 ??? info "More inspiration"
     Browse the full catalog in [Use Cases & Inspiration](../use-cases/index.md) including engine-specific guides for Unity, Unreal, and Godot.
 
-## Progressive Disclosure
+## Documentation Structure
+
+The documentation is organized for progressive learning:
 
 - **Build Characters** starts with the tutorial overview before diving into each step.
 - **Validate & QA** highlights quick wins first, then advanced diagnostics.
 - **Integrate & Automate** separates validator setup from ecosystem extensions.
 - **Reference & Governance** keeps normative specs, decision records, and glossary entries together.
 
-
-## Related Resources
+## Quick Reference
 
 - [FAQ](../faq.md) for quick answers and troubleshooting shortcuts.
 - [Migration Guide](../migration-guide.md) if you're upgrading from an earlier schema.
 - [Examples Gallery](../authoring/examples.md) when you prefer to reverse-engineer working files.
-
-Still unsure where to go? The [Glossary](../glossary.md) defines key terms and links back to the sections where they are explained in context.
+- [Glossary](../glossary.md) defines key terms and links back to the sections where they are explained in context.

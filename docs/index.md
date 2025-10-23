@@ -124,6 +124,15 @@ meta:
 
 <div class="feature-card">
 
+<h3>🗺️ <a href="start-here/">Start Here</a></h3>
+
+<p>Navigate the documentation and choose the right path for your needs.</p>
+
+</div>
+
+<div class="feature-card">
+
+
 <h3>🚀 <a href="getting-started">Get Started</a></h3>
 
 <p>Install validators, create your first character, and understand the basics.</p>

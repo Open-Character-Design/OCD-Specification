@@ -99,7 +99,7 @@ From storytelling to simulation, OCD connects creativity, data, and collaboratio
 Here's a minimal OCD character to get you started:
 
 ```yaml title="my-character.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "my-first-character"
 names:
   canon: "Rita"

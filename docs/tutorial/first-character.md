@@ -110,7 +110,7 @@ meta:
 Let's enhance Rita with some additional details:
 
 ```yaml title="rita-enhanced.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-rita-adventurer"
 names:
   canon: "Rita"
@@ -192,7 +192,7 @@ names:
 ### Invalid Field Values
 
 ```yaml title="invalid-field-values.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-rita"
 names:
   canon: "Rita"

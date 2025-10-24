@@ -361,7 +361,7 @@ The default specification defines optional fields with type validation:
 ### Basic Character
 
 ```yaml
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-001"
 names:
   canon: "Aria Ironleaf"
@@ -374,7 +374,7 @@ identity:
 ### Extended Character
 
 ```yaml
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-002"
 names:
   canon: "Zed Nova"
@@ -397,7 +397,7 @@ meta:
 ### Character with Content Rating
 
 ```yaml
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-003"
 names:
   canon: "Seraphine Fireblade"

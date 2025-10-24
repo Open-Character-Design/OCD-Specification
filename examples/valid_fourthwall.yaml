@@ -1,5 +1,5 @@
 kind: CharacterDefinition
-ocd_version: 0.9.0
+ocd_version: "1.0.0"
 id: "eeeeeee1-eeee-eeee-eeee-eeeeeeeeeee1"
 slug: "script-savvy"
 names:

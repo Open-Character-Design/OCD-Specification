@@ -30,7 +30,7 @@ Binary on/off traits, like `psionic` or `licensed-medic`.
 Let's enhance Rita with personality traits:
 
 ```yaml title="rita-personality.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-rita-adventurer"
 names:
   canon: "Rita"

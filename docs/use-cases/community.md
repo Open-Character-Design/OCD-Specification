@@ -25,7 +25,7 @@ Let's say a global community decides to create a shared collection of fantasy he
 **Community Contribution:**
 ```yaml
 # Aria the Swift - contributed by Studio Tokyo
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-aria-swift"
 names:
   canon: "Aria the Swift"
@@ -61,7 +61,7 @@ meta:
 **Community Remix:**
 ```yaml
 # Aria the Swift - Remixed by London Writer
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-aria-swift-london-remix"
 names:
   canon: "Aria the Swift"
@@ -350,7 +350,7 @@ Let's follow a character from novel to game to animation:
 **Phase 1: Novel Character**
 ```yaml
 # Original novel character
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-marcus-chen"
 names:
   canon: "Marcus Chen"
@@ -385,7 +385,7 @@ meta:
 **Phase 2: Game Adaptation**
 ```yaml
 # Game-adapted character
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-marcus-chen"
 names:
   canon: "Marcus Chen"
@@ -431,7 +431,7 @@ meta:
 **Phase 3: Animation Adaptation**
 ```yaml
 # Animation-adapted character
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-marcus-chen"
 names:
   canon: "Marcus Chen"

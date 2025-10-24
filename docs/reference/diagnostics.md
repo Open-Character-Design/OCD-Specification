@@ -24,7 +24,7 @@ personality:
   traits:
     - name: "violent-pacifist"
       polarity: 0.8  # Leans violent
-meta_properties:
+meta:
   appropriateness:
     violence: "none"  # But rated as no violence
 ```
@@ -281,7 +281,7 @@ ocd_version: "99.99.99"  # Unsupported version
 ```
 
 **How to Fix:**
-- Use supported OCD version: `"0.0.1"`
+- Use supported OCD version: `"1.0.0"`
 - Check validator compatibility
 - Update to latest version
 

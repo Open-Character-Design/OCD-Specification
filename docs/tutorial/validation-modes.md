@@ -99,7 +99,7 @@ Let's see how the same character file behaves in different modes:
 
 ```yaml
 # character.yaml
-ocd_version: "0.9.0"
+ocd_version: "1.0.0"
 id: "hero-001"
 names:
   canon: "Aria the Bold"
@@ -156,7 +156,7 @@ Let's see how an invalid character behaves in different modes:
 
 ```yaml
 # invalid-character.yaml
-ocd_version: "0.9.0"
+ocd_version: "1.0.0"
 id: "hero-002"
 names:
   canon: "Aria the Bold"

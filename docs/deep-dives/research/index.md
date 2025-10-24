@@ -85,6 +85,19 @@ This section contains peer-reviewed research, academic papers, and theoretical a
 
 **Impact**: This research enables responsible character deployment through standardized content rating fields in OCD, ensuring appropriate content classification across gaming, entertainment, AI platforms, and interactive media while respecting regional and cultural sensitivities.
 
+### [Licensing Metadata Schema for Character Rights Management](licensing-metadata-schema.md)
+**Authors**: OCD Research Team  
+**Date**: 2024  
+**Abstract**: Comprehensive analysis of licensing frameworks and their application to character design specifications, establishing a unified metadata schema for rights management across diverse platforms. Through systematic examination of Creative Commons, SPDX, platform-specific licensing models, and intellectual property frameworks, this research establishes machine-readable licensing profiles for consistent rights management.
+
+**Key Findings**:
+- Identification of universal licensing dimensions across all major platforms
+- Cross-platform mapping methodology for consistent rights management
+- Implementation framework for automated licensing compliance assessment
+- Best practices for handling copyright, trademark, and personality rights
+
+**Impact**: This research provides the foundation for comprehensive character rights management in OCD, enabling clear licensing specification and automated compliance across gaming, AI, entertainment, and interactive media platforms.
+
 ## Submission Guidelines
 
 We welcome research contributions that advance the field of character modeling and interoperability. Research papers should:

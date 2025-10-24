@@ -188,7 +188,7 @@ Yes, in relaxed mode you can add custom fields. In strict mode, only fields defi
 
 ```yaml
 # This works in relaxed mode
-ocd_version: "0.9.0"
+ocd_version: "1.0.0"
 id: "my-character"
 names:
   canon: "My Character"

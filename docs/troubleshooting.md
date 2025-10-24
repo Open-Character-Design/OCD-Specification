@@ -12,7 +12,7 @@ This guide helps you resolve common issues when working with the Open Character 
 
 **Solution:**
 ```yaml
-ocd_version: "0.9.0"  # Add this field at the top level
+ocd_version: "1.0.0"  # Add this field at the top level
 id: "my-character"
 # ... rest of character data
 ```
@@ -23,27 +23,27 @@ id: "my-character"
 
 **Solution:**
 ```yaml
-ocd_version: "0.9.0"
+ocd_version: "1.0.0"
 id: "my-character"  # Add this field
 # ... rest of character data
 ```
 
 ### Invalid Enum Values
 
-**Error:** `Invalid enum value: 'invalid-kind' for field 'identity.entity_kind'`
+**Error:** `Invalid enum value: 'invalid-kind' for field 'identity.kind'`
 
 **Cause:** The value doesn't match the allowed enum values.
 
 **Solution:**
 ```yaml
 identity:
-  entity_kind: "person"  # Use valid enum value: person, creature, ai, collective
+  kind: "person"  # Use valid enum value: person, creature, ai, collective
   species: "human"
   sapience_level: "sapient"
 ```
 
 **Valid enum values:**
-- `entity_kind`: `person`, `creature`, `ai`, `collective`
+- `kind`: `person`, `creature`, `ai`, `collective`
 - `species`: `human`, `elf`, `dwarf`, `halfling`, `dragonborn`, `gnome`, `tiefling`
 - `sapience_level`: `animal`, `tool`, `agent`, `sapient`, `transcendent`
 
@@ -326,7 +326,7 @@ ocd-validate character.yaml --mode strict --spec minimal-spec.ocd
 
 ```yaml
 # Minimal valid character
-ocd_version: "0.9.0"
+ocd_version: "1.0.0"
 id: "test"
 names:
   canon: "Test"

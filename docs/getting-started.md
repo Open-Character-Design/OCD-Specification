@@ -31,12 +31,12 @@ Let's validate your first character file.
 `sample-character.yaml`
 
 ```yaml
-ocd_version: "0.9.0"
+ocd_version: "1.0.0"
 id: "char-sample-hero"
 names:
   canon: "Sample Hero"
 identity:
-  entity_kind: "person"
+  kind: "person"
   species: "human"
   sapience_level: "sapient"
 meta:

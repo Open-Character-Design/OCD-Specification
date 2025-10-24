@@ -69,6 +69,7 @@ nav:
       - AI Agent Fields: deep-dives/research/ai-agent-fields-research.md
       - Common Character Fields: deep-dives/research/common-character-fields.md
       - Content Ratings: deep-dives/research/content-ratings-unified-schema.md
+      - Licensing Metadata: deep-dives/research/licensing-metadata-schema.md
     - Case Studies:
       - Index: deep-dives/case-studies/index.md
       - Game Studio Integration: deep-dives/case-studies/game-studio-integration.md

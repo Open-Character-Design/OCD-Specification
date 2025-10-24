@@ -1,5 +1,5 @@
 kind: CharacterDefinition
-ocd_version: 0.9.0
+ocd_version: "1.0.0"
 id: "aaaaaaa1-aaaa-aaaa-aaaa-aaaaaaaaaaa1"
 slug: "veil-bond"
 names:

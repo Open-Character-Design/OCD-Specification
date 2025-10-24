@@ -97,7 +97,7 @@ Agents (AI-driven characters, NPCs, chatbots, or simulation entities) need struc
 ## 5. Example: Grounding a Chat Agent
 
 ```yaml
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: npc-barkeep-01
 names:
   canon: "Mira the Barkeep"

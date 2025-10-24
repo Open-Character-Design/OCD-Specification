@@ -4,7 +4,7 @@ This example demonstrates OCD's AI agent configuration fields for creating AI-po
 
 ```yaml
 kind: "CharacterDefinition"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "ai-weather-assistant-enrico"
 slug: "weather-assistant-enrico"
 names:

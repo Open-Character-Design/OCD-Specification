@@ -7,7 +7,7 @@ OCD supports custom extensions through the `x-*` namespace pattern, allowing you
 Extensions use the `x-` prefix to avoid conflicts with core OCD fields:
 
 ```yaml title="character-with-extensions.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-example"
 names:
   canon: "Example Character"
@@ -235,7 +235,7 @@ x-my-system:
   extension_version: "1.2"  # Extension version
   system_version: "2.1"      # System version
   compatibility:
-    min_ocd_version: "0.0.1"
+    min_ocd_version: "1.0.0"
     max_ocd_version: "1.0.0"
 ```
 
@@ -360,7 +360,7 @@ def migrate_extension_v1_to_v2(data):
 ### Minimal Extension Template
 
 ```yaml title="extension-template.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-template"
 names:
   canon: "Template Character"

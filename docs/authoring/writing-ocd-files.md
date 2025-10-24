@@ -27,7 +27,7 @@ Choose the format that best fits your workflow:
 ### Basic Structure
 
 ```yaml title="character.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-example"
 names:
   canon: "Example Character"
@@ -50,7 +50,7 @@ meta:
 
 ```yaml title="best-practices.yaml"
 # Character metadata
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-rita-adventurer"  # Use descriptive IDs
 
 names:
@@ -70,7 +70,7 @@ personality:
 
 ```yaml title="avoid-this.yaml"
 # ❌ Don't do this
-ocd_version: 0.0.1  # Missing quotes
+ocd_version: "1.0.0"  # Missing quotes
 id: "Rita"  # Not descriptive enough
 names:
   canon: Rita  # Missing quotes
@@ -135,7 +135,7 @@ ocd-validate character.yaml --print
    ```bash
    ❌ Missing required field: ocd_version
    ```
-   **Fix**: Add `ocd_version: "0.0.1"`
+   **Fix**: Add `ocd_version: "1.0.0"`
 
 2. **Invalid field values**
    ```bash
@@ -185,7 +185,7 @@ Use extension blocks for system-specific data:
 
 ```yaml title="dnd-character.yaml"
 # Core OCD data
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-bruenor"
 names:
   canon: "Bruenor Battlehammer"
@@ -208,7 +208,7 @@ x-dnd5e:
 Create reusable templates:
 
 ```yaml title="template-minimal.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-template"
 names:
   canon: "Template Character"

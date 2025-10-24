@@ -662,7 +662,7 @@ class TestCharacterValidation:
     @pytest.fixture
     def valid_character(self):
         return {
-            "ocd_version": "0.9.0",
+            "ocd_version": "1.0.0",
             "id": "test-001",
             "names": {"canon": "Test Character"},
             "identity": {
@@ -681,7 +681,7 @@ class TestCharacterValidation:
     @pytest.fixture
     def invalid_character(self):
         return {
-            "ocd_version": "0.9.0",
+            "ocd_version": "1.0.0",
             "id": "test-002",
             # Missing required fields
             "identity": {

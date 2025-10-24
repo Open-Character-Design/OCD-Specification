@@ -1,5 +1,5 @@
 kind: CharacterDefinition
-ocd_version: 0.9.0
+ocd_version: "1.0.0"
 id: "55555555-5555-5555-5555-555555555555"
 slug: "chorus-of-dawn"
 names:

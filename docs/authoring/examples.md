@@ -91,7 +91,7 @@ Avatar's protagonist showing how to represent characters with body-swapping abil
 Perfect for getting started:
 
 ```yaml title="minimal-template.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-template-minimal"
 names:
   canon: "Template Character"
@@ -109,7 +109,7 @@ meta:
 Full-featured template with all major blocks:
 
 ```yaml title="complete-template.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-template-complete"
 names:
   canon: "Complete Character"
@@ -184,7 +184,7 @@ meta:
 
 #### The Noble Paladin
 ```yaml title="paladin-example.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-paladin-example"
 names:
   canon: "Sir Galahad"
@@ -209,7 +209,7 @@ x-dnd5e:
 
 #### The Mysterious Wizard
 ```yaml title="wizard-example.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-wizard-example"
 names:
   canon: "Gandalf"
@@ -236,7 +236,7 @@ x-dnd5e:
 
 #### The Space Marine
 ```yaml title="marine-example.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-marine-example"
 names:
   canon: "Sergeant Johnson"
@@ -263,7 +263,7 @@ x-sci-fi:
 
 #### The AI Companion
 ```yaml title="ai-example.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-ai-example"
 names:
   canon: "Cortana"
@@ -290,7 +290,7 @@ x-sci-fi:
 
 #### The Detective
 ```yaml title="detective-example.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-detective-example"
 names:
   canon: "Detective Sarah Chen"
@@ -317,7 +317,7 @@ x-modern:
 
 #### The Superhero
 ```yaml title="superhero-example.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-superhero-example"
 names:
   canon: "Captain Justice"
@@ -360,7 +360,7 @@ See [Bruenor Battlehammer](https://github.com/Open-Character-Design/OCD-Specific
 Example of a custom game system extension:
 
 ```yaml title="custom-system-example.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-custom-example"
 names:
   canon: "Custom Hero"
@@ -394,7 +394,7 @@ x-my-fantasy-rpg:
 Demonstrates composite identity and complex relationships:
 
 ```yaml title="shapeshifter-example.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-shapeshifter-example"
 names:
   canon: "Mystique"
@@ -429,7 +429,7 @@ capabilities:
 Shows how to represent collective consciousness:
 
 ```yaml title="hivemind-example.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-hivemind-example"
 names:
   canon: "The Collective"
@@ -463,7 +463,7 @@ capabilities:
 
 ### Valid Character
 ```yaml title="valid-example.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-valid-example"
 names:
   canon: "Valid Character"
@@ -484,7 +484,7 @@ meta:
 
 ### Character with Warnings
 ```yaml title="warning-example.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char_warning_example"  # Underscores will be normalized
 names:
   canon: "Warning Character"

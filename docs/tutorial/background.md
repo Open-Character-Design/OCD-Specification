@@ -11,7 +11,7 @@ A character with detailed background, timeline events, affiliations, and relatio
 Let's enhance Rita with background details:
 
 ```yaml title="rita-background.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-rita-adventurer"
 names:
   canon: "Rita"
@@ -207,7 +207,7 @@ narrative_hooks:
 To make relationships work properly, you need to create the referenced characters. Here's Marcus, Rita's father:
 
 ```yaml title="marcus-blacksmith.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-marcus-blacksmith"
 names:
   canon: "Marcus Ironforge"

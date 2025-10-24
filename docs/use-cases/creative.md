@@ -33,7 +33,7 @@ Imagine you're creating a fantasy hero named **Aria the Swift**. Here's how OCD 
 
 **OCD Approach:**
 ```yaml
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-aria-swift"
 names:
   canon: "Aria the Swift"

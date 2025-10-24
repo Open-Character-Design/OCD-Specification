@@ -19,7 +19,7 @@ OCD uses `x-*` namespaces to add system-specific data without cluttering the cor
 Let's enhance Rita with D&D 5e stats:
 
 ```yaml title="rita-dnd5e.yaml"
-ocd_version: "0.0.1"
+ocd_version: "1.0.0"
 id: "char-rita-adventurer"
 names:
   canon: "Rita"

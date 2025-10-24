@@ -5,10 +5,10 @@ Create sophisticated AI-driven NPCs with OCD personality traits that drive behav
 OCD personality traits provide the perfect foundation for creating AI-driven NPCs that exhibit consistent, believable behavior. This guide shows you how to build sophisticated AI systems that use OCD character data to drive decision-making, memory formation, and social interactions.
 
 !!! info "AI Research & Case Studies"
-    For comprehensive research on AI persona modeling and real-world implementation case studies, explore our [Deep Dives](../../deep-dives/index.md) section, including research papers on AI behavior modeling and production deployment case studies.
+    For comprehensive research on AI persona modeling and real-world implementation case studies, explore our [Deep Dives](../deep-dives/index.md) section, including research papers on AI behavior modeling and production deployment case studies.
 
 !!! tip "AI Agent Configuration"
-    For standardized AI agent configuration using OCD's new `ai_agent` fields, see our [AI Agent Fields Research](../../deep-dives/research/ai-agent-fields-research.md) and [AI Agent Configuration Reference](../../reference/fields.md#ai-agent-configuration-block).
+    For standardized AI agent configuration using OCD's new `ai_agent` fields, see our [AI Agent Fields Research](../deep-dives/research/ai-agent-fields-research.md) and [AI Agent Configuration Reference](../reference/fields.md#ai-agent-configuration-block).
 
 ## Getting Started with AI NPCs
 

@@ -5,10 +5,10 @@ conditioning. Validators normalize values and ensure trait names align with the
 [controlled vocabularies](../reference/vocabularies.md) so cross-title analytics remain consistent.
 
 !!! info "Deep Dive: Trait Model Design"
-    For comprehensive technical analysis of the trait model architecture and design decisions, see the [Trait Model Design Rationale](../../deep-dives/white-papers/trait-model-design.md) white paper.
+    For comprehensive technical analysis of the trait model architecture and design decisions, see the [Trait Model Design Rationale](../deep-dives/white-papers/trait-model-design.md) white paper.
 
 !!! tip "Research Foundation"
-    The trait model is based on research into universal character definition fields across all mediums. See [Common Character Definition Fields Across All Mediums](../../deep-dives/research/common-character-fields.md) for the theoretical foundation.
+    The trait model is based on research into universal character definition fields across all mediums. See [Common Character Definition Fields Across All Mediums](../deep-dives/research/common-character-fields.md) for the theoretical foundation.
 
 ## Kinds
 

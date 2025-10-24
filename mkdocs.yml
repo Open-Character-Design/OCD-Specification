@@ -64,10 +64,21 @@ nav:
     - Changelog: changelog.md
   - Deep Dives:
     - Overview: deep-dives/index.md
-    - Research Papers: deep-dives/research/index.md
-    - Case Studies: deep-dives/case-studies/index.md
-    - White Papers: deep-dives/white-papers/index.md
-    - Methodology Guides: deep-dives/methodology/index.md
+    - Research Papers: 
+      - Index: deep-dives/research/index.md
+      - AI Agent Fields: deep-dives/research/ai-agent-fields-research.md
+      - Common Character Fields: deep-dives/research/common-character-fields.md
+      - Content Ratings: deep-dives/research/content-ratings-unified-schema.md
+    - Case Studies:
+      - Index: deep-dives/case-studies/index.md
+      - Game Studio Integration: deep-dives/case-studies/game-studio-integration.md
+    - White Papers:
+      - Index: deep-dives/white-papers/index.md
+      - Schema Implementation: deep-dives/white-papers/schema-core-fields-implementation.md
+      - Trait Model Design: deep-dives/white-papers/trait-model-design.md
+    - Methodology Guides:
+      - Index: deep-dives/methodology/index.md
+      - Character Analysis Framework: deep-dives/methodology/character-analysis-framework.md
     - Agents Directory: Agents.md
 
 theme:

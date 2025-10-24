@@ -11,16 +11,19 @@ A character with detailed personality traits using bipolar axes, scalar values, 
 OCD supports three types of traits:
 
 ### Bipolar Traits
+
 Traits that exist on a spectrum between two opposites, like `introversion-extraversion`.
 
 ### Scalar Traits
+
 Single-dimension traits measured from 0 to 1, like `combat-readiness` or `empathy`.
 
 ### Flag Traits
+
 Binary on/off traits, like `psionic` or `licensed-medic`.
 
 !!! tip "AI Agent Integration"
-    Personality traits work seamlessly with OCD's `ai_agent` configuration fields. The traits you define here can be referenced in AI agent persona configuration to ensure consistent behavior across AI-powered interactions. See our [AI Agent Configuration Reference](../../reference/fields.md#ai-agent-configuration-block) for details.
+    Personality traits work seamlessly with OCD's `ai_agent` configuration fields. The traits you define here can be referenced in AI agent persona configuration to ensure consistent behavior across AI-powered interactions. See our [AI Agent Configuration Reference](../reference/fields.md#ai-agent-configuration-block) for details.
 
 ## Adding Personality Traits
 
@@ -225,6 +228,7 @@ instincts:
 ## Goals and Values
 
 ### Goals
+
 Define what your character wants to achieve:
 
 ```yaml
@@ -234,6 +238,7 @@ goals:
 ```
 
 ### Values
+
 Core principles that guide your character's decisions:
 
 ```yaml
@@ -245,18 +250,21 @@ values: ["honor", "family", "justice", "freedom"]
 ### Common Validation Errors
 
 **Invalid polarity range:**
+
 ```yaml
 - name: "introversion-extraversion"
   polarity: 1.5  # Error: must be between -1 and 1
 ```
 
 **Invalid intensity range:**
+
 ```yaml
 - name: "introversion-extraversion"
   intensity: 2.0  # Error: must be between 0 and 1
 ```
 
 **Missing trait kind:**
+
 ```yaml
 - name: "combat-readiness"
   value: 0.7  # Error: missing 'kind' field
@@ -271,11 +279,13 @@ Great! You've added personality traits to Rita. In the next step, you'll learn a
 ## Quick Reference
 
 ### Trait Types
+
 - **Bipolar**: `polarity: [-1..1]`, `intensity: [0..1]`
 - **Scalar**: `value: [0..1]`
 - **Flag**: `value: true/false`
 
 ### Common Bipolar Axes
+
 - `introversion-extraversion`
 - `competitive-cooperative`
 - `serious-playful`
@@ -285,6 +295,7 @@ Great! You've added personality traits to Rita. In the next step, you'll learn a
 - `honest-deceptive`
 
 ### Common Scalar Traits
+
 - `combat-readiness`
 - `empathy`
 - `leadership`

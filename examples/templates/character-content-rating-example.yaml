@@ -1,0 +1,223 @@
+# Character Content Rating Example
+# This example demonstrates the character content profile fields for content appropriateness
+
+ocd_version: "1.0.0"
+id: "seraphine-fireblade"
+kind: "CharacterDefinition"
+names:
+  canon: "Seraphine Fireblade"
+  aliases: ["The Demon Hunter", "Seraphine the Cursed", "Blade of Light"]
+  display:
+    en-US: "Seraphine Fireblade"
+    es-ES: "Seraphine Hoja de Fuego"
+    fr-FR: "Seraphine Lame de Feu"
+
+identity:
+  entity_kind: "person"
+  species: "human"
+  sapience_level: "sapient"
+  age: "28 years"
+  pronouns: ["she/her"]
+  locale: "Dark Fantasy Realm"
+
+appearance:
+  physical_summary: "A fierce demon-hunter with dark magical origins, featured in an action RPG"
+  distinguishing_features: ["glowing red eyes", "tattoos that pulse with dark energy", "scarred hands from demon battles"]
+  body_type: "athletic and battle-scarred"
+  height: "5'8\""
+  distinguishing_features: ["glowing red eyes", "tattoos that pulse with dark energy", "scarred hands from demon battles"]
+
+personality:
+  summary: "A determined demon hunter with a dark past, driven by vengeance but struggling with the corruption within her"
+  traits:
+    - name: "introversion-extraversion"
+      kind: "bipolar"
+      polarity: 0.3
+      intensity: 0.7
+    - name: "selfish-selfless"
+      kind: "bipolar"
+      polarity: 0.6
+      intensity: 0.8
+    - name: "combat-readiness"
+      kind: "scalar"
+      value: 0.9
+  values: ["justice", "protection", "redemption", "vengeance"]
+  quirks: ["touches her weapon when nervous", "speaks in ancient demonic tongue when angry"]
+
+background:
+  summary: "Once a village healer, Seraphine was corrupted by demonic energy during a failed exorcism. Now she hunts demons while fighting her own inner darkness."
+  timeline:
+    - at: "age 20"
+      event: "Became village healer and learned basic magic"
+    - at: "age 25"
+      event: "Failed exorcism corrupted her with demonic energy"
+    - at: "age 28"
+      event: "Now hunts demons while struggling with inner corruption"
+  relationships:
+    - target_ref: "char-village-elder"
+      role: "mentor"
+      sentiment: 0.7
+      notes: "Taught her healing magic, now fears her corruption"
+    - target_ref: "char-demon-lord-malphas"
+      role: "nemesis"
+      sentiment: -0.9
+      notes: "The demon lord who corrupted her, ultimate target of her vengeance"
+
+capabilities:
+  skills:
+    - name: "Demon Hunting"
+      level: 5
+      tags: ["combat", "supernatural", "tracking"]
+    - name: "Dark Magic"
+      level: 4
+      tags: ["spellcasting", "curses", "corruption"]
+    - name: "Healing Arts"
+      level: 3
+      tags: ["magic", "restoration", "purification"]
+  powers:
+    - "Demonic energy manipulation"
+    - "Enhanced physical abilities"
+    - "Demon detection and tracking"
+    - "Corruption resistance"
+  resources:
+    - "Blessed silver sword"
+    - "Ancient demonology texts"
+    - "Healing potions and herbs"
+
+behavior_directives:
+  portrayal_tips:
+    - "Show the internal struggle between light and darkness"
+    - "Demonstrate both her healing nature and violent tendencies"
+    - "Use her corruption as a source of both power and torment"
+  dialogue_style:
+    register: "formal but conflicted"
+    pace: "measured with occasional bursts of intensity"
+    vocabulary: ["by the light", "demon spawn", "I must resist", "the corruption calls"]
+  safety_bounds:
+    topics_to_soften: ["violence presented as necessary evil", "inner darkness and corruption"]
+    topics_to_avoid: ["graphic torture", "harm to innocent children", "glorification of demonic power"]
+
+# Character Content Profile - Content Rating and Appropriateness
+meta:
+  character_content_profile:
+    target_audience:
+      age_range: "16+"
+      demographics: "Fans of action RPGs; teen and adult players; fantasy genre enthusiasts"
+      tone_alignment: "gritty"
+    
+    appropriateness:
+      violence_level: "realistic"           # Options: none / cartoon / realistic / extreme
+      sexuality_level: "implied"            # Options: none / implied / explicit
+      language_level: "mild"                # Options: clean / mild / strong / explicit
+      cultural_sensitivity:
+        - "Depicts religious iconography in dark fantasy context"
+        - "Themes of demon possession may be sensitive to some groups"
+        - "Contains elements of spiritual corruption and exorcism"
+    
+    content_rating:
+      - system: "ESRB"
+        rating: "T for Teen"
+        notes: "Rated T for fantasy violence, mild language, and suggestive themes"
+      - system: "PEGI"
+        rating: "16"
+        notes: "Realistic-looking violence against humans and non-explicit sexual content"
+      - system: "IARC"
+        rating: "16+"
+        notes: "Violence, mild language, and supernatural themes"
+      - system: "MPA"
+        rating: "PG-13"
+        notes: "Action violence and brief suggestive material"
+      - system: "CERO"
+        rating: "C (15+)"
+        notes: "Violence and supernatural themes suitable for ages 15 and up"
+      - system: "USK"
+        rating: "16"
+        notes: "Gewalt und übernatürliche Themen"
+      - system: "ACB"
+        rating: "MA15+"
+        notes: "Strong violence and supernatural themes"
+    
+    deployment_contexts:
+      - "teen action RPG"
+      - "fantasy-themed digital comic"
+      - "general streaming platform (not flagged as mature-only)"
+      - "dark fantasy novel adaptation"
+      - "action-adventure game"
+    
+    safety_warnings:
+      - "Mild horror elements (demonic transformations, possession)"
+      - "Fantasy violence with blood and gore"
+      - "Themes of identity loss and mental manipulation"
+      - "Religious and spiritual content that may be sensitive"
+      - "Depiction of internal struggle with corruption and darkness"
+
+  tags: ["demon-hunter", "dark-fantasy", "action-rpg", "corrupted-hero", "supernatural"]
+  versioning:
+    created_at: "2024-01-15T10:30:00Z"
+    last_modified: "2024-01-15T10:30:00Z"
+    version: "1.0.0"
+  canon_status: "example"
+  license: "CC-BY-4.0"
+
+# Additional Examples for Different Content Levels
+
+# Example 1: Family-Friendly Character
+# meta:
+#   character_content_profile:
+#     target_audience:
+#       age_range: "6+"
+#       demographics: "Children and families; fantasy adventure fans"
+#       tone_alignment: "adventurous"
+#     appropriateness:
+#       violence_level: "cartoon"
+#       sexuality_level: "none"
+#       language_level: "clean"
+#       cultural_sensitivity: []
+#     content_rating:
+#       - system: "ESRB"
+#         rating: "E for Everyone"
+#         notes: "Cartoon violence, no inappropriate content"
+#       - system: "PEGI"
+#         rating: "3"
+#         notes: "Suitable for all ages"
+#     deployment_contexts:
+#       - "children's games"
+#       - "family entertainment"
+#       - "educational platforms"
+#     safety_warnings: []
+
+# Example 2: Mature Character
+# meta:
+#   character_content_profile:
+#     target_audience:
+#       age_range: "18+"
+#       demographics: "Adult gamers; horror fans; mature audiences"
+#       tone_alignment: "dark"
+#     appropriateness:
+#       violence_level: "extreme"
+#       sexuality_level: "explicit"
+#       language_level: "explicit"
+#       cultural_sensitivity:
+#         - "Contains graphic horror imagery"
+#         - "Themes of psychological trauma"
+#         - "May trigger anxiety or fear responses"
+#     content_rating:
+#       - system: "ESRB"
+#         rating: "AO (Adults Only)"
+#         notes: "Extreme violence, explicit sexual content, strong language"
+#       - system: "PEGI"
+#         rating: "18"
+#         notes: "Extreme violence, sexual content, strong language"
+#       - system: "MPA"
+#         rating: "NC-17"
+#         notes: "No one 17 and under admitted"
+#     deployment_contexts:
+#       - "mature gaming platforms"
+#       - "adult streaming services"
+#       - "horror entertainment venues"
+#     safety_warnings:
+#       - "Extreme graphic violence"
+#       - "Explicit sexual content"
+#       - "Strong language and profanity"
+#       - "Psychological horror elements"
+#       - "Content not suitable for minors"

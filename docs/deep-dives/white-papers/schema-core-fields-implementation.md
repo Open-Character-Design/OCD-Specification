@@ -14,7 +14,7 @@ tags:
 
 ## Overview
 
-This document outlines the updates made to the Open Character Design Specification core schema (`spec/core.schema.json`) to align with the research findings from [Common Character Definition Fields Across All Mediums](../../deep-dives/research/common-character-fields.md). The updates ensure that OCD's validation system implements the universal character attributes identified through comprehensive cross-media analysis.
+This document outlines the updates made to the Open Character Design Specification core schema (`spec/core.schema.json`) to align with the research findings from [Common Character Definition Fields Across All Mediums](../research/common-character-fields.md). The updates ensure that OCD's validation system implements the universal character attributes identified through comprehensive cross-media analysis.
 
 ## Research Foundation
 
@@ -244,4 +244,4 @@ The updated schema provides the technical foundation for OCD's goal of standardi
 
 ---
 
-*For the complete research foundation, see [Common Character Definition Fields Across All Mediums](../../deep-dives/research/common-character-fields.md). For implementation examples, see [character-research-example.json](../../examples/templates/character-research-example.json).*
+*For the complete research foundation, see [Common Character Definition Fields Across All Mediums](../research/common-character-fields.md). For implementation examples, see [character-research-example.json](../../examples/templates/character-research-example.json).*

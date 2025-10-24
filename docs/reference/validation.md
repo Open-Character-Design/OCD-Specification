@@ -3,10 +3,10 @@
 The Open Character Design Specification provides flexible validation with two distinct modes and support for custom specification overlays.
 
 !!! tip "Validation Methodology"
-    For systematic approaches to character validation and quality assessment, see our [Methodology Guides](../../deep-dives/methodology/index.md) section, including the Character Analysis Framework for comprehensive validation strategies.
+    For systematic approaches to character validation and quality assessment, see our [Methodology Guides](../deep-dives/methodology/index.md) section, including the Character Analysis Framework for comprehensive validation strategies.
 
 !!! info "Research Foundation"
-    The validation criteria are based on research into universal character definition fields across all mediums. See [Common Character Definition Fields Across All Mediums](../../deep-dives/research/common-character-fields.md) for the theoretical foundation behind OCD's validation approach.
+    The validation criteria are based on research into universal character definition fields across all mediums. See [Common Character Definition Fields Across All Mediums](../deep-dives/research/common-character-fields.md) for the theoretical foundation behind OCD's validation approach.
 
 ## Validation Modes
 

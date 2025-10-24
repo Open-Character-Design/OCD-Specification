@@ -273,6 +273,82 @@ The default specification defines optional fields with type validation:
   - path: "meta.content_rating"
     type: string
 
+  - path: "meta.character_content_profile"
+    type: object
+    presence: optional
+
+  - path: "meta.character_content_profile.target_audience"
+    type: object
+    presence: optional
+
+  - path: "meta.character_content_profile.target_audience.age_range"
+    type: string
+    presence: optional
+
+  - path: "meta.character_content_profile.target_audience.demographics"
+    type: string
+    presence: optional
+
+  - path: "meta.character_content_profile.target_audience.tone_alignment"
+    type: string
+    presence: optional
+
+  - path: "meta.character_content_profile.appropriateness"
+    type: object
+    presence: optional
+
+  - path: "meta.character_content_profile.appropriateness.violence_level"
+    type: string
+    enum: ["none", "cartoon", "realistic", "extreme"]
+    presence: optional
+
+  - path: "meta.character_content_profile.appropriateness.sexuality_level"
+    type: string
+    enum: ["none", "implied", "explicit"]
+    presence: optional
+
+  - path: "meta.character_content_profile.appropriateness.language_level"
+    type: string
+    enum: ["clean", "mild", "strong", "explicit"]
+    presence: optional
+
+  - path: "meta.character_content_profile.appropriateness.cultural_sensitivity"
+    type: array
+    items:
+      type: string
+    presence: optional
+
+  - path: "meta.character_content_profile.content_rating"
+    type: array
+    items:
+      type: object
+    presence: optional
+
+  - path: "meta.character_content_profile.content_rating[].system"
+    type: string
+    enum: ["ESRB", "PEGI", "IARC", "MPA", "CERO", "USK", "ACB"]
+    presence: required
+
+  - path: "meta.character_content_profile.content_rating[].rating"
+    type: string
+    presence: required
+
+  - path: "meta.character_content_profile.content_rating[].notes"
+    type: string
+    presence: optional
+
+  - path: "meta.character_content_profile.deployment_contexts"
+    type: array
+    items:
+      type: string
+    presence: optional
+
+  - path: "meta.character_content_profile.safety_warnings"
+    type: array
+    items:
+      type: string
+    presence: optional
+
   - path: "meta.versioning"
     type: object
 
@@ -316,6 +392,88 @@ personality:
       value: 8
 meta:
   tags: ["sci-fi", "android", "analyst"]
+```
+
+### Character with Content Rating
+
+```yaml
+ocd_version: "0.0.1"
+id: "char-003"
+names:
+  canon: "Seraphine Fireblade"
+identity:
+  entity_kind: "person"
+  species: "human"
+  sapience_level: "sapient"
+meta:
+  character_content_profile:
+    target_audience:
+      age_range: "16+"
+      demographics: "Fans of action RPGs; teen and adult players"
+      tone_alignment: "gritty"
+    appropriateness:
+      violence_level: "realistic"
+      sexuality_level: "implied"
+      language_level: "mild"
+      cultural_sensitivity:
+        - "Depicts religious iconography in dark fantasy context"
+    content_rating:
+      - system: "ESRB"
+        rating: "T for Teen"
+        notes: "Rated T for fantasy violence, mild language, and suggestive themes"
+      - system: "PEGI"
+        rating: "16"
+        notes: "Realistic-looking violence against humans and non-explicit sexual content"
+    deployment_contexts:
+      - "teen action RPG"
+      - "fantasy-themed digital comic"
+    safety_warnings:
+      - "Mild horror elements (demonic transformations, possession)"
+      - "Fantasy violence with blood"
+  tags: ["demon-hunter", "dark-fantasy", "action-rpg"]
+```
+
+## Content Rating Validation
+
+The default specification includes comprehensive validation for character content profiles under the `meta.character_content_profile` field. This optional field enables responsible character deployment across different platforms and audiences.
+
+### Validation Rules
+
+- **Optional Fields**: All content profile fields are optional, even in strict validation mode
+- **Enum Validation**: Restricted values enforced for violence_level, sexuality_level, language_level
+- **System Validation**: Rating system must be from approved list (ESRB, PEGI, IARC, MPA, CERO, USK, ACB)
+- **Structure Validation**: Nested objects validated for proper types and required fields
+
+### Content Level Enums
+
+**Violence Level**: `none`, `cartoon`, `realistic`, `extreme`
+**Sexuality Level**: `none`, `implied`, `explicit`
+**Language Level**: `clean`, `mild`, `strong`, `explicit`
+**Rating Systems**: `ESRB`, `PEGI`, `IARC`, `MPA`, `CERO`, `USK`, `ACB`
+
+### Validation Examples
+
+```yaml
+# Valid content profile
+meta:
+  character_content_profile:
+    appropriateness:
+      violence_level: "realistic"  # Valid enum value
+    content_rating:
+      - system: "ESRB"             # Valid rating system
+        rating: "T for Teen"       # Required field
+        notes: "Fantasy violence"  # Optional field
+
+# Invalid content profile (will generate warnings)
+meta:
+  character_content_profile:
+    appropriateness:
+      violence_level: "moderate"   # Invalid enum value
+    content_rating:
+      - system: "INVALID"          # Invalid rating system
+        rating: "T for Teen"
+      # Missing required 'rating' field
+      - system: "ESRB"
 ```
 
 ## Extending the Default Spec

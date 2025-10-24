@@ -555,7 +555,7 @@ meta:
 The `ai_agent` block provides comprehensive configuration for AI-powered character interactions across multiple mediums. This optional field enables standardized AI behavior modeling while remaining optional even in strict validation mode.
 
 !!! info "AI Agent Research"
-    For comprehensive research on AI agent configuration patterns and implementation strategies, see our [AI Agent Fields Research](../../deep-dives/research/ai-agent-fields-research.md) paper.
+    For comprehensive research on AI agent configuration patterns and implementation strategies, see our [AI Agent Fields Research](../deep-dives/research/ai-agent-fields-research.md) paper.
 
 ### Core Fields
 
@@ -898,7 +898,162 @@ The validator normalizes:
 - **Professional**: `mentor`, `student`, `colleague`, `rival`
 - **Social**: `friend`, `ally`, `enemy`, `nemesis`
 
-### Content Rating Values
-- **Violence**: `none`, `minimal`, `moderate`, `fantasy`, `realistic`
-- **Sexuality**: `none`, `minimal`, `moderate`, `explicit`
-- **Language**: `none`, `mild`, `moderate`, `strong`
+## Character Content Profile Block
+
+The `meta.character_content_profile` block provides comprehensive content rating and appropriateness information for character deployment across different platforms and audiences. This optional field enables responsible character deployment while respecting regional and cultural sensitivities.
+
+!!! info "Content Rating Research"
+    For comprehensive research on unified content rating systems and their implementation, see our [Content Ratings Research](../deep-dives/research/content-ratings-unified-schema.md) paper.
+
+### Core Fields
+
+| Field | Type | Required | Description | Example |
+|-------|------|----------|-------------|---------|
+| `target_audience` | object | ❌ | Target audience demographics and characteristics | See [Target Audience](#target-audience) |
+| `appropriateness` | object | ❌ | Content appropriateness levels | See [Appropriateness](#appropriateness) |
+| `content_rating` | array | ❌ | Platform-specific content ratings | See [Content Rating](#content-rating) |
+| `deployment_contexts` | array | ❌ | Suitable deployment platforms | `["teen action RPG", "streaming platform"]` |
+| `safety_warnings` | array | ❌ | Content warnings for users | `["Mild horror elements", "Fantasy violence"]` |
+
+### Target Audience
+
+| Field | Type | Required | Description | Example |
+|-------|------|----------|-------------|---------|
+| `age_range` | string | ❌ | Target age range | `"16+"`, `"13-18"`, `"All ages"` |
+| `demographics` | string | ❌ | Target demographic description | `"Fans of action RPGs; teen and adult players"` |
+| `tone_alignment` | string | ❌ | Content tone and style | `"gritty"`, `"family-friendly"`, `"dark"` |
+
+### Appropriateness
+
+| Field | Type | Required | Description | Valid Values |
+|-------|------|----------|-------------|--------------|
+| `violence_level` | enum | ❌ | Level of violent content | `none`, `cartoon`, `realistic`, `extreme` |
+| `sexuality_level` | enum | ❌ | Level of sexual content | `none`, `implied`, `explicit` |
+| `language_level` | enum | ❌ | Level of inappropriate language | `clean`, `mild`, `strong`, `explicit` |
+| `cultural_sensitivity` | array | ❌ | Cultural sensitivity warnings | `["Religious content", "Historical themes"]` |
+
+### Content Rating
+
+Array of platform-specific ratings with the following structure:
+
+| Field | Type | Required | Description | Valid Values |
+|-------|------|----------|-------------|--------------|
+| `system` | enum | ✅ | Rating system identifier | `ESRB`, `PEGI`, `IARC`, `MPA`, `CERO`, `USK`, `ACB` |
+| `rating` | string | ✅ | Specific rating from the system | `"T for Teen"`, `"16"`, `"PG-13"` |
+| `notes` | string | ❌ | Additional rating context | `"Rated T for fantasy violence"` |
+
+### Examples
+
+```yaml title="Basic Content Profile"
+meta:
+  character_content_profile:
+    target_audience:
+      age_range: "13+"
+      demographics: "General audience, fantasy fans"
+      tone_alignment: "adventurous"
+    
+    appropriateness:
+      violence_level: "cartoon"
+      sexuality_level: "none"
+      language_level: "clean"
+      cultural_sensitivity: []
+    
+    content_rating:
+      - system: "ESRB"
+        rating: "E10+"
+        notes: "Cartoon violence, no inappropriate content"
+      - system: "PEGI"
+        rating: "7"
+        notes: "Mild violence, suitable for children"
+    
+    deployment_contexts:
+      - "family-friendly games"
+      - "children's entertainment"
+      - "educational platforms"
+    
+    safety_warnings: []
+```
+
+```yaml title="Mature Content Profile"
+meta:
+  character_content_profile:
+    target_audience:
+      age_range: "18+"
+      demographics: "Adult gamers, horror fans"
+      tone_alignment: "dark"
+    
+    appropriateness:
+      violence_level: "extreme"
+      sexuality_level: "explicit"
+      language_level: "explicit"
+      cultural_sensitivity:
+        - "Contains graphic horror imagery"
+        - "Themes of psychological trauma"
+    
+    content_rating:
+      - system: "ESRB"
+        rating: "AO"
+        notes: "Adults Only - extreme violence, explicit sexual content"
+      - system: "PEGI"
+        rating: "18"
+        notes: "Extreme violence, sexual content, strong language"
+      - system: "MPA"
+        rating: "NC-17"
+        notes: "No one 17 and under admitted"
+    
+    deployment_contexts:
+      - "mature gaming platforms"
+      - "adult streaming services"
+      - "horror entertainment venues"
+    
+    safety_warnings:
+      - "Extreme graphic violence"
+      - "Explicit sexual content"
+      - "Strong language and profanity"
+      - "Psychological horror elements"
+      - "Content not suitable for minors"
+```
+
+### Rating System Mappings
+
+#### Violence Level Mappings
+
+| Violence Level | ESRB | PEGI | IARC | MPA |
+|----------------|------|------|------|-----|
+| none | E | 3 | 3+ | G |
+| cartoon | E10+ | 7 | 7+ | PG |
+| realistic | T | 12 | 12+ | PG-13 |
+| extreme | M | 16 | 16+ | R |
+
+#### Sexuality Level Mappings
+
+| Sexuality Level | ESRB | PEGI | IARC | MPA |
+|-----------------|------|------|------|-----|
+| none | E | 3 | 3+ | G |
+| implied | T | 12 | 12+ | PG-13 |
+| explicit | M | 16 | 16+ | R |
+
+#### Language Level Mappings
+
+| Language Level | ESRB | PEGI | IARC | MPA |
+|----------------|------|------|------|-----|
+| clean | E | 3 | 3+ | G |
+| mild | T | 12 | 12+ | PG |
+| strong | M | 16 | 16+ | PG-13 |
+| explicit | M | 18 | 18+ | R |
+
+### Best Practices
+
+1. **Assess Content Honestly**: Evaluate violence, sexuality, and language levels objectively
+2. **Consider Cultural Context**: Include relevant cultural sensitivity warnings
+3. **Specify Target Audience**: Clearly define age range and demographic characteristics
+4. **Map to Rating Systems**: Use provided mappings for platform-specific ratings
+5. **Document Safety Concerns**: List specific content warnings for users
+6. **Regular Review**: Update ratings as content or standards change
+
+### Validation Behavior
+
+- **Optional Fields**: All content profile fields are optional, even in strict validation mode
+- **Enum Validation**: Restricted values enforced for violence_level, sexuality_level, language_level
+- **System Validation**: Rating system must be from approved list
+- **Structure Validation**: Nested objects validated for proper types and required fields

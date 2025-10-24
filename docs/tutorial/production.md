@@ -3,10 +3,10 @@
 In this final step, you'll learn best practices for production deployment, validation workflows, and maintaining OCD characters.
 
 !!! tip "Production Case Studies"
-    For real-world examples of OCD implementation in production environments, see our [Case Studies](../../deep-dives/case-studies/index.md) section, including detailed accounts of game studio integrations and enterprise deployments.
+    For real-world examples of OCD implementation in production environments, see our [Case Studies](../deep-dives/case-studies/index.md) section, including detailed accounts of game studio integrations and enterprise deployments.
 
 !!! tip "AI Agent Production Configuration"
-    For AI-powered characters, use OCD's `ai_agent` fields to configure production-ready AI behavior. This includes safety settings, memory configuration, and multi-agent orchestration. See our [AI Agent Fields Research](../../deep-dives/research/ai-agent-fields-research.md) for comprehensive guidance on AI agent configuration best practices.
+    For AI-powered characters, use OCD's `ai_agent` fields to configure production-ready AI behavior. This includes safety settings, memory configuration, and multi-agent orchestration. See our [AI Agent Fields Research](../deep-dives/research/ai-agent-fields-research.md) for comprehensive guidance on AI agent configuration best practices.
 
 ## What You'll Learn
 
@@ -424,24 +424,119 @@ names:
     de-DE: "Rita"
 ```
 
-### 3. Comprehensive Content Ratings
+### 3. Content Rating and Appropriateness
 
-Always include appropriate content ratings:
+For production deployment, always include comprehensive content rating information to ensure appropriate character deployment across different platforms and audiences.
+
+!!! info "Content Rating Research"
+    For detailed guidance on content rating systems and cultural sensitivity, see our [Content Ratings Research](../deep-dives/research/content-ratings-unified-schema.md) paper.
+
+#### Basic Content Profile
 
 ```yaml
-meta_properties:
-  target_audience:
-    age_range: "13+"
-    tone_alignment: "heroic fantasy"
-  appropriateness:
-    violence: "fantasy combat"
-    sexuality: "minimal"
-    language: "mild"
-  content_ratings:
-    - system: "ESRB"
-      rating: "T"
-      notes: "Fantasy violence, mild language"
+meta:
+  character_content_profile:
+    target_audience:
+      age_range: "13+"
+      demographics: "Teen and adult fantasy fans; RPG enthusiasts"
+      tone_alignment: "heroic"
+    
+    appropriateness:
+      violence_level: "realistic"      # none, cartoon, realistic, extreme
+      sexuality_level: "none"          # none, implied, explicit
+      language_level: "mild"           # clean, mild, strong, explicit
+      cultural_sensitivity:
+        - "Contains fantasy magic and supernatural elements"
+        - "Themes of good vs evil may be sensitive to some groups"
+    
+    content_rating:
+      - system: "ESRB"
+        rating: "T for Teen"
+        notes: "Fantasy violence, mild language, and suggestive themes"
+      - system: "PEGI"
+        rating: "12"
+        notes: "Violence against fantasy characters"
+      - system: "IARC"
+        rating: "12+"
+        notes: "Fantasy violence and mild language"
+      - system: "MPA"
+        rating: "PG-13"
+        notes: "Fantasy action violence"
+    
+    deployment_contexts:
+      - "teen fantasy RPG"
+      - "streaming platform"
+      - "fantasy novel adaptation"
+    
+    safety_warnings:
+      - "Fantasy violence"
+      - "Mild peril and danger"
+      - "Supernatural themes"
 ```
+
+#### Mature Content Profile
+
+For characters with mature content:
+
+```yaml
+meta:
+  character_content_profile:
+    target_audience:
+      age_range: "18+"
+      demographics: "Adult gamers; mature fantasy fans"
+      tone_alignment: "dark"
+    
+    appropriateness:
+      violence_level: "extreme"
+      sexuality_level: "implied"
+      language_level: "strong"
+      cultural_sensitivity:
+        - "Contains graphic violence and horror elements"
+        - "Themes of corruption and moral ambiguity"
+        - "May trigger anxiety or fear responses"
+    
+    content_rating:
+      - system: "ESRB"
+        rating: "M for Mature"
+        notes: "Blood and Gore, Intense Violence, Strong Language"
+      - system: "PEGI"
+        rating: "18"
+        notes: "Extreme violence, strong language"
+      - system: "MPA"
+        rating: "R"
+        notes: "Strong violence and language throughout"
+    
+    deployment_contexts:
+      - "mature gaming platforms"
+      - "adult streaming services"
+      - "horror entertainment venues"
+    
+    safety_warnings:
+      - "Extreme graphic violence"
+      - "Strong language and profanity"
+      - "Horror and psychological elements"
+      - "Content not suitable for minors"
+```
+
+#### Rating System Selection
+
+Choose appropriate rating systems based on your target markets:
+
+- **ESRB**: North American gaming market
+- **PEGI**: European gaming market
+- **IARC**: Global digital content
+- **MPA**: Film and video content
+- **CERO**: Japanese market
+- **USK**: German market
+- **ACB**: Australian market
+
+#### Cultural Sensitivity Guidelines
+
+1. **Research Local Standards**: Understand regional content sensitivity
+2. **Document Concerns**: List specific cultural sensitivity issues
+3. **Consider Context**: Evaluate content within cultural context
+4. **Regular Updates**: Keep abreast of changing cultural norms
+5. **Expert Consultation**: Work with local cultural advisors when possible
 
 ## Validation Workflows
 
@@ -682,7 +777,10 @@ Congratulations! You've completed the OCD Tutorial. You now have:
 ### Production Checklist
 - [ ] Complete metadata with authorship and versioning
 - [ ] Localized display names
-- [ ] Comprehensive content ratings
+- [ ] Comprehensive character content profile with ratings
+- [ ] Appropriate content rating for target markets
+- [ ] Cultural sensitivity warnings documented
+- [ ] Safety warnings included
 - [ ] Proper asset references
 - [ ] Validation passes without warnings
 - [ ] All references resolved

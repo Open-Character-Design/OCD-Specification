@@ -22,6 +22,10 @@ definitions:
     AIVerbosity: ["concise", "short", "moderate", "detailed"]
     AIMemoryType: ["none", "short_term", "long_term", "hybrid"]
     AIRefusalMethod: ["polite_redirection", "direct_refusal", "topic_change"]
+    ViolenceLevel: ["none", "cartoon", "realistic", "extreme"]
+    SexualityLevel: ["none", "implied", "explicit"]
+    LanguageLevel: ["clean", "mild", "strong", "explicit"]
+    RatingSystem: ["ESRB", "PEGI", "IARC", "MPA", "CERO", "USK", "ACB"]
 
 rules:
   # Basic structure validation
@@ -325,6 +329,82 @@ rules:
 
   - path: "meta.content_rating"
     type: string
+
+  - path: "meta.character_content_profile"
+    type: object
+    presence: optional
+
+  - path: "meta.character_content_profile.target_audience"
+    type: object
+    presence: optional
+
+  - path: "meta.character_content_profile.target_audience.age_range"
+    type: string
+    presence: optional
+
+  - path: "meta.character_content_profile.target_audience.demographics"
+    type: string
+    presence: optional
+
+  - path: "meta.character_content_profile.target_audience.tone_alignment"
+    type: string
+    presence: optional
+
+  - path: "meta.character_content_profile.appropriateness"
+    type: object
+    presence: optional
+
+  - path: "meta.character_content_profile.appropriateness.violence_level"
+    type: string
+    enum: "@enums.ViolenceLevel"
+    presence: optional
+
+  - path: "meta.character_content_profile.appropriateness.sexuality_level"
+    type: string
+    enum: "@enums.SexualityLevel"
+    presence: optional
+
+  - path: "meta.character_content_profile.appropriateness.language_level"
+    type: string
+    enum: "@enums.LanguageLevel"
+    presence: optional
+
+  - path: "meta.character_content_profile.appropriateness.cultural_sensitivity"
+    type: array
+    items:
+      type: string
+    presence: optional
+
+  - path: "meta.character_content_profile.content_rating"
+    type: array
+    items:
+      type: object
+    presence: optional
+
+  - path: "meta.character_content_profile.content_rating[].system"
+    type: string
+    enum: "@enums.RatingSystem"
+    presence: required
+
+  - path: "meta.character_content_profile.content_rating[].rating"
+    type: string
+    presence: required
+
+  - path: "meta.character_content_profile.content_rating[].notes"
+    type: string
+    presence: optional
+
+  - path: "meta.character_content_profile.deployment_contexts"
+    type: array
+    items:
+      type: string
+    presence: optional
+
+  - path: "meta.character_content_profile.safety_warnings"
+    type: array
+    items:
+      type: string
+    presence: optional
 
   - path: "meta.versioning"
     type: object

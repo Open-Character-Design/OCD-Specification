@@ -72,6 +72,19 @@ This section contains peer-reviewed research, academic papers, and theoretical a
 
 **Impact**: This research forms the foundation for OCD's AI agent configuration fields, enabling standardized AI behavior modeling across text chat, voice assistants, avatar video, and multi-agent systems.
 
+### [Unified Content Ratings Schema for Character Appropriateness](content-ratings-unified-schema.md)
+**Authors**: OCD Research Team  
+**Date**: 2024  
+**Abstract**: Comprehensive analysis of major content rating systems (ESRB, PEGI, IARC, MPA) and their application to character design and deployment across different media platforms. This research establishes a unified schema for character appropriateness that enables consistent content rating across diverse platforms and audiences, with particular focus on cultural sensitivity and automated assessment capabilities.
+
+**Key Findings**:
+- Identification of universal content rating dimensions across all major systems
+- Cross-platform mapping methodology for consistent character appropriateness
+- Implementation framework for automated content rating assessment
+- Best practices for cultural sensitivity and audience targeting
+
+**Impact**: This research enables responsible character deployment through standardized content rating fields in OCD, ensuring appropriate content classification across gaming, entertainment, AI platforms, and interactive media while respecting regional and cultural sensitivities.
+
 ## Submission Guidelines
 
 We welcome research contributions that advance the field of character modeling and interoperability. Research papers should:

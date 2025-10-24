@@ -27,36 +27,44 @@ The Deep Dives section contains authoritative, comprehensive content that goes b
 ## Content Categories
 
 ### 📚 [Research Papers](research/index.md)
+
 Academic research and theoretical foundations of character modeling, interoperability, and cross-media character representation.
 
 **Topics include:**
+
 - Character modeling theory and psychology
 - AI persona research and behavior modeling
 - Cross-media character analysis
 - Interoperability standards research
 
 ### 📊 [Case Studies](case-studies/index.md)
+
 Real-world implementations, production deployments, and lessons learned from teams adopting OCD.
 
 **Topics include:**
+
 - Game studio adoption stories
 - AI training pipeline implementations
 - Collaborative worldbuilding projects
 - Enterprise integration experiences
 
 ### 📋 [White Papers](white-papers/index.md)
+
 Technical deep dives into OCD architecture, design decisions, and implementation strategies.
 
 **Topics include:**
+
 - Trait model design rationale
 - Validation architecture and performance
 - Interoperability standards and protocols
 - Security and privacy considerations
 
 ### 🔬 [Methodology Guides](methodology/index.md)
+
 Frameworks, processes, and systematic approaches for character analysis, quality assessment, and implementation.
 
 **Topics include:**
+
 - Character analysis frameworks
 - Quality assessment metrics and processes
 - Systematic implementation methodologies

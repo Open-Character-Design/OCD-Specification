@@ -164,4 +164,114 @@ meta:
   version: "0.0.1"
   canon_status: "official"
   license: "© Disney / Pixar"
-  expansion_hooks: ["relationship growth with WALL·E", "support humanity’s return to Earth"]
+  expansion_hooks: ["relationship growth with WALL·E", "support humanity's return to Earth"]
+
+licensing_profile:
+  schema_version: "1.0.0"
+  character:
+    id: "char_eve_walle"
+    display_name: "EVE (Extraterrestrial Vegetation Evaluator)"
+    version: "v1.0"
+
+  default_license:
+    name: "All Rights Reserved"
+    spdx_id: "NOASSERTION"
+    url: "https://www.disney.com/legal"
+    jurisdiction: "global"
+    permissions:
+      reuse: false
+      remix: false
+      commercial_use: false
+      redistribution: false
+      private_use: true
+      sublicense: false
+    restrictions:
+      attribution_required: true
+      trademark_restrictions: true
+      personality_rights_reserved: true
+      no_derivatives: true
+      other_prohibitions:
+        - "No commercial use without written permission from Disney/Pixar"
+        - "Character design and likeness are protected intellectual property"
+        - "No derivative works or adaptations without authorization"
+    attribution:
+      required: true
+      text_template: "© {year} Disney/Pixar. All Rights Reserved. EVE is a trademark of Disney/Pixar."
+      fields_required:
+        - owner
+        - license_name
+      placement_guidelines: "Must appear in credits, about page, or legal notices"
+    ownership:
+      rights_holder: "Disney/Pixar Animation Studios"
+      authors:
+        - name: "Pixar Animation Studios"
+          role: "Creator"
+      publisher: "Disney/Pixar Animation Studios"
+      contact_for_rights: "https://www.disney.com/legal"
+    provenance:
+      source_repository: "https://www.pixar.com/"
+      created: "2008-06-27T00:00:00Z"
+      last_modified: "2008-06-27T00:00:00Z"
+    notes:
+      - "EVE is a character from the 2008 Pixar film WALL·E"
+      - "Character design and likeness are protected intellectual property of Disney/Pixar"
+      - "Use in fan works may be permitted under fair use doctrine"
+
+  inheritance_policy:
+    precedence: "asset_overrides_default"
+    conflict_resolution: "most_restrictive_wins"
+    implicit_inheritance: true
+    require_explicit_for_weaken: true
+
+  character_concept:
+    inherits_default: true
+    coverage:
+      includes:
+        - "biography_text"
+        - "personality_traits"
+        - "background_story"
+        - "character_design_concept"
+      excludes:
+        - "official_artwork"
+        - "film_footage"
+        - "voice_recordings"
+
+  non_copyright_rights:
+    trademarks:
+      claimed: true
+      marks:
+        - name: "EVE"
+          type: "word_mark"
+          owner: "Disney/Pixar Animation Studios"
+        - name: "WALL·E"
+          type: "word_mark"
+          owner: "Disney/Pixar Animation Studios"
+        - name: "Pixar"
+          type: "word_mark"
+          owner: "Disney/Pixar Animation Studios"
+      usage_guidelines_url: "https://www.disney.com/legal"
+    personality_rights:
+      likeness_protected: true
+      contact_for_clearance: "https://www.disney.com/legal"
+
+  distribution:
+    allowed_channels:
+      - "fan_works"
+      - "educational_use"
+      - "personal_projects"
+    forbidden_channels:
+      - "commercial_products"
+      - "merchandise"
+      - "unauthorized_adaptations"
+      - "ai_training"
+    geo_blocks: []
+
+  compliance:
+    acknowledgements_required: true
+    attribution_bundle_file: "CREDITS.md"
+    audit_trail:
+      license_history:
+        - date: "2008-06-27"
+          change: "Character created by Pixar Animation Studios for WALL·E film"
+        - date: "2025-01-01"
+          change: "Licensing profile established for OCD specification"

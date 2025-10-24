@@ -715,6 +715,7 @@
         "media_profiles": { "type": "object", "additionalProperties": true },
         "ai_agent": { "$ref": "#/$defs/AIAgentProfile" },
         "meta": { "$ref": "#/$defs/Meta" },
+        "licensing_profile": { "$ref": "#/$defs/LicensingProfile" },
         "extras": { "type": "object", "additionalProperties": true }
       },
       "additionalProperties": false
@@ -860,6 +861,354 @@
           "type": "array",
           "items": { "type": "string" }
         }
+      },
+      "additionalProperties": true
+    },
+    "License": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string" },
+        "spdx_id": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "jurisdiction": { "type": "string" },
+        "territory_exceptions": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "term": {
+          "type": "object",
+          "properties": {
+            "start": { "type": "string", "format": "date" },
+            "end": { "type": ["string", "null"], "format": "date" },
+            "revocable": { "type": "boolean" }
+          },
+          "additionalProperties": true
+        },
+        "permissions": {
+          "type": "object",
+          "properties": {
+            "reuse": { "type": "boolean" },
+            "remix": { "type": "boolean" },
+            "commercial_use": { "type": "boolean" },
+            "redistribution": { "type": "boolean" },
+            "private_use": { "type": "boolean" },
+            "sublicense": { "type": "boolean" }
+          },
+          "additionalProperties": true
+        },
+        "restrictions": {
+          "type": "object",
+          "properties": {
+            "attribution_required": { "type": "boolean" },
+            "share_alike": { "type": "boolean" },
+            "non_commercial": { "type": "boolean" },
+            "no_derivatives": { "type": "boolean" },
+            "trademark_restrictions": { "type": "boolean" },
+            "personality_rights_reserved": { "type": "boolean" },
+            "territory_limited": { "type": "boolean" },
+            "embargoed_uses": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "other_prohibitions": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "additionalProperties": true
+        },
+        "attribution": {
+          "type": "object",
+          "properties": {
+            "required": { "type": "boolean" },
+            "text_template": { "type": "string" },
+            "fields_required": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "placement_guidelines": { "type": "string" }
+          },
+          "additionalProperties": true
+        },
+        "ownership": {
+          "type": "object",
+          "properties": {
+            "rights_holder": { "type": "string" },
+            "authors": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "role": { "type": "string" },
+                  "contact": { "type": "string" }
+                },
+                "additionalProperties": true
+              }
+            },
+            "publisher": { "type": "string" },
+            "contact_for_rights": { "type": "string" }
+          },
+          "additionalProperties": true
+        },
+        "provenance": {
+          "type": "object",
+          "properties": {
+            "source_repository": { "type": "string", "format": "uri" },
+            "asset_registry_ids": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "created": { "type": "string", "format": "date-time" },
+            "last_modified": { "type": "string", "format": "date-time" },
+            "checksum_manifest": { "type": ["string", "null"] }
+          },
+          "additionalProperties": true
+        },
+        "notes": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "InheritancePolicy": {
+      "type": "object",
+      "properties": {
+        "precedence": {
+          "type": "string",
+          "enum": ["asset_overrides_default", "default_overrides_asset", "merge_most_restrictive"]
+        },
+        "conflict_resolution": {
+          "type": "string",
+          "enum": ["most_restrictive_wins", "least_restrictive_wins", "explicit_wins"]
+        },
+        "implicit_inheritance": { "type": "boolean" },
+        "require_explicit_for_weaken": { "type": "boolean" },
+        "explicit_waivers_and_grants": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "asset_id": { "type": "string" },
+              "waiver_type": { "type": "string" },
+              "granted_by": { "type": "string" },
+              "date": { "type": "string", "format": "date" },
+              "notes": { "type": "string" }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "PlatformOverrides": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "license_file_path": { "type": "string" },
+          "spdx_id": { "type": "string" },
+          "license_category": { "type": "string" },
+          "attribution_url": { "type": "string", "format": "uri" },
+          "model_card_license": { "type": "string" },
+          "allow_commercial_derivatives": { "type": "boolean" },
+          "seat_type": { "type": "string" },
+          "redistribution": { "type": "boolean" },
+          "downloadable": { "type": "boolean" },
+          "license_tag": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "CharacterConcept": {
+      "type": "object",
+      "properties": {
+        "inherits_default": { "type": "boolean" },
+        "license": { "$ref": "#/$defs/License" },
+        "coverage": {
+          "type": "object",
+          "properties": {
+            "includes": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "excludes": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "ThirdPartyComponent": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string" },
+        "source_url": { "type": "string", "format": "uri" },
+        "license": { "$ref": "#/$defs/License" },
+        "attribution_override": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "AssetLicense": {
+      "type": "object",
+      "required": ["id", "type", "title"],
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "title": { "type": "string" },
+        "source_url": { "type": "string", "format": "uri" },
+        "authors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "role": { "type": "string" }
+            },
+            "additionalProperties": true
+          }
+        },
+        "inherits_default": { "type": "boolean" },
+        "license": { "$ref": "#/$defs/License" },
+        "third_party_components": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/ThirdPartyComponent" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "NonCopyrightRights": {
+      "type": "object",
+      "properties": {
+        "trademarks": {
+          "type": "object",
+          "properties": {
+            "claimed": { "type": "boolean" },
+            "marks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "type": {
+                    "type": "string",
+                    "enum": ["word_mark", "logo_mark", "design_mark", "service_mark"]
+                  },
+                  "owner": { "type": "string" }
+                },
+                "additionalProperties": true
+              }
+            },
+            "usage_guidelines_url": { "type": "string", "format": "uri" }
+          },
+          "additionalProperties": true
+        },
+        "personality_rights": {
+          "type": "object",
+          "properties": {
+            "likeness_protected": { "type": "boolean" },
+            "contact_for_clearance": { "type": "string" }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "Distribution": {
+      "type": "object",
+      "properties": {
+        "allowed_channels": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "forbidden_channels": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "geo_blocks": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "Compliance": {
+      "type": "object",
+      "properties": {
+        "acknowledgements_required": { "type": "boolean" },
+        "attribution_bundle_file": { "type": "string" },
+        "audit_trail": {
+          "type": "object",
+          "properties": {
+            "license_history": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "date": { "type": "string", "format": "date" },
+                  "change": { "type": "string" }
+                },
+                "additionalProperties": true
+              }
+            },
+            "grants_and_waivers": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "EffectivePolicy": {
+      "type": "object",
+      "properties": {
+        "evaluation_mode": {
+          "type": "string",
+          "enum": ["most_restrictive_wins", "least_restrictive_wins", "explicit_wins"]
+        },
+        "computed_on_save": { "type": "boolean" },
+        "output_fields": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "LicensingProfile": {
+      "type": "object",
+      "required": ["schema_version", "character", "default_license", "inheritance_policy"],
+      "properties": {
+        "schema_version": { "type": "string" },
+        "character": {
+          "type": "object",
+          "required": ["id", "display_name", "version"],
+          "properties": {
+            "id": { "type": "string" },
+            "display_name": { "type": "string" },
+            "version": { "type": "string" }
+          },
+          "additionalProperties": true
+        },
+        "default_license": { "$ref": "#/$defs/License" },
+        "inheritance_policy": { "$ref": "#/$defs/InheritancePolicy" },
+        "platform_overrides": { "$ref": "#/$defs/PlatformOverrides" },
+        "character_concept": { "$ref": "#/$defs/CharacterConcept" },
+        "assets": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/AssetLicense" }
+        },
+        "non_copyright_rights": { "$ref": "#/$defs/NonCopyrightRights" },
+        "distribution": { "$ref": "#/$defs/Distribution" },
+        "compliance": { "$ref": "#/$defs/Compliance" },
+        "effective_policy": { "$ref": "#/$defs/EffectivePolicy" }
       },
       "additionalProperties": true
     }

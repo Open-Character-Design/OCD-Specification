@@ -174,6 +174,109 @@ meta:
   license: "© Wizards of the Coast"
   expansion_hooks: ["future retellings of Mithral Hall wars", "mentor legacy arcs"]
 
+licensing_profile:
+  schema_version: "1.0.0"
+  character:
+    id: "char_bruenor_battlehammer"
+    display_name: "Bruenor Battlehammer"
+    version: "v1.0"
+
+  default_license:
+    name: "All Rights Reserved"
+    spdx_id: "NOASSERTION"
+    url: "https://company.wizards.com/en/legal/wizardscoasts/terms"
+    jurisdiction: "global"
+    permissions:
+      reuse: false
+      remix: false
+      commercial_use: false
+      redistribution: false
+      private_use: true
+      sublicense: false
+    restrictions:
+      attribution_required: true
+      trademark_restrictions: true
+      personality_rights_reserved: true
+      other_prohibitions:
+        - "No commercial use without written permission from Wizards of the Coast"
+        - "Character name and likeness are protected trademarks"
+    attribution:
+      required: true
+      text_template: "© {year} Wizards of the Coast. All Rights Reserved. Bruenor Battlehammer is a trademark of Wizards of the Coast."
+      fields_required:
+        - owner
+        - license_name
+      placement_guidelines: "Must appear in credits, about page, or legal notices"
+    ownership:
+      rights_holder: "Wizards of the Coast LLC"
+      authors:
+        - name: "R.A. Salvatore"
+          role: "Creator"
+      publisher: "Wizards of the Coast LLC"
+      contact_for_rights: "https://company.wizards.com/en/legal/wizardscoasts/terms"
+    provenance:
+      source_repository: "https://dnd.wizards.com/"
+      created: "1988-01-01T00:00:00Z"
+      last_modified: "1988-01-01T00:00:00Z"
+    notes:
+      - "Bruenor Battlehammer is a character from the Forgotten Realms campaign setting"
+      - "Character name and likeness are trademarks of Wizards of the Coast"
+      - "Use in fan works may be permitted under fair use doctrine"
+
+  inheritance_policy:
+    precedence: "asset_overrides_default"
+    conflict_resolution: "most_restrictive_wins"
+    implicit_inheritance: true
+    require_explicit_for_weaken: true
+
+  character_concept:
+    inherits_default: true
+    coverage:
+      includes:
+        - "biography_text"
+        - "stat_blocks"
+        - "personality_traits"
+        - "background_story"
+      excludes:
+        - "official_artwork"
+        - "trademarked_names"
+
+  non_copyright_rights:
+    trademarks:
+      claimed: true
+      marks:
+        - name: "Bruenor Battlehammer"
+          type: "word_mark"
+          owner: "Wizards of the Coast LLC"
+        - name: "Forgotten Realms"
+          type: "word_mark"
+          owner: "Wizards of the Coast LLC"
+      usage_guidelines_url: "https://company.wizards.com/en/legal/wizardscoasts/terms"
+    personality_rights:
+      likeness_protected: true
+      contact_for_clearance: "https://company.wizards.com/en/legal/wizardscoasts/terms"
+
+  distribution:
+    allowed_channels:
+      - "fan_works"
+      - "educational_use"
+      - "personal_projects"
+    forbidden_channels:
+      - "commercial_products"
+      - "merchandise"
+      - "unauthorized_adaptations"
+    geo_blocks: []
+
+  compliance:
+    acknowledgements_required: true
+    attribution_bundle_file: "CREDITS.md"
+    audit_trail:
+      license_history:
+        - date: "1988-01-01"
+          change: "Character created by R.A. Salvatore for Forgotten Realms novels"
+        - date: "2025-01-01"
+          change: "Licensing profile established for OCD specification"
+
 x-dnd5e:
   edition: "5e"
   alignment: "Lawful Good"

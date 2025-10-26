@@ -55,7 +55,7 @@
     "ajv": "^8.17.1",
     "ajv-formats": "^2.1.1",
     "yaml": "^2.4.1",
-    "jsonpath-plus": "^8.0.0"
+    "jsonpath-plus": "^10.3.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.30",

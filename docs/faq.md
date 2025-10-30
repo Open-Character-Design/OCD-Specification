@@ -2,6 +2,10 @@
 
 ## General Questions
 
+### Where should I start by role?
+
+See [Choose Your Path](start-here/paths.md) for role-based routes (creatives, interactive/game dev, production, collaboration, technical). Prefer no install? Try the [In-Browser Playground (Preview)](validation/playground.md).
+
 ### What is the Open Character Design Specification (OCD)?
 
 The Open Character Design Specification is a standardized format for describing characters in a structured, machine-readable way. It's designed to be flexible enough for creative use cases while providing enough structure for technical applications like AI systems, game engines, and APIs.

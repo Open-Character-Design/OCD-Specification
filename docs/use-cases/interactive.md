@@ -2,6 +2,9 @@
 
 Create immersive interactive experiences with OCD-powered characters that bring your stories to life in digital worlds.
 
+!!! note "Who this is for"
+    Game developers, AI engineers, technical designers. New here? See [Choose Your Path](../start-here/paths.md). Integration paths: [Integration Overview](../integration/examples.md) or try the [Playground (Preview)](../validation/playground.md).
+
 OCD bridges the gap between creative character design and technical implementation, enabling rich interactive experiences across games, visual novels, AI-driven narratives, and virtual production. Whether you're building the next blockbuster game or creating an AI-powered storytelling platform, OCD provides the structured foundation your interactive characters need.
 
 ## Game Engine Integration

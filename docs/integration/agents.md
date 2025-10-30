@@ -2,6 +2,8 @@
 
 Designing interactive agents with the Open Character Design Specification requires combining authored character data with runtime orchestration. This guide covers four operational pillars, prompt composition, memory synchronization, state management, and safety filtering, for three common deployment modes: AI agents, NPCs, and chatbots.
 
+> Audience: Agent/runtime engineers, gameplay AI, conversational systems. Validate via [Integration](examples.md) or experiment in the [Playground (Preview)](../validation/playground.md).
+
 ## Prompt Composition
 
 | Deployment | Recommended Strategy | Implementation Notes |

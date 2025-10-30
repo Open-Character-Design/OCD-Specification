@@ -49,7 +49,7 @@ This section contains peer-reviewed research, academic papers, and theoretical a
 ### [Common Character Definition Fields Across All Mediums](common-character-fields.md)
 **Authors**: OCD Research Team  
 **Date**: 2024  
-**Abstract**: Comprehensive analysis of universal character attributes that appear consistently across all storytelling mediums—literature, film, television, games, and interactive media. This research identifies the core fields that define character identity and behavior regardless of medium, forming the theoretical foundation for OCD's core validation fields.
+**Abstract**: Comprehensive analysis of universal character attributes that appear consistently across all storytelling mediums: literature, film, television, games, and interactive media. This research identifies the core fields that define character identity and behavior regardless of medium, forming the theoretical foundation for OCD's core validation fields.
 
 **Key Findings**:
 - Identification of 6 core character definition categories

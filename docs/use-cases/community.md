@@ -2,6 +2,9 @@
 
 Join the open creative ecosystem where characters transcend individual projects to become shared cultural assets.
 
+!!! note "Who this is for"
+    Open-source collaborators, educators, cross-media teams, platform builders. New here? See [Choose Your Path](../start-here/paths.md). Next steps: [Integration](../integration/examples.md) or [Playground (Preview)](../validation/playground.md).
+
 OCD isn't just a technical specification, it's the foundation for a new kind of creative community. By enabling true character portability and interoperability, OCD creates opportunities for collaboration, education, and cultural exchange that were never possible before. Welcome to the future of open creative ecosystems.
 
 ## Shared Character Libraries

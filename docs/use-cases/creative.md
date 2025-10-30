@@ -2,6 +2,9 @@
 
 Transform your creative process with OCD's structured approach to character design and worldbuilding.
 
+!!! note "Who this is for"
+    Writers, artists, narrative designers. New here? See [Choose Your Path](../start-here/paths.md). Ready to validate? Check [Integration](../integration/examples.md) or try the [Playground (Preview)](../validation/playground.md).
+
 OCD isn't just about storing character data, it's about revolutionizing how we think about character creation. By treating characters as living, structured entities rather than static images or notes, OCD enables true creative collaboration and consistency across any medium.
 
 ## Character Design Framework

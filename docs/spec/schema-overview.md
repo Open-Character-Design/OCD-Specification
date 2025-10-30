@@ -7,9 +7,9 @@ It defines how creative and technical information fits together, ensuring that c
 
 OCD schemas make your characters:
 
-* ✅ **Consistent** — same identity across engines, languages, and platforms
-* ⚙️ **Structured** — ready for AI, games, or analytics
-* 🌍 **Portable** — usable by both humans and machines
+* ✅ **Consistent**: same identity across engines, languages, and platforms
+* ⚙️ **Structured**: ready for AI, games, or analytics
+* 🌍 **Portable**: usable by both humans and machines
 
 ---
 
@@ -49,7 +49,7 @@ Each root block has a clear role and consistent validation expectations.
   `names.canon` defines the main label shown to users. `names.display` and `names.aliases` allow localized or alternate representations.
 
 * **Identity**
-  Describes biological and metaphysical traits — `species`, `pronouns`, `embodiment`. This ensures downstream systems can generate consistent runtime descriptions.
+  Describes biological and metaphysical traits: `species`, `pronouns`, `embodiment`. This ensures downstream systems can generate consistent runtime descriptions.
 
 * **Meta & Versioning**
   Holds metadata such as `tags`, `ratings`, and timestamps (`created_at`, `last_modified`) to track history and content maturity.
@@ -93,10 +93,10 @@ Normalized CharacterDefinition JSON
 
 ### Key Stages
 
-1. **Authoring** — Narrative teams write structured OCD files in YAML or JSON format.
-2. **Controlled Vocabularies** — Validation ensures consistent tags, registers, and rating terms.
-3. **Validation & Normalization** — Validators check schema, align traits, and issue diagnostics.
-4. **Runtime JSON** — Normalized data feeds into AI prompts, memory stores, or game logic systems.
+1. **Authoring**: Narrative teams write structured OCD files in YAML or JSON format.
+2. **Controlled Vocabularies**: Validation ensures consistent tags, registers, and rating terms.
+3. **Validation & Normalization**: Validators check schema, align traits, and issue diagnostics.
+4. **Runtime JSON**: Normalized data feeds into AI prompts, memory stores, or game logic systems.
 
 ---
 

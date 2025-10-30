@@ -2,6 +2,8 @@
 
 The Python validator provides comprehensive validation, normalization, and diagnostics for OCD documents using the validation spec pipeline with JSON Schema and Pydantic v2.
 
+> Audience: Developers, data engineers, CI users. Prefer no install? Try the [In-Browser Playground (Preview)](../validation/playground.md).
+
 ## Installation
 
 ```bash

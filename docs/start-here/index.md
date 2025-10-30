@@ -15,19 +15,17 @@ Welcome! This orientation page helps you navigate the Open Character Design Spec
 
 ## Choose Your Journey
 
-### 💻 **Ready to Get Started?**
-If you want to install validators and validate your first character right now:
-**[Go to Quick Install →](../getting-started.md)**
+- Creative Design → [use-cases/creative](../use-cases/creative.md)
+- Interactive & Game Dev → [use-cases/interactive](../use-cases/interactive.md)
+- Virtual & Real-Time Production → [use-cases/virtual-production](../use-cases/virtual-production.md)
+- Collaboration & Open Ecosystem → [use-cases/community](../use-cases/community.md)
+- Technical Integration → [integration/examples](../integration/examples.md)
 
-### 🗺️ **Want to Explore First?**
-Follow the step-by-step journey most teams take when adopting OCD:
+Or jump in hands-on:
 
-1. **Install & Validate** – Use the [Quick Install guide](../getting-started.md) to validate sample characters in minutes.
-2. **Learn the Basics** – The [Guided Tutorial](../tutorial/index.md) walks you through building a character with increasing depth.
-3. **Level up Authoring Skills** – Move into the [Authoring Playbook](../authoring/writing-ocd-files.md) to structure larger casts of characters.
-4. **Guard Quality** – Configure checks using the [Validation Overview](../reference/validation.md) and [Validation Modes](../tutorial/validation-modes.md).
-5. **Ship Integrations** – Plug OCD data into your tools with the [Integration guides](../integration/python-validator.md).
-6. **Reference Details** – Look up field-level rules any time in the [Field Reference](../reference/fields.md).
+- Create your first character → [Getting Started](../getting-started.md)
+- Guided path → [Tutorial](../tutorial/index.md)
+- Try in the browser (Preview) → [Playground](../validation/playground.md)
 
 !!! tip "Need a shortcut?"
     Use the global search (`/` to focus) with keywords like `traits`, `extensions`, or `validators`. Section tags and synonyms were added across the docs so relevant pages surface even if they're in different folders.

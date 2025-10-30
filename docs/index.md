@@ -8,30 +8,67 @@ Transform your character development workflow with a unified specification that 
 
 ## Quick Start
 
-Get up and running in minutes with our validators:
+Choose a path that fits how you work:
 
-=== "Python"
+<div class="features-grid">
 
-    ```bash
-    pip install ocd-validate
-    ocd-validate examples/bruenor.yaml --print
-    ```
+<div class="feature-card">
+<h3>🎨 Creative Design</h3>
+<p>Structure your characters without changing your creative process.</p>
+<p><em>Writers, artists, narrative designers</em></p>
+<p><a href="use-cases/creative/">Explore Creative →</a></p>
+</div>
 
-=== "Node.js"
+<div class="feature-card">
+<h3>🎮 Interactive & Game Dev</h3>
+<p>Build consistent NPCs and agents across engines and tools.</p>
+<p><em>Game developers, AI engineers</em></p>
+<p><a href="use-cases/interactive/">Explore Interactive →</a></p>
+</div>
 
-    ```bash
-    npm install @ocd-tools/validator
-    npx @ocd-tools/validator examples/bruenor.yaml --print
-    ```
+<div class="feature-card">
+<h3>🎬 Virtual & Real-Time Production</h3>
+<p>Keep character identity aligned across scenes and pipelines.</p>
+<p><em>Virtual production, real-time teams</em></p>
+<p><a href="use-cases/virtual-production/">Explore Production →</a></p>
+</div>
 
-[Get Started Now](getting-started.md){ .md-button .md-button--primary }
+<div class="feature-card">
+<h3>🌐 Collaboration & Open Ecosystem</h3>
+<p>Share, remix, and evolve characters across teams and platforms.</p>
+<p><em>Open-source, cross-media teams</em></p>
+<p><a href="use-cases/community/">Explore Collaboration →</a></p>
+</div>
+
+</div>
+
+### Try it in 60 seconds (no install)
+Create a minimal character file and open it in your editor. You can validate later.
+
+```yaml title="my-character.yaml"
+ocd_version: "1.0.0"
+id: "my-first-character"
+names: { canon: "Rita" }
+identity: { kind: "humanoid", species: "Human" }
+personality: { summary: "Bold and fun socialite" }
+meta:
+  tags: [mentor, human, brave]
+  versioning:
+    created_at: "2024-01-01T00:00:00Z"
+    last_modified: "2024-01-01T00:00:00Z"
+```
+
+[Start Here](start-here/){ .md-button .md-button--primary } [Get Started](getting-started.md){ .md-button }
+
+!!! note "Prefer to validate now?"
+    Use the CLI validators under [Integration](integration/examples.md), or try the [In-Browser Playground (Preview)](validation/playground.md).
 
 
 ## Why OCD?
 
 <p id="why-ocd-quip">Why OCD? Good question</p>
 
-The Open Character Design bridges creativity and technology — providing a structured, interoperable framework for defining, sharing, and evolving digital characters.
+The Open Character Design bridges creativity and technology. It provides a structured, interoperable framework for defining, sharing, and evolving digital characters.
 It helps creators maintain consistency, enhance collaboration, and connect characters across art, data, and interactive systems.
 
 ## Use Cases
@@ -56,7 +93,7 @@ From storytelling to simulation, OCD connects creativity, data, and collaboratio
 
 <h3>⚙️ <a href="use-cases/technical/">Technical Integration & Data Systems</a></h3>
 
-<p>Bridge creativity and computation. OCD provides a structured metadata layer for character systems—ideal for AI datasets, API integration, procedural pipelines, and version control in complex productions.</p>
+<p>Bridge creativity and computation. OCD provides a structured metadata layer for character systems. It is ideal for AI datasets, API integration, procedural pipelines, and version control in complex productions.</p>
 
 <p><em>For: Developers, data engineers, AI researchers</em></p>
 

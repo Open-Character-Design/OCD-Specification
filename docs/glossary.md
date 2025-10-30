@@ -22,7 +22,7 @@ A trait axis with two poles and `polarity`/`intensity` values.
 A trait with a single normalized value (0..1).
 
 **Spiky POV (Spiky Point of View)**  
-A belief or perspective held with strong conviction — one that is debatable, distinctive, and intentionally non-neutral — used to create clarity, differentiation, and memorability in ideas or products. Concept originally articulated by Wes Kao (2020), co-founder of Maven, in her essay "[Spiky point of view: Let's get a little controversial](https://www.weskao.com/blog/spiky-point-of-view-lets-get-a-little-controversial)".
+A belief or perspective held with strong conviction that is debatable, distinctive, and intentionally non-neutral. Used to create clarity, differentiation, and memorability in ideas or products. Concept originally articulated by Wes Kao (2020), co-founder of Maven, in her essay "[Spiky point of view: Let's get a little controversial](https://www.weskao.com/blog/spiky-point-of-view-lets-get-a-little-controversial)".
 
 **Flag trait**  
 A boolean trait indicating presence/absence.

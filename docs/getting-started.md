@@ -6,23 +6,14 @@ In just a few minutes, you'll be validating your first character and connecting 
 !!! tip "New to OCD?"
     If you want to explore use cases and understand what you can build first, check out the [Start Here orientation guide](start-here/index.md) for navigation help.
 
-## Installation
+## Optional: Install a validator
 
-Choose your preferred validator. OCD (will be) available for both **Python** and **Node.js**.
+When you're ready to validate locally or in CI, use the CLI validators:
 
-### 🐍 Python
+- Python: see [Validators (Python)](integration/python-validator.md)
+- JS/TS: see [Validators (JS/TS)](integration/js-ts-validator.md)
 
-```bash
-pip install ocd-validate
-```
-
-**Requirements:** Python 3.8+ and `pip`
-
-### 🟦 Node.js
-
-```bash
-npm install -g @ocd-tools/validator
-```
+Or try the [In-Browser Playground (Preview)](validation/playground.md) without installing anything.
 
 ## Quick Validation
 
@@ -58,9 +49,9 @@ You should see:
 📝 0 warnings
 ```
 
-If you do — congrats! Your OCD validator is working.
+If you do, congrats! Your OCD validator is working. Prefer no install? Use the [Playground (Preview)](validation/playground.md).
 
-## Validation Modes
+## Validation Modes (optional)
 
 The OCD validation system provides two modes to suit different needs:
 
@@ -194,5 +185,5 @@ If you run into issues:
 
 ### ✨ Tip
 
-> OCD doesn't replace your creativity — it organizes it.
+> OCD doesn't replace your creativity, it organizes it.
 > Think of it as structured imagination or version control for vision.

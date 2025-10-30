@@ -15,7 +15,7 @@ tags:
 
 ## Abstract
 
-This research paper analyzes the universal character attributes that appear consistently across all storytelling mediums—literature, film, television, games, and interactive media. Through comprehensive analysis of character creation methodologies, narrative theory, and cross-media adaptation practices, we identify the core fields that define character identity and behavior regardless of medium. These findings form the theoretical foundation for the Open Character Design Specification's core validation fields, ensuring interoperability and consistency across diverse applications.
+This research paper analyzes the universal character attributes that appear consistently across all storytelling mediums: literature, film, television, games, and interactive media. Through comprehensive analysis of character creation methodologies, narrative theory, and cross-media adaptation practices, we identify the core fields that define character identity and behavior regardless of medium. These findings form the theoretical foundation for the Open Character Design Specification's core validation fields, ensuring interoperability and consistency across diverse applications.
 
 ## Introduction
 

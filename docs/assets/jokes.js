@@ -2,30 +2,49 @@ document.addEventListener("DOMContentLoaded", () => {
     const el = document.getElementById("why-ocd-quip");
     if (!el) return;
   
-    const quips = [
-      "Why learn something new? I have Notepad…",
-      "Because your characters deserve more than a folder named *final_final_v3_reallythisone.json*.",
-      "Because brilliant ideas deserve better than sticky notes and half-finished docs.",
-      "Because a well-structured character file beats chaos in a thousand config.yaml(s).",
-      "Because creativity shouldn’t get lost between concept art, dialogue scripts, and data schemas.",
-      "Because even your characters need a little organization therapy."
+    const prefixes = [
+      "Because",
+      "Well...",
+      "Maybe",
+      "Perhaps",
+      "We believe",
+      "Let's face it,",
+      "Studies show",
+      "Unpopular opinion:",
     ];
-  
-    // Deterministic per-page (same quip for the same URL during one session)
-    const key = location.pathname + (document.title || "");
-    let seed = 0;
-    for (let i = 0; i < key.length; i++) seed = (seed * 31 + key.charCodeAt(i)) >>> 0;
-    const idx = seed % quips.length;
-  
-    el.innerHTML = quips[idx];
+    const quips = [
+      "chaotic mess works better as a character backstory.",
+      "chaotic is a great character trait, not so much a workflow.",
+      "chaos makes great stories, not great pipelines.",
+      "a well-structured character file beats chaos in a thousand txts.",
+      "brilliant ideas deserve better than half-finished docs.",
+      "clarity beats caffeine.",
+      "consistency is sexier than improv continuity.",
+      "consistency shouldn't be a plot twist.",
+      "creativity thrives when the docs aren't on fire.",
+      "creativity's fun. file management isn't. ocd fixes that.",
+      "even imagination needs documentation.",
+      "even your characters need a little organization therapy.",
+      "final_v12_really_final.txt was a cry for help.",
+      "ideas deserve better than your file naming conventions.",
+      "notepad isn't version control.",
+      "nothing kills flow like finding character_notes_v4_backup_old.",
+      "order > panic saves.",
+      "organization: the underrated art form.",
+      "sticky notes don't scale.",
+      "structure won't kill your vibe, just your chaos.",
+      "world-building shouldn't feel like archaeology.",
+      "you shouldn't need a lore historian to find your notes.",
+      "your canon shouldn't be an improv.",
+      "your characters deserve more than twelve slightly different google docs.",
+      "your creativity called... it wants a folder structure.",
+      "your lore shouldn't live in dms.",
+      "someday you'll actually remember which 'final' is final.",
+      "your world-building notes shouldn't look like a ransom letter."
+    ];
+
+  // Random per refresh
+  const idx = Math.floor(Math.random() * quips.length);
+  const prefixIdx = Math.floor(Math.random() * prefixes.length);
+  el.textContent = prefixes[prefixIdx] + " " + quips[idx];
   });
-  
-  // Optional: “shuffle” on click
-  document.addEventListener("click", (e) => {
-    if (e.target.closest("[data-quip-shuffle]")) {
-      const el = document.getElementById("why-ocd-quip");
-      if (!el) return;
-      const quips = Array.from(new Set(el.dataset.allQuips?.split("|") || []));
-    }
-  });
-  

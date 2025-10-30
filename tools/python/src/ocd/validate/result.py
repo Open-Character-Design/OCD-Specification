@@ -28,7 +28,11 @@ class Diagnostic:
     def to_dict(self) -> Dict[str, Any]:
         """Convert diagnostic to dictionary."""
         result = asdict(self)
+        # Normalize field names for cross-language JSON contract (camelCase)
         result["severity"] = self.severity.value
+        # Map snake_case internal names to camelCase JSON keys
+        result["specId"] = result.pop("spec_id")
+        result["schemaVersion"] = result.pop("schema_version")
         return result
 
 

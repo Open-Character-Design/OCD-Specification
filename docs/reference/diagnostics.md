@@ -10,6 +10,41 @@ OCD validators provide three types of feedback:
 - **⚠️ Warnings**: Suggestions for improvement (validation still succeeds)
 - **❌ Errors**: Critical issues that prevent validation
 
+## JSON Contract
+
+All official validators return a unified JSON shape:
+
+```json
+{
+  "ok": true,
+  "diagnostics": [
+    {
+      "code": "MISSING_REQUIRED_FIELD",
+      "severity": "error",
+      "message": "Required field 'id' is missing",
+      "path": "/id",
+      "rule": {"path": "id", "presence": "required"},
+      "specId": "ocd-default",
+      "schemaVersion": 1
+    }
+  ],
+  "data": { /* normalized document (present only when ok=true) */ }
+}
+```
+
+- **ok**: boolean – overall success
+- **diagnostics**: array of Diagnostic objects
+- **data**: normalized document when validation succeeds
+
+Diagnostic fields:
+- **code**: stable error/warning code
+- **severity**: `error` | `warning`
+- **message**: human-friendly detail
+- **path**: JSON Pointer-like path to offending location
+- **rule**: minimal rule context that produced the diagnostic
+- **specId**: identifier of the validation spec in effect
+- **schemaVersion**: numeric version of the validation spec schema
+
 ## Warning Codes
 
 ### Content Rating Warnings

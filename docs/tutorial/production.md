@@ -804,3 +804,19 @@ ocd-validate character.yaml --print
 - `x-pf2e`: Pathfinder 2nd Edition
 - `x-coc`: Call of Cthulhu
 - `x-savage`: Savage Worlds
+
+---
+
+## TODO: Production Notes Update
+
+**Status**: Pending  
+**Last Updated**: 2024-12-19  
+**Priority**: Medium
+
+This section needs updates to reflect recent changes to the OpenCharacter Specification:
+
+- [ ] Review and update content rating examples with latest schema
+- [ ] Add new production deployment patterns
+- [ ] Update validation commands and examples
+- [ ] Incorporate feedback from production case studies
+- [ ] Ensure all examples are current with latest OCD version

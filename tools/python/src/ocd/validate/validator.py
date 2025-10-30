@@ -278,7 +278,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         help="Path to an OCD document (YAML or JSON). Use '-' to read from standard input.",
     )
     parser.add_argument(
-        "--format",
+        "-f", "--format",
         choices=("auto", "json", "yaml"),
         default="auto",
         help="Force the input parser. Defaults to 'auto'.",

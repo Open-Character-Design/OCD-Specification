@@ -1,3 +1,16 @@
+---
+tags:
+  - interactive
+  - game-development
+  - npcs
+  - agents
+  - storytelling
+  - games
+  - characters
+  - blueprint
+  - persona
+---
+
 # Interactive & Storytelling Applications
 
 Create immersive interactive experiences with OCD-powered characters that bring your stories to life in digital worlds.
@@ -117,5 +130,28 @@ func load_character(file_path: String) -> bool:
     return true
 ```
 
-!!! tip "Ready to Build Interactive Experiences?"
-    Start with our [Integration Guides](../integration/python-validator.md) to see how to integrate OCD into your applications, or explore our [Interactive Examples](../authoring/examples.md) for implementation patterns.
+---
+
+## Choose Your Next Step
+
+<div class="features-grid">
+
+<div class="feature-card">
+<h3>✍️ Author</h3>
+<p>Create NPCs and agents</p>
+<p><a href="../getting-started.md">Get Started →</a></p>
+</div>
+
+<div class="feature-card">
+<h3>✅ Validate</h3>
+<p>Validate agent definitions</p>
+<p><a href="../validation/playground.md">Playground →</a> or <a href="../integration/examples.md">CLI Validators →</a></p>
+</div>
+
+<div class="feature-card">
+<h3>🔌 Integrate</h3>
+<p>Deploy in your engine</p>
+<p><a href="../integration/agents.md">Agent Patterns →</a> or <a href="../integration/extensions-and-namespaces.md">Extensions →</a></p>
+</div>
+
+</div>

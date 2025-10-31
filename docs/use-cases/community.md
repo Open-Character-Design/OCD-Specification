@@ -629,5 +629,28 @@ The future of character design isn't about better tools, it's about better syste
 
 The future of character design is open, collaborative, and global. And it starts with OCD.
 
-!!! tip "Ready to Join the Community?"
-    Start by exploring our [Community Resources](../governance/contributing-to-spec.md) to learn how to contribute, or check out our [Examples Gallery](../authoring/examples.md) to see what's possible with OCD.
+---
+
+## Choose Your Next Step
+
+<div class="features-grid">
+
+<div class="feature-card">
+<h3>✍️ Author</h3>
+<p>Share your characters</p>
+<p><a href="../getting-started.md">Get Started →</a></p>
+</div>
+
+<div class="feature-card">
+<h3>✅ Validate</h3>
+<p>Ensure quality before sharing</p>
+<p><a href="../validation/playground.md">Playground →</a> or <a href="../integration/examples.md">CLI Validators →</a></p>
+</div>
+
+<div class="feature-card">
+<h3>🔌 Integrate</h3>
+<p>Contribute to the ecosystem</p>
+<p><a href="../governance/contributing-to-spec.md">Contributing Guide →</a> or <a href="../authoring/examples.md">Examples →</a></p>
+</div>
+
+</div>

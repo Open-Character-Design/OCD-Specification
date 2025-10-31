@@ -1,3 +1,15 @@
+---
+tags:
+  - agents
+  - npcs
+  - ai
+  - conversational
+  - chatbots
+  - characters
+  - runtime
+  - deployment
+---
+
 # Operational Guidance for Conversational Agents
 
 Designing interactive agents with the Open Character Design Specification requires combining authored character data with runtime orchestration. This guide covers four operational pillars, prompt composition, memory synchronization, state management, and safety filtering, for three common deployment modes: AI agents, NPCs, and chatbots.

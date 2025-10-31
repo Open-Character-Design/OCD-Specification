@@ -1,3 +1,14 @@
+---
+tags:
+  - creative
+  - design
+  - characters
+  - persona
+  - writing
+  - art
+  - worldbuilding
+---
+
 # Creative Applications
 
 Transform your creative process with OCD's structured approach to character design and worldbuilding.
@@ -251,5 +262,28 @@ OCD represents a fundamental shift in how we think about character creation. Ins
 
 The future of character design isn't about better tools, it's about better systems. And OCD is the foundation that makes it all possible.
 
-!!! tip "Ready to Transform Your Creative Process?"
-    Start with our [Getting Started Guide](../getting-started.md) to create your first OCD character, or explore our [Examples Gallery](../authoring/examples.md) to see how other creators are using OCD.
+---
+
+## Choose Your Next Step
+
+<div class="features-grid">
+
+<div class="feature-card">
+<h3>✍️ Author</h3>
+<p>Create your first character</p>
+<p><a href="../getting-started.md">Get Started →</a></p>
+</div>
+
+<div class="feature-card">
+<h3>✅ Validate</h3>
+<p>Check your character</p>
+<p><a href="../validation/playground.md">Playground →</a> or <a href="../integration/examples.md">CLI Validators →</a></p>
+</div>
+
+<div class="feature-card">
+<h3>🔌 Integrate</h3>
+<p>Use OCD in your tools</p>
+<p><a href="../integration/examples.md">Integration Guides →</a></p>
+</div>
+
+</div>

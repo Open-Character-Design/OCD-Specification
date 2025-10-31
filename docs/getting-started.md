@@ -1,3 +1,13 @@
+---
+tags:
+  - getting-started
+  - tutorial
+  - characters
+  - persona
+  - validation
+  - quick-start
+---
+
 # Getting Started 💻
 
 Welcome to OCD (Open Character Design), your open framework for structured, consistent, and interoperable character design.

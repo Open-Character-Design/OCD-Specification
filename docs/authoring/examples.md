@@ -545,20 +545,33 @@ find . -name "*.yaml" -exec ocd-validate {} \;
 
 ## Contributing Examples
 
-We welcome community contributions! To add your character example:
+We welcome community contributions! Share your character examples to help others learn and inspire new use cases.
 
-1. **Follow the format** of existing examples
+### How to Contribute
+
+1. **Follow the format** of existing examples in the [examples directory](https://github.com/Open-Character-Design/OCD-Specification/tree/main/examples)
 2. **Include comprehensive metadata** (tags, authorship, etc.)
-3. **Validate your character** before submitting
+3. **Validate your character** before submitting using our [validators](../integration/examples.md) or [playground](../validation/playground.md)
 4. **Document any custom extensions** you use
-5. **Submit a pull request** with your example
+5. **Submit a pull request** - see our [Contributing Guide](../governance/contributing-to-spec.md) for details
 
 ### Example Guidelines
 
-- **Complete characters**: Include all relevant blocks
-- **Clear documentation**: Add comments explaining unique features
-- **Proper validation**: Ensure your character passes validation
+- **Complete characters**: Include all relevant blocks (identity, personality, background, etc.)
+- **Clear documentation**: Add comments explaining unique features or non-obvious choices
+- **Proper validation**: Ensure your character passes validation in both relaxed and strict modes
 - **Diverse representation**: Show different genres, systems, and complexity levels
+- **Real-world examples**: Both original and adapted characters are welcome
+
+### What We're Looking For
+
+- Characters from underrepresented genres or systems
+- Examples demonstrating advanced features (composites, relationships, extensions)
+- Integration examples for specific engines or platforms
+- Validation edge cases and how they're handled
+
+!!! tip "New to contributing?"
+    Check out our [Contributing Guide](../governance/contributing-to-spec.md) for step-by-step instructions, or open an issue to discuss your example idea first.
 
 ## What's Next?
 

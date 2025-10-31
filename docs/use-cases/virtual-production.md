@@ -792,5 +792,28 @@ class LiveProductionController:
 3. **Format Conversion**: Convert data formats as needed
 4. **Testing**: Test across all target platforms
 
-!!! tip "Ready for Virtual Production?"
-    Check out our [Python Validator](../integration/python-validator.md) to validate your OCD files before importing, or explore our [Examples Gallery](../authoring/examples.md) for character inspiration.
+---
+
+## Choose Your Next Step
+
+<div class="features-grid">
+
+<div class="feature-card">
+<h3>✍️ Author</h3>
+<p>Define production characters</p>
+<p><a href="../getting-started.md">Get Started →</a></p>
+</div>
+
+<div class="feature-card">
+<h3>✅ Validate</h3>
+<p>Validate in CI pipelines</p>
+<p><a href="../integration/python-validator.md">Python →</a> or <a href="../integration/js-ts-validator.md">JS/TS →</a></p>
+</div>
+
+<div class="feature-card">
+<h3>🔌 Integrate</h3>
+<p>Sync across platforms</p>
+<p><a href="../integration/examples.md">Integration Guides →</a></p>
+</div>
+
+</div>

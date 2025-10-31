@@ -58,7 +58,9 @@ meta:
     last_modified: "2024-01-01T00:00:00Z"
 ```
 
-[Start Here](start-here/){ .md-button .md-button--primary } [Get Started](getting-started.md){ .md-button }
+[Create Your First Character](getting-started.md){ .md-button .md-button--primary }
+
+Not sure where to start? [Choose Your Path](start-here/paths.md){ .md-button }
 
 !!! note "Prefer to validate now?"
     Use the CLI validators under [Integration](integration/examples.md), or try the [In-Browser Playground (Preview)](validation/playground.md).

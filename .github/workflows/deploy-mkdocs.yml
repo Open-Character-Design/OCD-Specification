@@ -37,9 +37,10 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git checkout gh-pages || git checkout -b gh-pages
-          git rm -rf docs/ || true
-          mkdir -p docs
-          cp -r site/* docs/
-          git add docs/
+          git rm -rf ./* || true
+          cp -r ../site/* .
+          # Ensure GitHub Pages doesn't run Jekyll so MkDocs assets work
+          touch .nojekyll
+          git add .
           git commit -m "Deploy MkDocs site from main branch" || exit 0
           git push origin gh-pages

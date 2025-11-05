@@ -38,19 +38,16 @@ class PathMatcher:
             if segment == "":
                 continue
             
-            # Handle array notation
-            if "[]" in segment:
-                # Convert "field[]" to "field[*]"
-                segment = segment.replace("[]", "[*]")
-            
-            # Handle wildcard arrays
+            # Handle array notation with wildcard
             if segment == "[*]":
                 jsonpath_segments.append("[*]")
             elif segment.endswith("[*]"):
+                # Handle "field[*]" -> ".field[*]"
                 field_name = segment[:-3]
                 jsonpath_segments.append(f".{field_name}[*]")
-            elif segment.endswith("[]"):
-                field_name = segment[:-2]
+            elif "[]" in segment:
+                # Handle "field[]" -> ".field[*]"
+                field_name = segment.replace("[]", "")
                 jsonpath_segments.append(f".{field_name}[*]")
             else:
                 jsonpath_segments.append(f".{segment}")
@@ -66,7 +63,7 @@ class PathMatcher:
             return [
                 {
                     "value": match.value,
-                    "path": str(match.full_path),
+                    "path": self._jsonpath_to_ocd_path(str(match.full_path)),
                     "context": self._get_context(document, match.full_path)
                 }
                 for match in matches
@@ -74,6 +71,86 @@ class PathMatcher:
         except Exception as e:
             # If path matching fails, return empty list
             return []
+    
+    def _jsonpath_to_ocd_path(self, jsonpath_str: str) -> str:
+        """Convert JSONPath format to OCD dot notation format."""
+        # Remove $ prefix
+        if jsonpath_str.startswith("$"):
+            jsonpath_str = jsonpath_str[1:]
+        
+        # Handle empty or root path
+        if not jsonpath_str or jsonpath_str == ".":
+            return ""
+        
+        # Remove leading dot if present
+        if jsonpath_str.startswith("."):
+            jsonpath_str = jsonpath_str[1:]
+        
+        # Convert bracket notation to dot notation
+        # e.g., ['meta']['tags'][0] -> meta.tags[0]
+        # e.g., ['tags'][0] -> tags[0]
+        parts = []
+        current = ""
+        i = 0
+        while i < len(jsonpath_str):
+            if jsonpath_str[i] == "[":
+                if current:
+                    parts.append(current)
+                    current = ""
+                # Look for index or key
+                i += 1
+                if i < len(jsonpath_str) and jsonpath_str[i] == "'":
+                    # Key in quotes: ['key']
+                    i += 1
+                    key = ""
+                    while i < len(jsonpath_str) and jsonpath_str[i] != "'":
+                        key += jsonpath_str[i]
+                        i += 1
+                    if i < len(jsonpath_str) and jsonpath_str[i] == "'":
+                        i += 1
+                    if i < len(jsonpath_str) and jsonpath_str[i] == "]":
+                        i += 1
+                        parts.append(key)
+                elif i < len(jsonpath_str) and jsonpath_str[i] == "*":
+                    # Wildcard: [*]
+                    i += 1
+                    if i < len(jsonpath_str) and jsonpath_str[i] == "]":
+                        i += 1
+                        parts.append("[*]")
+                else:
+                    # Numeric index: [0]
+                    index = ""
+                    while i < len(jsonpath_str) and jsonpath_str[i] != "]":
+                        index += jsonpath_str[i]
+                        i += 1
+                    if i < len(jsonpath_str) and jsonpath_str[i] == "]":
+                        i += 1
+                    parts.append(f"[{index}]")
+            elif jsonpath_str[i] == ".":
+                if current:
+                    parts.append(current)
+                    current = ""
+                i += 1
+            else:
+                current += jsonpath_str[i]
+                i += 1
+        
+        if current:
+            parts.append(current)
+        
+        # Join parts with dots, handling array indices
+        result = []
+        for i, part in enumerate(parts):
+            if part.startswith("[") and part.endswith("]"):
+                # Array index - append to previous part
+                if result:
+                    result[-1] += part
+                else:
+                    result.append(part)
+            else:
+                result.append(part)
+        
+        return ".".join(result)
     
     def _get_context(self, document: Any, full_path: JSONPath) -> Dict[str, Any]:
         """Get context information for a matched value."""

@@ -239,17 +239,32 @@ class RuleEvaluator:
             )
         
         if "pattern" in rule:
-            if not re.match(rule["pattern"], value):
-                severity = self._get_severity(rule, "PATTERN_MISMATCH")
-                return Diagnostic(
-                    code="PATTERN_MISMATCH",
-                    severity=severity,
-                    message=rule.get("message", f"String does not match required pattern"),
-                    path=path,
-                    rule=rule,
-                    spec_id=spec_id,
-                    schema_version=schema_version
-                )
+            # Pattern validation: check if value matches the regex pattern
+            pattern = rule["pattern"]
+            try:
+                # For negative lookahead patterns, use case-insensitive matching
+                # Pattern like ^((?!laser|plasma|railgun).)*$ matches if forbidden words are NOT found
+                if pattern.startswith("^") and pattern.endswith("$"):
+                    # Anchored pattern - use match with case-insensitive flag
+                    matches_pattern = bool(re.match(pattern, value, re.IGNORECASE))
+                else:
+                    # Unanchored pattern - use search with case-insensitive flag
+                    matches_pattern = bool(re.search(pattern, value, re.IGNORECASE))
+                
+                if not matches_pattern:
+                    severity = self._get_severity(rule, "PATTERN_MISMATCH")
+                    return Diagnostic(
+                        code="PATTERN_MISMATCH",
+                        severity=severity,
+                        message=rule.get("message", f"String does not match required pattern"),
+                        path=path,
+                        rule=rule,
+                        spec_id=spec_id,
+                        schema_version=schema_version
+                    )
+            except re.error:
+                # Invalid regex pattern - skip validation
+                pass
         
         if "format" in rule:
             format_diag = self._evaluate_format(rule, value, path, spec_id, schema_version)

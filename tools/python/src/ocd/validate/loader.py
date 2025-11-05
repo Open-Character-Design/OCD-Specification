@@ -26,7 +26,8 @@ class SpecLoader:
             schema_path = Path(self.schema_path)
             if not schema_path.exists():
                 # Try relative to current file
-                schema_path = Path(__file__).parent.parent.parent.parent.parent / "schema" / "ocd-validation-spec.schema.json"
+                # From tools/python/src/ocd/validate/loader.py, go up 6 levels to project root
+                schema_path = Path(__file__).parent.parent.parent.parent.parent.parent / "schema" / "ocd-validation-spec.schema.json"
             
             with schema_path.open("r", encoding="utf-8") as f:
                 schema = json.load(f)
@@ -38,6 +39,11 @@ class SpecLoader:
     def load_spec(self, spec_path: str) -> Dict[str, Any]:
         """Load and validate a .ocd specification file."""
         path = Path(spec_path)
+        if not path.exists() and not path.is_absolute():
+            # Try relative to project root
+            # From tools/python/src/ocd/validate/loader.py, go up 6 levels to project root
+            project_root = Path(__file__).parent.parent.parent.parent.parent.parent
+            path = project_root / spec_path
         if not path.exists():
             raise FileNotFoundError(f"Specification file not found: {spec_path}")
         
@@ -62,6 +68,11 @@ class SpecLoader:
     def load_character(self, character_path: str) -> Dict[str, Any]:
         """Load a character file (YAML or JSON)."""
         path = Path(character_path)
+        if not path.exists() and not path.is_absolute():
+            # Try relative to project root
+            # From tools/python/src/ocd/validate/loader.py, go up 6 levels to project root
+            project_root = Path(__file__).parent.parent.parent.parent.parent.parent
+            path = project_root / character_path
         if not path.exists():
             raise FileNotFoundError(f"Character file not found: {character_path}")
         
@@ -74,12 +85,17 @@ class SpecLoader:
         except Exception as e:
             raise ValueError(f"Failed to parse character file: {e}")
     
-    def resolve_extends(self, spec: Dict[str, Any], base_dir: Optional[str] = None) -> Dict[str, Any]:
-        """Resolve extends references in a specification."""
+    def resolve_extends(self, spec: Dict[str, Any], base_dir: Optional[str] = None) -> List[Dict[str, Any]]:
+        """Resolve extends references in a specification. Returns list of base specs."""
         if "extends" not in spec:
-            return spec
+            return []
         
-        base_dir = base_dir or "."
+        if base_dir is None:
+            # Try to find project root
+            # From tools/python/src/ocd/validate/loader.py, go up 6 levels to project root
+            project_root = Path(__file__).parent.parent.parent.parent.parent.parent
+            base_dir = str(project_root)
+        
         extended_specs = []
         
         for extend_id in spec["extends"]:
@@ -87,8 +103,9 @@ class SpecLoader:
             spec_file = self._find_spec_by_id(extend_id, base_dir)
             if spec_file:
                 extended_spec = self.load_spec(spec_file)
-                # Recursively resolve extends
-                extended_spec = self.resolve_extends(extended_spec, base_dir)
+                # Recursively resolve extends for this base spec
+                base_specs = self.resolve_extends(extended_spec, base_dir)
+                extended_specs.extend(base_specs)
                 extended_specs.append(extended_spec)
             else:
                 raise ValueError(f"Could not find specification with ID: {extend_id}")
@@ -99,20 +116,31 @@ class SpecLoader:
         """Find a specification file by its ID."""
         base_path = Path(base_dir)
         
-        # Look in common locations
+        # Look in common locations relative to base_dir
         search_paths = [
             base_path / "tests" / "specs",
             base_path / "specs",
             base_path / "spec",
         ]
         
+        # Also try looking from project root
+        # From tools/python/src/ocd/validate/loader.py, go up 6 levels to project root
+        project_root = Path(__file__).parent.parent.parent.parent.parent.parent
+        search_paths.extend([
+            project_root / "tests" / "specs",
+            project_root / "specs",
+            project_root / "spec",
+        ])
+        
         for search_path in search_paths:
             if search_path.exists():
                 for spec_file in search_path.glob("*.ocd"):
                     try:
-                        spec = self.load_spec(str(spec_file))
+                        # Use absolute path to avoid resolution issues
+                        abs_spec_file = spec_file.resolve()
+                        spec = self.load_spec(str(abs_spec_file))
                         if spec.get("id") == spec_id:
-                            return str(spec_file)
+                            return str(abs_spec_file)
                     except Exception:
                         continue
         

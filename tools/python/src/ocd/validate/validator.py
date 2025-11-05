@@ -40,22 +40,45 @@ def validate_and_normalize(
         
         # Load custom spec if provided
         if spec_path:
-            custom_spec = loader.load_spec(spec_path)
+            spec_path_obj = Path(spec_path)
+            if not spec_path_obj.is_absolute():
+                if not spec_path_obj.exists():
+                    # Try relative to project root
+                    # From tools/python/src/ocd/validate/validator.py, go up 6 levels to project root
+                    project_root = Path(__file__).parent.parent.parent.parent.parent.parent
+                    spec_path_obj = project_root / spec_path
+            if not spec_path_obj.exists():
+                return {
+                    "ok": False,
+                    "errors": [{"loc": ("spec",), "msg": f"Specification file not found: {spec_path}", "type": "spec_error"}]
+                }
+            base_dir = str(spec_path_obj.parent)
+            custom_spec = loader.load_spec(str(spec_path_obj))
+            # Resolve extends for custom spec
+            if "extends" in custom_spec:
+                # Use project root for extends resolution to find specs in common locations
+                # From tools/python/src/ocd/validate/validator.py, go up 6 levels to project root
+                project_root = Path(__file__).parent.parent.parent.parent.parent.parent
+                base_specs = loader.resolve_extends(custom_spec, str(project_root))
+                # Add base specs first, then custom spec
+                specs_to_merge.extend(base_specs)
             specs_to_merge.append(custom_spec)
         else:
             # Load default spec only if no custom spec provided
-            default_spec_path = Path(__file__).parent.parent.parent.parent.parent / "spec" / "ocd-default-spec.ocd"
-            if not default_spec_path.exists():
-                # Try tests directory
-                default_spec_path = Path(__file__).parent.parent.parent.parent.parent / "tests" / "specs" / "ocd-default-spec.ocd"
+            default_spec_path = _find_default_spec()
             
-            if not default_spec_path.exists():
+            if not default_spec_path or not default_spec_path.exists():
                 return {
                     "ok": False, 
                     "errors": [{"loc": ("spec",), "msg": "Default specification not found", "type": "spec_error"}]
                 }
             
-            specs_to_merge.append(loader.load_spec(str(default_spec_path)))
+            default_spec = loader.load_spec(str(default_spec_path))
+            # Resolve extends for default spec if it has any
+            if "extends" in default_spec:
+                base_specs = loader.resolve_extends(default_spec, str(default_spec_path.parent.parent))
+                specs_to_merge.extend(base_specs)
+            specs_to_merge.append(default_spec)
         
         # Merge specifications
         merger = SpecMerger()
@@ -123,20 +146,40 @@ def validate_and_normalize(
                     schema_version=resolved_spec.get("schemaVersion", 1)
                 ))
         
-        # Convert to legacy format for compatibility
+        # Convert to documented format
+        # Errors: {loc: tuple, msg: str, type: str}
+        # Warnings: {path: str, detail: str, code: str}
+        def format_error_loc(path: str) -> tuple:
+            """Format path as tuple for error location."""
+            if not path or path == "<root>":
+                return ()
+            return tuple(part for part in path.split(".") if part)
+        
         result = {
             "ok": validation_passed,
             "data": normalized_data,
-            "errors": [{"loc": (d.path,), "msg": d.message, "type": d.code} for d in errors],
+            "errors": [{"loc": format_error_loc(d.path), "msg": d.message, "type": d.code} for d in errors],
             "warnings": [{"path": d.path, "detail": d.message, "code": d.code} for d in warnings]
         }
+        
+        # Always include errors and warnings keys (empty list if none)
+        if "errors" not in result:
+            result["errors"] = []
+        if "warnings" not in result:
+            result["warnings"] = []
         
         return result
         
     except Exception as exc:
+        import traceback
+        # Provide more detailed error information
+        error_msg = str(exc)
+        if hasattr(exc, '__traceback__'):
+            # For debugging, but don't include full traceback in production
+            pass
         return {
             "ok": False, 
-            "errors": [{"loc": ("validation",), "msg": str(exc), "type": "validation_error"}]
+            "errors": [{"loc": ("validation",), "msg": error_msg, "type": "validation_error"}]
         }
 
 
@@ -198,18 +241,37 @@ def _evaluate_constraints(
         disallow = constraints["disallow"]
         if "tags" in disallow:
             forbidden_tags = disallow["tags"]
-            tag_matches = matcher.find_matches(doc, "meta.tags")
+            # Check both meta.tags and tags paths
+            tag_paths = ["meta.tags", "tags"]
             
-            for match in tag_matches:
-                if isinstance(match["value"], list):
-                    for tag in match["value"]:
-                        if tag in forbidden_tags:
+            for tag_path in tag_paths:
+                tag_matches = matcher.find_matches(doc, tag_path)
+                
+                for match in tag_matches:
+                    if isinstance(match["value"], list):
+                        for tag in match["value"]:
+                            if tag in forbidden_tags:
+                                # Use the matched path for the error location
+                                error_path = match["path"] if match["path"] else tag_path
+                                diagnostics.append(Diagnostic(
+                                    code="DISALLOWED_TAG",
+                                    severity=Severity.ERROR,
+                                    message=f"Tag \"{tag}\" not allowed",
+                                    path=error_path,
+                                    rule={"path": tag_path, "disallow": {"tags": forbidden_tags}},
+                                    spec_id=spec_id,
+                                    schema_version=schema_version
+                                ))
+                    elif isinstance(match["value"], str):
+                        # Handle single tag as string (shouldn't happen but handle it)
+                        if match["value"] in forbidden_tags:
+                            error_path = match["path"] if match["path"] else tag_path
                             diagnostics.append(Diagnostic(
                                 code="DISALLOWED_TAG",
                                 severity=Severity.ERROR,
-                                message=f"Tag \"{tag}\" not allowed",
-                                path=match["path"],
-                                rule={"path": match["path"], "disallow": {"tags": forbidden_tags}},
+                                message=f"Tag \"{match['value']}\" not allowed",
+                                path=error_path,
+                                rule={"path": tag_path, "disallow": {"tags": forbidden_tags}},
                                 spec_id=spec_id,
                                 schema_version=schema_version
                             ))
@@ -233,6 +295,25 @@ def _parse_document(text: str, format_hint: str, source: str) -> Any:
             return safe_load(text)
         except Exception as exc:
             raise ValueError(f"failed to parse '{source}' as JSON or YAML") from exc
+
+
+def _find_default_spec() -> Optional[Path]:
+    """Find the default spec file."""
+    validator_file = Path(__file__)
+    # Go up from tools/python/src/ocd/validate/validator.py to project root (6 levels)
+    project_root = validator_file.parent.parent.parent.parent.parent.parent
+    
+    # Try spec/ocd-default-spec.ocd first
+    default_spec_path = project_root / "spec" / "ocd-default-spec.ocd"
+    if default_spec_path.exists():
+        return default_spec_path
+    
+    # Try tests/specs/ocd-default-spec.ocd as fallback
+    test_spec_path = project_root / "tests" / "specs" / "ocd-default-spec.ocd"
+    if test_spec_path.exists():
+        return test_spec_path
+    
+    return None
 
 
 def _format_location(location: Sequence[Any] | None) -> str:

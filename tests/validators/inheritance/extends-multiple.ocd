@@ -1,0 +1,15 @@
+id: extends-multiple
+type: validationSpec
+schemaVersion: 1
+extends: [extends-base, ocd-default-spec]
+metadata:
+  name: Multiple Inheritance Test
+  description: Tests extending multiple specifications.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+
+rules: []
+

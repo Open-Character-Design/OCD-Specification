@@ -1,0 +1,23 @@
+id: i18n-multilang
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Multi-Language Support
+  description: Validates multi-language character data.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "meta.locale"
+    type: string
+    format: locale
+    message: "Locale must be in valid format"
+  - path: "meta.language"
+    type: string
+    format: language-code
+    message: "Language code must be in valid format"
+

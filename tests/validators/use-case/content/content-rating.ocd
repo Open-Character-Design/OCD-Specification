@@ -1,0 +1,15 @@
+id: content-rating
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Content Rating Validation
+  description: Validates content rating for character data.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules: []
+

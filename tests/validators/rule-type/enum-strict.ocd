@@ -1,0 +1,24 @@
+id: enum-strict
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Strict Enum Validation
+  description: Enforces strict enum values with errors.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums:
+    Status: ["active", "inactive", "pending"]
+    Priority: ["low", "medium", "high"]
+
+rules:
+  - path: "status"
+    enum: "@enums.Status"
+    severity: error
+    message: "Status must be one of the allowed values"
+  - path: "priority"
+    enum: "@enums.Priority"
+    severity: error
+    message: "Priority must be one of the allowed values"
+

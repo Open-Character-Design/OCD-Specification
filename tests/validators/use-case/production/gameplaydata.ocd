@@ -1,0 +1,15 @@
+id: gameplaydata
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Gameplay Data Validation
+  description: Validates gameplay-specific character data.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules: []
+

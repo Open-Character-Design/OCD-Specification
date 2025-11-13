@@ -1,0 +1,15 @@
+id: gameplaydata-legendary
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Legendary Gameplay Data Validation
+  description: Validates legendary-tier gameplay character data.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules: []
+

@@ -1,0 +1,24 @@
+id: presence-required-fields
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Required Fields Validation
+  description: Enforces required field presence.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "id"
+    presence: required
+    type: string
+  - path: "profile.name"
+    presence: required
+    type: string
+  - path: "identity.species"
+    presence: required
+    type: string
+

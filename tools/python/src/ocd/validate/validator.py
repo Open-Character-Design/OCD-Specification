@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from importlib import resources
 from pathlib import Path
 from typing import Any, Dict, List, Literal, Optional, Sequence
 
@@ -12,7 +13,7 @@ from .loader import SpecLoader
 from .merger import SpecMerger
 from .matcher import PathMatcher
 from .evaluator import RuleEvaluator
-from .result import Diagnostic, ValidationResult, ResultFormatter, Severity
+from .result import Diagnostic, Severity
 from .normalizer import normalize_in_place
 from .linter import lint
 
@@ -52,7 +53,6 @@ def validate_and_normalize(
                     "ok": False,
                     "errors": [{"loc": ("spec",), "msg": f"Specification file not found: {spec_path}", "type": "spec_error"}]
                 }
-            base_dir = str(spec_path_obj.parent)
             custom_spec = loader.load_spec(str(spec_path_obj))
             # Resolve extends for custom spec
             if "extends" in custom_spec:
@@ -104,7 +104,7 @@ def validate_and_normalize(
         # Evaluate constraints
         if "constraints" in resolved_spec:
             constraint_diagnostics = _evaluate_constraints(
-                resolved_spec["constraints"], doc, matcher, evaluator, resolved_spec.get("id", "unknown"), resolved_spec.get("schemaVersion", 1)
+                resolved_spec["constraints"], doc, matcher, resolved_spec.get("id", "unknown"), resolved_spec.get("schemaVersion", 1)
             )
             all_diagnostics.extend(constraint_diagnostics)
         
@@ -171,12 +171,8 @@ def validate_and_normalize(
         return result
         
     except Exception as exc:
-        import traceback
-        # Provide more detailed error information
+        # Provide error information
         error_msg = str(exc)
-        if hasattr(exc, '__traceback__'):
-            # For debugging, but don't include full traceback in production
-            pass
         return {
             "ok": False, 
             "errors": [{"loc": ("validation",), "msg": error_msg, "type": "validation_error"}]
@@ -186,8 +182,7 @@ def validate_and_normalize(
 def _evaluate_constraints(
     constraints: Dict[str, Any], 
     doc: Any, 
-    matcher: PathMatcher, 
-    evaluator: RuleEvaluator,
+    matcher: PathMatcher,
     spec_id: str,
     schema_version: int
 ) -> List[Diagnostic]:
@@ -298,7 +293,30 @@ def _parse_document(text: str, format_hint: str, source: str) -> Any:
 
 
 def _find_default_spec() -> Optional[Path]:
-    """Find the default spec file."""
+    """Find the default spec file.
+    
+    First tries to find it in the installed package data,
+    then falls back to development locations.
+    """
+    # Try to find in installed package data first
+    try:
+        # Use importlib.resources to get the resource path
+        # For Python 3.9+, we can use files() which returns a Traversable
+        spec_resource = resources.files("ocd.validate.data").joinpath("ocd-default-spec.ocd")
+        if spec_resource.is_file():
+            # For installed packages, we need to extract to a temporary location
+            # since SpecLoader.load_spec expects a file path
+            import tempfile
+            import shutil
+            temp_path = Path(tempfile.gettempdir()) / f"ocd-default-spec-{id(spec_resource)}.ocd"
+            if not temp_path.exists():
+                with spec_resource.open("rb") as src, temp_path.open("wb") as dst:
+                    shutil.copyfileobj(src, dst)
+            return temp_path
+    except (ImportError, FileNotFoundError, ModuleNotFoundError, AttributeError):
+        pass
+    
+    # Fall back to development locations
     validator_file = Path(__file__)
     # Go up from tools/python/src/ocd/validate/validator.py to project root (6 levels)
     project_root = validator_file.parent.parent.parent.parent.parent.parent

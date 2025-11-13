@@ -1,0 +1,17 @@
+id: extends-base
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Base Specification for Extension
+  description: Base specification designed to be extended by other specs.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums:
+    BaseStatus: ["active", "inactive"]
+
+rules:
+  - path: "status"
+    enum: "@enums.BaseStatus"
+

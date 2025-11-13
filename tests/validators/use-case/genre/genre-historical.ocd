@@ -1,0 +1,22 @@
+id: genre-historical
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Historical Genre Validation
+  description: Validates characters for historical settings.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "background.time_period"
+    type: string
+    message: "Historical characters should specify time period"
+
+constraints:
+  disallow:
+    tags: ["sci-fi", "fantasy", "futuristic", "magic"]
+

@@ -1,0 +1,19 @@
+id: extends-override
+type: validationSpec
+schemaVersion: 1
+extends: [extends-base]
+metadata:
+  name: Rule Override Test
+  description: Tests overriding rules from extended specifications.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums:
+    BaseStatus: ["active", "inactive", "pending"]
+
+rules:
+  - path: "status"
+    enum: "@enums.BaseStatus"
+    message: "Status overrides base specification"
+

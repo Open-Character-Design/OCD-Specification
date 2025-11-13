@@ -1,0 +1,18 @@
+id: enum-status
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Status Enum Validation
+  description: Validates status/state enum values.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums:
+    Status: ["draft", "review", "approved", "published", "archived"]
+
+rules:
+  - path: "meta.status"
+    enum: "@enums.Status"
+    message: "Status must be from the allowed list"
+

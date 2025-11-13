@@ -1,0 +1,23 @@
+id: pattern-no-profanity
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Profanity Filter Pattern
+  description: Filters profanity from character fields.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  patterns:
+    profanity: "(badword|inappropriate)"
+
+rules:
+  - path: "profile.name"
+    type: string
+    pattern: "^((?!@patterns.profanity).)*$"
+    message: "Name contains prohibited content"
+  - path: "background.history"
+    type: string
+    pattern: "^((?!@patterns.profanity).)*$"
+    message: "History contains prohibited content"
+

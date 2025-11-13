@@ -1,0 +1,16 @@
+id: staging
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Staging Environment Validation
+  description: Validation rules for staging environment.
+policy:
+  allowUnknownFields: true
+  unknownFieldSeverity: warning
+
+definitions:
+  enums: {}
+  types: {}
+
+rules: []
+

@@ -1,0 +1,23 @@
+id: dependent-required
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Dependent Required Fields
+  description: Validates dependent field requirements.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "contact.email"
+    type: string
+    format: email
+  - path: "contact.phone"
+    type: string
+    dependentRequired:
+      email: ["phone"]
+    message: "Phone is required when email is provided"
+

@@ -1,0 +1,19 @@
+id: platform-web
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Web Platform Validation
+  description: Validates characters for web platform deployment.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "links.url"
+    type: string
+    format: url
+    message: "Web links must be valid URLs"
+

@@ -1,0 +1,18 @@
+id: edge-null-values
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Null Value Handling
+  description: Validates handling of null values.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "optional_field"
+    presence: optional
+    type: string
+

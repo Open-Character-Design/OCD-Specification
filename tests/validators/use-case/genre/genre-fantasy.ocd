@@ -1,0 +1,22 @@
+id: genre-fantasy
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Fantasy Genre Validation
+  description: Validates characters for fantasy genre settings.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums:
+    Species: ["human", "elf", "dwarf", "orc", "halfling", "dragonborn", "gnome", "tiefling"]
+
+rules:
+  - path: "identity.species"
+    enum: "@enums.Species"
+    message: "Species must be appropriate for fantasy genre"
+
+constraints:
+  disallow:
+    tags: ["sci-fi", "space", "cyberpunk", "modern", "futuristic"]
+

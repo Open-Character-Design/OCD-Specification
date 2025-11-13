@@ -1,0 +1,19 @@
+id: format-email
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Email Format Validation
+  description: Validates email format for character contact fields.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "contact.email"
+    type: string
+    format: email
+    message: "Email must be in valid format"
+

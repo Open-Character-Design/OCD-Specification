@@ -1,0 +1,38 @@
+id: production-complete
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Complete Production Requirements
+  description: Comprehensive validation for production deployment.
+policy:
+  allowUnknownFields: false
+  unknownFieldSeverity: error
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "id"
+    presence: required
+    type: string
+    format: slug
+  - path: "profile.name"
+    presence: required
+    type: string
+    minLength: 1
+  - path: "meta.versioning.created_at"
+    presence: required
+    type: string
+    format: date-time
+  - path: "meta.versioning.last_modified"
+    presence: required
+    type: string
+    format: date-time
+
+constraints:
+  require:
+    - "id"
+    - "profile.name"
+    - "meta.versioning.created_at"
+

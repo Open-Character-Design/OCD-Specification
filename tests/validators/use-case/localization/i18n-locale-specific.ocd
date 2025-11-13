@@ -1,0 +1,18 @@
+id: i18n-locale-specific
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Locale-Specific Validation
+  description: Validates locale-specific character data requirements.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums:
+    SupportedLocales: ["en-US", "en-GB", "es-ES", "fr-FR", "de-DE", "ja-JP"]
+
+rules:
+  - path: "meta.locale"
+    enum: "@enums.SupportedLocales"
+    message: "Locale must be one of the supported locales"
+

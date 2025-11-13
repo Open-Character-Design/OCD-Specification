@@ -1,0 +1,18 @@
+id: platform-unity
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Unity Platform Validation
+  description: Validates characters for Unity game engine integration.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "x-unity"
+    type: object
+    message: "Unity-specific fields should follow Unity extension format"
+

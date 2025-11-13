@@ -1,0 +1,21 @@
+id: edge-array-wildcards
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Array Wildcard Path Matching
+  description: Validates array wildcard path matching.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "items[*].name"
+    type: string
+    minLength: 1
+  - path: "items[].id"
+    type: string
+    format: slug
+

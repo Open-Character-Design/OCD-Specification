@@ -1,0 +1,30 @@
+id: production-api
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: API Production Requirements
+  description: Strict validation for API-ready character data.
+policy:
+  allowUnknownFields: false
+  unknownFieldSeverity: error
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "id"
+    presence: required
+    type: string
+    format: slug
+  - path: "profile.name"
+    presence: required
+    type: string
+    minLength: 1
+    maxLength: 100
+
+constraints:
+  require:
+    - "id"
+    - "profile.name"
+

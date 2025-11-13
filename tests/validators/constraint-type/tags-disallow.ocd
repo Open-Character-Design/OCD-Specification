@@ -1,0 +1,19 @@
+id: tags-disallow
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Disallowed Tags Constraint
+  description: Ensures certain tags are not used.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules: []
+
+constraints:
+  disallow:
+    tags: ["test", "draft", "placeholder", "temp"]
+

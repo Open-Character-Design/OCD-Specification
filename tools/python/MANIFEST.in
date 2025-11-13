@@ -1,0 +1,4 @@
+# Include package data files
+include src/ocd/validate/data/*.ocd
+include src/ocd/validate/data/*.json
+recursive-include src/ocd/validate/data *

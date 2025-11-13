@@ -1,0 +1,22 @@
+id: tags-require
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Required Tags Constraint
+  description: Ensures certain tags are present.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "meta.tags"
+    type: array
+    minItems: 1
+
+constraints:
+  require:
+    - path: "meta.tags"
+

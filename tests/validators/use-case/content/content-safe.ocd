@@ -1,0 +1,27 @@
+id: content-safe
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Safe Content Filter
+  description: Validates safe content suitable for all audiences.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  patterns:
+    profanity: "(badword|inappropriate)"
+
+rules:
+  - path: "profile.name"
+    type: string
+    pattern: "^((?!@patterns.profanity).)*$"
+    message: "Name contains prohibited content"
+  - path: "background.history"
+    type: string
+    pattern: "^((?!@patterns.profanity).)*$"
+    message: "History contains prohibited content"
+
+constraints:
+  disallow:
+    tags: ["mature", "adult", "explicit", "violent"]
+

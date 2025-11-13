@@ -1,0 +1,19 @@
+id: format-uuid
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: UUID Format Validation
+  description: Validates UUID format for character identifiers and references.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "id"
+    type: string
+    format: uuid
+    message: "ID must be a valid UUID"
+

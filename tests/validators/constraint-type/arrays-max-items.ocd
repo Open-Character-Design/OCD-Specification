@@ -1,0 +1,23 @@
+id: arrays-max-items
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Array Maximum Items Constraint
+  description: Enforces maximum array size.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules: []
+
+constraints:
+  arrays:
+    maxItems:
+      - path: "tags"
+        value: 10
+      - path: "abilities"
+        value: 5
+

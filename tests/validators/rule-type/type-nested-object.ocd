@@ -1,0 +1,24 @@
+id: type-nested-object
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Nested Object Type Validation
+  description: Validates nested object structure and types.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "profile"
+    type: object
+    properties:
+      name:
+        type: string
+        minLength: 1
+      age:
+        type: integer
+        min: 0
+

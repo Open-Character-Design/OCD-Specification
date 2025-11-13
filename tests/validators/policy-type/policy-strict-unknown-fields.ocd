@@ -1,0 +1,16 @@
+id: policy-strict-unknown-fields
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Strict Unknown Fields Policy
+  description: Disallows unknown fields with errors.
+policy:
+  allowUnknownFields: false
+  unknownFieldSeverity: error
+
+definitions:
+  enums: {}
+  types: {}
+
+rules: []
+

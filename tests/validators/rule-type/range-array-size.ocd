@@ -1,0 +1,26 @@
+id: range-array-size
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Array Size Validation
+  description: Validates array min/max size constraints.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "tags"
+    type: array
+    minItems: 1
+    maxItems: 10
+    message: "Tags must have between 1 and 10 items"
+  - path: "skills"
+    type: array
+    minItems: 0
+    maxItems: 20
+    items:
+      type: string
+

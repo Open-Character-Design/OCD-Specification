@@ -1,0 +1,290 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://open-character-design.org/schema/ocd-validation-spec.schema.json",
+  "title": "OCD Validation Specification",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "type", "schemaVersion"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "type": { "const": "validationSpec" },
+    "schemaVersion": { "type": "integer", "minimum": 1 },
+
+    "extends": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "version": { "type": "string" }
+      }
+    },
+
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "allowUnknownFields": { "type": "boolean" },
+        "allowUnknownTopLevel": { "type": "boolean" },
+        "unknownFieldSeverity": { "enum": ["warning", "error"] }
+      }
+    },
+
+    "definitions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enums": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "types": {
+          "type": "object",
+          "description": "Reusable type definitions (mini-schemas) for rule `type` references.",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "type": {
+                "enum": ["string", "number", "integer", "boolean", "object", "array"]
+              },
+              "pattern": { "type": "string" },
+              "format": {
+                "type": "string",
+                "enum": [
+                  "uuid", "date", "date-time", "email", "uri", "url", "slug",
+                  "locale", "language-code"
+                ]
+              },
+              "min": { "type": "number" },
+              "max": { "type": "number" },
+              "minLength": { "type": "integer", "minimum": 0 },
+              "maxLength": { "type": "integer", "minimum": 0 },
+              "minItems": { "type": "integer", "minimum": 0 },
+              "maxItems": { "type": "integer", "minimum": 0 },
+              "uniqueItems": { "type": "boolean" },
+              "items": { "$ref": "#/$defs/ruleTypeDef" },
+              "properties": {
+                "type": "object",
+                "additionalProperties": { "$ref": "#/$defs/ruleTypeDef" }
+              }
+            }
+          }
+        },
+        "patterns": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        }
+      }
+    },
+
+    "rules": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/rule" }
+    },
+
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "require": {
+          "description": "Paths that must be present. Accepts array of strings or {path} objects.",
+          "type": "array",
+          "items": {
+            "oneOf": [
+              { "type": "string", "minLength": 1 },
+              { "type": "object", "additionalProperties": false, "required": ["path"], "properties": { "path": { "type": "string", "minLength": 1 } } }
+            ]
+          }
+        },
+        "forbid": {
+          "description": "Paths that must not be present.",
+          "type": "array",
+          "items": {
+            "oneOf": [
+              { "type": "string", "minLength": 1 },
+              { "type": "object", "additionalProperties": false, "required": ["path"], "properties": { "path": { "type": "string", "minLength": 1 } } }
+            ]
+          }
+        },
+        "disallow": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "tags": {
+              "type": "array",
+              "items": { "type": "string" },
+              "uniqueItems": true
+            }
+          }
+        },
+        "arrays": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "unique": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/pathOnly" }
+            },
+            "minItems": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["path", "value"],
+                "properties": {
+                  "path": { "type": "string", "minLength": 1 },
+                  "value": { "type": "integer", "minimum": 0 }
+                }
+              }
+            },
+            "maxItems": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["path", "value"],
+                "properties": {
+                  "path": { "type": "string", "minLength": 1 },
+                  "value": { "type": "integer", "minimum": 0 }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "$defs": {
+    "pathOnly": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 }
+      }
+    },
+
+    "ruleTypeDef": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": ["string", "number", "integer", "boolean", "object", "array"]
+        },
+        "pattern": { "type": "string" },
+        "format": {
+          "type": "string",
+          "enum": [
+            "uuid", "date", "date-time", "email", "uri", "url", "slug",
+            "locale", "language-code"
+          ]
+        },
+        "min": { "type": "number" },
+        "max": { "type": "number" },
+        "minLength": { "type": "integer", "minimum": 0 },
+        "maxLength": { "type": "integer", "minimum": 0 },
+        "minItems": { "type": "integer", "minimum": 0 },
+        "maxItems": { "type": "integer", "minimum": 0 },
+        "uniqueItems": { "type": "boolean" },
+        "items": { "$ref": "#/$defs/ruleTypeDef" },
+        "properties": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/ruleTypeDef" }
+        }
+      }
+    },
+
+    "compare": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "equalTo": { "type": "string", "minLength": 1 },
+        "notEqualTo": { "type": "string", "minLength": 1 },
+        "greaterThan": { "type": "string", "minLength": 1 },
+        "greaterOrEqual": { "type": "string", "minLength": 1 },
+        "lessThan": { "type": "string", "minLength": 1 },
+        "lessOrEqual": { "type": "string", "minLength": 1 }
+      }
+    },
+
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+
+        "presence": { "enum": ["required", "optional", "forbidden"] },
+
+        "type": {
+          "anyOf": [
+            { "enum": ["string", "number", "integer", "boolean", "object", "array"] },
+            { "type": "string", "pattern": "^@types\\.[A-Za-z_][A-Za-z0-9_]*$" }
+          ]
+        },
+
+        "enum": {
+          "anyOf": [
+            { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
+            { "type": "string", "pattern": "^@enums\\.[A-Za-z_][A-Za-z0-9_]*$" }
+          ]
+        },
+
+        "const": { "type": ["string", "number", "integer", "boolean", "null"] },
+
+        "min": { "type": "number" },
+        "max": { "type": "number" },
+
+        "minLength": { "type": "integer", "minimum": 0 },
+        "maxLength": { "type": "integer", "minimum": 0 },
+        "pattern": { "type": "string" },
+
+        "format": {
+          "type": "string",
+          "enum": [
+            "uuid", "date", "date-time", "email", "uri", "url", "slug",
+            "locale", "language-code"
+          ]
+        },
+
+        "uniqueItems": { "type": "boolean" },
+        "minItems": { "type": "integer", "minimum": 0 },
+        "maxItems": { "type": "integer", "minimum": 0 },
+
+        "items": { "$ref": "#/$defs/ruleTypeDef" },
+        "properties": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/ruleTypeDef" }
+        },
+
+        "dependentRequired": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+
+        "compare": { "$ref": "#/$defs/compare" },
+
+        "severity": { "enum": ["warning", "error"] },
+        "message": { "type": "string" }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+id: genre-modern
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Modern Genre Validation
+  description: Validates characters for modern/contemporary settings.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums:
+    Species: ["human"]
+
+rules:
+  - path: "identity.species"
+    enum: "@enums.Species"
+    message: "Modern genre typically features human characters only"
+
+constraints:
+  disallow:
+    tags: ["fantasy", "sci-fi", "medieval", "magic", "space"]
+

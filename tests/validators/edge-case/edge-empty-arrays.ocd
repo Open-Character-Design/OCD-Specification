@@ -1,0 +1,20 @@
+id: edge-empty-arrays
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Empty Array Handling
+  description: Validates handling of empty arrays.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "tags"
+    type: array
+    minItems: 0
+    items:
+      type: string
+

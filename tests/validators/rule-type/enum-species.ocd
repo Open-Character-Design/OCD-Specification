@@ -1,0 +1,18 @@
+id: enum-species
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Species Enum Validation
+  description: Validates species enum values.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums:
+    Species: ["human", "elf", "dwarf", "orc", "halfling", "dragonborn", "gnome", "tiefling"]
+
+rules:
+  - path: "identity.species"
+    enum: "@enums.Species"
+    message: "Species must be from the allowed list"
+

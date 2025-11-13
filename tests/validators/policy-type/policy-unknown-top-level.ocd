@@ -1,0 +1,17 @@
+id: policy-unknown-top-level
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Unknown Top-Level Fields Policy
+  description: Controls top-level unknown field handling.
+policy:
+  allowUnknownFields: true
+  allowUnknownTopLevel: false
+  unknownFieldSeverity: warning
+
+definitions:
+  enums: {}
+  types: {}
+
+rules: []
+

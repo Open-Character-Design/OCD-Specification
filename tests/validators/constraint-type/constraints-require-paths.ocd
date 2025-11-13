@@ -1,0 +1,21 @@
+id: constraints-require-paths
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Required Paths Constraint
+  description: Enforces required paths at constraint level.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules: []
+
+constraints:
+  require:
+    - "id"
+    - "profile.name"
+    - "identity.species"
+

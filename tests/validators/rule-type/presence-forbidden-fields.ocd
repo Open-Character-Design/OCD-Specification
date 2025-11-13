@@ -1,0 +1,21 @@
+id: presence-forbidden-fields
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Forbidden Fields Validation
+  description: Ensures certain fields are not present.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "internal.debug"
+    presence: forbidden
+    message: "Debug fields are not allowed"
+  - path: "temp.data"
+    presence: forbidden
+    message: "Temporary data fields are not allowed"
+

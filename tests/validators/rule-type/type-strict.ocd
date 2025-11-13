@@ -1,0 +1,24 @@
+id: type-strict
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Strict Type Validation
+  description: Enforces strict type checking with no coercion.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "age"
+    type: integer
+    message: "Age must be an integer"
+  - path: "score"
+    type: number
+    message: "Score must be a number"
+  - path: "is_active"
+    type: boolean
+    message: "is_active must be a boolean"
+

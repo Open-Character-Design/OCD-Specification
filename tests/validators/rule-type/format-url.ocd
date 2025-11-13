@@ -1,0 +1,23 @@
+id: format-url
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: URL Format Validation
+  description: Validates URL/URI format for character links and references.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "links.url"
+    type: string
+    format: url
+    message: "URL must be in valid format"
+  - path: "references.uri"
+    type: string
+    format: uri
+    message: "URI must be in valid format"
+

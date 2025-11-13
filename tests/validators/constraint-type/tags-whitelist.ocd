@@ -1,0 +1,18 @@
+id: tags-whitelist
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Tag Whitelist Constraint
+  description: Only allows specific tags.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums:
+    AllowedTags: ["fantasy", "sci-fi", "modern", "historical", "adventure"]
+
+rules:
+  - path: "meta.tags[]"
+    enum: "@enums.AllowedTags"
+    message: "Tags must be from the allowed list"
+

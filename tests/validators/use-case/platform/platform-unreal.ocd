@@ -1,0 +1,18 @@
+id: platform-unreal
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Unreal Platform Validation
+  description: Validates characters for Unreal Engine integration.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "x-unreal"
+    type: object
+    message: "Unreal-specific fields should follow Unreal extension format"
+

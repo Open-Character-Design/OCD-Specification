@@ -1,0 +1,21 @@
+id: production-minimal
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Minimal Production Requirements
+  description: Minimal validation for production deployment.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "id"
+    presence: required
+    type: string
+  - path: "profile.name"
+    presence: required
+    type: string
+

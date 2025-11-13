@@ -1,0 +1,22 @@
+id: genre-sci-fi
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Sci-Fi Genre Validation
+  description: Validates characters for science fiction genre settings.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums:
+    Species: ["human", "android", "alien", "cyborg", "ai", "hybrid"]
+
+rules:
+  - path: "identity.species"
+    enum: "@enums.Species"
+    message: "Species must be appropriate for sci-fi genre"
+
+constraints:
+  disallow:
+    tags: ["fantasy", "medieval", "magic", "historical"]
+

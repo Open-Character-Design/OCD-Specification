@@ -1,0 +1,25 @@
+id: range-numeric
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Numeric Range Validation
+  description: Validates numeric min/max ranges.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "age"
+    type: integer
+    min: 0
+    max: 150
+    message: "Age must be between 0 and 150"
+  - path: "score"
+    type: number
+    min: 0
+    max: 100
+    message: "Score must be between 0 and 100"
+

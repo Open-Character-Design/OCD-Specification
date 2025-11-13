@@ -1,0 +1,18 @@
+id: edge-nested-paths
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Deep Nesting Validation
+  description: Validates deeply nested path structures.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "deeply.nested.path.structure.field"
+    type: string
+    message: "Deeply nested paths should be validated"
+

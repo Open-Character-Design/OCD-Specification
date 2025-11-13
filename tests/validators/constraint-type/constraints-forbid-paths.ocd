@@ -1,0 +1,21 @@
+id: constraints-forbid-paths
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Forbidden Paths Constraint
+  description: Enforces forbidden paths at constraint level.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules: []
+
+constraints:
+  forbid:
+    - "internal.debug"
+    - "temp.data"
+    - "test.placeholder"
+

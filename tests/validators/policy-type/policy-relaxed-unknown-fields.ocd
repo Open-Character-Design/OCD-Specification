@@ -1,0 +1,16 @@
+id: policy-relaxed-unknown-fields
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Relaxed Unknown Fields Policy
+  description: Allows unknown fields with warnings.
+policy:
+  allowUnknownFields: true
+  unknownFieldSeverity: warning
+
+definitions:
+  enums: {}
+  types: {}
+
+rules: []
+

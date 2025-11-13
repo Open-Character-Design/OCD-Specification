@@ -1,0 +1,19 @@
+id: content-rating-adult
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Adult Content Rating
+  description: Validates content appropriate for adult audiences.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules: []
+
+constraints:
+  disallow:
+    tags: ["child-friendly", "all-ages"]
+

@@ -1,0 +1,19 @@
+id: pattern-id
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: ID Pattern Validation
+  description: Validates ID pattern format.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "id"
+    type: string
+    pattern: "^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"
+    message: "ID must match slug pattern"
+

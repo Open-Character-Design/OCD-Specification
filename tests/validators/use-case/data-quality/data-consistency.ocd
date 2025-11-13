@@ -1,0 +1,21 @@
+id: data-consistency
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Data Consistency Validation
+  description: Validates cross-field consistency.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "meta.versioning.last_modified"
+    type: string
+    format: date-time
+    compare:
+      greaterOrEqual: "meta.versioning.created_at"
+    message: "Last modified must be after or equal to created date"
+

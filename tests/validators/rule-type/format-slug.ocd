@@ -1,0 +1,19 @@
+id: format-slug
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Slug Format Validation
+  description: Validates slug format for character IDs and identifiers.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "id"
+    type: string
+    format: slug
+    message: "ID must be in slug format"
+

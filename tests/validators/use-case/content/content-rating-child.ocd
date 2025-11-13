@@ -1,0 +1,19 @@
+id: content-rating-child
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Child Content Rating Validation
+  description: Validates content appropriate for child audiences.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules: []
+
+constraints:
+  disallow:
+    tags: ["mature", "adult", "explicit", "violent", "gore", "teen"]
+

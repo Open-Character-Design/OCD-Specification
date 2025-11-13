@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from importlib import resources
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -23,16 +24,27 @@ class SpecLoader:
     def _load_schema_validator(self) -> Draft202012Validator:
         """Load and cache the JSON schema validator."""
         if self._schema_validator is None:
-            schema_path = Path(self.schema_path)
-            if not schema_path.exists():
-                # Try relative to current file
-                # From tools/python/src/ocd/validate/loader.py, go up 6 levels to project root
-                schema_path = Path(__file__).parent.parent.parent.parent.parent.parent / "schema" / "ocd-validation-spec.schema.json"
+            # Try to load schema from installed package data first
+            schema_data = None
+            try:
+                with resources.files("ocd.validate.data").joinpath("ocd-validation-spec.schema.json").open("r", encoding="utf-8") as f:
+                    schema_data = json.load(f)
+            except (ImportError, FileNotFoundError, ModuleNotFoundError):
+                # Fall back to development location
+                schema_path = Path(self.schema_path)
+                if not schema_path.exists() or not schema_path.is_absolute():
+                    # Try relative to current file
+                    # From tools/python/src/ocd/validate/loader.py, go up 6 levels to project root
+                    schema_path = Path(__file__).parent.parent.parent.parent.parent.parent / "schema" / "ocd-validation-spec.schema.json"
+                
+                if schema_path.exists():
+                    with schema_path.open("r", encoding="utf-8") as f:
+                        schema_data = json.load(f)
             
-            with schema_path.open("r", encoding="utf-8") as f:
-                schema = json.load(f)
+            if schema_data is None:
+                raise FileNotFoundError("Could not find ocd-validation-spec.schema.json in package or development paths")
             
-            self._schema_validator = Draft202012Validator(schema)
+            self._schema_validator = Draft202012Validator(schema_data)
         
         return self._schema_validator
     

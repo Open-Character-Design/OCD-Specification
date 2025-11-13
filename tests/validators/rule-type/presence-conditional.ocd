@@ -1,0 +1,23 @@
+id: presence-conditional
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Conditional Required Fields
+  description: Fields required based on other field values.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "email"
+    type: string
+    format: email
+  - path: "phone"
+    type: string
+    dependentRequired:
+      email: ["phone"]
+    message: "Phone is required when email is provided"
+

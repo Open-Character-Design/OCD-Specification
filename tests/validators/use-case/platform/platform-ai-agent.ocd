@@ -1,0 +1,22 @@
+id: platform-ai-agent
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: AI Agent Platform Validation
+  description: Validates characters for AI agent systems.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "ai_agent"
+    type: object
+    message: "AI agent configuration should be present for AI platforms"
+
+constraints:
+  require:
+    - "ai_agent"
+

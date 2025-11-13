@@ -1,0 +1,21 @@
+id: pattern-username
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Username Pattern Validation
+  description: Validates username pattern (alphanumeric and underscores).
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "profile.username"
+    type: string
+    pattern: "^[a-zA-Z0-9_]+$"
+    minLength: 3
+    maxLength: 20
+    message: "Username must be 3-20 characters, alphanumeric and underscores only"
+

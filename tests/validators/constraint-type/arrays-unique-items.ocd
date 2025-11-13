@@ -1,0 +1,25 @@
+id: arrays-unique-items
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Unique Array Items Constraint
+  description: Ensures array items are unique.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "tags"
+    type: array
+    uniqueItems: true
+    message: "Tags must be unique"
+
+constraints:
+  arrays:
+    unique:
+      - path: "tags"
+      - path: "skills"
+

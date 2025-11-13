@@ -42,12 +42,12 @@ Issues = "https://github.com/opencharacter/OpenCharacter-Specification/issues"
 [project.scripts]
 ocd-validate = "ocd.validate.validator:main"
 
-[tool.hatch.build]
+[tool.hatch.build.targets.wheel]
 packages = ["src/ocd"]
 include = [
     "src/ocd/**/*.py",
     "src/ocd/**/*.json",
-    "spec/ocd-default-spec.ocd"
+    "src/ocd/**/*.ocd",
 ]
 
 [tool.hatch.envs.default]

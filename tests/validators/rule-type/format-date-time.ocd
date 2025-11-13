@@ -1,0 +1,23 @@
+id: format-date-time
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Date-Time Format Validation
+  description: Validates ISO 8601 date-time format for timestamps.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "meta.versioning.created_at"
+    type: string
+    format: date-time
+    message: "Created date must be in ISO 8601 format"
+  - path: "meta.versioning.last_modified"
+    type: string
+    format: date-time
+    message: "Last modified date must be in ISO 8601 format"
+

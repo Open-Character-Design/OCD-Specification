@@ -1,0 +1,16 @@
+id: staging-prod
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Staging Production Validation
+  description: Validation rules for staging production environment.
+policy:
+  allowUnknownFields: false
+  unknownFieldSeverity: error
+
+definitions:
+  enums: {}
+  types: {}
+
+rules: []
+

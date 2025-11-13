@@ -1,0 +1,25 @@
+id: range-string-length
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: String Length Validation
+  description: Validates string min/max length constraints.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "profile.name"
+    type: string
+    minLength: 1
+    maxLength: 100
+    message: "Name must be between 1 and 100 characters"
+  - path: "profile.bio"
+    type: string
+    minLength: 0
+    maxLength: 1000
+    message: "Bio must be less than 1000 characters"
+

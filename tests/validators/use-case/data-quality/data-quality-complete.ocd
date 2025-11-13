@@ -1,0 +1,36 @@
+id: data-quality-complete
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Complete Data Quality Validation
+  description: Comprehensive validation for data quality assurance.
+policy:
+  allowUnknownFields: false
+  unknownFieldSeverity: error
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "id"
+    presence: required
+    type: string
+    format: slug
+    minLength: 1
+  - path: "profile.name"
+    presence: required
+    type: string
+    minLength: 1
+    maxLength: 100
+  - path: "meta.versioning.created_at"
+    presence: required
+    type: string
+    format: date-time
+
+constraints:
+  require:
+    - "id"
+    - "profile.name"
+    - "meta.versioning.created_at"
+

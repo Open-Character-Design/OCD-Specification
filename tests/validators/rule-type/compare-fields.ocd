@@ -1,0 +1,21 @@
+id: compare-fields
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Field Comparison Validation
+  description: Compares field values (equalTo, greaterThan, etc.).
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules:
+  - path: "meta.versioning.last_modified"
+    type: string
+    format: date-time
+    compare:
+      greaterOrEqual: "meta.versioning.created_at"
+    message: "Last modified must be after or equal to created date"
+

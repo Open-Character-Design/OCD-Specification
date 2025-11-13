@@ -1,0 +1,19 @@
+id: content-rating-teen
+type: validationSpec
+schemaVersion: 1
+metadata:
+  name: Teen Content Rating
+  description: Validates content appropriate for teen audiences.
+policy:
+  allowUnknownFields: true
+
+definitions:
+  enums: {}
+  types: {}
+
+rules: []
+
+constraints:
+  disallow:
+    tags: ["mature", "adult", "explicit", "violent", "gore"]
+

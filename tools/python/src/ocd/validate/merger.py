@@ -88,26 +88,27 @@ class SpecMerger:
         return merged
     
     def _merge_rules(self, base_rules: List[Dict[str, Any]], overlay_rules: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-        """Merge rules with de-duplication by (path + operatorKeysHash)."""
-        # Create lookup for base rules
-        base_lookup = {}
+        """Merge rules with de-duplication by path (child rules override parent rules for same path)."""
+        # Create lookup for base rules by path
+        base_rules_by_path = {}
         for rule in base_rules:
-            key = self._rule_key(rule)
-            base_lookup[key] = rule
+            path = rule.get("path", "")
+            # If multiple base rules have same path, keep the last one
+            base_rules_by_path[path] = rule
         
-        # Process overlay rules
+        # Process overlay rules - these override base rules with same path
         merged_rules = []
-        overlay_keys: Set[str] = set()
+        overlay_paths: Set[str] = set()
         
         for rule in overlay_rules:
-            key = self._rule_key(rule)
-            overlay_keys.add(key)
+            path = rule.get("path", "")
+            overlay_paths.add(path)
             merged_rules.append(rule)
         
-        # Add base rules that weren't overridden
+        # Add base rules that weren't overridden (different path)
         for rule in base_rules:
-            key = self._rule_key(rule)
-            if key not in overlay_keys:
+            path = rule.get("path", "")
+            if path not in overlay_paths:
                 merged_rules.append(rule)
         
         return merged_rules

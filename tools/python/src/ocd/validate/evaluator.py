@@ -128,7 +128,22 @@ class RuleEvaluator:
         
         actual_type = self._get_python_type(value)
         
-        if actual_type != expected_type:
+        # Handle arrays of allowed types (union types)
+        if isinstance(expected_type, list):
+            # Check if actual type is in the allowed types list
+            if actual_type not in expected_type:
+                severity = self._get_severity(rule, "TYPE_MISMATCH")
+                allowed_types = ", ".join(expected_type)
+                return Diagnostic(
+                    code="TYPE_MISMATCH",
+                    severity=severity,
+                    message=rule.get("message", f"Expected one of [{allowed_types}], got {actual_type}"),
+                    path=path,
+                    rule=rule,
+                    spec_id=spec_id,
+                    schema_version=schema_version
+                )
+        elif actual_type != expected_type:
             severity = self._get_severity(rule, "TYPE_MISMATCH")
             return Diagnostic(
                 code="TYPE_MISMATCH",

@@ -182,7 +182,16 @@
       "additionalProperties": false,
       "properties": {
         "type": {
-          "enum": ["string", "number", "integer", "boolean", "object", "array"]
+          "anyOf": [
+            { "enum": ["string", "number", "integer", "boolean", "object", "array"] },
+            { "type": "array", "items": { "enum": ["string", "number", "integer", "boolean", "object", "array"] }, "minItems": 1 }
+          ]
+        },
+        "enum": {
+          "anyOf": [
+            { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
+            { "type": "string", "pattern": "^@enums\\.[A-Za-z_][A-Za-z0-9_]*$" }
+          ]
         },
         "pattern": { "type": "string" },
         "format": {
@@ -232,6 +241,7 @@
         "type": {
           "anyOf": [
             { "enum": ["string", "number", "integer", "boolean", "object", "array"] },
+            { "type": "array", "items": { "enum": ["string", "number", "integer", "boolean", "object", "array"] }, "minItems": 1 },
             { "type": "string", "pattern": "^@types\\.[A-Za-z_][A-Za-z0-9_]*$" }
           ]
         },
@@ -283,7 +293,8 @@
         "compare": { "$ref": "#/$defs/compare" },
 
         "severity": { "enum": ["warning", "error"] },
-        "message": { "type": "string" }
+        "message": { "type": "string" },
+        "description": { "type": "string" }
       }
     }
   }

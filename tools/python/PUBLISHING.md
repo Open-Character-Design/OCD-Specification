@@ -16,7 +16,7 @@
 From the `tools/python` directory:
 
 ```bash
-# Clean previous builds
+# Clean previous builds (Windows: use rmdir /s /q dist build && del /q *.egg-info)
 rm -rf dist build *.egg-info
 
 # Build wheel and source distribution
@@ -85,9 +85,9 @@ The package includes:
 - All Python source files in `src/ocd/validate/`
 - Default specification: `ocd/validate/data/ocd-default-spec.ocd`
 - Validation schema: `ocd/validate/data/ocd-validation-spec.schema.json`
-- Core schema: `ocd/validate/data/core.schema.json`
+- Core schema: `ocd/validate/data/core.schema.json` (included but not currently used by validator)
 
-These files are automatically included via the build configuration in `pyproject.toml`.
+These files are automatically included via the build configuration in `pyproject.toml`. The package data files are accessible via `importlib.resources` from the `ocd.validate.data` module.
 
 ## Verification Checklist
 

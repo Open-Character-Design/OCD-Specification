@@ -42,7 +42,7 @@ class TestSpecMerger:
         merger = SpecMerger()
         parent = {"policy": {"allowUnknownFields": True, "unknownFieldSeverity": "warning"}}
         child = {"policy": {"allowUnknownFields": False}}
-        merged = merger.merge_specs([parent], child)
+        merged = merger.merge_specs([parent, child])
         assert merged["policy"]["allowUnknownFields"] is False
         assert merged["policy"]["unknownFieldSeverity"] == "warning"
     
@@ -51,7 +51,7 @@ class TestSpecMerger:
         merger = SpecMerger()
         parent = {"definitions": {"enums": {"Color": ["red", "blue"]}}}
         child = {"definitions": {"enums": {"Size": ["small", "large"]}}}
-        merged = merger.merge_specs([parent], child)
+        merged = merger.merge_specs([parent, child])
         assert "Color" in merged["definitions"]["enums"]
         assert "Size" in merged["definitions"]["enums"]
     
@@ -60,7 +60,7 @@ class TestSpecMerger:
         merger = SpecMerger()
         parent = {"rules": [{"path": "id", "type": "string"}]}
         child = {"rules": [{"path": "id", "type": "string", "minLength": 10}]}
-        merged = merger.merge_specs([parent], child)
+        merged = merger.merge_specs([parent, child])
         # Should have only one rule for "id" with minLength from child
         id_rules = [r for r in merged["rules"] if r["path"] == "id"]
         assert len(id_rules) == 1
@@ -107,7 +107,7 @@ class TestRuleEvaluator:
         matches = []  # No matches = missing field
         diags = evaluator.evaluate_rule(rule, matches, "test-spec", 1)
         assert len(diags) == 1
-        assert diags[0].code == "MISSING_REQUIRED"
+        assert diags[0].code == "REQUIRED_FIELD_MISSING"
     
     def test_type_validation(self):
         """Test type validation."""
@@ -125,7 +125,7 @@ class TestRuleEvaluator:
         matches = [{"path": "species", "value": "android"}]
         diags = evaluator.evaluate_rule(rule, matches, "test-spec", 1)
         assert len(diags) == 1
-        assert diags[0].code == "ENUM_VIOLATION"
+        assert diags[0].code == "INVALID_ENUM_VALUE"
     
     def test_pattern_validation(self):
         """Test pattern validation."""
@@ -145,13 +145,13 @@ class TestRuleEvaluator:
         matches = [{"path": "age", "value": 10}]
         diags = evaluator.evaluate_rule(rule, matches, "test-spec", 1)
         assert len(diags) == 1
-        assert diags[0].code == "VALUE_TOO_LOW"
+        assert diags[0].code == "VALUE_TOO_SMALL"
         
         # Test above max
         matches = [{"path": "age", "value": 150}]
         diags = evaluator.evaluate_rule(rule, matches, "test-spec", 1)
         assert len(diags) == 1
-        assert diags[0].code == "VALUE_TOO_HIGH"
+        assert diags[0].code == "VALUE_TOO_LARGE"
     
     def test_length_validation(self):
         """Test string length validation."""

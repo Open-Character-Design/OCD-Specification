@@ -81,6 +81,7 @@ Companion **non-normative** samples:
 - [Minimal baker](../../../examples/experimental/x-career/minimal-baker.json) — occupation without an employer, education or invented timeline.
 - [Scoped scientist](../../../examples/experimental/x-career/scoped-scientist.json) — structured education and a career transition in different narrative scopes.
 - [Unpaid caregiver](../../../examples/experimental/x-career/unpaid-caregiver.json) — an occupation/vocation without paid employment.
+- [Invalid root extension](../../../examples/experimental/x-career/invalid-root-extension.json) — negative core fixture proving top-level `x-career` is forbidden.
 
 These files are deliberately not placed in the official conformance fixture directory. They are candidates for independent review. **No official validator parity or x-career v0.3 extension conformance is claimed here.**
 

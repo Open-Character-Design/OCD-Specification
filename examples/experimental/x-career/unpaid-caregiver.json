@@ -1,0 +1,28 @@
+{
+  "kind": "CharacterDefinition",
+  "ocd_version": "1.0.0",
+  "id": "8ac0ed18-b331-4fc0-b777-99a6767837bb",
+  "slug": "noor-caregiver",
+  "names": {
+    "canon": "Noor"
+  },
+  "identity": {
+    "entity_kind": "person",
+    "sapience_level": "sapient"
+  },
+  "meta": {
+    "versioning": {
+      "created_at": "2026-11-03T00:00:00Z",
+      "last_modified": "2026-11-03T00:00:00Z"
+    }
+  },
+  "extras": {
+    "x-career": {
+      "occupations": [
+        {
+          "name": "Unpaid family caregiver"
+        }
+      ]
+    }
+  }
+}

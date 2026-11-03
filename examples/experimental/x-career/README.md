@@ -7,6 +7,7 @@ These JSON files are **full-character, candidate core-schema examples** with the
 - `minimal-baker.json`: only a known occupation; unknown employer and education must not be invented.
 - `scoped-scientist.json`: narrative-scoped engagements and education. `story_scope` is experimental, not an accepted time/continuity reference.
 - `unpaid-caregiver.json`: nontraditional unpaid occupation without presumed employer, contract or earnings.
+- `invalid-root-extension.json`: **intentionally invalid** `CharacterDefinition` that puts `x-career` at the root instead of under `extras`; this must fail strict core validation.
 
 ## Expected review checks
 

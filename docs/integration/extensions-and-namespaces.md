@@ -4,31 +4,37 @@ OCD supports custom extensions through the `x-*` namespace pattern, allowing you
 
 ## Extension Namespaces
 
-Extensions use the `x-` prefix to avoid conflicts with core OCD fields:
+Extensions use the `x-` prefix to avoid conflicts with core OCD fields.
+
+> **Core-schema placement:** In the current `spec/core.schema.json` **CharacterDefinition** format, `additionalProperties: false` forbids unrecognized top-level `x-*` keys. Put extensions under `extras` to preserve core-schema validity, as shown below. The other `x-*` snippets on this page illustrate **extension payloads or conventions**, not complete, validated `CharacterDefinition` documents. Core validation does not validate nested extension contents.
 
 ```yaml title="character-with-extensions.yaml"
+kind: CharacterDefinition
 ocd_version: "1.0.0"
-id: "char-example"
+id: "bd944a14-49a2-4b2e-8aeb-85262bf036a2"
+slug: "example-character"
 names:
   canon: "Example Character"
-
-# Core OCD fields
 identity:
-  kind: "humanoid"
-  species: "Human"
+  entity_kind: person
+  sapience_level: sapient
+meta:
+  versioning:
+    created_at: "2026-11-03T00:00:00Z"
+    last_modified: "2026-11-03T00:00:00Z"
 
-# Custom extensions
-x-dnd5e:
-  class: "Fighter"
-  level: 8
-  abilities:
-    strength: 18
-    dexterity: 12
-
-x-my-game:
-  system: "MyFantasyRPG"
-  character_type: "Warrior"
-  power_level: "Heroic"
+# Optional extensions are nested inside extras:
+extras:
+  x-dnd5e:
+    class: "Fighter"
+    level: 8
+    abilities:
+      strength: 18
+      dexterity: 12
+  x-my-game:
+    system: "MyFantasyRPG"
+    character_type: "Warrior"
+    power_level: "Heroic"
 ```
 
 ## Creating Extensions

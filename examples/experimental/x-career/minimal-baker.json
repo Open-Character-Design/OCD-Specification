@@ -1,0 +1,28 @@
+{
+  "kind": "CharacterDefinition",
+  "ocd_version": "1.0.0",
+  "id": "5ce0b37c-59ac-4a61-9dc9-27b3197c5995",
+  "slug": "mara-baker",
+  "names": {
+    "canon": "Mara"
+  },
+  "identity": {
+    "entity_kind": "person",
+    "sapience_level": "sapient"
+  },
+  "meta": {
+    "versioning": {
+      "created_at": "2026-11-03T00:00:00Z",
+      "last_modified": "2026-11-03T00:00:00Z"
+    }
+  },
+  "extras": {
+    "x-career": {
+      "occupations": [
+        {
+          "name": "Baker"
+        }
+      ]
+    }
+  }
+}

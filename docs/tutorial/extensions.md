@@ -2,6 +2,8 @@
 
 In this step, you'll learn how to integrate OCD with specific game systems using extension blocks.
 
+> **Current core-schema compatibility:** The detailed tutorial example below illustrates a legacy authoring style and is **not** a validated, full `CharacterDefinition` under `spec/core.schema.json`. In that schema, custom `x-*` fields belong under `extras` rather than at the root, and its required core fields differ from several fields shown here. See [Extensions & Namespaces](../integration/extensions-and-namespaces.md) for a current-schema-shaped extension example. Do not treat this tutorial example as a conformance fixture.
+
 ## What You'll Build
 
 A character with D&D 5e stats, abilities, and equipment using the `x-dnd5e` extension block.
